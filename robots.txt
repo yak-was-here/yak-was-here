@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /archive/
+Disallow: /cgi-bin/
+Disallow: /scgi-bin/
