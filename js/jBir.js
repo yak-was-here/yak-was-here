@@ -43,10 +43,10 @@ function setRandomWallpaper(newWallpaperPath)
 	// This if statement was included so that the path to the wallpapers
 	// directory could be updated if the path was not originally absolute
 	// (e.g. it was set as: ./folder/wallpapers instead of http://www.example.com/folder/wallpapers)
-	if(typeof newWallpaperPath !== 'undefined')// If new wallpaper path was specified
+	if(typeof wallpaperPath !== 'undefined')// If new wallpaper path was specified
 	{
 		// Build location of next wallpaper based on new path
-		image = newWallpaperPath + imageFiles[randImgNum];
+		image = wallpaperPath + imageFiles[randImgNum];
 	}
 	else // No new wallpaper path is specified
 	{
