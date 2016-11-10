@@ -117,3 +117,10 @@ img.ss
 	max-height: 300px;
 	width: auto;
 }
+
+p.footer
+{
+	color: white;
+	padding: 5px;
+	opacity: 0.75;
+}
