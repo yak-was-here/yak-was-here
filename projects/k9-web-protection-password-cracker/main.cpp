@@ -1,11 +1,11 @@
 /*
 	K9 Web Protection Password Cracker v1.0 source code
 	Copyright (c) 2014 izacktheyak.com. All rights reserved.
-	Author: Yak/Isaac Litzenberger
+	Author: Isaac "Yak" L
 
-	To use any part of this code you must contact me and ask my permission via webmaster@izacktheyak.com
+	Released under GNU General Public License v3.0 - https://www.gnu.org/licenses/gpl-3.0.en.html
 	
-	Visit http://www.izacktheyak.com/software/k9wppc for more information.
+	Visit http://izacktheyak.com/projects/k9-web-protection-password-cracker/ for more information.
 
 	Description:
 	This tool allows the user to recover the password of their K9 Web Protection installation.
@@ -76,13 +76,9 @@ int main()
 	//print program info
 	cout << "K9 Web Protection Password Cracker v1.0\n";
 	cout << "Copyright (c) 2014 izacktheyak.com. All rights reserved.\n";
-	cout << "Visit http://www.izacktheyak.com/projects/k9wppc for updates and more information about this program.\n";
+	cout << "Visit http://izacktheyak.com/projects/k9-web-protection-password-cracker/ for updates and more information about this program.\n";
 	cout << "\n";
 	cout << "NOTICE: This program is intended to help with the recovery of lost passwords. By using this program, you agree that the author is not liable for any lose or damage you incur from use or misuse of this program.\n";
-	cout << "\n";
-	cout << "-------------------------------------------------------------------------------\n";
-	cout << "                        Follow or Tweet Me @izacktheyak  \n";
-	cout << "-------------------------------------------------------------------------------\n";
 	cout << "\n\n";
 
 	//welcome the user!
