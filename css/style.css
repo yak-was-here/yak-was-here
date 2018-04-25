@@ -133,7 +133,6 @@ p.footer
 
 #site-title
 {
-	margin-left: 15px;
 	color: white;
 }
 
@@ -146,5 +145,5 @@ span.label /*labels utilized for listing tools and technologies*/
 
 span.label-tool
 {
-	background-color: #8C6529;
+	background-color: #03C03C;
 }
