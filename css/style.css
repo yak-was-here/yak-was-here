@@ -159,3 +159,13 @@ span.label-tool
 	height: 100%;
 	margin-right: 13px;
 }
+
+/* Social icon section */
+p.social {
+	
+}
+
+/* Control size of font awesome 5 icons used for social buttons */
+i.fab {
+	font-size: 2.5rem;
+}
