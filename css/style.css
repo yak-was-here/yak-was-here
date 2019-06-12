@@ -55,7 +55,7 @@ body
 
 @font-face {
     font-family: Zanzibar SF;
-    src: url(../fonts/Zanzibar SF.ttf);
+    src: url("../fonts/Zanzibar SF.ttf");
 }
 
 /* Extra small devices (phones, less than 768px) */
@@ -158,11 +158,6 @@ span.label-tool
 {
 	height: 100%;
 	margin-right: 13px;
-}
-
-/* Social icon section */
-p.social {
-	
 }
 
 /* Control size of font awesome 5 icons used for social buttons */
