@@ -1,67 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Whoops! Page Not Found - isaacyakl.com</title>
-  <meta charset="utf-8">
-  <meta name="author" content='Isaac "Yak" L.'>
-  <link rel="shortcut icon" type="image/x-icon" href="./images/isaacyakl_favicon.gif" />
-  <link rel="icon" type="image/x-icon" href="./images/isaacyakl_favicon.gif" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/style.css">
-</head>
-<body id="bgimg">
-<nav class="navbar navbar-inverse">
-  <div class="container">
-    <div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</button>
-		<a class="navbar-brand" href="./"><div><img id="nav-img-branding" src="images/isaacyakl_20px.jpg" alt="Isaac 'Yak' L."><span id="site-title">Isaac "Yak" L.</span></div></a>
+  <head>
+    <title>Whoops! Page Not Found - isaacyakl.com</title>
+    <meta charset="utf-8" />
+    <!-- prettier-ignore -->
+    <meta name="author" content="Isaac &quot;Yak&quot; L." />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="./images/isaacyakl_favicon.gif"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./images/isaacyakl_favicon.gif"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1,user-scalable=yes"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body id="bgimg">
+    <nav class="navbar navbar-inverse">
+      <div class="container" role="navigation">
+        <div class="navbar-header" role="navigation">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#navbar"
+          >
+            <span
+              class="icon-bar"
+              role="navigation"
+              aria-label="Site Menu"
+            ></span>
+            <span class="icon-bar" role="navigation"></span>
+            <span class="icon-bar" role="navigation"></span>
+          </button>
+          <a class="navbar-brand" href="./"
+            ><div>
+              <!-- prettier-ignore -->
+              <img
+                id="nav-img-branding"
+                src="images/isaacyakl_20px.jpg"
+                alt="Isaac &quot;Yak&quot; L."
+              /><span id="site-title" role="none presentation"
+                >Isaac &quot;Yak&quot; L.</span
+              >
+            </div></a
+          >
+        </div>
+        <div class="collapse navbar-collapse" id="navbar" role="navigation">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                href="./projects.html"
+                >Projects<span
+                  class="caret"
+                  role="navigation"
+                  aria-label="projects menu"
+                ></span
+              ></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="projects/alive-in-christ-apparel/"
+                    ><img
+                      src="projects/alive-in-christ-apparel/aica-logo.png"
+                      class="project-icon"
+                      alt="AiCA Logo"
+                    />Alive in Christ Apparel</a
+                  >
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="projects/nah-son-free-pie-gaming/"
+                    >img src="projects/nah-son-free-pie-gaming/nsfp_logo.png"
+                    class="project-icon" alt="NSFP Gaming Logo" />Nah Son, Free
+                    Pie! Gaming</a
+                  >
+                </li>
+                <li>
+                  <a href="projects/map-training/"
+                    ><img
+                      src="projects/map-training/map_logo.png"
+                      class="project-icon"
+                      alt="MAP Training Logo"
+                    />MAP Training</a
+                  >
+                </li>
+                <li>
+                  <a href="projects/yourpbfriend/"
+                    ><img
+                      src="projects/yourpbfriend/YPBF_Shield_Logo_2015.png"
+                      class="project-icon"
+                      alt="YPBF Logo"
+                    />YourPbFriend.com</a
+                  >
+                </li>
+                <li>
+                  <a href="projects/k9-web-protection-password-cracker/"
+                    ><img
+                      src="projects/k9-web-protection-password-cracker/k9wppc_logo.png"
+                      class="project-icon"
+                      alt="K9WPPC Logo"
+                    />K9 Web Protection Password Cracker</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li><a href="#social">Social</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a
+                href="#"
+                title="Change Background"
+                onclick="setRandomWallpaper();"
+                ><span
+                  class="glyphicon glyphicon-picture"
+                  role="none presentation"
+                  aria-label="change background"
+                ></span
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container" role="main">
+      <div class="row" role="document">
+        <div class="col-xs-12 page shadow" role="document">
+          <h1 id="projects">Whoops! Page Not Found</h1>
+          <p>
+            That page seems to be misplaced...<a href="./#social">let me know</a
+            >.
+          </p>
+        </div>
+      </div>
+      <div class="row" role="document">
+        <div class="col-xs-12" role="contentinfo">
+          <p class="footer"></p>
+        </div>
+      </div>
     </div>
-	<div class="collapse navbar-collapse" id="navbar">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-    			<a class="dropdown-toggle" data-toggle="dropdown" href="./projects.html">Projects<span class="caret"></span></a>
-    			<ul class="dropdown-menu">
-            <li><a href="projects/alive-in-christ-apparel/"><img src="projects/alive-in-christ-apparel/aica-logo.png" class="project-icon"/>Alive in Christ Apparel</a></li>
-            <li role="separator" class="divider"></li>
-    				<li><a href="projects/nah-son-free-pie-gaming/"><img src="projects/nah-son-free-pie-gaming/nsfp_logo.png" class="project-icon"/>Nah Son, Free Pie! Gaming</a></li>
-    				<li><a href="projects/map-training/"><img src="projects/map-training/map_logo.png" class="project-icon"/>MAP Training</a></li>
-    				<li><a href="projects/yourpbfriend/"><img src="projects/yourpbfriend/YPBF_Shield_Logo_2015.png" class="project-icon"/>YourPbFriend.com</a></li>
-    				<li><a href="projects/k9-web-protection-password-cracker/"><img src="projects/k9-web-protection-password-cracker/k9wppc_logo.png" class="project-icon"/>K9 Web Protection Password Cracker</a></li>
-    			</ul>
-    		</li>
-        <li><a href="#social">Social</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-	  <ul class="nav navbar-nav navbar-right">
-		<li><a href="#" title="Change Background" alt="Change Background" onclick="setRandomWallpaper();"><span class="glyphicon glyphicon-picture"></span></a></li>
-	  </ul>
-    </div>
-  </div>
-</nav>
-<div class="container">
-	<div class="row">
-		<div class="col-xs-12 page shadow">
-			<h1 id="projects">Whoops! Page Not Found</h1>
-			<p>
-				That page seems to be misplaced...<a href="./#social">let me know</a>.
-			</p>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-12">
-			<p class="footer"></p>
-		</div>
-	</div>
-</div>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script type="text/javascript" src="./js/jBir.js"></script>
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="./js/jBir.js"></script>
+  </body>
 </html>
