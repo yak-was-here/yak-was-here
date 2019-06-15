@@ -1,3 +1,8 @@
+html {
+  /* add smooth scrolling to id tags etc. */
+  scroll-behavior: smooth;
+}
+
 body {
   background-image: url("../images/wallpaper_bin/wp_9.jpg");
   background-size: cover;
