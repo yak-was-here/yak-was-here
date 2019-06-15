@@ -11,7 +11,7 @@ var numberOfWallpapers = 9;
 // Set the path to the directory of all the wallpapers
 // For example: absolute "http://www.example.com/images/wallpapers/" or relative "./images/wallpapers/" ending with a forward slash
 // Absolute is recommended so that this script will work on pages in subdirectories.
-var wallpaperPath = "http://www.isaacyakl.com/images/wallpaper_bin/";
+var wallpaperPath = "https://www.isaacyakl.com/images/wallpaper_bin/";
 //var wallpaperPath = "./images/wallpaper_bin/";
 
 // Array of all the wallpaper files
