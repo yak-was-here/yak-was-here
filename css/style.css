@@ -1,155 +1,95 @@
 html {
-  /* add smooth scrolling to id tags etc. */
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* add smooth scrolling to id tags etc. */
 }
 
 body {
-  background-image: url("../images/wallpaper_bin/wp_9.jpg");
+  background-image: url("../images/wallpaper_bin/wp_9.jpg"); /* starting background image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
   -webkit-transition: background 4s ease-in-out;
   -moz-transition: background 4s ease-in-out;
   -o-transition: background 4s ease-in-out;
   transition: background 4s ease-in-out;
 }
 
+/********************************/
+/*********  nav bar  ************/
+/********************************/
+/* brand logo in navigation bar */
+img.brand-logo {
+  height: 1.75rem;
+  margin-right: 0.3rem;
+}
+/* text of navbar branding */
+.navbar-brand {
+  font-weight: bolder;
+}
+/* menu icons for projects */
+.menu-project-icon {
+  height: 1rem;
+  margin-right: 0.3rem;
+}
+.dropdown-menu {
+  padding: 0rem;
+}
+.dropdown-item {
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+}
+.dropdown-divider {
+  margin: 0rem;
+}
+/* background color of nav bar */
+nav.bg-dark-yak {
+  color: white;
+  background-color: #222;
+  border: 0.0625rem solid #080808;
+}
+/* change background button */
+.change-background {
+  color: white;
+}
+.change-background:hover {
+  cursor: pointer;
+}
+
+/********************************/
+/******** main content **********/
+/********************************/
+/* main content wrapper */
 .page {
   background-color: white;
-  border-radius: 5px;
-  border: 1px solid #e8e8e8;
-  /*border: 2px solid #000000;*/
-  margin-bottom: 15px;
-  padding-bottom: 20px;
+  border-radius: 0.3rem;
+  margin: 0.95rem 0rem 0.95rem 0;
+  padding: 0.95rem;
 }
-
-.shadow {
-  -webkit-box-shadow: 10px 10px 25px -6px rgba(0, 0, 0, 0.22);
-  -moz-box-shadow: 10px 10px 25px -6px rgba(0, 0, 0, 0.22);
-  box-shadow: 10px 10px 25px -6px rgba(0, 0, 0, 0.22);
+/* picture of isaacyakl */
+img.me {
+  width: 25%;
+  margin: 0.3rem 0.95rem 0.95rem 0rem;
+  border-radius: 0.3rem;
 }
-
-#twitter-widget-0 {
-  -webkit-box-shadow: 10px 10px 25px -6px rgba(0, 0, 0, 0.22);
-  -moz-box-shadow: 10px 10px 25px -6px rgba(0, 0, 0, 0.22);
-  box-shadow: 10px 10px 25px -6px rgba(0, 0, 0, 0.22);
-}
-
-.embed-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-}
-
-.embed-container iframe,
-.embed-container object,
-.embed-container embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-@font-face {
-  font-family: Zanzibar SF;
-  src: url("../fonts/Zanzibar SF.ttf");
-}
-
-/* Extra small devices (phones, less than 768px) */
-@media (max-width: 767px) {
-  .siteHeader {
-    font-family: Zanzibar SF;
-    font-size: 2.5em;
-    font-size: 13vw;
-    color: white;
-    margin-bottom: 10px;
-  }
-}
-
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  .siteHeader {
-    font-family: Zanzibar SF;
-    font-size: 5em;
-    font-size: 7.5vw;
-    color: white;
-    margin-bottom: 10px;
-  }
-}
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-  .siteHeader {
-    font-family: Zanzibar SF;
-    font-size: 7.5em;
-    color: white;
-    margin-bottom: 10px;
-  }
-}
-/*Change links to green
-a,a:visited,a:hover,a:active
-{
-	color: #03C03C;
-}*/
-
-.affix {
-  top: 0;
-  width: 100%;
-  z-index: 999;
-}
-
-.affix + .container-fluid {
-  padding-top: 70px;
-}
-
-.project-icon {
-  border: none;
-  height: 32px;
-  width: 32px;
-  margin-right: 5px;
-}
-
-img.ss {
-  max-height: 300px;
-  width: auto;
-}
-
-p.footer {
-  color: white;
-  padding: 5px;
-  opacity: 0.75;
-}
-
-#site-title {
-  color: white;
-}
-
-span.label /*labels utilized for listing tools and technologies*/
- {
-  display: inline-block;
-  font-size: 14pt;
-  margin-bottom: 5px;
-}
-
-span.label-tool {
-  background-color: #03c03c;
-}
-
-#me-img {
-  width: 19%;
-  margin: 2% 2% 2% 0%;
-}
-
-#nav-img-branding {
-  height: 100%;
-  margin-right: 13px;
-}
-
 /* Control size of font awesome 5 icons used for social buttons */
-i.fab {
-  font-size: 2.5rem;
+p.social-icons > a > i.fab,
+p.social-icons > a > i.fas,
+p.social-icons > a > i.far {
+  font-size: 1.75rem;
+}
+/* twitter feed */
+div.tweets {
+  border-radius: 0.3rem;
+  padding: 0.95rem;
+}
+/* icons for project page headers */
+.project-icon {
+  height: 2.5rem;
+  margin-right: 0.3rem;
+}
+/* footer */
+footer {
+  color: white;
+  padding: 0.3rem;
+  opacity: 0.75;
 }
