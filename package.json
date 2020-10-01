@@ -4,27 +4,43 @@
 	"description": "yak's Personal Website",
 	"main": "src/index.js",
 	"private": true,
+	"dependencies": {
+		"@testing-library/jest-dom": "^4.2.4",
+		"@testing-library/react": "^9.5.0",
+		"@testing-library/user-event": "^7.2.1",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"react-scripts": "3.4.3"
+	},
 	"scripts": {
-		"dev": "webpack --mode development",
-		"start": "webpack-dev-server --mode development --open"
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+ssh://git@github.com/isaacyakl/isaacyakl.com.git"
 	},
-	"author": "",
+	"author": "Isaac 'yak' L. <i@isaacyakl.com> (https://www.isaacyakl.com/)",
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/isaacyakl/isaacyakl.com/issues"
 	},
 	"homepage": "https://github.com/isaacyakl/isaacyakl.com#readme",
-	"devDependencies": {
-		"css-loader": "^3.6.0",
-		"html-webpack-plugin": "^4.4.1",
-		"mini-css-extract-plugin": "^0.9.0",
-		"style-loader": "^1.2.1",
-		"webpack": "^4.44.2",
-		"webpack-cli": "^3.3.12",
-		"webpack-dev-server": "^3.11.0"
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
 	}
 }
