@@ -11,7 +11,13 @@ body {
 	box-sizing: border-box;
 }
 
-div.container {
+header {
+}
+
+header.hero {
+}
+
+main {
 }
 
 span.site-wordmark {

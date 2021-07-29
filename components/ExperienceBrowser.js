@@ -1,11 +1,9 @@
-import BaseMeta from './BaseMeta'
 import Image from 'next/image'
-import Header from './Header'
 
-export default function Home() {
+export default function ExperienceBrowser() {
     return (
-        <>
+        <div className="experience-browser">
             
-        </>
+        </div>
     )
 }
