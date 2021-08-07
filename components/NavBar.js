@@ -1,19 +1,31 @@
-import Image from 'next/image'
-import yakLogo from '../public/img/yak-logo.png'
+import PropTypes from 'prop-types'
 
-const NavBar = () => {
+const NavBar = ({active}) => {
     return (
         <nav>
-            <Image src={yakLogo} alt="yak Logo" className="logo" height="42" width="42"/>
-            <span className="site-wordmark">Yak</span>
+            <div className="branding-container">
+                <a href="/">
+                    <img src="/img/yak-logo.svg" alt="yak Logo" title="Home" className="logo"/>
+                    <span className="site-wordmark">Yak</span>
+                </a>
+            </div>
             <ul className="nav-menu">
-                <li className="nav-menu-item">Portfolio</li>
-                <li className="nav-menu-item">Experience</li>
-                <li className="nav-menu-item">Hire</li>
-                <li className="nav-menu-item">Contact</li>
+                <a href="/"><li className={`nav-menu-item ${active === "portfolio" ? "active" : ""}`}>Portfolio</li></a>
+                <a href="/experience"><li className={`nav-menu-item ${active === "experience" ? "active" : ""}`}>Experience</li></a>
+                <a href="/"><li className={`nav-menu-item ${active === "hire" ? "active" : ""}`}>Hire</li></a>
+                <a href="/#contact"><li className={`nav-menu-item ${active === "contact" ? "active" : ""}`}>Contact</li></a>
             </ul>
         </nav>
     )
 }
+
+NavBar.defaultProps = {
+    active: 'portfolio',
+}
+
+NavBar.propTypes = {
+    active: PropTypes.string,
+}
+
 
 export default NavBar
