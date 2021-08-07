@@ -1,26 +1,149 @@
+/* Variables */
+:root {
+	--container-width: 95%;
+}
+
+/* All */
 *,
 html,
 body {
 	padding: 0;
 	margin: 0;
-	font-family: "Roboto", sans-serif;
-	font-size: 18px;
-}
-
-* {
 	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+	font-size: 1.5vw;
 }
 
-header {
+a,
+a:visited,
+a:hover,
+a:active {
+	color: black;
+	text-decoration: none;
 }
 
-header.hero {
+hr {
+	width: 20%;
+	border: 0;
+	background-color: #000;
+	height: 0.1rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 
-main {
+/* Navigation */
+nav {
+	width: var(--container-width);
+	margin: auto;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+div.branding-container > a,
+div.branding-container > a:visited,
+div.branding-container > a:active,
+div.branding-container > a:hover {
+	color: black;
+	text-decoration: none;
+}
+
+img.logo {
+	height: 1.75rem;
+	width: 1.75rem;
 }
 
 span.site-wordmark {
-	font-family: "Bebas Neue", cursive;
-	font-size: 3rem;
+	font-family: "Bebas Neue";
+	font-weight: 100;
+	font-size: 2rem;
+}
+
+ul.nav-menu {
+	list-style-type: none;
+}
+
+li.nav-menu-item {
+	background-color: #fff;
+	font-family: "Bebas Neue";
+	font-weight: 100;
+	padding: 0.5em 1em 0.5em 1em;
+}
+
+li.nav-menu-item:hover {
+	background-color: #f3f3f3;
+}
+
+li.nav-menu-item.active {
+	background-color: #e0e0e0;
+}
+
+/* Header */
+header {
+	background-image: url("/img/isaacyakl-hero-background-4k.jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	min-height: 3em;
+	display: flex;
+	align-items: center;
+	align-content: center;
+}
+
+header.hero {
+	min-height: 100vh;
+	opacity: 0.95;
+}
+
+div.header-container > h1 {
+	font-family: "Bebas Neue";
+	font-weight: 100;
+}
+
+div.header-container {
+	width: var(--container-width);
+	margin: auto;
+}
+
+h1.hero-title {
+	font-size: 14vw;
+	font-weight: 100;
+	line-height: 12vw;
+	flex-grow: 1;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+div.seeking,
+div.seeking > strong {
+	font-size: 2vw;
+	padding: 0.5em 0em;
+}
+
+/* Body */
+body {
+	background-color: #fff;
+}
+
+main {
+	width: var(--container-width);
+	margin: auto;
+}
+
+div.social-icons {
+	padding: 0.5em 0em;
+}
+
+div.social-icons > a > svg {
+	-webkit-transition: color 0.5s 0s ease;
+	-moz-transition: color 0.5s 0s ease;
+	-o-transition: color 0.5s 0s ease;
+	transition: color 0.5s 0s ease;
+	width: 2rem;
+	margin: 0em 0.5em 0em 0em;
+}
+
+div.social-icons > a > svg:hover {
+	color: #0dd1d1;
 }

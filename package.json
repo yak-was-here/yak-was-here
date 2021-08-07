@@ -2,7 +2,7 @@
   "name": "isaacyakl.com",
   "version": "3.0.0",
   "description": "yak's Personal Website",
-	"main": "src/index.js",
+  "main": "src/index.js",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,6 +11,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
     "next": "11.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"
@@ -20,13 +24,13 @@
     "eslint-config-next": "11.0.1"
   },
   "repository": {
-		"type": "git",
-		"url": "git+ssh://git@github.com/isaacyakl/isaacyakl.com.git"
-	},
-	"author": "Isaac 'yak' L. <i@isaacyakl.com> (https://www.isaacyakl.com/)",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/isaacyakl/isaacyakl.com/issues"
-	},
-	"homepage": "https://github.com/isaacyakl/isaacyakl.com#readme"
+    "type": "git",
+    "url": "git+ssh://git@github.com/isaacyakl/isaacyakl.com.git"
+  },
+  "author": "Isaac 'yak' L. <i@isaacyakl.com> (https://www.isaacyakl.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/isaacyakl/isaacyakl.com/issues"
+  },
+  "homepage": "https://github.com/isaacyakl/isaacyakl.com#readme"
 }
