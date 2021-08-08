@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 const NavBar = ({active}) => {
     return (
-        <nav>
+        <nav className="no-select">
             <div className="branding-container">
                 <a href="/">
                     <img src="/img/yak-logo.svg" alt="yak Logo" title="Home" className="logo"/>
