@@ -1,10 +1,12 @@
-const About = () => {
+import Section from "./Section"
+
+const Experience = () => {
     return (
-      <section>
+      <Section>
         <h2>Experience</h2>
         <div id="experience"></div>
-      </section>
+      </Section>
     )
 }
 
-export default About
+export default Experience

@@ -38,6 +38,45 @@ hr {
 	user-select: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Bebas Neue";
+	font-weight: 100;
+}
+
+h1 {
+	font-size: 4vw;
+}
+
+h2 {
+	font-size: 3.3vw;
+	opacity: 0.9;
+}
+
+h3 {
+	font-size: 2.75vw;
+	opacity: 0.8;
+}
+
+h4 {
+	font-size: 2.5vw;
+	opacity: 0.7;
+}
+
+h5 {
+	font-size: 2.25vw;
+	opacity: 0.6;
+}
+
+h6 {
+	font-size: 2vw;
+	opacity: 0.5;
+}
+
 /* Navigation */
 nav {
 	width: var(--container-width);
@@ -149,4 +188,9 @@ div.social-icons > a > svg {
 
 div.social-icons > a > svg:hover {
 	color: #0dd1d1;
+}
+
+section {
+	padding-top: 1rem;
+	padding-bottom: 0.5rem;
 }
