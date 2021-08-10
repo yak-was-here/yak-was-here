@@ -11,7 +11,7 @@ body {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	font-family: "Roboto", sans-serif;
+	font-family: "Roboto", Arial, "Bebas Neue", serif;
 	font-size: 1.75vmax;
 }
 
@@ -44,7 +44,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Bebas Neue";
+	font-family: "Bebas Neue", serif;
 	font-weight: 100;
 	padding-bottom: var(--space-unit);
 }
@@ -54,26 +54,26 @@ h1 {
 }
 
 h2 {
-	font-size: 2rem;
+	font-size: 1.95rem;
 }
 
 h3 {
-	font-size: 1.75rem;
+	font-size: 1.65rem;
 	color: #424242;
 }
 
 h4 {
-	font-size: 1.55rem;
+	font-size: 1.35rem;
 	color: #424242;
 }
 
 h5 {
-	font-size: 1.35rem;
+	font-size: 1.25rem;
 	color: #666666;
 }
 
 h6 {
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 	color: #666666;
 }
 
@@ -106,7 +106,7 @@ img.logo {
 }
 
 span.site-wordmark {
-	font-family: "Bebas Neue";
+	font-family: "Bebas Neue", serif;
 	font-weight: 100;
 	font-size: 2rem;
 }
@@ -117,8 +117,9 @@ ul.nav-menu {
 
 li.nav-menu-item {
 	background-color: #fff;
-	font-family: "Bebas Neue";
+	font-family: "Bebas Neue", serif;
 	font-weight: 100;
+	text-transform: uppercase;
 	padding: var(--space-unit) calc(var(--space-unit) * 2);
 }
 
@@ -145,10 +146,11 @@ header {
 header.hero {
 	min-height: 100vh;
 	opacity: 0.95;
+	overflow: hidden;
 }
 
 div.header-container > h1 {
-	font-family: "Bebas Neue";
+	font-family: "Bebas Neue", serif;
 	font-weight: 100;
 }
 
@@ -159,7 +161,6 @@ div.header-container {
 
 h1.hero-title {
 	font-size: 14vw;
-	font-weight: 100;
 	line-height: 12vw;
 	flex-grow: 1;
 }
@@ -217,8 +218,9 @@ section {
 }
 
 div.role-experience-container {
-	font-family: "Bebas Neue";
+	font-family: "Bebas Neue", serif;
 	font-weight: 100;
+	text-transform: uppercase;
 	display: grid;
 	grid-template-columns: 1fr auto;
 	justify-items: start;
@@ -239,6 +241,7 @@ div.role-experience-time {
 	overflow: hidden;
 	white-space: nowrap;
 }
+
 div.role-experience-unit {
 	font-family: inherit;
 	font-size: 0.75rem;
@@ -250,6 +253,7 @@ div.role-experience-unit {
 	overflow: hidden;
 	white-space: nowrap;
 }
+
 div.role-experience-role {
 	font-family: inherit;
 	font-weight: inherit;
@@ -261,6 +265,12 @@ div.role-experience-role {
 	white-space: nowrap;
 }
 
+div.skills-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 ul.skills {
 	list-style-type: none;
+	margin: 0rem calc(var(--space-unit) * 2) 0rem 0rem;
 }
