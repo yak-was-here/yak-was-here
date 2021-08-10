@@ -172,7 +172,7 @@ div.seeking > strong {
 
 div.seeking > svg {
 	height: 1.5vmax;
-	width: 1.75vmax;
+	width: 2vmax;
 	padding-right: 0.25rem;
 }
 
@@ -220,9 +220,9 @@ div.role-experience-container {
 	font-family: "Bebas Neue";
 	font-weight: 100;
 	display: grid;
-	grid-template-columns: 1fr 5fr;
+	grid-template-columns: 1fr auto;
 	justify-items: start;
-	margin: 0.125rem 0rem;
+	margin: 0.125rem calc(var(--space-unit) * 2) 0.125rem 0rem;
 }
 
 div.role-experience-time {

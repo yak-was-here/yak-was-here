@@ -1,8 +1,7 @@
 import ContactIcons from "./ContactIcons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
-import { faLaptopCode } from '@fortawesome/free-solid-svg-icons'
-
+import { faCode } from '@fortawesome/free-solid-svg-icons'
 
 function Hero() {
     return (
@@ -15,7 +14,7 @@ function Hero() {
                 <hr/>
                 <div className="seeking no-select">
                     <FontAwesomeIcon icon={faMapMarkerAlt} />San Francisco Bay Area<br/>
-                    <FontAwesomeIcon icon={faLaptopCode} />Frontend Developer
+                    <FontAwesomeIcon icon={faCode} />Frontend Developer
                 </div>
                 <ContactIcons/>
             </div>
