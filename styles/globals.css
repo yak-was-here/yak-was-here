@@ -1,6 +1,7 @@
 /* Variables */
 :root {
 	--container-width: 95%;
+	--space-unit: 0.5rem;
 }
 
 /* All */
@@ -11,7 +12,7 @@ body {
 	margin: 0;
 	box-sizing: border-box;
 	font-family: "Roboto", sans-serif;
-	font-size: 1.5vw;
+	font-size: 1.75vmax;
 }
 
 a,
@@ -26,9 +27,8 @@ hr {
 	width: 20%;
 	border: 0;
 	background-color: #000;
-	height: 0.1rem;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
+	height: 0.09rem;
+	margin: var(--space-unit) 0rem;
 }
 
 .no-select {
@@ -46,43 +46,50 @@ h5,
 h6 {
 	font-family: "Bebas Neue";
 	font-weight: 100;
+	padding-bottom: var(--space-unit);
 }
 
 h1 {
-	font-size: 4vw;
+	font-size: 2.15rem;
 }
 
 h2 {
-	font-size: 3.3vw;
-	opacity: 0.9;
+	font-size: 2rem;
 }
 
 h3 {
-	font-size: 2.75vw;
-	opacity: 0.8;
+	font-size: 1.75rem;
+	color: #424242;
 }
 
 h4 {
-	font-size: 2.5vw;
-	opacity: 0.7;
+	font-size: 1.55rem;
+	color: #424242;
 }
 
 h5 {
-	font-size: 2.25vw;
-	opacity: 0.6;
+	font-size: 1.35rem;
+	color: #666666;
 }
 
 h6 {
-	font-size: 2vw;
-	opacity: 0.5;
+	font-size: 1.2rem;
+	color: #666666;
+}
+
+p {
+	padding: var(--space-unit) 0rem;
+}
+
+ul {
+	padding: var(--space-unit) 0rem;
 }
 
 /* Navigation */
 nav {
 	width: var(--container-width);
 	margin: auto;
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
+	padding: var(--space-unit) 0rem;
 }
 
 div.branding-container > a,
@@ -112,7 +119,7 @@ li.nav-menu-item {
 	background-color: #fff;
 	font-family: "Bebas Neue";
 	font-weight: 100;
-	padding: 0.5em 1em 0.5em 1em;
+	padding: var(--space-unit) calc(var(--space-unit) * 2);
 }
 
 li.nav-menu-item:hover {
@@ -129,7 +136,7 @@ header {
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
-	min-height: 3em;
+	min-height: 3rem;
 	display: flex;
 	align-items: center;
 	align-content: center;
@@ -159,8 +166,14 @@ h1.hero-title {
 
 div.seeking,
 div.seeking > strong {
-	font-size: 2vw;
-	padding: 0.5em 0em;
+	font-size: 2vmax;
+	padding: var(--space-unit) 0rem;
+}
+
+div.seeking > svg {
+	height: 1.5vmax;
+	width: 1.75vmax;
+	padding-right: 0.25rem;
 }
 
 /* Body */
@@ -174,7 +187,7 @@ main {
 }
 
 div.social-icons {
-	padding: 0.5em 0em;
+	padding: var(--space-unit) 0rem;
 }
 
 div.social-icons > a > svg {
@@ -182,8 +195,8 @@ div.social-icons > a > svg {
 	-moz-transition: color 0.5s 0s ease;
 	-o-transition: color 0.5s 0s ease;
 	transition: color 0.5s 0s ease;
-	width: 2rem;
-	margin: 0em 0.5em 0em 0em;
+	width: 1.5rem;
+	margin-right: var(--space-unit);
 }
 
 div.social-icons > a > svg:hover {
@@ -191,6 +204,63 @@ div.social-icons > a > svg:hover {
 }
 
 section {
-	padding-top: 1rem;
-	padding-bottom: 0.5rem;
+	padding: calc(var(--space-unit) * 2) 0rem;
+}
+
+#role-experience {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	justify-content: flex-start;
+	align-content: stretch;
+	padding: var(--space-unit) 0rem;
+}
+
+div.role-experience-container {
+	font-family: "Bebas Neue";
+	font-weight: 100;
+	display: grid;
+	grid-template-columns: 1fr 5fr;
+	justify-items: start;
+	margin: 0.125rem 0rem;
+}
+
+div.role-experience-time {
+	font-family: inherit;
+	font-size: 2.5rem;
+	font-weight: inherit;
+	line-height: 2.5rem;
+	color: #424242;
+	grid-row: 1/3;
+	align-self: start;
+	justify-self: end;
+	margin-right: 0.3rem;
+	max-width: 2rem;
+	overflow: hidden;
+	white-space: nowrap;
+}
+div.role-experience-unit {
+	font-family: inherit;
+	font-size: 0.75rem;
+	font-weight: inherit;
+	line-height: 0.75rem;
+	color: #7d7d7d;
+	align-self: end;
+	max-width: 15rem;
+	overflow: hidden;
+	white-space: nowrap;
+}
+div.role-experience-role {
+	font-family: inherit;
+	font-weight: inherit;
+	line-height: 1rem;
+	color: #424242;
+	align-self: start;
+	max-width: 9rem;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+ul.skills {
+	list-style-type: none;
 }
