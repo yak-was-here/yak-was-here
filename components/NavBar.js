@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import Link from 'next/link'
 
 const NavBar = ({active}) => {
     return (
@@ -10,10 +11,10 @@ const NavBar = ({active}) => {
                 </a>
             </div>
             <ul className="nav-menu">
-                <a href="/"><li className={`nav-menu-item ${active === "portfolio" ? "active" : ""}`}>Portfolio</li></a>
-                <a href="/experience"><li className={`nav-menu-item ${active === "experience" ? "active" : ""}`}>Experience</li></a>
-                <a href="/"><li className={`nav-menu-item ${active === "hire" ? "active" : ""}`}>Hire</li></a>
-                <a href="/#contact"><li className={`nav-menu-item ${active === "contact" ? "active" : ""}`}>Contact</li></a>
+                <Link href="/"><li className={`nav-menu-item ${active === "portfolio" ? "active" : ""}`}>Portfolio</li></Link>
+                <Link href="/experience"><li className={`nav-menu-item ${active === "experience" ? "active" : ""}`}>Experience</li></Link>
+                <Link href="/#hire"><li className={`nav-menu-item ${active === "hire" ? "active" : ""}`}>Hire</li></Link>
+                <Link href="/#contact"><li className={`nav-menu-item ${active === "contact" ? "active" : ""}`}>Contact</li></Link>
             </ul>
         </nav>
     )
