@@ -31,9 +31,6 @@ hr {
 }
 
 .no-select {
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
 	user-select: none;
 }
 
@@ -91,6 +88,12 @@ nav {
 	padding: var(--space-unit) 0rem;
 }
 
+div.nav-dash {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: center;
+}
+
 div.branding-container > a,
 div.branding-container > a:visited,
 div.branding-container > a:active,
@@ -110,15 +113,27 @@ span.site-wordmark {
 	font-size: 2rem;
 }
 
+div.branding-container {
+	justify-self: left;
+}
+
+div.hamburger {
+	justify-self: right;
+	width: 1rem;
+	cursor: pointer;
+}
+
 ul.nav-menu {
 	list-style-type: none;
+	transition: all 0.5s 0s ease;
+	max-height: 9em;
+	overflow: hidden;
 }
 
 li.nav-menu-item {
 	background-color: #fff;
 	font-family: "Bebas Neue", serif;
 	font-weight: 100;
-	text-transform: uppercase;
 	padding: var(--space-unit) calc(var(--space-unit) * 2);
 }
 
@@ -128,6 +143,11 @@ li.nav-menu-item:hover {
 
 li.nav-menu-item.active {
 	background-color: #e0e0e0;
+}
+
+ul.nav-menu.hidden {
+	max-height: 0em;
+	padding: 0em;
 }
 
 /* Header */
@@ -198,9 +218,6 @@ div.social-icons {
 }
 
 div.social-icons > a > svg {
-	-webkit-transition: color 0.5s 0s ease;
-	-moz-transition: color 0.5s 0s ease;
-	-o-transition: color 0.5s 0s ease;
 	transition: color 0.5s 0s ease;
 	width: 1.5rem;
 	margin-right: var(--space-unit);
