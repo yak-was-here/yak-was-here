@@ -24,11 +24,10 @@ a:active {
 }
 
 hr {
-	width: 20%;
 	border: 0;
 	background-color: #000;
-	height: 0.09rem;
-	margin: var(--space-unit) 0rem;
+	height: 0.05rem;
+	width: 7vw;
 }
 
 .no-select {
@@ -137,7 +136,7 @@ header {
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
-	min-height: 3rem;
+	min-height: 5rem;
 	display: flex;
 	align-items: center;
 	align-content: center;
@@ -152,6 +151,7 @@ header.hero {
 div.header-container > h1 {
 	font-family: "Bebas Neue", serif;
 	font-weight: 100;
+	padding: 0;
 }
 
 div.header-container {
@@ -161,8 +161,14 @@ div.header-container {
 
 h1.hero-title {
 	font-size: 14vw;
-	line-height: 12vw;
+	line-height: 11vw;
 	flex-grow: 1;
+	padding: var(--space-unit) 0rem;
+}
+
+header.hero > div.header-container > hr {
+	width: 20vw;
+	margin: var(--space-unit) 0rem;
 }
 
 div.seeking,
