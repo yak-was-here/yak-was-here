@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import Branding from "../components/Branding";
 
 const NavBar = ({ active }) => {
 	const [isNavMenuOpen, setNavMenuState] = useState(true); // Nav menu starts open
@@ -10,14 +11,7 @@ const NavBar = ({ active }) => {
 	return (
 		<nav className="no-select">
 			<div className="nav-dash">
-				<div className="branding-container">
-					<Link href="/">
-						<a>
-							<img src="/img/yak-logo.svg" alt="yak Logo" title="Home" className="logo" />
-							<span className="site-wordmark">Yak</span>
-						</a>
-					</Link>
-				</div>
+				<Branding />
 				<div className="hamburger" onClick={() => setNavMenuState(!isNavMenuOpen)}>
 					<FontAwesomeIcon icon={faBars} />
 				</div>

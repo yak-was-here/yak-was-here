@@ -297,3 +297,33 @@ ul.skills {
 	list-style-type: none;
 	margin: 0rem calc(var(--space-unit) * 2) 0rem 0rem;
 }
+
+footer {
+	background-image: url("/img/isaacyakl-hero-background-4k.jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+div.footer-container {
+	width: var(--container-width);
+	margin: auto;
+	text-align: center;
+}
+
+footer div.social-icons {
+	padding: calc(var(--space-unit) * 2) 0rem;
+}
+
+footer img.logo {
+	height: 1rem;
+	width: 1rem;
+}
+
+footer span.site-wordmark {
+	font-size: 1.25rem;
+}
+
+footer p {
+	font-size: 0.75rem;
+}
