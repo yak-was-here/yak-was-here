@@ -1,7 +1,7 @@
-const Section = (props) => {
+const Section = ({children}) => {
     return (
         <section>
-          {props.children}
+          {children}
         </section>
     )
 }

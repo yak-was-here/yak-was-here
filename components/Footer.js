@@ -5,7 +5,7 @@ const Footer = () => {
 	return (
 		<footer>
 			<div className="footer-container">
-				<ContactIcons />
+				<ContactIcons id="contact" />
 				<Branding />
 				<p>&copy; {new Date().getFullYear()} Isaac L. &mdash; All rights reserved.</p>
 			</div>

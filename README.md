@@ -7,6 +7,7 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 # To-Do
 
 -  Add all projects
+-  Remove residual id attribute in ContactIcons
 -  Generate sitemap.xml
 -  Optimize accessibility
 -  Add [Schema.org JSON microdata](https://github.com/joshbuchea/HEAD#schemaorg)
