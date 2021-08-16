@@ -9,15 +9,15 @@ import Footer from "../components/Footer";
 export default function Home() {
 	return (
 		<>
-			<BaseMeta title='Isaac "Yak" Litzenberger&apos;s Portfolio - isaacyakl.com' desc='Isaac "Yak" Litzenberger&apos;s Portfolio'></BaseMeta>
-			<NavBar></NavBar>
-			<Hero></Hero>
+			<BaseMeta title='Isaac "Yak" Litzenberger&apos;s Portfolio - isaacyakl.com' desc='Isaac "Yak" Litzenberger&apos;s Portfolio' />
+			<NavBar />
+			<Hero />
 			<main role="main">
-				<About></About>
-				<Skills></Skills>
-				<Experience></Experience>
+				<About />
+				<Skills />
+				<Experience />
 			</main>
-			<Footer></Footer>
+			<Footer />
 		</>
 	);
 }

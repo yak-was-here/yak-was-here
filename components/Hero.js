@@ -5,15 +5,15 @@ import { faCode } from "@fortawesome/free-solid-svg-icons";
 
 function Hero() {
 	return (
-		<header className="hero">
+		<header className="hero no-select">
 			<div className="header-container">
-				<h1 className="hero-title no-select">
+				<h1 className="hero-title">
 					Isaac
 					<br />
 					Litzenberger
 				</h1>
 				<hr />
-				<div className="seeking no-select">
+				<div className="seeking">
 					<FontAwesomeIcon icon={faMapMarkerAlt} />
 					San Francisco Bay Area
 					<br />
