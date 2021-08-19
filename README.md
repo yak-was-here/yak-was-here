@@ -7,7 +7,6 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 # To-Do
 
 -  Add all projects
--  Generate sitemap.xml
 -  Remove residual id attribute in ContactIcons
 -  Gracefully close nav menu when opening a link from it to another page (e.g. Home -> Experience page)
 -  Optimize accessibility
