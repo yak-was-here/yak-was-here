@@ -12,7 +12,7 @@ const Header = ({ heading }) => {
 };
 
 Header.defaultProps = {
-	heading: "Experience",
+	heading: "isaacyakl.com",
 };
 
 Header.propTypes = {
