@@ -1,0 +1,33 @@
+{
+	"about": {
+		"title": "YourPbFriend",
+		"image": "cover.jpg",
+		"tags": ["Shopify", "Social Media Mktg", "SEO/SERP", "Adobe Photoshop", "Liquid", "PHP"],
+		"summary": "I was an online marketing specialist for YourPbFriend. I leveraged the latest e-commerce platforms and SEO/SERP to help push this site to the first page of search results."
+	},
+	"brief": "The customer needed lorem ipsum is simply dummy text of the printing and typesetting industry.",
+	"process": {
+		"sections": [
+			{
+				"title": "",
+				"image": "file.jpg",
+				"body": ""
+			},
+			{
+				"title": "Sketching",
+				"image": "",
+				"body": "Not much D: The customer needed lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+			}
+		]
+	},
+	"result": {
+		"image": "file.jpg",
+		"sections": [
+			{
+				"title": "",
+				"image": "",
+				"body": "FAILURE! :D ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+			}
+		]
+	}
+}
