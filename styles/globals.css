@@ -345,6 +345,10 @@ footer span.site-wordmark {
 	font-size: 1rem;
 }
 
+footer > div.hire-btn-container {
+	margin-top: var(--hire-btn-font-size);
+}
+
 div.hire-btn-container {
 	position: relative;
 	top: calc(var(--hire-btn-font-size) * (-1));
