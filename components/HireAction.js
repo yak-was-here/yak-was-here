@@ -1,5 +1,5 @@
 import Obfuscate from "react-obfuscate";
-import { emailAddress } from "./ObfusDat";
+import { emailAddress } from "../Data/ObfusDat";
 
 export default function HireAction({ children }) {
 	return (
