@@ -7,8 +7,9 @@
 	/* Utilities */
 	--container-width: 95%;
 	--space-unit: 0.5rem;
+	--border-radius: 0.1rem;
 
-	/* Styling */
+	/* Sizing */
 	--hire-btn-font-size: 1.4rem;
 }
 
@@ -366,7 +367,7 @@ a.btn,
 	padding: 0.33em 1.5em;
 	color: white;
 	background: var(--primary-accent);
-	border-radius: 0.1em;
+	border-radius: var(--border-radius);
 	transition: all 0.5s 0s ease;
 }
 
@@ -385,4 +386,15 @@ a.hire,
 
 .cta-arrow::after {
 	content: " \2192";
+}
+
+ul.experience-tags li {
+	font-size: smaller;
+	display: inline-block;
+	color: white;
+	background-color: var(--secondary-accent);
+	border-radius: var(--border-radius);
+	padding: calc(var(--space-unit) * 0.7) calc(var(--space-unit) * 1.7);
+	margin-bottom: calc(var(--space-unit) * 0.7);
+	margin-right: calc(var(--space-unit) * 0.7);
 }
