@@ -21,7 +21,7 @@ body {
 	margin: 0;
 	box-sizing: border-box;
 	font-family: "Roboto", Arial, "Bebas Neue", serif;
-	font-size: 1.75vmax;
+	font-size: 1.68vmax;
 }
 
 a,
@@ -120,6 +120,7 @@ span.site-wordmark {
 	font-family: "Bebas Neue", serif;
 	font-weight: 100;
 	font-size: 2rem;
+	padding-left: 0.1rem;
 }
 
 div.branding-container {
@@ -364,7 +365,8 @@ div.hire-btn-container {
 a.btn,
 .btn {
 	display: inline-block;
-	padding: 0.33em 1.5em;
+	margin: calc(var(--space-unit) / 2);
+	padding: 0.33em 1em;
 	color: white;
 	background: var(--primary-accent);
 	border-radius: var(--border-radius);
@@ -373,8 +375,7 @@ a.btn,
 
 a.btn:hover,
 .btn:hover {
-	filter: grayscale(20%);
-	transform: scale(1.04, 1.04);
+	filter: grayscale(25%);
 }
 
 a.hire,
@@ -384,17 +385,42 @@ a.hire,
 	cursor: pointer;
 }
 
+a.hire:hover,
+.hire:hover {
+	transform: scale(1.04, 1.04);
+}
+
 .cta-arrow::after {
 	content: " \2192";
 }
 
+.cta-link::after {
+	content: " \2197";
+}
+
 ul.experience-tags li {
-	font-size: smaller;
+	font-size: 0.7rem;
 	display: inline-block;
 	color: white;
 	background-color: var(--secondary-accent);
 	border-radius: var(--border-radius);
-	padding: calc(var(--space-unit) * 0.7) calc(var(--space-unit) * 1.7);
-	margin-bottom: calc(var(--space-unit) * 0.7);
-	margin-right: calc(var(--space-unit) * 0.7);
+	padding: calc(var(--space-unit) * 0.65) calc(var(--space-unit) * 1.65);
+	margin-bottom: calc(var(--space-unit) * 0.65);
+	margin-right: calc(var(--space-unit) * 0.65);
+	transition: all 0.5s 0s ease;
+}
+
+ul.experience-tags li:hover {
+	filter: grayscale(25%);
+}
+
+a.experience-links {
+	color: var(--primary-accent);
+	background-color: white;
+	border: 1px solid var(--primary-accent);
+}
+
+a.experience-links:hover {
+	color: white;
+	background-color: var(--primary-accent);
 }

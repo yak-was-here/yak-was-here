@@ -34,12 +34,25 @@ const experience = ({ experienceData }) => {
 							);
 						})}
 					</ul>
-					<p>{xpObj.summary.body}</p>
+					<p dangerouslySetInnerHTML={{ __html: xpObj.summary.body }}></p>
+					{xpObj.summary.links !== undefined ? (
+						<p style={{ textAlign: "center" }}>
+							{xpObj.summary.links.map((l) => {
+								return (
+									<Link href={l.url} key={l.title} passHref>
+										<a className="btn cta-link experience-links">{l.title}</a>
+									</Link>
+								);
+							})}
+						</p>
+					) : (
+						``
+					)}
 				</Section>
 				{xpObj.brief !== undefined && xpObj.brief !== "" ? (
 					<Section>
 						<h2>Brief</h2>
-						<p>{xpObj.brief}</p>
+						<p dangerouslySetInnerHTML={{ __html: xpObj.brief }}></p>
 					</Section>
 				) : (
 					``
@@ -52,7 +65,7 @@ const experience = ({ experienceData }) => {
 								<div key={i}>
 									{s.title !== "" ? <h3>{s.title}</h3> : ``}
 									{s.image !== "" ? <img src={`/img/experiences/${s.image}`} /> : ``}
-									{s.body !== "" ? <p>{s.body}</p> : ``}
+									{s.body !== "" ? <p dangerouslySetInnerHTML={{ __html: s.body }}></p> : ``}
 								</div>
 							);
 						})}
@@ -67,7 +80,7 @@ const experience = ({ experienceData }) => {
 							<div key={i}>
 								{s.title !== "" ? <h3>{s.title}</h3> : ``}
 								{s.image !== "" ? <img src={`/img/experiences/${s.image}`} /> : ``}
-								{s.body !== "" ? <p>{s.body}</p> : ``}
+								{s.body !== "" ? <p dangerouslySetInnerHTML={{ __html: s.body }}></p> : ``}
 							</div>
 						);
 					})}
