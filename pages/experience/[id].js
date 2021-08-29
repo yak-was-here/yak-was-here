@@ -3,8 +3,10 @@ import NavBar from "../../components/NavBar";
 import Header from "../../components/Header";
 import Section from "../../components/Section";
 import Footer from "../../components/Footer";
+import ImageSlider from "../../components/ImageSlider";
 import { getAllExperiences, getExperience } from "../../lib/experiences";
 import Link from "next/link";
+import ExperienceSection from "../../components/ExperienceSection";
 
 const experience = ({ experienceData }) => {
 	let xpObj = {};
@@ -21,7 +23,7 @@ const experience = ({ experienceData }) => {
 			<Header heading={xpTitle} />
 			<main role="main">
 				<Section>
-					<img src={`/img/experiences/${xpObj.summary.image}`} />
+					<ImageSlider images={xpObj.summary.images} />
 					<h2>Summary</h2>
 					<ul className="experience-tags">
 						{xpObj.summary.tags.map((t) => {
@@ -40,7 +42,9 @@ const experience = ({ experienceData }) => {
 							{xpObj.summary.links.map((l) => {
 								return (
 									<Link href={l.url} key={l.title} passHref>
-										<a className="btn cta-link experience-links">{l.title}</a>
+										<a className="btn cta-link experience-links" target="_blank" rel="noopener">
+											{l.title}
+										</a>
 									</Link>
 								);
 							})}
@@ -60,30 +64,14 @@ const experience = ({ experienceData }) => {
 				{xpObj.process !== undefined ? (
 					<Section>
 						<h2>Process</h2>
-						{xpObj.process.sections.map((s, i) => {
-							return (
-								<div key={i}>
-									{s.title !== "" ? <h3>{s.title}</h3> : ``}
-									{s.image !== "" ? <img src={`/img/experiences/${s.image}`} /> : ``}
-									{s.body !== "" ? <p dangerouslySetInnerHTML={{ __html: s.body }}></p> : ``}
-								</div>
-							);
-						})}
+						<ExperienceSection sections={xpObj.process.sections} />
 					</Section>
 				) : (
 					``
 				)}
 				<Section>
 					<h2>Result</h2>
-					{xpObj.result.sections.map((s, i) => {
-						return (
-							<div key={i}>
-								{s.title !== "" ? <h3>{s.title}</h3> : ``}
-								{s.image !== "" ? <img src={`/img/experiences/${s.image}`} /> : ``}
-								{s.body !== "" ? <p dangerouslySetInnerHTML={{ __html: s.body }}></p> : ``}
-							</div>
-						);
-					})}
+					<ExperienceSection sections={xpObj.result.sections} />
 				</Section>
 			</main>
 			<Footer />

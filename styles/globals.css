@@ -119,7 +119,7 @@ img.logo {
 span.site-wordmark {
 	font-family: "Bebas Neue", serif;
 	font-weight: 100;
-	font-size: 2rem;
+	font-size: 2.25rem;
 	padding-left: 0.1rem;
 }
 
@@ -129,7 +129,7 @@ div.branding-container {
 
 div.hamburger {
 	justify-self: right;
-	width: 1rem;
+	width: 1.68rem;
 	cursor: pointer;
 }
 
@@ -375,7 +375,7 @@ a.btn,
 
 a.btn:hover,
 .btn:hover {
-	filter: grayscale(25%);
+	filter: grayscale(30%);
 }
 
 a.hire,
@@ -423,4 +423,21 @@ a.experience-links {
 a.experience-links:hover {
 	color: white;
 	background-color: var(--primary-accent);
+}
+
+div.experience-slider {
+	margin-bottom: var(--space-unit);
+}
+
+img.experience-slide {
+	max-width: 100%;
+	object-fit: contain;
+}
+
+div.swiper-wrapper {
+	align-items: center;
+}
+
+div.swiper-slide {
+	text-align: center;
 }

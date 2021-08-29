@@ -1,7 +1,7 @@
 {
 	"summary": {
 		"title": "YourPbFriend",
-		"image": "yourpbfriend-cover.png",
+		"images": ["yourpbfriend-cover.png", "test-1.jpg", "test-2.jpg", "test-3.jpg", "test-4.jpg", "test-5.jpg"],
 		"tags": ["Shopify", "Social Media Mktg", "SEO", "Adobe Photoshop", "Liquid", "PHP"],
 		"body": "I was an online marketing specialist for YourPbFriend. I leveraged the latest e-commerce platforms and <strong>SEO/SERP</strong> to help push this site to the <span>first</span> page of search results.",
 		"links": [
@@ -12,6 +12,10 @@
 			{
 				"title": "Test site",
 				"url": "https://google.com/?q=reeeeeeeeee"
+			},
+			{
+				"title": "NSFPGaming.com",
+				"url": "http://nsfpgaming.com/"
 			}
 		]
 	},
@@ -20,17 +24,17 @@
 		"sections": [
 			{
 				"title": "Testing",
-				"image": "",
+				"images": [],
 				"body": "We did some of that good good testing unit testing etcx. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
 			},
 			{
 				"title": "Sketching",
-				"image": "yourpbfriend-cover.png",
+				"images": ["yourpbfriend-cover.png"],
 				"body": "Not much D: The customer needed lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer <u>took</u> a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
 			},
 			{
 				"title": "",
-				"image": "",
+				"images": [],
 				"body": "<i>Scrambled</i> it to make a type specimen book. It has survived not only five centuries, but also the leap into. Not much D: The customer needed lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
 			}
 		]
@@ -39,7 +43,7 @@
 		"sections": [
 			{
 				"title": "",
-				"image": "yourpbfriend-cover.png",
+				"images": ["yourpbfriend-cover.png", "yourpbfriend-cover.png"],
 				"body": "FAILURE! :D ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the <span style=\"color: red\">1500s</span>, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
 			}
 		]
