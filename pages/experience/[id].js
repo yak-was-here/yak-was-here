@@ -7,6 +7,7 @@ import ImageSlider from "../../components/ImageSlider";
 import { getAllExperiences, getExperience } from "../../lib/experiences";
 import Link from "next/link";
 import ExperienceSection from "../../components/ExperienceSection";
+import ExperienceTags from "../../components/ExperienceTags";
 
 const experience = ({ experienceData }) => {
 	let xpObj = {};
@@ -25,17 +26,7 @@ const experience = ({ experienceData }) => {
 				<Section>
 					<ImageSlider images={xpObj.summary.images} />
 					<h2>Summary</h2>
-					<ul className="experience-tags">
-						{xpObj.summary.tags.map((t) => {
-							return (
-								<Link href={`/experience?q=${t}`} key={t} passHref>
-									<a>
-										<li>{t}</li>
-									</a>
-								</Link>
-							);
-						})}
-					</ul>
+					{xpObj.summary.tags !== undefined ? <ExperienceTags tags={xpObj.summary.tags} /> : ``}
 					<p dangerouslySetInnerHTML={{ __html: xpObj.summary.body }}></p>
 					{xpObj.summary.links !== undefined ? (
 						<p style={{ textAlign: "center" }}>
