@@ -10,13 +10,8 @@ import ExperienceSection from "../../components/ExperienceSection";
 import ExperienceTags from "../../components/ExperienceTags";
 
 const experience = ({ experienceData }) => {
-	let xpObj = {};
-	let xpTitle = "Experience";
-	if (experienceData) {
-		xpObj = JSON.parse(experienceData.json);
-		xpTitle = xpObj.summary.title;
-	}
-
+	let xpObj = JSON.parse(experienceData.json);
+	let xpTitle = xpObj.summary.title;
 	return (
 		<>
 			<BaseMeta title={xpTitle} desc={`${xpTitle} experience details.`} />
@@ -74,26 +69,21 @@ export async function getStaticPaths() {
 	const paths = getAllExperiences();
 	return {
 		paths,
-		fallback: true,
+		fallback: false,
 	};
 }
 
 export async function getStaticProps({ params }) {
-	const experienceData = await getExperience(params.id);
-	if (experienceData.json) {
-		return {
-			props: {
-				experienceData,
-			},
-		};
+	if (params.id !== undefined) {
+		const experienceData = await getExperience(params.id);
+		if (experienceData !== undefined) {
+			return {
+				props: {
+					experienceData,
+				},
+			};
+		}
 	}
-
-	return {
-		redirect: {
-			destination: "/experience",
-			permanent: false,
-		},
-	};
 }
 
 export default experience;
