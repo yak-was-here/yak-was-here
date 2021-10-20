@@ -4,9 +4,10 @@ import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 
 export default function ExperienceBrowser({ experiences, tagQuery, onQueryUpdate }) {
-	const [qT, setQt] = useState(tagQuery);
-	const [filteredExp, setFilter] = useState([]);
+	const [searchQuery, setSearchQuery] = useState(tagQuery);
+	const [filteredExpComponents, setFilteredExpComponents] = useState([]);
 
+	// Format a raw experience data array into an ExperienceCard components array
 	const formatExperiences = (e) => {
 		return e.map((xp) => (
 			<Section key={xp.id}>
@@ -15,32 +16,36 @@ export default function ExperienceBrowser({ experiences, tagQuery, onQueryUpdate
 		));
 	};
 
-	const updateResults = (e) => {
-		if (qT === "") {
-			setFilter(formatExperiences(experiences));
-			console.log("Showing all experiences");
+	// Filter the raw experience data array based on the search query
+	const filterExperiences = () => {
+		return experiences.filter((xp) =>
+			xp.tags.some((t) => {
+				return t.toLowerCase().includes(searchQuery.toLowerCase());
+			})
+		);
+	};
+
+	const updateResults = () => {
+		if (searchQuery === "") {
+			setFilteredExpComponents(formatExperiences(experiences));
 			return;
-		} else if (e.filter((exp) => exp.tags.includes(qT)).length === 0) {
-			setFilter([
+		} else if (filterExperiences().length === 0) {
+			setFilteredExpComponents([
 				<Section key="no-exp">
-					<p>No experiences found.</p>
+					<p>No experiences found for that search term.</p>
 				</Section>,
 			]);
-			console.log("No experiences");
 			return;
 		}
-		setFilter(formatExperiences(e.filter((exp) => exp.tags.includes(qT))));
-		console.log("Showing queried experiences");
+		setFilteredExpComponents(formatExperiences(filterExperiences()));
 	};
 
 	useEffect(() => {
-		console.log("update results");
-		updateResults(experiences);
-	}, [qT]);
+		updateResults();
+	}, [searchQuery]);
 
 	useEffect(() => {
-		console.log("update qt");
-		setQt(tagQuery);
+		setSearchQuery(tagQuery);
 	}, [tagQuery]);
 
 	return (
@@ -50,17 +55,14 @@ export default function ExperienceBrowser({ experiences, tagQuery, onQueryUpdate
 				placeholder={`Search... (try "React")`}
 				id="experienceSearch"
 				onChange={(e) => {
-					onQueryUpdate(e.target.value);
-					setQt(e.target.value);
+					if (onQueryUpdate instanceof Function) onQueryUpdate(e.target.value);
+					setSearchQuery(e.target.value);
 				}}
-				onFocus={(e) => {
-					onQueryUpdate(e.target.value);
-					setQt(e.target.value);
-				}}
-				defaultValue={tagQuery || ExperienceBrowser.defaultProps.tagQuery}
+				value={searchQuery}
 				autoFocus
+				autoComplete="off"
 			/>
-			{filteredExp}
+			{filteredExpComponents}
 		</div>
 	);
 }

@@ -10,7 +10,6 @@ const index = ({ expSummaries }) => {
 	const router = useRouter();
 
 	const updateURLQuery = (q) => {
-		console.log("index-query:", q);
 		if (q !== "") {
 			router.query.q = q;
 			router.push(router);
