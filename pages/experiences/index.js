@@ -5,11 +5,19 @@ import NavBar from "../../components/NavBar";
 import Section from "../../components/Section";
 import { getAllExperienceSummaries } from "../../lib/experiences";
 import { useRouter } from "next/router";
-import { useState } from "react";
 
 const index = ({ expSummaries }) => {
-	const { q, setQ } = useState("");
-	const { query } = useRouter();
+	const router = useRouter();
+
+	const updateURLQuery = (q) => {
+		console.log("index-query:", q);
+		if (q !== "") {
+			router.query.q = q;
+			router.push(router);
+		} else {
+			router.push("");
+		}
+	};
 
 	return (
 		<>
@@ -18,7 +26,7 @@ const index = ({ expSummaries }) => {
 			<Header heading="Experience" />
 			<main role="main">
 				<Section>
-					<ExperienceBrowser experiences={expSummaries} tagQuery={query.q} />
+					<ExperienceBrowser experiences={expSummaries} tagQuery={router.query.q} onQueryUpdate={updateURLQuery} />
 				</Section>
 			</main>
 		</>
