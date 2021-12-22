@@ -319,6 +319,10 @@ ul.skills {
 	margin: 0rem calc(var(--space-unit) * 2) 0rem 0rem;
 }
 
+ul.skills li {
+	padding-bottom: calc(var(--space-unit) / 1.3);
+}
+
 footer {
 	background-image: url("/img/isaacyakl-hero-background-4k.jpg");
 	background-repeat: no-repeat;
