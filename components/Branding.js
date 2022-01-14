@@ -1,11 +1,15 @@
 import Link from "next/link";
+import Image from "next/image";
+import logo from "../public/img/yak-logo.svg";
 
 const Branding = () => {
 	return (
 		<div className="branding-container">
 			<Link href="/" passHref>
-				<a>
-					<img src="/img/yak-logo.svg" alt="yak Logo" title="Home" className="logo" />
+				<a title="Home">
+					<div className="logo">
+						<Image src={logo} alt="" />
+					</div>
 					<span className="site-wordmark">Yak</span>
 				</a>
 			</Link>

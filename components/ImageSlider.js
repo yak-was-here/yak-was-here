@@ -13,7 +13,7 @@ const ImageSlider = ({ images }) => {
 			{images.map((i) => {
 				return (
 					<SwiperSlide key={i}>
-						<img data-src={`/img/experiences/${i}`} className="swiper-lazy experience-slide" />
+						<img data-src={`/img/experiences/${i}`} className="swiper-lazy experience-slide" alt="" />
 						<div className="swiper-lazy-preloader"></div>
 					</SwiperSlide>
 				);

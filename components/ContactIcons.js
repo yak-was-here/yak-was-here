@@ -8,13 +8,13 @@ import HireAction from "./HireAction";
 const ContactIcons = ({ id }) => {
 	return (
 		<div id={`${id ? id : ""}`} className="social-icons no-select">
-			<a href="https://www.instagram.com/isaacyakl" title="yak on Insta" target="_blank" rel="noopener">
+			<a href="https://www.instagram.com/isaacyakl" title="yak on Insta">
 				<FontAwesomeIcon icon={faInstagram} />
 			</a>
-			<a href="https://www.twitter.com/isaacyakl" title="yak on Twitter" target="_blank" rel="noopener">
+			<a href="https://www.twitter.com/isaacyakl" title="yak on Twitter">
 				<FontAwesomeIcon icon={faTwitter} />
 			</a>
-			<a href="https://www.github.com/isaacyakl" title="yak on GitHub" target="_blank" rel="noopener">
+			<a href="https://www.github.com/isaacyakl" title="yak on GitHub">
 				<FontAwesomeIcon icon={faGithub} />
 			</a>
 			<HireAction>

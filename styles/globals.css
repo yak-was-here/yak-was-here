@@ -113,7 +113,8 @@ div.branding-container a:hover {
 	text-decoration: none;
 }
 
-img.logo {
+.logo {
+	display: inline-block;
 	height: 1.75rem;
 	width: 1.75rem;
 }

@@ -7,7 +7,7 @@ const ExperienceCard = ({ id, title, image, tags, body }) => {
 		<div className="experience-card">
 			<Link href={`/experience/${id}`} passHref>
 				<a>
-					<Image src={`/img/experiences/${image}`} layout="responsive" width="300" height="175" />
+					<Image src={`/img/experiences/${image}`} layout="responsive" width="300" height="175" alt={title} />
 					<h3>{title}</h3>
 				</a>
 			</Link>
