@@ -1,41 +1,32 @@
 {
 	"summary": {
 		"title": "YourPbFriend",
-		"images": ["yourpbfriend-cover.png", "test-1.jpg", "test-2.jpg", "test-3.jpg", "test-4.jpg", "test-5.jpg"],
-		"tags": ["Shopify", "Social Media Marketing", "SEO", "Adobe Photoshop", "Liquid", "PHP"],
-		"body": "I was an online marketing specialist for YourPbFriend. I leveraged the latest e-commerce platforms and <strong>SEO/SERP</strong> to help push this site to the <span>first</span> page of search results. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad rem aut voluptatum architecto reiciendis minus iste. Nobis vitae dolore eum, architecto totam, ipsum quod optio quos deleniti eveniet natus repellendus.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad rem aut voluptatum architecto reiciendis minus iste. Nobis vitae dolore eum, architecto totam, ipsum quod optio quos deleniti eveniet natus repellendus.",
+		"images": ["yourpbfriend-ss1-frontpage.png", "yourpbfriend-ss2-usedguns.png", "yourpbfriend-ss3-footer.png", "yourpbfriend-ss4-about.png", "yourpbfriend-ss5-tradeinform.png", "yourpbfriend-ss6-newguns.png", "yourpbfriend-ss7-product.png", "yourpbfriend-ss8-social.png", "yourpbfriend-ss9-responsive.png", "yourpbfriend-ss10-responsivemenu.png"],
+		"tags": ["Shopify", "SEO", "Liquid", "PHP", "Social Media Marketing", "Front end", "Back end", "Adobe Photoshop", "Graphic Design"],
+		"body": "I was a Digital Marketer for YourPbFriend from 2014-2016. My team and I brought YourPbFriend.com to the #2 online Paintball retailer by sales from 2015-2016. We differentiated ourselves from the competition with an in-depth Paintball trade-in program featuring a robust rating system, high-quality photos/videos, and 30-day return policy. Our program is emulated by virtually every other online paintball retailer today.",
 		"links": [
 			{
-				"title": "Visit archived site",
-				"url": "https://web.archive.org/web/20150314221002/yourpbfriend.com/"
+				"title": "Archived Site",
+				"url": "https://web.archive.org/web/20160324133326/yourpbfriend.com/"
 			},
 			{
-				"title": "Test site",
-				"url": "https://google.com/?q=reeeeeeeeee"
+				"title": "Facebook Page",
+				"url": "https://www.facebook.com/YourPBfriend/"
 			},
 			{
-				"title": "NSFPGaming.com",
-				"url": "http://nsfpgaming.com/"
+				"title": "Popular Video: Best Paintball Setups",
+				"url": "https://www.youtube.com/watch?v=IGxCeL8g8hI"
 			}
 		]
 	},
-	"brief": "The customer needed <a href=\"https://example.com/\">lorem ipsum</a> is simply dummy text of the printing and typesetting industry.",
+	"responsibilities": "OOGAHBOOGAH",
+	"brief": "When I first joined the company in 2014, I was hired to help with both the website and marketing efforts. The company needed web development expertise as well as graphic design services to execute the founder's vision. This included several website feature additions and the advertisement of new features.",
 	"process": {
 		"sections": [
 			{
-				"title": "Testing",
+				"title": "Ecommerce Platform Selection",
 				"images": [],
-				"body": "We did some of that good good testing unit testing etcx. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-			},
-			{
-				"title": "Sketching",
-				"images": ["yourpbfriend-cover.png"],
-				"body": "Not much D: The customer needed lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer <u>took</u> a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-			},
-			{
-				"title": "",
-				"images": [],
-				"body": "<i>Scrambled</i> it to make a type specimen book. It has survived not only five centuries, but also the leap into. Not much D: The customer needed lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+				"body": "Originally, we tried out both the Volusion and BigCommerce platforms, but settled on Shopify due to its growing third-party application ecosystem. We purchased one of the themes and went to work adding our the features<h3>Responsibilities</h3><ul><li>ABC</li><li>123</li><li>REEE</li></ul>"
 			}
 		]
 	},
@@ -43,7 +34,7 @@
 		"sections": [
 			{
 				"title": "",
-				"images": ["yourpbfriend-cover.png", "yourpbfriend-cover.png"],
+				"images": ["yourpbfriend-ss1-frontpage.png", "yourpbfriend-ss2-usedguns.png"],
 				"body": "FAILURE! :D ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the <span style=\"color: red\">1500s</span>, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
 			}
 		]

@@ -7,6 +7,18 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 # To-Do
 
 -  Add all projects
+   -  YourPbFriend
+   -  ypbf-shopify-theme
+   -  NBPA
+   -  new-breed-shopify-theme
+   -  nbpa-trade-form
+   -  remote-jackbox-player
+   -  brandojs
+   -  Alive in Christ
+   -  isaacyakl.com
+   -  MAP Training
+   -  nsfphax.com
+   -  fairhaven-bc-vbs-2019-soundboard
 -  Resolve console warning: "Unknown key passed via urlObject into [...]"
 -  Remove need for long skill names to wrap
 -  Customize Error Pages
