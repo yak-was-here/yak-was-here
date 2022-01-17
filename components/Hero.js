@@ -6,7 +6,7 @@ import { faCode } from "@fortawesome/free-solid-svg-icons";
 function Hero() {
 	return (
 		<header className="hero no-select">
-			<div className="header-container">
+			<div className="header-container max-page-width">
 				<h1 className="hero-title">
 					Isaac
 					<br />
@@ -14,13 +14,13 @@ function Hero() {
 				</h1>
 				<hr />
 				<div className="seeking">
-					<FontAwesomeIcon icon={faMapMarkerAlt} />
-					San Francisco Bay Area
-					<br />
 					<FontAwesomeIcon icon={faCode} />
 					Frontend Developer
+					<br />
+					<FontAwesomeIcon icon={faMapMarkerAlt} />
+					San Francisco Bay Area
 				</div>
-				<ContactIcons />
+				<ContactIcons id="contact" />
 			</div>
 		</header>
 	);

@@ -9,11 +9,11 @@ import "swiper/css/a11y";
 
 const ImageSlider = ({ images }) => {
 	return (
-		<Swiper className="experience-slider" modules={[Navigation, Pagination, Autoplay, A11y, Lazy]} spaceBetween={42} slidesPerView={2} centeredSlides={true} lazy={true} navigation pagination={{ clickable: true }} grabCursor={true} autoplay>
+		<Swiper className="work-slider" modules={[Navigation, Pagination, Autoplay, A11y, Lazy]} spaceBetween={42} slidesPerView={2} centeredSlides={true} lazy={true} navigation pagination={{ clickable: true }} grabCursor={true} autoplay>
 			{images.map((i) => {
 				return (
 					<SwiperSlide key={i}>
-						<img data-src={`/img/experiences/${i}`} className="swiper-lazy experience-slide" alt="" />
+						<img data-src={`/img/work/${i}`} className="swiper-lazy work-slide" alt="" />
 						<div className="swiper-lazy-preloader"></div>
 					</SwiperSlide>
 				);

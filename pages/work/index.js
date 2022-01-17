@@ -1,12 +1,12 @@
 import BaseMeta from "../../components/BaseMeta";
-import ExperienceBrowser from "../../components/ExperienceBrowser";
+import WorkBrowser from "../../components/WorkBrowser";
 import Header from "../../components/Header";
 import NavBar from "../../components/NavBar";
 import Section from "../../components/Section";
-import { getAllExperienceSummaries } from "../../lib/experiences";
+import { getAllWorkSummaries } from "../../lib/work";
 import { useRouter } from "next/router";
 
-const index = ({ expSummaries }) => {
+const index = ({ workSummaries }) => {
 	const router = useRouter();
 
 	const updateURLQuery = (q) => {
@@ -20,12 +20,12 @@ const index = ({ expSummaries }) => {
 
 	return (
 		<>
-			<BaseMeta title="Experience" desc="Isaac's experience." />
-			<NavBar active="experience" />
-			<Header heading="Experience" />
+			<BaseMeta title="Experience" desc="Isaac's work." />
+			<NavBar active="work" />
+			<Header heading="Work" />
 			<main role="main">
 				<Section>
-					<ExperienceBrowser experiences={expSummaries} tagQuery={router.query.q} onQueryUpdate={updateURLQuery} />
+					<WorkBrowser work={workSummaries} tagQuery={router.query.q} onQueryUpdate={updateURLQuery} />
 				</Section>
 			</main>
 		</>
@@ -33,11 +33,11 @@ const index = ({ expSummaries }) => {
 };
 
 export async function getStaticProps() {
-	const expSummaries = getAllExperienceSummaries();
-	if (expSummaries) {
+	const workSummaries = getAllWorkSummaries();
+	if (workSummaries) {
 		return {
 			props: {
-				expSummaries,
+				workSummaries,
 			},
 		};
 	}

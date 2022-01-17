@@ -11,22 +11,24 @@ const NavBar = ({ active }) => {
 
 	return (
 		<nav className="no-select">
-			<div className="nav-dash">
+			<div id="top" className="nav-dash">
 				<Branding />
-				<div className="hamburger" onClick={() => setNavMenuState(!isNavMenuOpen)}>
+				<div className="hamburger" onClick={() => setNavMenuState(!isNavMenuOpen)} role="menu">
 					<FontAwesomeIcon icon={faBars} />
 				</div>
 			</div>
 			<ul className={`nav-menu${isNavMenuOpen ? " hidden" : ""}`}>
-				<Link href="/experience" passHref>
+				<Link href="/work" passHref>
 					<a>
-						<li className={`nav-menu-item${active === "experience" ? " active" : ""}`}>Experience</li>
+						<li className={`nav-menu-item${active === "work" ? " active" : ""}`}>Work</li>
 					</a>
 				</Link>
-				<HireAction>
-					<li className={`nav-menu-item${active === "hire" ? " active" : ""}`}>Hire</li>
-				</HireAction>
-				<Link href="/#contact" passHref>
+				<Link href="https://github.com/isaacyakl" passHref>
+					<a>
+						<li className={`nav-menu-item${active === "projects" ? " active" : ""}`}>Projects</li>
+					</a>
+				</Link>
+				<Link href="/#top">
 					<a>
 						<li className={`nav-menu-item${active === "contact" ? " active" : ""}`}>Contact</li>
 					</a>

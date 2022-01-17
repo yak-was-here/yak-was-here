@@ -1,24 +1,24 @@
-import ExperienceCard from "./ExperienceCard";
+import WorkCard from "./WorkCard";
 import Section from "./Section";
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 
-export default function ExperienceBrowser({ experiences, tagQuery, onQueryUpdate }) {
+export default function WorkBrowser({ work, tagQuery, onQueryUpdate }) {
 	const [searchQuery, setSearchQuery] = useState(tagQuery);
-	const [filteredExpComponents, setFilteredExpComponents] = useState([]);
+	const [filteredWorkComponents, setfilteredWorkComponents] = useState([]);
 
-	// Format a raw experience data array into an ExperienceCard components array
-	const formatExperiences = (e) => {
+	// Format a raw work data array into an WorkCard components array
+	const formatWork = (e) => {
 		return e.map((xp) => (
 			<Section key={xp.id}>
-				<ExperienceCard id={xp.id} image={xp.image} title={xp.title} tags={xp.tags} body={xp.body} />
+				<WorkCard id={xp.id} image={xp.image} title={xp.title} tags={xp.tags} body={xp.body} />
 			</Section>
 		));
 	};
 
-	// Filter the raw experience data array based on the search query
-	const filterExperiences = () => {
-		return experiences.filter((xp) =>
+	// Filter the raw work data array based on the search query
+	const filterWork = () => {
+		return work.filter((xp) =>
 			xp.tags.some((t) => {
 				return t.toLowerCase().includes(searchQuery.toLowerCase());
 			})
@@ -27,17 +27,17 @@ export default function ExperienceBrowser({ experiences, tagQuery, onQueryUpdate
 
 	const updateResults = () => {
 		if (searchQuery === "") {
-			setFilteredExpComponents(formatExperiences(experiences));
+			setfilteredWorkComponents(formatWork(work));
 			return;
-		} else if (filterExperiences().length === 0) {
-			setFilteredExpComponents([
+		} else if (filterWork().length === 0) {
+			setfilteredWorkComponents([
 				<Section key="no-exp">
-					<p>No experiences found for that search term.</p>
+					<p>No work found for that search term.</p>
 				</Section>,
 			]);
 			return;
 		}
-		setFilteredExpComponents(formatExperiences(filterExperiences()));
+		setfilteredWorkComponents(formatWork(filterWork()));
 	};
 
 	useEffect(() => {
@@ -49,11 +49,11 @@ export default function ExperienceBrowser({ experiences, tagQuery, onQueryUpdate
 	}, [tagQuery]);
 
 	return (
-		<div className="experience-browser">
+		<div className="work-browser">
 			<input
 				type="text"
 				placeholder={`Search... (try "React")`}
-				id="experienceSearch"
+				id="workSearch"
 				onChange={(e) => {
 					if (onQueryUpdate instanceof Function) onQueryUpdate(e.target.value);
 					setSearchQuery(e.target.value);
@@ -62,19 +62,18 @@ export default function ExperienceBrowser({ experiences, tagQuery, onQueryUpdate
 				autoFocus
 				autoComplete="off"
 			/>
-			{filteredExpComponents}
+			{filteredWorkComponents}
 		</div>
 	);
 }
 
-ExperienceBrowser.defaultProps = {
-	experiences: [],
+WorkBrowser.defaultProps = {
+	work: [],
 	tagQuery: "",
 	onQueryUpdate: undefined,
 };
-
-ExperienceBrowser.propTypes = {
-	experiences: PropTypes.array,
+WorkBrowser.propTypes = {
+	work: PropTypes.array,
 	tagQuery: PropTypes.string,
 	onQueryUpdate: PropTypes.func,
 };
