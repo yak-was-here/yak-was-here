@@ -259,7 +259,7 @@ section {
 	padding: calc(var(--space-unit) * 2) 0rem;
 }
 
-#role-experience {
+#position-experience {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: stretch;
@@ -268,7 +268,7 @@ section {
 	padding: var(--space-unit) 0rem;
 }
 
-div.role-experience-container {
+div.position-experience-container {
 	font-family: "Bebas Neue", serif;
 	font-weight: 100;
 	text-transform: uppercase;
@@ -278,7 +278,7 @@ div.role-experience-container {
 	margin: 0.125rem calc(var(--space-unit) * 2) 0.125rem 0rem;
 }
 
-div.role-experience-time {
+div.position-experience-time {
 	font-family: inherit;
 	font-size: 4.5rem;
 	font-weight: inherit;
@@ -293,7 +293,7 @@ div.role-experience-time {
 	white-space: nowrap;
 }
 
-div.role-experience-unit {
+div.position-experience-unit {
 	font-family: inherit;
 	font-size: 1.55rem;
 	font-weight: inherit;
@@ -305,7 +305,7 @@ div.role-experience-unit {
 	white-space: nowrap;
 }
 
-div.role-experience-role {
+div.position-experience-position {
 	font-family: inherit;
 	font-size: 1.55rem;
 	font-weight: inherit;

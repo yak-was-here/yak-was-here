@@ -1,14 +1,14 @@
 import Section from "./Section";
-import RoleExperience from "./RoleExperience";
+import PositionExperience from "./PositionExperience";
 
 const About = () => {
 	return (
 		<Section>
 			<h2>About</h2>
-			<div id="role-experience">
-				<RoleExperience time={3} role="Frontend Dev" />
-				<RoleExperience time={5} role="E-commerce Mgmt" />
-				<RoleExperience time={2} role="Digital Marketing" />
+			<div id="position-experience">
+				<PositionExperience time={3} position="Frontend Dev" />
+				<PositionExperience time={5} position="E-commerce Mgmt" />
+				<PositionExperience time={2} position="Digital Marketing" />
 			</div>
 			<p>I focus on delivering value through usability, maintainability, and integrity. I am seeking a frontend position that offers experience with modern web architecture and global impact.</p>
 		</Section>
