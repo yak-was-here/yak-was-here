@@ -355,7 +355,7 @@ footer div.social-icons {
 	padding: calc(var(--space-unit) * 4) 0rem;
 }
 
-footer img.logo {
+footer .logo {
 	height: 0.9rem;
 	width: 0.9rem;
 }
