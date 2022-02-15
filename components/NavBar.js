@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import Branding from "../components/Branding";
-import HireAction from "../components/HireAction";
 
 const NavBar = ({ active }) => {
 	const [isNavMenuOpen, setNavMenuState] = useState(true); // Nav menu starts open

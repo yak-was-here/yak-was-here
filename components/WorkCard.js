@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import WorkTags from "./WorkTags";
 
-const WorkCard = ({ id, title, date, image, tags, summary }) => {
+const WorkCard = ({ id, title, date, image, summary }) => {
 	return (
 		<div className="work-card">
 			<Link href={`/work/${id}`} passHref>

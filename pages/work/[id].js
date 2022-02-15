@@ -3,26 +3,27 @@ import NavBar from "../../components/NavBar";
 import Header from "../../components/Header";
 import Section from "../../components/Section";
 import Footer from "../../components/Footer";
-import ImageSlider from "../../components/ImageSlider";
+import Image from "next/image";
 import { getAllWorkIds, getWorkFileData } from "../../lib/work";
 import Link from "next/link";
 import WorkTags from "../../components/WorkTags";
 
-const work = ({ workFileData }) => {
+const work = ({ title, date, images, tags, summary, links, htmlContent }) => {
 	return (
 		<>
-			<BaseMeta title={workFileData.title} desc={`${workFileData.title} work details.`} />
+			<BaseMeta title={title} desc={`${title} work details.`} />
 			<NavBar active="work" />
-			<Header heading={workFileData.title} />
+			<Header heading={title} />
 			<main role="main">
 				<Section>
-					<ImageSlider images={workFileData.images} />
+					<Image src={`/img/work/${images[0]}`} layout="responsive" width="300" height="175" alt="" />
 					<h2>Summary</h2>
-					{workFileData.tags !== undefined ? <WorkTags tags={workFileData.tags} /> : ``}
-					<p dangerouslySetInnerHTML={{ __html: workFileData.summary }}></p>
-					{workFileData.links !== undefined ? (
+					<h6 className="work-date">{date}</h6>
+					{tags !== undefined ? <WorkTags tags={tags} /> : ``}
+					<p dangerouslySetInnerHTML={{ __html: summary }}></p>
+					{links !== undefined ? (
 						<p style={{ textAlign: "center" }}>
-							{workFileData.links.map((l) => {
+							{links.map((l) => {
 								return (
 									<Link href={l.url} key={l.title} passHref>
 										<a className="btn cta-link work-links" target="_blank" rel="noopener">
@@ -36,7 +37,7 @@ const work = ({ workFileData }) => {
 						``
 					)}
 				</Section>
-				<Section dangerouslySetInnerHTML={{ __html: workFileData.htmlContent }}></Section>
+				<Section dangerouslySetInnerHTML={{ __html: htmlContent }}></Section>
 			</main>
 			<Footer />
 		</>
@@ -57,7 +58,7 @@ export async function getStaticProps({ params }) {
 		if (workFileData) {
 			return {
 				props: {
-					workFileData,
+					...workFileData,
 				},
 			};
 		}

@@ -11,7 +11,7 @@ export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate }) {
 	const formatWork = (e) => {
 		return e.map((xp) => (
 			<Section key={xp.id}>
-				<WorkCard id={xp.id} image={xp.images[0]} title={xp.title} date={xp.date} tags={xp.tags} summary={xp.summary} />
+				<WorkCard id={xp.id} image={xp.images[0]} title={xp.title} date={xp.date} summary={xp.summary} />
 			</Section>
 		));
 	};
