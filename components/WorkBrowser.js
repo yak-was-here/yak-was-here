@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate }) {
 	const [searchQuery, setSearchQuery] = useState(tagQuery);
-	const [filteredWorkComponents, setfilteredWorkComponents] = useState([]);
+	const [filteredWorkComponents, setFilteredWorkComponents] = useState([]);
 
 	// Format a raw work data array into an WorkCard components array
 	const formatWork = (e) => {
@@ -20,29 +20,25 @@ export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate }) {
 	const filterWork = () => {
 		return workMetadata.filter((xp) =>
 			xp.tags.some((t) => {
-				return t.toLowerCase().includes(searchQuery.toLowerCase());
+				return t.toLowerCase().includes(searchQuery.toLowerCase()) || xp.title.toLowerCase().includes(searchQuery.toLowerCase());
 			})
 		);
 	};
 
-	const updateResults = () => {
+	useEffect(() => {
 		if (searchQuery === "") {
-			setfilteredWorkComponents(formatWork(workMetadata));
+			setFilteredWorkComponents(formatWork(workMetadata));
 			return;
 		} else if (filterWork().length === 0) {
-			setfilteredWorkComponents([
+			setFilteredWorkComponents([
 				<Section key="no-exp">
 					<p>No work found for that search term.</p>
 				</Section>,
 			]);
 			return;
 		}
-		setfilteredWorkComponents(formatWork(filterWork()));
-	};
-
-	useEffect(() => {
-		updateResults();
-	}, []);
+		setFilteredWorkComponents(formatWork(filterWork()));
+	}, [searchQuery]);
 
 	useEffect(() => {
 		setSearchQuery(tagQuery);
