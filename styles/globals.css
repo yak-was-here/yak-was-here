@@ -469,6 +469,10 @@ input[type="text"] {
 	box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
+div.work-card h6.work-date {
+	font-size: 1.7rem;
+}
+
 div.work-card p.summary-body {
 	max-height: 6em;
 	overflow: hidden;

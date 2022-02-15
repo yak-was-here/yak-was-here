@@ -3,6 +3,7 @@ import WorkBrowser from "../../components/WorkBrowser";
 import Header from "../../components/Header";
 import NavBar from "../../components/NavBar";
 import Section from "../../components/Section";
+import Footer from "../../components/Footer";
 import { getAllWorkMetadata } from "../../lib/work";
 import { useRouter } from "next/router";
 
@@ -28,6 +29,7 @@ const index = ({ allWorkMetadata }) => {
 					<WorkBrowser workMetadata={allWorkMetadata} tagQuery={router.query.q} onQueryUpdate={updateURLQuery} />
 				</Section>
 			</main>
+			<Footer />
 		</>
 	);
 };
