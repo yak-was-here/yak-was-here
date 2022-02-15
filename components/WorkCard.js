@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import WorkTags from "./WorkTags";
 
-const WorkCard = ({ id, title, image, tags, body }) => {
+const WorkCard = ({ id, title, image, tags, summary }) => {
 	return (
 		<div className="work-card">
 			<Link href={`/work/${id}`} passHref>
@@ -12,7 +12,7 @@ const WorkCard = ({ id, title, image, tags, body }) => {
 				</a>
 			</Link>
 			<WorkTags tags={tags} />
-			<p className="summary-body" dangerouslySetInnerHTML={{ __html: body }}></p>
+			<p className="summary-body" dangerouslySetInnerHTML={{ __html: summary }}></p>
 		</div>
 	);
 };

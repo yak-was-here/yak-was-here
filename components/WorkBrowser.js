@@ -3,7 +3,7 @@ import Section from "./Section";
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 
-export default function WorkBrowser({ work, tagQuery, onQueryUpdate }) {
+export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate }) {
 	const [searchQuery, setSearchQuery] = useState(tagQuery);
 	const [filteredWorkComponents, setfilteredWorkComponents] = useState([]);
 
@@ -11,14 +11,14 @@ export default function WorkBrowser({ work, tagQuery, onQueryUpdate }) {
 	const formatWork = (e) => {
 		return e.map((xp) => (
 			<Section key={xp.id}>
-				<WorkCard id={xp.id} image={xp.image} title={xp.title} tags={xp.tags} body={xp.body} />
+				<WorkCard id={xp.id} image={xp.images[0]} title={xp.title} tags={xp.tags} summary={xp.summary} />
 			</Section>
 		));
 	};
 
 	// Filter the raw work data array based on the search query
 	const filterWork = () => {
-		return work.filter((xp) =>
+		return workMetadata.filter((xp) =>
 			xp.tags.some((t) => {
 				return t.toLowerCase().includes(searchQuery.toLowerCase());
 			})
@@ -27,7 +27,7 @@ export default function WorkBrowser({ work, tagQuery, onQueryUpdate }) {
 
 	const updateResults = () => {
 		if (searchQuery === "") {
-			setfilteredWorkComponents(formatWork(work));
+			setfilteredWorkComponents(formatWork(workMetadata));
 			return;
 		} else if (filterWork().length === 0) {
 			setfilteredWorkComponents([
@@ -68,12 +68,12 @@ export default function WorkBrowser({ work, tagQuery, onQueryUpdate }) {
 }
 
 WorkBrowser.defaultProps = {
-	work: [],
+	workMetadata: [],
 	tagQuery: "",
 	onQueryUpdate: undefined,
 };
 WorkBrowser.propTypes = {
-	work: PropTypes.array,
+	workMetadata: PropTypes.array,
 	tagQuery: PropTypes.string,
 	onQueryUpdate: PropTypes.func,
 };

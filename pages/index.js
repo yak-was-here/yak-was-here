@@ -6,7 +6,7 @@ import Skills from "../components/Skills";
 import Footer from "../components/Footer";
 import WorkBrowser from "../components/WorkBrowser";
 import Section from "../components/Section";
-import { getAllWorkSummaries } from "../lib/work";
+import { getAllWorkMetadata } from "../lib/work";
 
 export default function Home({ workSummaries }) {
 	return (
@@ -14,7 +14,7 @@ export default function Home({ workSummaries }) {
 			<BaseMeta title='Isaac "Yak" Litzenberger&apos;s Portfolio' desc='Isaac "Yak" Litzenberger&apos;s Portfolio' />
 			<NavBar />
 			<Hero />
-			<main class="max-page-width" role="main">
+			<main className="max-page-width" role="main">
 				<About />
 				<Skills />
 				<Section>
@@ -39,7 +39,7 @@ export default function Home({ workSummaries }) {
 }
 
 export async function getStaticProps() {
-	const workSummaries = getAllWorkSummaries();
+	const workSummaries = getAllWorkMetadata();
 	if (workSummaries) {
 		return {
 			props: {

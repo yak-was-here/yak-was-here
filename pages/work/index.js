@@ -3,10 +3,10 @@ import WorkBrowser from "../../components/WorkBrowser";
 import Header from "../../components/Header";
 import NavBar from "../../components/NavBar";
 import Section from "../../components/Section";
-import { getAllWorkSummaries } from "../../lib/work";
+import { getAllWorkMetadata } from "../../lib/work";
 import { useRouter } from "next/router";
 
-const index = ({ workSummaries }) => {
+const index = ({ allWorkMetadata }) => {
 	const router = useRouter();
 
 	const updateURLQuery = (q) => {
@@ -25,22 +25,24 @@ const index = ({ workSummaries }) => {
 			<Header heading="Work" />
 			<main role="main">
 				<Section>
-					<WorkBrowser work={workSummaries} tagQuery={router.query.q} onQueryUpdate={updateURLQuery} />
+					<WorkBrowser workMetadata={allWorkMetadata} tagQuery={router.query.q} onQueryUpdate={updateURLQuery} />
 				</Section>
 			</main>
 		</>
 	);
 };
 
-export async function getStaticProps() {
-	const workSummaries = getAllWorkSummaries();
-	if (workSummaries) {
+export function getStaticProps() {
+	const allWorkMetadata = getAllWorkMetadata();
+
+	if (allWorkMetadata) {
 		return {
 			props: {
-				workSummaries,
+				allWorkMetadata,
 			},
 		};
 	}
+	return;
 }
 
 export default index;

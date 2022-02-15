@@ -4,28 +4,25 @@ import Header from "../../components/Header";
 import Section from "../../components/Section";
 import Footer from "../../components/Footer";
 import ImageSlider from "../../components/ImageSlider";
-import { getAllWork, getWork } from "../../lib/work";
+import { getAllWorkIds, getWorkFileData } from "../../lib/work";
 import Link from "next/link";
-import WorkSection from "../../components/WorkSection";
 import WorkTags from "../../components/WorkTags";
 
-const work = ({ workData }) => {
-	let xpObj = JSON.parse(workData.json);
-	let xpTitle = xpObj.summary.title;
+const work = ({ workFileData }) => {
 	return (
 		<>
-			<BaseMeta title={xpTitle} desc={`${xpTitle} work details.`} />
+			<BaseMeta title={workFileData.title} desc={`${workFileData.title} work details.`} />
 			<NavBar active="work" />
-			<Header heading={xpTitle} />
+			<Header heading={workFileData.title} />
 			<main role="main">
 				<Section>
-					<ImageSlider images={xpObj.summary.images} />
+					<ImageSlider images={workFileData.images} />
 					<h2>Summary</h2>
-					{xpObj.summary.tags !== undefined ? <WorkTags tags={xpObj.summary.tags} /> : ``}
-					<p dangerouslySetInnerHTML={{ __html: xpObj.summary.body }}></p>
-					{xpObj.summary.links !== undefined ? (
+					{workFileData.tags !== undefined ? <WorkTags tags={workFileData.tags} /> : ``}
+					<p dangerouslySetInnerHTML={{ __html: workFileData.summary }}></p>
+					{workFileData.links !== undefined ? (
 						<p style={{ textAlign: "center" }}>
-							{xpObj.summary.links.map((l) => {
+							{workFileData.links.map((l) => {
 								return (
 									<Link href={l.url} key={l.title} passHref>
 										<a className="btn cta-link work-links" target="_blank" rel="noopener">
@@ -39,26 +36,7 @@ const work = ({ workData }) => {
 						``
 					)}
 				</Section>
-				{xpObj.brief !== undefined && xpObj.brief !== "" ? (
-					<Section>
-						<h2>Brief</h2>
-						<p dangerouslySetInnerHTML={{ __html: xpObj.brief }}></p>
-					</Section>
-				) : (
-					``
-				)}
-				{xpObj.process !== undefined ? (
-					<Section>
-						<h2>Process</h2>
-						<WorkSection sections={xpObj.process.sections} />
-					</Section>
-				) : (
-					``
-				)}
-				<Section>
-					<h2>Result</h2>
-					<WorkSection sections={xpObj.result.sections} />
-				</Section>
+				<Section dangerouslySetInnerHTML={{ __html: workFileData.htmlContent }}></Section>
 			</main>
 			<Footer />
 		</>
@@ -66,7 +44,7 @@ const work = ({ workData }) => {
 };
 
 export async function getStaticPaths() {
-	const paths = getAllWork();
+	const paths = getAllWorkIds();
 	return {
 		paths,
 		fallback: false,
@@ -75,11 +53,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
 	if (params.id !== undefined) {
-		const workData = await getWork(params.id);
-		if (workData !== undefined) {
+		const workFileData = getWorkFileData(params.id);
+		if (workFileData) {
 			return {
 				props: {
-					workData,
+					workFileData,
 				},
 			};
 		}
