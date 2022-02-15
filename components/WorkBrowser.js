@@ -42,7 +42,7 @@ export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate }) {
 
 	useEffect(() => {
 		updateResults();
-	}, [searchQuery]);
+	}, []);
 
 	useEffect(() => {
 		setSearchQuery(tagQuery);

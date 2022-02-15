@@ -206,6 +206,10 @@ div.header-container {
 	margin: auto;
 }
 
+div.header-container hr {
+	margin-bottom: 1rem;
+}
+
 h1.hero-title {
 	font-size: 14vw;
 	line-height: 11vw;

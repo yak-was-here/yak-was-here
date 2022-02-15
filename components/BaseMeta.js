@@ -14,11 +14,6 @@ function BaseMeta({ title, desc, absoluteURL, robots, googlebot, author }) {
 			<meta name="googlebot" content={googlebot} />
 			<meta name="author" content={author} />
 
-			{/* Fonts */}
-			<link rel="preconnect" href="https://fonts.googleapis.com" />
-			<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-			<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,400&display=swap" rel="stylesheet" />
-
 			{/* Favicons */}
 			{/* Source: https://github.com/audreyfeldroy/favicon-cheat-sheet */}
 			<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
