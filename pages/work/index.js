@@ -7,7 +7,7 @@ import Footer from "../../components/Footer";
 import { getAllWorkMetadata } from "../../lib/work";
 import { useRouter } from "next/router";
 
-const index = ({ allWorkMetadata }) => {
+export default function index({ allWorkMetadata }) {
 	const router = useRouter();
 
 	const updateURLQuery = (q) => {
@@ -32,7 +32,7 @@ const index = ({ allWorkMetadata }) => {
 			<Footer />
 		</>
 	);
-};
+}
 
 export function getStaticProps() {
 	const allWorkMetadata = getAllWorkMetadata();
@@ -46,5 +46,3 @@ export function getStaticProps() {
 	}
 	return;
 }
-
-export default index;
