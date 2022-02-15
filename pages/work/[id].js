@@ -8,7 +8,7 @@ import { getAllWorkIds, getWorkFileData } from "../../lib/work";
 import Link from "next/link";
 import WorkTags from "../../components/WorkTags";
 
-const work = ({ title, date, images, tags, summary, links, htmlContent }) => {
+const Work = ({ title, date, images, tags, summary, links, htmlContent }) => {
 	return (
 		<>
 			<BaseMeta title={title} desc={`${title} work details.`} />
@@ -65,4 +65,4 @@ export async function getStaticProps({ params }) {
 	}
 }
 
-export default work;
+export default Work;
