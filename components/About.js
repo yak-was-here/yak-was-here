@@ -10,7 +10,7 @@ const About = () => {
 				<PositionExperience time={5} position="E-commerce Mgmt" />
 				<PositionExperience time={2} position="Digital Marketing" />
 			</div>
-			<p>I focus on delivering value through usability, maintainability, and integrity. I am seeking a frontend position that offers experience with modern web architecture and global impact.</p>
+			<p>I focus on delivering value through usability, maintainability, and integrity. I am seeking work that offers experience with modern web architecture and practices as well as global impact.</p>
 		</Section>
 	);
 };

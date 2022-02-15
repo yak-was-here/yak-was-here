@@ -14,9 +14,6 @@ function Hero() {
 				</h1>
 				<hr />
 				<div className="seeking">
-					<FontAwesomeIcon icon={faCode} />
-					Frontend Developer
-					<br />
 					<FontAwesomeIcon icon={faMapMarkerAlt} />
 					San Francisco Bay Area
 				</div>
