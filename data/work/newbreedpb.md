@@ -2,9 +2,8 @@
 title: New Breed Paintball & Airsoft
 date: 2020-Present
 images:
-   - nbpa-ss1.png
    - nbpa-ss2.png
-   - nbpa-ss3.png
+   - nbpa-ss1.png
 tags:
    - Shopify
    - SEO

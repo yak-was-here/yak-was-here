@@ -19,6 +19,7 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
    -  MAP Training
    -  nsfphax.com
    -  fairhaven-bc-vbs-2019-soundboard
+-  Add blog and landing page
 -  Remove need for long skill names to wrap
 -  Customize Error Pages
 -  Remove residual id attribute in ContactIcons
