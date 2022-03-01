@@ -27,11 +27,6 @@ const NavBar = ({ active }) => {
 						<li className={`nav-menu-item${active === "work" ? " active" : ""}`}>Work</li>
 					</a>
 				</Link>
-				<Link href="https://github.com/isaacyakl" passHref>
-					<a>
-						<li className={`nav-menu-item${active === "projects" ? " active" : ""}`}>Projects</li>
-					</a>
-				</Link>
 				<Link href="/#top">
 					<a>
 						<li className={`nav-menu-item${active === "contact" ? " active" : ""}`}>Contact</li>

@@ -6,20 +6,22 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 
 # To-Do
 
--  Add all projects
+-  Add all work
    -  YourPbFriend
+   -  New Breed Paintball & Airsoft
+   -  MAP Training
    -  ypbf-shopify-theme
-   -  NBPA
    -  new-breed-shopify-theme
    -  nbpa-trade-form
    -  remote-jackbox-player
    -  brandojs
    -  Alive in Christ
    -  isaacyakl.com
-   -  MAP Training
    -  nsfphax.com
    -  fairhaven-bc-vbs-2019-soundboard
--  Add blog and landing page
+-  Create blog
+-  Add blog and resume to nav menu
+-  Make skills clickable
 -  Remove need for long skill names to wrap
 -  Customize Error Pages
 -  Remove residual id attribute in ContactIcons
