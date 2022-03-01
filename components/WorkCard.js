@@ -16,7 +16,7 @@ const WorkCard = ({ id, title, date, image, summary }) => {
 						<h3>{title}</h3>
 					</a>
 				</Link>
-				<h6 className="work-date">{date}</h6>
+				<h4 className="work-date">{date}</h4>
 				<p className="summary-body" dangerouslySetInnerHTML={{ __html: summary }}></p>
 			</div>
 		</div>

@@ -16,9 +16,8 @@ const Work = ({ title, date, images, tags, summary, links, htmlContent }) => {
 			<Header heading={title} />
 			<main role="main">
 				<Section>
-					<Image src={`/img/work/${images[0]}`} layout="responsive" width="300" height="175" alt="" />
-					<h2>Summary</h2>
-					<h6 className="work-date">{date}</h6>
+					<Image src={`/img/work/${images[0]}`} layout="responsive" width="100%" height="60vh" objectFit="cover" objectPosition="center top" alt={title} />
+					<h2 className="work-date">{date}</h2>
 					{tags !== undefined ? <WorkTags tags={tags} /> : ``}
 					<p dangerouslySetInnerHTML={{ __html: summary }}></p>
 					{links !== undefined ? (
@@ -37,7 +36,7 @@ const Work = ({ title, date, images, tags, summary, links, htmlContent }) => {
 						``
 					)}
 				</Section>
-				<Section dangerouslySetInnerHTML={{ __html: htmlContent }}></Section>
+				<section dangerouslySetInnerHTML={{ __html: htmlContent }}></section>
 			</main>
 			<Footer />
 		</>
@@ -54,7 +53,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
 	if (params.id !== undefined) {
-		const workFileData = getWorkFileData(params.id);
+		const workFileData = await getWorkFileData(params.id);
 		if (workFileData) {
 			return {
 				props: {

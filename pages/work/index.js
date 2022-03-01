@@ -34,8 +34,8 @@ const Index = ({ allWorkMetadata }) => {
 	);
 };
 
-export function getStaticProps() {
-	const allWorkMetadata = getAllWorkMetadata();
+export async function getStaticProps() {
+	const allWorkMetadata = await getAllWorkMetadata();
 
 	if (allWorkMetadata) {
 		return {

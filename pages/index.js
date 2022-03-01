@@ -6,7 +6,6 @@ import Skills from "../components/Skills";
 import Footer from "../components/Footer";
 import WorkBrowser from "../components/WorkBrowser";
 import Section from "../components/Section";
-import { getAllWorkMetadata } from "../lib/work";
 
 export default function Home({ workSummaries }) {
 	return (
@@ -36,15 +35,4 @@ export default function Home({ workSummaries }) {
 			<Footer />
 		</>
 	);
-}
-
-export async function getStaticProps() {
-	const workSummaries = getAllWorkMetadata();
-	if (workSummaries) {
-		return {
-			props: {
-				workSummaries,
-			},
-		};
-	}
 }
