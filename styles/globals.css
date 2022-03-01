@@ -145,7 +145,7 @@ div.hamburger {
 ul.nav-menu {
 	list-style-type: none;
 	transition: all 0.5s 0s ease;
-	max-height: 9em;
+	max-height: 10em;
 	overflow: hidden;
 }
 

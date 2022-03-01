@@ -17,6 +17,11 @@ const NavBar = ({ active }) => {
 				</div>
 			</div>
 			<ul className={`nav-menu${isNavMenuOpen ? " hidden" : ""}`}>
+				<Link href="/" passHref>
+					<a>
+						<li className={`nav-menu-item${active === "home" ? " active" : ""}`}>Home</li>
+					</a>
+				</Link>
 				<Link href="/work" passHref>
 					<a>
 						<li className={`nav-menu-item${active === "work" ? " active" : ""}`}>Work</li>
@@ -38,7 +43,7 @@ const NavBar = ({ active }) => {
 };
 
 NavBar.defaultProps = {
-	active: "portfolio",
+	active: "home",
 };
 
 NavBar.propTypes = {
