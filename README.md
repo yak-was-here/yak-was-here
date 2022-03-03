@@ -21,7 +21,6 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
    -  fairhaven-bc-vbs-2019-soundboard
 -  Create blog
 -  Add blog and resume to nav menu
--  Make skills clickable
 -  Remove need for long skill names to wrap
 -  Customize Error Pages
 -  Remove residual id attribute in ContactIcons

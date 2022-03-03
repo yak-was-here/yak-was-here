@@ -30,10 +30,14 @@ body {
 
 a,
 a:visited,
-a:hover,
 a:active {
+	transition: all 0.25s ease-in;
 	color: var(--primary-accent);
 	text-decoration: none;
+}
+
+a:hover {
+	color: #048a2c;
 }
 
 hr {
@@ -251,7 +255,8 @@ div.social-icons {
 div.social-icons svg {
 	color: var(--text-color);
 	transition: color 0.5s 0s ease;
-	width: 1.7rem;
+	max-width: 1.7rem;
+	max-height: 1.7rem;
 	margin-right: var(--space-unit);
 }
 
@@ -522,4 +527,37 @@ div.work-card-border {
 	height: 0.4rem;
 	background-color: #099292;
 	border-top: 0.2rem solid #0dd1d1;
+}
+
+div.experience-timeline {
+	font-family: "Bebas Neue", serif;
+	font-weight: 100;
+	font-size: 1.5rem;
+	letter-spacing: 0.1rem;
+	border-left: 0.3rem solid #099292;
+}
+
+div.experience-timeline p {
+	margin-left: 2rem;
+}
+
+div.experience-timeline h3 {
+	color: #099292;
+}
+
+div.experience-timeline h3::before {
+	content: "—";
+	font-size: 3rem;
+}
+
+div.experience-timeline span {
+	display: block;
+	margin-left: 2rem;
+	color: #666666;
+}
+
+em.highlight {
+	font-style: normal;
+	text-decoration: underline;
+	text-decoration-color: #048a2c;
 }

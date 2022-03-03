@@ -27,7 +27,7 @@ const NavBar = ({ active }) => {
 						<li className={`nav-menu-item${active === "work" ? " active" : ""}`}>Work</li>
 					</a>
 				</Link>
-				<Link href="/#top">
+				<Link href="/#top" passHref>
 					<a>
 						<li className={`nav-menu-item${active === "contact" ? " active" : ""}`}>Contact</li>
 					</a>
