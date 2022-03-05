@@ -470,6 +470,7 @@ div.swiper-slide {
 }
 
 input[type="text"] {
+	font-size: 1rem;
 	width: 100%;
 	background-color: #dcdcdc;
 	border-radius: calc(var(--border-radius) * 3);
