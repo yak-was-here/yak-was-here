@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import Section from "../components/Section";
+import CtaBtn from "../components/CtaBtn";
 import Link from "next/link";
 
 export default function Home() {
@@ -95,7 +96,9 @@ export default function Home() {
 					</div>
 				</Section>
 			</main>
-			<Footer />
+			<Footer>
+				<CtaBtn ctaText="Browse work" ctaHref="/work" />
+			</Footer>
 		</>
 	);
 }

@@ -3,7 +3,7 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faAt } from "@fortawesome/free-solid-svg-icons";
-import HireAction from "./HireAction";
+import EmailLink from "./EmailLink";
 
 const ContactIcons = ({ id }) => {
 	return (
@@ -17,9 +17,9 @@ const ContactIcons = ({ id }) => {
 			<a href="https://www.instagram.com/isaacyakl" title="yak on Insta">
 				<FontAwesomeIcon icon={faInstagram} />
 			</a>
-			<HireAction>
+			<EmailLink>
 				<FontAwesomeIcon icon={faAt} />
-			</HireAction>
+			</EmailLink>
 		</div>
 	);
 };

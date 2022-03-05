@@ -1,11 +1,10 @@
 import ContactIcons from "../components/ContactIcons";
 import Branding from "../components/Branding";
-import HireBtn from "./HireBtn";
 
-const Footer = () => {
+const Footer = ({ children }) => {
 	return (
 		<footer>
-			<HireBtn />
+			{children}
 			<div className="footer-container">
 				<ContactIcons id="contact" />
 				<Branding />

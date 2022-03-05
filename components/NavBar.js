@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import Branding from "../components/Branding";
+import EmailLink from "./EmailLink";
 
 const NavBar = ({ active }) => {
 	const [isNavMenuOpen, setNavMenuState] = useState(true); // Nav menu starts open
@@ -27,11 +28,9 @@ const NavBar = ({ active }) => {
 						<li className={`nav-menu-item${active === "work" ? " active" : ""}`}>Work</li>
 					</a>
 				</Link>
-				<Link href="/#top" passHref>
-					<a>
-						<li className={`nav-menu-item${active === "contact" ? " active" : ""}`}>Contact</li>
-					</a>
-				</Link>
+				<EmailLink>
+					<li className={`nav-menu-item${active === "contact" ? " active" : ""}`}>Contact</li>
+				</EmailLink>
 			</ul>
 		</nav>
 	);

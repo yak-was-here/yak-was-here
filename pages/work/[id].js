@@ -7,6 +7,7 @@ import Image from "next/image";
 import { getAllWorkIds, getWorkFileData } from "../../lib/work";
 import Link from "next/link";
 import WorkTags from "../../components/WorkTags";
+import ContactBtn from "../../components/ContactBtn";
 
 const Work = ({ title, date, images, tags, summary, links, htmlContent }) => {
 	return (
@@ -38,7 +39,9 @@ const Work = ({ title, date, images, tags, summary, links, htmlContent }) => {
 				</Section>
 				<section dangerouslySetInnerHTML={{ __html: htmlContent }}></section>
 			</main>
-			<Footer />
+			<Footer>
+				<ContactBtn />
+			</Footer>
 		</>
 	);
 };

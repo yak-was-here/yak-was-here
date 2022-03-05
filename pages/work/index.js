@@ -6,6 +6,7 @@ import Section from "../../components/Section";
 import Footer from "../../components/Footer";
 import { getAllWorkMetadata } from "../../lib/work";
 import { useRouter } from "next/router";
+import ContactBtn from "../../components/ContactBtn";
 
 const Index = ({ allWorkMetadata }) => {
 	const router = useRouter();
@@ -29,7 +30,9 @@ const Index = ({ allWorkMetadata }) => {
 					<WorkBrowser workMetadata={allWorkMetadata} tagQuery={router.query.q} onQueryUpdate={updateURLQuery} />
 				</Section>
 			</main>
-			<Footer />
+			<Footer>
+				<ContactBtn />
+			</Footer>
 		</>
 	);
 };

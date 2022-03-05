@@ -12,7 +12,7 @@
 	--border-radius: 0.1rem;
 
 	/* Sizing */
-	--hire-btn-font-size: 1.4rem;
+	--cta-btn-font-size: 1.4rem;
 }
 
 /* All */
@@ -373,16 +373,16 @@ footer span.site-wordmark {
 	font-size: 1rem;
 }
 
-footer > div.hire-btn-container {
-	margin-top: var(--hire-btn-font-size);
+footer > div.cta-btn-container {
+	margin-top: var(--cta-btn-font-size);
 }
 
-div.hire-btn-container {
+div.cta-btn-container {
 	position: relative;
-	top: calc(var(--hire-btn-font-size) * (-1));
+	top: calc(var(--cta-btn-font-size) * (-1));
 	width: var(--container-width);
 	margin: auto;
-	margin-bottom: calc(var(--hire-btn-font-size) * (-1));
+	margin-bottom: calc(var(--cta-btn-font-size) * (-1));
 	text-align: center;
 	filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
 	z-index: 1;
@@ -404,15 +404,15 @@ a.btn:hover,
 	filter: grayscale(30%);
 }
 
-a.hire,
-.hire {
-	font-size: var(--hire-btn-font-size);
+a.cta,
+.cta {
+	font-size: var(--cta-btn-font-size);
 	border: 0;
 	cursor: pointer;
 }
 
-a.hire:hover,
-.hire:hover {
+a.cta:hover,
+.cta:hover {
 	transform: scale(1.04, 1.04);
 }
 
