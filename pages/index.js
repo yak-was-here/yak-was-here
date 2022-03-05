@@ -3,7 +3,6 @@ import NavBar from "../components/NavBar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import Section from "../components/Section";
-import PositionExperience from "../components/PositionExperience";
 import Link from "next/link";
 
 export default function Home() {
@@ -15,29 +14,30 @@ export default function Home() {
 			<main className="max-page-width" role="main">
 				<Section>
 					<h2>About</h2>
-					<div id="position-experience">
-						<PositionExperience time={3} position="Web Developer" />
-						<PositionExperience time={5} position="E-commerce Mgmt" />
-						<PositionExperience time={2} position="Digital Marketing" />
-					</div>
+					<p>I am a self-taught web developer based out of the San Francisco Bay Area. My experience is primarily in Javascript (ES10) frontend development, and much of my work is comprised of vanilla JS or React.js/Next.js. I also have experience with SEO, digital marketing, and design principles.</p>
 					<p>I focus on delivering value through usability, maintainability, and integrity. I am seeking work that offers experience with modern web architecture and practices.</p>
 				</Section>
 				<Section>
 					<h2>Skills</h2>
 					<div className="skills-container">
 						<ul className="skills">
-							<h3>Web Tech</h3>
-							<li>Next.js</li>
+							<h3>Frontend</h3>
 							<li>React.js</li>
-							<li>jQuery</li>
+							<li>Next.js</li>
 							<li>Shopify Liquid</li>
-							<li>TailwindCSS</li>
+							<li>jQuery</li>
 							<li>Bootstrap</li>
+							<li>TailwindCSS</li>
+						</ul>
+						<ul className="skills">
+							<h3>Backend</h3>
+							<li>Next.js</li>
+							<li>Node.js</li>
 							<li>PHP</li>
 						</ul>
 						<ul className="skills">
 							<h3>Tools</h3>
-							<li>Git</li>
+							<li>Git / GitHub</li>
 							<li>NPM</li>
 							<li>Scrum</li>
 							<li>Figma</li>
