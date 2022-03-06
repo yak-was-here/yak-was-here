@@ -31,6 +31,11 @@ const NavBar = ({ active }) => {
 				<EmailLink>
 					<li className={`nav-menu-item${active === "contact" ? " active" : ""}`}>Contact</li>
 				</EmailLink>
+				<Link href="/more">
+					<a>
+						<li className={`nav-menu-item${active === "more" ? " active" : ""}`}>More</li>
+					</a>
+				</Link>
 			</ul>
 		</nav>
 	);
