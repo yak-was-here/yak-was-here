@@ -12,7 +12,7 @@ import ContactBtn from "../../components/ContactBtn";
 const Work = ({ title, date, images, tags, summary, links, htmlContent }) => {
 	return (
 		<>
-			<BaseMeta title={title} desc={`${title} work details.`} />
+			<BaseMeta title={`The ${title} development process`} desc={`Read about the development process of ${title} and how yak was involved.`} />
 			<NavBar active="work" />
 			<Header heading={title} />
 			<main role="main">
@@ -25,7 +25,7 @@ const Work = ({ title, date, images, tags, summary, links, htmlContent }) => {
 						<p style={{ textAlign: "center" }}>
 							{links.map((l) => {
 								return (
-									<Link href={l.url} key={l.title} passHref>
+									<Link href={l.url} key={l.title}>
 										<a className="btn cta-link work-links" target="_blank" rel="noopener">
 											{l.title}
 										</a>

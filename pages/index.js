@@ -9,8 +9,8 @@ import Link from "next/link";
 export default function Home() {
 	return (
 		<>
-			<BaseMeta title='Isaac "Yak" Litzenberger&apos;s Portfolio' desc='Isaac "Yak" Litzenberger&apos;s Portfolio' />
-			<NavBar />
+			<BaseMeta title='Isaac "Yak" Litzenberger&apos;s Portfolio' desc="Have a look at yak's portfolio of work details and included resume." />
+			<NavBar active="home" />
 			<Hero />
 			<main className="max-page-width" role="main">
 				<Section>
@@ -71,7 +71,7 @@ export default function Home() {
 						<p>
 							Web Developer, E-commerce Manager
 							<span>
-								<Link href="/work/newbreedpb" passHref>
+								<Link href="/work/newbreedpb">
 									<a>New Breed Paintball &amp; Airsoft</a>
 								</Link>
 							</span>
@@ -84,7 +84,7 @@ export default function Home() {
 						<p>
 							Web Developer, Digital Marketing Specialist
 							<span>
-								<Link href="/work/yourpbfriend" passHref>
+								<Link href="/work/yourpbfriend">
 									<a>YourPbFriend</a>
 								</Link>
 							</span>

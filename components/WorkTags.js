@@ -5,7 +5,7 @@ const WorkTags = ({ tags }) => {
 		<ul className="work-tags">
 			{tags.map((t) => {
 				return (
-					<Link href={`/work?q=${t}`} key={t} passHref>
+					<Link href={`/work?q=${t}`} key={t}>
 						<a>
 							<li>{t}</li>
 						</a>

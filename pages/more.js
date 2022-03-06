@@ -5,18 +5,19 @@ import NavBar from "../components/NavBar";
 import Section from "../components/Section";
 
 export default function More() {
+	const title = "Isaac Litzenberger";
 	const tagline = 'Web Developer | "Yak"';
 
 	return (
 		<div style={{ backgroundImage: "url('/img/isaacyakl-hero-background-4k.jpg')", backgroundSize: "cover", backgroundAttachment: "fixed", minHeight: "100vh" }}>
-			<BaseMeta title="Browse Yak's businesses, projects, and more." desc="Browse a list of links to Yak's businesses, projects, and more." />
+			<BaseMeta title="Links to Yak's businesses, projects, and more." desc="Browse a list of links to Yak's businesses, projects, and more." />
 			<NavBar active="more" />
 			<main className="max-page-width" role="main" style={{ textAlign: "center" }}>
 				<Section>
-					<h1>Isaac Litzenberger</h1>
+					<h1>{title}</h1>
 					<p>{tagline}</p>
 				</Section>
-				<Section style={{ margin: "auto", maxWidth: "20rem", display: "grid", gridTemplateColumns: "1fr" }}>
+				<Section style={{ margin: "auto", maxWidth: `${title.length + 2}rem`, display: "grid", gridTemplateColumns: "1fr" }}>
 					<Link href="/">
 						<button className="btn cta more-links">Yak's Portfolio</button>
 					</Link>

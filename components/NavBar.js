@@ -18,12 +18,12 @@ const NavBar = ({ active }) => {
 				</div>
 			</div>
 			<ul className={`nav-menu${isNavMenuOpen ? " hidden" : ""}`}>
-				<Link href="/" passHref>
+				<Link href="/">
 					<a>
 						<li className={`nav-menu-item${active === "home" ? " active" : ""}`}>Home</li>
 					</a>
 				</Link>
-				<Link href="/work" passHref>
+				<Link href="/work">
 					<a>
 						<li className={`nav-menu-item${active === "work" ? " active" : ""}`}>Work</li>
 					</a>

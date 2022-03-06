@@ -5,7 +5,7 @@ import logo from "../public/img/yak-logo.svg";
 const Branding = () => {
 	return (
 		<div className="branding-container">
-			<Link href="/" passHref>
+			<Link href="/">
 				<a title="Home">
 					<div className="logo">
 						<Image src={logo} alt="" />

@@ -6,7 +6,7 @@ function BaseMeta({ title, desc, absoluteURL, robots, googlebot, author }) {
 		<Head>
 			{/* Next.js already adds <meta charset="utf-8"/> */}
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
-			<title>{title} - isaacyakl.com</title>
+			<title>{title}</title>
 			<meta name="theme-color" content="#03C03C" />
 			{/*Theme Color for Chrome, Firefox OS and Opera*/}
 			<meta name="description" content={desc} />
@@ -62,12 +62,12 @@ function BaseMeta({ title, desc, absoluteURL, robots, googlebot, author }) {
 }
 
 BaseMeta.defaultProps = {
-	title: "Isaac  &quot;Yak&quot; Litzenberger&apos;s Website",
-	desc: "yak&apos;s personal website.",
+	title: `Isaac "Yak" Litzenberger's Website`,
+	desc: "yak's personal website.",
 	absoluteURL: "https://isaacyakl.com/",
 	robots: "index,follow",
 	googlebot: "index,follow",
-	author: "Isaac &quot;Yak&quot; L.",
+	author: 'Isaac "Yak" L.',
 };
 
 BaseMeta.propTypes = {

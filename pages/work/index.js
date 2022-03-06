@@ -22,7 +22,7 @@ const Index = ({ allWorkMetadata }) => {
 
 	return (
 		<>
-			<BaseMeta title="Experience" desc="Isaac's work." />
+			<BaseMeta title='Isaac "Yak" Litzenberger&apos;s work and projects' desc="Look at detailed information about yak's current and past work." />
 			<NavBar active="work" />
 			<Header heading="Work" />
 			<main role="main">
