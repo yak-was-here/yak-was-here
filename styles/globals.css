@@ -142,8 +142,12 @@ div.branding-container {
 
 div.hamburger {
 	justify-self: right;
-	width: 1.68rem;
 	cursor: pointer;
+}
+
+div.hamburger svg {
+	width: 1.68rem;
+	height: 1.68rem;
 }
 
 ul.nav-menu {
@@ -255,8 +259,8 @@ div.social-icons {
 div.social-icons svg {
 	color: var(--text-color);
 	transition: color 0.5s 0s ease;
-	max-width: 1.7rem;
-	max-height: 1.7rem;
+	width: 1.7rem;
+	height: 1.7rem;
 	margin-right: var(--space-unit);
 }
 
