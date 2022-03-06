@@ -18,16 +18,16 @@ export default function More() {
 					<p>{tagline}</p>
 				</Section>
 				<Section style={{ margin: "auto", maxWidth: `${title.length + 2}rem`, display: "grid", gridTemplateColumns: "1fr" }}>
-					<Link href="/">
-						<button className="btn cta more-links">Yak's Portfolio</button>
+					<Link href="/" passHref>
+						<button className="btn cta more-links">Yak&apos;s Portfolio</button>
 					</Link>
-					<Link href="https://iamaliveinchrist.com">
+					<Link href="https://iamaliveinchrist.com" passHref>
 						<button className="btn cta more-links">Alive in Christ Apparel</button>
 					</Link>
-					<Link href="https://open.spotify.com/user/izacktheyak/playlists">
+					<Link href="https://open.spotify.com/user/izacktheyak/playlists" passHref>
 						<button className="btn cta more-links">Spotify Playlists</button>
 					</Link>
-					<Link href="http://nsfpgaming.com">
+					<Link href="http://nsfpgaming.com" passHref>
 						<button className="btn cta more-links">NSFP Gaming</button>
 					</Link>
 				</Section>
