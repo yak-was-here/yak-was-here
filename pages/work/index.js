@@ -26,9 +26,8 @@ const Index = ({ allWorkMetadata }) => {
 			<NavBar active="work" />
 			<Header heading="Work" />
 			<main role="main">
-				<Section>
-					<WorkBrowser workMetadata={allWorkMetadata} tagQuery={router.query.q} onQueryUpdate={updateURLQuery} />
-				</Section>
+				<p>Browse my work experience and personal projects. I have included codebase links, summaries, performance metrics, tech stack details, screenshots, demos, and tools used.</p>
+				<WorkBrowser workMetadata={allWorkMetadata} tagQuery={router.query.q} onQueryUpdate={updateURLQuery} />
 			</main>
 			<Footer>
 				<ContactBtn />

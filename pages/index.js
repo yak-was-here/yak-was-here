@@ -69,7 +69,7 @@ export default function Home() {
 					<div className="experience-timeline">
 						<h3>2020-Present</h3>
 						<p>
-							Web Developer, E-commerce Manager
+							Web Developer, Digital Marketer, E-commerce Manager
 							<span>
 								<Link href="/work/newbreedpb">
 									<a>New Breed Paintball &amp; Airsoft</a>
@@ -82,7 +82,7 @@ export default function Home() {
 						</p>
 						<h3>2014-2016</h3>
 						<p>
-							Web Developer, Digital Marketing Specialist
+							Web Developer, Digital Marketer
 							<span>
 								<Link href="/work/yourpbfriend">
 									<a>YourPbFriend</a>

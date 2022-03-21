@@ -6,7 +6,7 @@ const WorkTags = ({ tags }) => {
 			{tags.map((t) => {
 				return (
 					<Link href={`/work?q=${t}`} key={t}>
-						<a>
+						<a title={`Browse more ${t} work`}>
 							<li>{t}</li>
 						</a>
 					</Link>
