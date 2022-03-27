@@ -25,8 +25,8 @@ const Index = ({ allWorkMetadata }) => {
 			<BaseMeta title='Isaac "Yak" Litzenberger&apos;s work and projects' desc="Look at detailed information about yak's current and past work." />
 			<NavBar active="work" />
 			<Header heading="Work" />
-			<main role="main">
-				<p>Browse my work experience and personal projects. I have included codebase links, summaries, performance metrics, tech stack details, screenshots, demos, and tools used.</p>
+			<main className="max-page-width" role="main">
+				<p style={{ marginBottom: "0.5rem" }}>Browse my work experience and personal projects. I have included codebase links, summaries, performance metrics, tech stack details, screenshots, demos, and tools used.</p>
 				<WorkBrowser workMetadata={allWorkMetadata} tagQuery={router.query.q} onQueryUpdate={updateURLQuery} />
 			</main>
 			<Footer>

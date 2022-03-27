@@ -12,33 +12,43 @@ images:
   - yourpbfriend-ss8-social.png
   - yourpbfriend-ss9-responsive.png
   - yourpbfriend-ss10-responsivemenu.png
-tags:
-  - Shopify
-  - SEO
-  - Liquid
-  - PHP
-  - Social Media Marketing
-  - Front end
-  - Back end
-  - Adobe Photoshop
-  - Graphic Design
-summary: 'I was a Digital Marketer for YourPbFriend from 2014-2016. My team and I brought
-YourPbFriend.com to the #2 online Paintball retailer by sales from 2015-2016.
+role: "Web Developer, Digital Marketer"
+results:
+  - "Launched an online trade-in program that became #1 in the industry by volume"
+  - Developed a Shopify web store that increased revenue by 10x in 2 years
+links:
+  - title: Theme Code
+    url: https://github.com/isaacyakl/ypbf-shopify-theme
+  - title: Facebook Page
+    url: https://www.facebook.com/YourPBfriend/
+  - title: 'Popular Video'
+    url: https://www.youtube.com/watch?v=IGxCeL8g8hI
+summary: 'I was a brought on as a Web Developer and Digital Marketer for YourPbFriend from 2014-2016. During that time, we brought
+YourPbFriend.com to the #2 online Paintball retailer by sales from 2015-2016 and were the fastest growing Paintball retailer at the time.
 We differentiated ourselves from the competition with an in-depth Paintball trade-in
 program featuring a robust rating system, high-quality photos/videos, and 30-day
 return policy. Our program is emulated by virtually every other online paintball
 retailer today.'
-links:
-  - title: Archived Site
-    url: https://web.archive.org/web/20160324133326/yourpbfriend.com/
-  - title: Facebook Page
-    url: https://www.facebook.com/YourPBfriend/
-  - title: 'Popular Video: Best Paintball Setups'
-    url: https://www.youtube.com/watch?v=IGxCeL8g8hI
+tags:
+  - Shopify
+  - SEO
+  - Liquid
+  - jQuery
+  - Bootstrap
+  - YouTube API
+  - Social Media Marketing
+  - Adobe Photoshop
+  - Graphic Design
 ---
 
-## Brief
+## Shopify Liquid
 
-### Ecommerce Platform Selection
+## Trade-In System
 
-Originally, we tried out both the Volusion and BigCommerce platforms, but settled on Shopify due to its growing third-party application ecosystem. We purchased one of the themes and went to work adding the features we needed.
+![Trade-In Program](/img/work/yourpbfriend-ss5-tradeinform.png)
+
+## YouTube Feed
+
+We chose the Shopify e-commerce platform due to its growing third-party application ecosystem. I
+
+## Graphic Design

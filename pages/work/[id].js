@@ -9,18 +9,22 @@ import Link from "next/link";
 import WorkTags from "../../components/WorkTags";
 import ContactBtn from "../../components/ContactBtn";
 
-const Work = ({ title, date, images, tags, summary, links, htmlContent }) => {
+const Work = ({ title, date, images, tags, results, role, summary, links, htmlContent }) => {
 	return (
 		<>
 			<BaseMeta title={`The ${title} development process`} desc={`Read about the development process of ${title} and how yak was involved.`} />
 			<NavBar active="work" />
 			<Header heading={title} />
-			<main role="main">
+			<main className="max-page-width" role="main">
 				<Section>
 					<Image src={`/img/work/${images[0]}`} layout="responsive" width="100%" height="60vh" objectFit="cover" objectPosition="center top" alt={title} />
 					<h2 className="work-date">{date}</h2>
-					{tags !== undefined ? <WorkTags tags={tags} /> : ``}
-					<p dangerouslySetInnerHTML={{ __html: summary }}></p>
+					<h2 className="work-role">{role}</h2>
+					<ul>
+						{results.map((r, i) => {
+							return <li key={`result${i}`}>{r}</li>;
+						})}
+					</ul>
 					{links !== undefined ? (
 						<p style={{ textAlign: "center" }}>
 							{links.map((l) => {
@@ -36,6 +40,9 @@ const Work = ({ title, date, images, tags, summary, links, htmlContent }) => {
 					) : (
 						``
 					)}
+					<p dangerouslySetInnerHTML={{ __html: summary }}></p>
+					<h6>Tags</h6>
+					{tags !== undefined ? <WorkTags tags={tags} /> : ``}
 				</Section>
 				<section dangerouslySetInnerHTML={{ __html: htmlContent }}></section>
 			</main>
