@@ -257,6 +257,7 @@ main {
 
 main img {
 	max-width: var(--container-width);
+	padding-bottom: var(--space-unit);
 }
 main img.ss {
 	border: rgba(0, 0, 0, 0.1) solid 1px;
@@ -415,7 +416,7 @@ a.btn,
 
 a.btn:hover,
 .btn:hover {
-	filter: grayscale(30%);
+	filter: saturate(115%);
 }
 
 a.cta,
@@ -452,32 +453,29 @@ ul.work-tags li {
 	margin-bottom: calc(var(--space-unit) * 0.65);
 	margin-right: calc(var(--space-unit) * 0.65);
 	transition: all 0.5s 0s ease;
+	border: 1px solid var(--secondary-accent);
 }
 
 ul.work-tags li:hover {
-	filter: grayscale(35%);
+	color: var(--secondary-accent);
+	background-color: rgba(0, 0, 0, 0);
 }
 
 a.work-links {
 	font-size: 1.2rem;
-	color: var(--primary-accent);
+	color: white;
 	background-color: white;
 	border: 1px solid var(--primary-accent);
+	background-color: var(--primary-accent);
 }
 
 a.work-links:hover {
-	color: white;
-	background-color: var(--primary-accent);
+	color: var(--primary-accent);
+	background-color: rgba(0, 0, 0, 0);
 }
 
 div.work-slider {
 	margin-bottom: var(--space-unit);
-}
-
-img.work-slide {
-	max-width: 100%;
-	max-height: 90vh;
-	object-fit: contain;
 }
 
 div.swiper-wrapper {
@@ -503,6 +501,8 @@ div.work-card {
 	overflow: hidden;
 	border-radius: calc(var(--border-radius) * 3);
 	cursor: pointer;
+	max-width: calc(var(--container-width) / 2 - var(--space-unit) / 2);
+	margin-bottom: var(--space-unit);
 }
 
 div.work-card:hover {
@@ -512,12 +512,20 @@ div.work-card:hover {
 	box-shadow: 0px 5px 5px #e4e4e4;
 }
 
-h2.work-date {
+.work-card-summary h2 {
+	font-size: 2rem;
+}
+
+.work-card-summary h3 {
+	font-size: 1rem;
+}
+
+.work-date {
 	font-size: 1.7rem;
 	color: #666666;
 }
 
-h2.work-role {
+.work-role {
 	font-size: 2rem;
 }
 

@@ -33,6 +33,7 @@ tags:
   - Shopify
   - SEO
   - Liquid
+  - PHP
   - jQuery
   - Bootstrap
   - YouTube API

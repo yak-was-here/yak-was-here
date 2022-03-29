@@ -18,6 +18,8 @@ const Work = ({ title, date, images, tags, results, role, summary, links, htmlCo
 			<main className="max-page-width" role="main">
 				<Section>
 					<Image src={`/img/work/${images[0]}`} layout="responsive" width="100%" height="60vh" objectFit="cover" objectPosition="center top" alt={title} />
+				</Section>
+				<Section>
 					<h2 className="work-date">{date}</h2>
 					<h2 className="work-role">{role}</h2>
 					<ul>
@@ -25,6 +27,7 @@ const Work = ({ title, date, images, tags, results, role, summary, links, htmlCo
 							return <li key={`result${i}`}>{r}</li>;
 						})}
 					</ul>
+					<p dangerouslySetInnerHTML={{ __html: summary }}></p>
 					{links !== undefined ? (
 						<p style={{ textAlign: "center" }}>
 							{links.map((l) => {
@@ -40,7 +43,6 @@ const Work = ({ title, date, images, tags, results, role, summary, links, htmlCo
 					) : (
 						``
 					)}
-					<p dangerouslySetInnerHTML={{ __html: summary }}></p>
 					<h6>Tags</h6>
 					{tags !== undefined ? <WorkTags tags={tags} /> : ``}
 				</Section>
