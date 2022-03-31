@@ -15,44 +15,45 @@ export default function Home() {
 			<main className="max-page-width" role="main">
 				<Section>
 					<h2>About</h2>
-					<p>I am a self-taught web developer based out of the San Francisco Bay Area. My experience is primarily in Javascript (ES10) frontend development, and much of my work is comprised of vanilla JS or React.js/Next.js. I also have experience with SEO, digital marketing, and design principles.</p>
-					<p>I focus on delivering value through usability, maintainability, and integrity. I am seeking work that offers experience with modern web architecture and practices.</p>
+					<p>I am a self-taught web developer with experience designing and developing e-commerce websites and web application user interfaces (UI). My work has illustrated the ability to successfully identify and create competitive business solutions that produce measurable results. Outside of software development, these solutions often involve knowledge of SEO, digital marketing, business management, and design principles. I believe high quality results are produced by team collaboration, integrity, and solutions that focus on user experience (UX), competitive differentiation, and a minimum viable product.</p>
+					<p>I am seeking work that offers experience with modern web architecture (Web3) and attempts to solve meaningful problems.</p>
 				</Section>
 				<Section>
 					<h2>Skills</h2>
 					<div className="skills-container">
 						<ul className="skills">
-							<h3>Frontend</h3>
-							<li>React.js</li>
+							<h3>Front end</h3>
 							<li>Next.js</li>
+							<li>React.js</li>
 							<li>Shopify Liquid</li>
+							<li>TailwindCSS</li>
 							<li>jQuery</li>
 							<li>Bootstrap</li>
-							<li>TailwindCSS</li>
 						</ul>
 						<ul className="skills">
-							<h3>Backend</h3>
+							<h3>Back end</h3>
 							<li>Next.js</li>
-							<li>Node.js</li>
 							<li>PHP</li>
+							<li>Node.js</li>
+							<li>Express.js</li>
+							<li>MongoDB</li>
 						</ul>
 						<ul className="skills">
 							<h3>Tools</h3>
-							<li>Git / GitHub</li>
+							<li>Git + GitHub</li>
 							<li>NPM</li>
-							<li>Scrum</li>
 							<li>Figma</li>
 							<li>Adobe Photoshop</li>
 							<li>Adobe Illustrator</li>
 						</ul>
 						<ul className="skills">
 							<h3>Platforms</h3>
-							<li>Vercel</li>
 							<li>Shopify</li>
-							<li>WooCommerce</li>
-							<li>WordPress</li>
-							<li>Heroku</li>
 							<li>AWS</li>
+							<li>Vercel</li>
+							<li>Heroku</li>
+							<li>WordPress</li>
+							<li>WooCommerce</li>
 						</ul>
 						<ul className="skills">
 							<h3>Marketing</h3>
