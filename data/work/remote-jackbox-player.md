@@ -1,6 +1,6 @@
 ---
-title: YourPbFriend
-date: 2014-2016
+title: Remote Jackbox Player
+date: 2020
 images:
   - yourpbfriend-ss1-frontpage.png
   - yourpbfriend-ss2-usedguns.png
@@ -12,7 +12,7 @@ images:
   - yourpbfriend-ss8-social.png
   - yourpbfriend-ss9-responsive.png
   - yourpbfriend-ss10-responsivemenu.png
-role: "Web Developer, Digital Marketer"
+role: ""
 results:
   - "Launched an online trade-in program that became #1 in the industry by volume"
   - Developed a Shopify web store that increased revenue by 10x in 2 years
@@ -30,17 +30,9 @@ program featuring a robust rating system, high-quality photos/videos, and 30-day
 return policy. Our program is emulated by virtually every other online paintball
 retailer today.'
 tags:
-  - Shopify
-  - SEO
-  - Liquid
-  - PHP
-  - jQuery
-  - Bootstrap
-  - YouTube API
-  - Meta Ads
-  - Adobe Photoshop
-  - Adobe Illustrator
-  - Graphic Design
+- JavaScript
+- Twitch API
+- Font Awesome
 ---
 
 ## Shopify Liquid

@@ -17,9 +17,10 @@ tags:
    - SEO
    - Liquid
    - PHP
-   - Social Media Marketing
+   - Meta Ads
    - Adobe Photoshop
    - Graphic Design
+   - Moz Pro
 ---
 
 ## Brief

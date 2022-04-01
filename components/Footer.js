@@ -6,7 +6,7 @@ const Footer = ({ children }) => {
 		<footer>
 			{children}
 			<div className="footer-container">
-				<ContactIcons id="contact" />
+				<ContactIcons />
 				<Branding />
 				<p>&copy; {new Date().getFullYear()} Isaac Litzenberger &mdash; All rights reserved.</p>
 			</div>

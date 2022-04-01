@@ -7,7 +7,7 @@ import EmailLink from "./EmailLink";
 
 const ContactIcons = ({ id }) => {
 	return (
-		<div id={`${id ? id : ""}`} className="social-icons no-select">
+		<div id={id} className="social-icons no-select">
 			<a href="https://www.twitter.com/isaacyakl" title="yak on Twitter">
 				<FontAwesomeIcon icon={faTwitter} />
 			</a>

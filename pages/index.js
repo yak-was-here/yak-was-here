@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import Section from "../components/Section";
 import CtaBtn from "../components/CtaBtn";
 import Link from "next/link";
+import Skill from "../components/Skill";
 
 export default function Home() {
 	return (
@@ -23,45 +24,45 @@ export default function Home() {
 					<div className="skills-container">
 						<ul className="skills">
 							<h3>Front end</h3>
-							<li>Next.js</li>
-							<li>React.js</li>
-							<li>Shopify Liquid</li>
-							<li>TailwindCSS</li>
-							<li>jQuery</li>
-							<li>Bootstrap</li>
+							<Skill>Next.js</Skill>
+							<Skill>React.js</Skill>
+							<Skill q="Liquid">Shopify Liquid</Skill>
+							<Skill>TailwindCSS</Skill>
+							<Skill>jQuery</Skill>
+							<Skill>Bootstrap</Skill>
 						</ul>
 						<ul className="skills">
 							<h3>Back end</h3>
-							<li>Next.js</li>
-							<li>PHP</li>
-							<li>Node.js</li>
-							<li>Express.js</li>
-							<li>MongoDB</li>
+							<Skill>Next.js</Skill>
+							<Skill>PHP</Skill>
+							<Skill>Node.js</Skill>
+							<Skill>Express.js</Skill>
+							<Skill>MongoDB</Skill>
 						</ul>
 						<ul className="skills">
 							<h3>Tools</h3>
-							<li>Git + GitHub</li>
-							<li>NPM</li>
-							<li>Figma</li>
-							<li>Adobe Photoshop</li>
-							<li>Adobe Illustrator</li>
+							<Skill q="Git">Git + GitHub</Skill>
+							<Skill>NPM</Skill>
+							<Skill>Figma</Skill>
+							<Skill>Adobe Photoshop</Skill>
+							<Skill>Adobe Illustrator</Skill>
 						</ul>
 						<ul className="skills">
 							<h3>Platforms</h3>
-							<li>Shopify</li>
-							<li>AWS</li>
-							<li>Vercel</li>
-							<li>Heroku</li>
-							<li>WordPress</li>
-							<li>WooCommerce</li>
+							<Skill>Shopify</Skill>
+							<Skill>AWS</Skill>
+							<Skill>Vercel</Skill>
+							<Skill>Heroku</Skill>
+							<Skill>Wordpress</Skill>
+							<Skill>WooCommerce</Skill>
 						</ul>
 						<ul className="skills">
 							<h3>Marketing</h3>
-							<li>SEO</li>
-							<li>Facebook/Instagram Ads</li>
-							<li>Google Analytics</li>
-							<li>Google Console</li>
-							<li>Moz Pro</li>
+							<Skill>SEO</Skill>
+							<Skill q="Meta Ads">Meta (Facebook/Instagram) Ads</Skill>
+							<Skill>Google Analytics</Skill>
+							<Skill>Google Console</Skill>
+							<Skill>Moz Pro</Skill>
 						</ul>
 					</div>
 				</Section>
@@ -73,7 +74,7 @@ export default function Home() {
 							Web Developer, Digital Marketer, E-commerce Manager
 							<span>
 								<Link href="/work/newbreedpb">
-									<a>New Breed Paintball &amp; Airsoft</a>
+									<a title="View this work experience">New Breed Paintball &amp; Airsoft</a>
 								</Link>
 							</span>
 						</p>
@@ -86,7 +87,7 @@ export default function Home() {
 							Web Developer, Digital Marketer
 							<span>
 								<Link href="/work/yourpbfriend">
-									<a>YourPbFriend</a>
+									<a title="View this work experience">YourPbFriend</a>
 								</Link>
 							</span>
 						</p>
