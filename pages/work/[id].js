@@ -43,7 +43,7 @@ const Work = ({ title, date, images, tags, results, role, summary, links, htmlCo
 					) : (
 						``
 					)}
-					<h6>Tags</h6>
+					<h3 id="tags">Tags</h3>
 					{tags !== undefined ? <WorkTags tags={tags} /> : ``}
 				</Section>
 				<section dangerouslySetInnerHTML={{ __html: htmlContent }}></section>

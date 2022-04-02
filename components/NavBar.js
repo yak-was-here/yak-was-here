@@ -13,29 +13,29 @@ const NavBar = ({ active }) => {
 		<nav className="no-select">
 			<div id="top" className="nav-dash">
 				<Branding />
-				<div className="hamburger" onClick={() => setNavMenuState(!isNavMenuOpen)} role="menu">
+				<div className="hamburger" onClick={() => setNavMenuState(!isNavMenuOpen)} role="menu" aria-owns="home-menuitem work-menuitem contact-menuitem more-menuitem">
 					<FontAwesomeIcon icon={faBars} />
 				</div>
 			</div>
 			<ul className={`nav-menu${isNavMenuOpen ? " hidden" : ""}`}>
-				<Link href="/">
-					<a>
-						<li className={`nav-menu-item${active === "home" ? " active" : ""}`}>Home</li>
-					</a>
-				</Link>
-				<Link href="/work">
-					<a>
-						<li className={`nav-menu-item${active === "work" ? " active" : ""}`}>Work</li>
-					</a>
-				</Link>
-				<EmailLink>
-					<li className={`nav-menu-item${active === "contact" ? " active" : ""}`}>Contact</li>
-				</EmailLink>
-				<Link href="/more">
-					<a>
-						<li className={`nav-menu-item${active === "more" ? " active" : ""}`}>More</li>
-					</a>
-				</Link>
+				<li id="home-menuitem" className={`${active === "home" ? " active" : ""}`} role="menuitem">
+					<Link href="/">
+						<a>Home</a>
+					</Link>
+				</li>
+				<li id="work-menuitem" className={`${active === "work" ? " active" : ""}`} title="Browse work" role="menuitem">
+					<Link href="/work">
+						<a>Work</a>
+					</Link>
+				</li>
+				<li id="contact-menuitem" className={`${active === "contact" ? " active" : ""}`} role="menuitem">
+					<EmailLink>Contact</EmailLink>
+				</li>
+				<li id="more-menuitem" className={`${active === "more" ? " active" : ""}`} title="More links" role="menuitem">
+					<Link href="/more">
+						<a>More</a>
+					</Link>
+				</li>
 			</ul>
 		</nav>
 	);

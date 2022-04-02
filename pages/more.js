@@ -10,7 +10,7 @@ export default function More() {
 
 	return (
 		<div style={{ backgroundImage: "url('/img/isaacyakl-hero-background-4k.jpg')", backgroundSize: "cover", backgroundAttachment: "fixed", minHeight: "100vh" }}>
-			<BaseMeta title="Links to Yak's businesses, projects, and more." desc="Browse a list of links to Yak's businesses, projects, and more." />
+			<BaseMeta title="Links to Yak's businesses, projects, and more." desc="Browse a list of Yak's businesses, projects, and more." />
 			<NavBar active="more" />
 			<main className="max-page-width" role="main" style={{ textAlign: "center" }}>
 				<Section>

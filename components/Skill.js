@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 
 function Skill({ children, q }) {
 	return (
-		<Link href={`/work?q=${q ? q : children}`}>
-			<a title={`Browse ${children} work`}>
-				<li>{children}</li>
-			</a>
-		</Link>
+		<li>
+			<Link href={`/work?q=${q ? q : children}`}>
+				<a title={`Browse ${children} work`}>{children}</a>
+			</Link>
+		</li>
 	);
 }
 

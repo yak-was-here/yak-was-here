@@ -92,6 +92,7 @@ h6 {
 
 p {
 	padding: var(--space-unit) 0rem;
+	line-height: 1.35;
 }
 
 ul {
@@ -157,35 +158,33 @@ ul.nav-menu {
 	max-height: 10em;
 	overflow: hidden;
 	padding: 0rem;
-}
-
-li.nav-menu-item {
 	background-color: var(--background-color);
 	font-family: "Bebas Neue", serif;
 	font-weight: 100;
 	text-align: right;
 	letter-spacing: 0.15em;
-	padding: var(--space-unit) calc(var(--space-unit) * 2);
-}
-
-li.nav-menu-item:hover {
-	color: var(--primary-accent);
-	background-color: #f3f3f3;
-}
-
-li.nav-menu-item.active {
-	color: var(--secondary-accent);
-	background-color: #e0e0e0;
-}
-
-ul.nav-menu a {
-	color: var(--text-color);
-	padding: 0em;
 }
 
 ul.nav-menu.hidden {
 	max-height: 0em;
 	padding: 0em;
+}
+
+ul.nav-menu a {
+	display: block;
+	transition: none;
+	color: var(--text-color);
+	padding: var(--space-unit) calc(var(--space-unit) * 2);
+}
+
+ul.nav-menu a:hover {
+	color: var(--primary-accent);
+	background-color: #f3f3f3;
+}
+
+ul.nav-menu li.active a {
+	color: var(--secondary-accent);
+	background-color: #e0e0e0;
 }
 
 /* Header */
@@ -270,9 +269,9 @@ div.social-icons {
 div.social-icons svg {
 	color: var(--text-color);
 	transition: color 0.5s 0s ease;
-	width: 1.7rem;
-	height: 1.7rem;
-	margin-right: var(--space-unit);
+	width: 1.85rem;
+	height: 1.85rem;
+	margin-right: calc(var(--space-unit) * 1.5);
 }
 
 div.social-icons svg:hover {
@@ -348,6 +347,7 @@ div.skills-container {
 
 ul.skills {
 	list-style-type: none;
+	font-size: 1.25rem;
 	margin: 1rem calc(var(--space-unit) * 2) 1rem 0rem;
 	border-left: 2px solid #424242;
 	border-bottom: 2px solid #424242;
@@ -355,7 +355,8 @@ ul.skills {
 }
 
 ul.skills li {
-	padding-bottom: calc(var(--space-unit) / 1.3);
+	padding-bottom: calc(var(--space-unit) * 1.4);
+	margin-bottom: var(--space-unit);
 }
 
 ul.skills a {
@@ -443,24 +444,32 @@ a.cta:hover,
 	content: " \2197";
 }
 
+#tags {
+	font-size: 2.1rem;
+}
+
 ul.work-tags {
 	padding: 0rem;
 }
 
 ul.work-tags li {
-	font-size: 0.7rem;
+	display: inline-block;
+}
+
+ul.work-tags a {
+	font-size: 1rem;
 	display: inline-block;
 	color: white;
 	background-color: var(--secondary-accent);
 	border-radius: var(--border-radius);
-	padding: calc(var(--space-unit) * 0.65) calc(var(--space-unit) * 1.65);
-	margin-bottom: calc(var(--space-unit) * 0.65);
-	margin-right: calc(var(--space-unit) * 0.65);
+	padding: var(--space-unit) calc(var(--space-unit) * 2);
+	margin-bottom: calc(var(--space-unit));
+	margin-right: calc(var(--space-unit));
 	transition: all 0.5s 0s ease;
 	border: 1px solid var(--secondary-accent);
 }
 
-ul.work-tags li:hover {
+ul.work-tags a:hover {
 	color: var(--secondary-accent);
 	background-color: rgba(0, 0, 0, 0);
 }
@@ -601,4 +610,8 @@ em.highlight {
 	font-style: normal;
 	text-decoration: underline;
 	text-decoration-color: #048a2c;
+}
+
+a.more-links {
+	transition: all 0.25s 0s ease;
 }

@@ -21,7 +21,7 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
    -  fairhaven-bc-vbs-2019-soundboard
 -  Create blog
 -  Create web-based resume
+-  Add structured data
 -  Customize Error Pages
--  [Optimize accessibility](https://medium.com/weekly-webtips/accessibility-and-seo-optimizations-in-next-js-app-472515a50ffc)
 -  Gracefully close nav menu when opening a link from it to another page (e.g. Home -> Experience page)
 -  Implement React-based [Javascript solution for nav menu collapse animation](https://css-tricks.com/using-css-transitions-auto-dimensions/#technique-3-javascript) instead of hard-coded CSS max-height
