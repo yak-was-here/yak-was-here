@@ -2,7 +2,6 @@ import BaseMeta from "../components/BaseMeta";
 import NavBar from "../components/NavBar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
-import Section from "../components/Section";
 import CtaBtn from "../components/CtaBtn";
 import Link from "next/link";
 import Skill from "../components/Skill";
@@ -13,13 +12,13 @@ export default function Home() {
 			<BaseMeta title='Isaac "Yak" Litzenberger&apos;s Portfolio' desc="Have a look at yak's portfolio of work details and included resume." />
 			<NavBar active="home" />
 			<Hero />
-			<main className="max-page-width" role="main">
-				<Section>
+			<main className="max-page-width">
+				<section>
 					<h2>About</h2>
 					<p>I am a self-taught web developer with experience designing and developing e-commerce websites and web application user interfaces (UI). My work has demonstrated the ability to successfully identify and create competitive business solutions that produce measurable results. Outside of software development, these solutions often involve knowledge of SEO, digital marketing, business management, and design principles. I believe high quality results are produced by team collaboration, integrity, and solutions that focus on user experience (UX), competitive differentiation, and a minimum viable product.</p>
 					<p>I am seeking work that offers experience with modern web architecture (Web3) and attempts to solve meaningful problems.</p>
-				</Section>
-				<Section>
+				</section>
+				<section>
 					<h2>Skills</h2>
 					<div className="skills-container">
 						<ul className="skills">
@@ -65,8 +64,8 @@ export default function Home() {
 							<Skill>Moz Pro</Skill>
 						</ul>
 					</div>
-				</Section>
-				<Section>
+				</section>
+				<section>
 					<h2>Experience</h2>
 					<div className="experience-timeline">
 						<h3>2020-Present</h3>
@@ -96,7 +95,7 @@ export default function Home() {
 							Web Designer <span>Freelance</span>
 						</p>
 					</div>
-				</Section>
+				</section>
 			</main>
 			<Footer>
 				<CtaBtn ctaText="Browse work" ctaHref="/work" />

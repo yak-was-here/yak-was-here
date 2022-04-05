@@ -1,7 +1,6 @@
 import BaseMeta from "../../components/BaseMeta";
 import NavBar from "../../components/NavBar";
 import Header from "../../components/Header";
-import Section from "../../components/Section";
 import Footer from "../../components/Footer";
 import Image from "next/image";
 import { getAllWorkIds, getWorkFileData } from "../../lib/work";
@@ -15,11 +14,11 @@ const Work = ({ title, date, images, tags, results, role, summary, links, htmlCo
 			<BaseMeta title={`The ${title} development process`} desc={`Read about the development process of ${title} and how yak was involved.`} />
 			<NavBar active="work" />
 			<Header heading={title} />
-			<main className="max-page-width" role="main">
-				<Section>
+			<main className="max-page-width">
+				<section>
 					<Image src={`/img/work/${images[0]}`} layout="responsive" width="100%" height="60vh" objectFit="cover" objectPosition="center top" alt={title} />
-				</Section>
-				<Section>
+				</section>
+				<section>
 					<h2 className="work-date">{date}</h2>
 					<h2 className="work-role">{role}</h2>
 					<ul>
@@ -29,7 +28,7 @@ const Work = ({ title, date, images, tags, results, role, summary, links, htmlCo
 					</ul>
 					<p dangerouslySetInnerHTML={{ __html: summary }}></p>
 					{links !== undefined ? (
-						<p style={{ textAlign: "center" }}>
+						<p className="text-center">
 							{links.map((l) => {
 								return (
 									<Link href={l.url} key={l.title}>
@@ -45,7 +44,7 @@ const Work = ({ title, date, images, tags, results, role, summary, links, htmlCo
 					)}
 					<h3 id="tags">Tags</h3>
 					{tags !== undefined ? <WorkTags tags={tags} /> : ``}
-				</Section>
+				</section>
 				<section dangerouslySetInnerHTML={{ __html: htmlContent }}></section>
 			</main>
 			<Footer>

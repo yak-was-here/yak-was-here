@@ -13,7 +13,7 @@ const NavBar = ({ active }) => {
 		<nav className="no-select">
 			<div id="top" className="nav-dash">
 				<Branding />
-				<div className="hamburger" onClick={() => setNavMenuState(!isNavMenuOpen)} role="menu" aria-owns="home-menuitem work-menuitem contact-menuitem more-menuitem">
+				<div className="hamburger" onClick={() => setNavMenuState(!isNavMenuOpen)} role="menu" aria-owns="home-menuitem work-menuitem resume-menuitem contact-menuitem more-menuitem">
 					<FontAwesomeIcon icon={faBars} />
 				</div>
 			</div>
@@ -26,6 +26,11 @@ const NavBar = ({ active }) => {
 				<li id="work-menuitem" className={`${active === "work" ? " active" : ""}`} title="Browse work" role="menuitem">
 					<Link href="/work">
 						<a>Work</a>
+					</Link>
+				</li>
+				<li id="resume-menuitem" className={`${active === "resume" ? " active" : ""}`} title="View resume" role="menuitem">
+					<Link href="/resume">
+						<a>Resume</a>
 					</Link>
 				</li>
 				<li id="contact-menuitem" className={`${active === "contact" ? " active" : ""}`} role="menuitem">

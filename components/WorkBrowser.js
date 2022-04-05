@@ -1,5 +1,4 @@
 import WorkCard from "./WorkCard";
-import Section from "./Section";
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 
@@ -27,9 +26,9 @@ export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate }) {
 			return;
 		} else if (filterWork().length === 0) {
 			setFilteredWorkComponents([
-				<Section key="no-exp">
+				<section key="no-exp">
 					<p>No work found for that search term.</p>
-				</Section>,
+				</section>,
 			]);
 			return;
 		}
@@ -54,7 +53,7 @@ export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate }) {
 				autoFocus
 				autoComplete="off"
 			/>
-			<Section style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "strech" }}>{filteredWorkComponents}</Section>
+			<section className="work-view">{filteredWorkComponents}</section>
 		</div>
 	);
 }

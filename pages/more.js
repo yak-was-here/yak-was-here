@@ -2,22 +2,21 @@ import Link from "next/link";
 import BaseMeta from "../components/BaseMeta";
 import ContactIcons from "../components/ContactIcons";
 import NavBar from "../components/NavBar";
-import Section from "../components/Section";
+import { fName, lName, tagline } from "../data/meta";
 
 export default function More() {
-	const title = "Isaac Litzenberger";
-	const tagline = 'Web Developer | "Yak"';
-
 	return (
-		<div style={{ backgroundImage: "url('/img/isaacyakl-hero-background-4k.jpg')", backgroundSize: "cover", backgroundAttachment: "fixed", minHeight: "100vh" }}>
+		<div className="more-background">
 			<BaseMeta title="Links to Yak's businesses, projects, and more." desc="Browse a list of Yak's businesses, projects, and more." />
 			<NavBar active="more" />
-			<main className="max-page-width" role="main" style={{ textAlign: "center" }}>
-				<Section>
-					<h1>{title}</h1>
+			<main className="max-page-width more">
+				<section>
+					<h1>
+						{fName}&nbsp;{lName}
+					</h1>
 					<p>{tagline}</p>
-				</Section>
-				<Section style={{ margin: "auto", maxWidth: `${title.length + 2}rem`, display: "grid", gridTemplateColumns: "1fr" }}>
+				</section>
+				<section className="more-link-container" style={{ maxWidth: `${fName.length + lName.length + 3}rem` }}>
 					<Link href="/">
 						<a className="btn cta more-links">Yak&apos;s Portfolio</a>
 					</Link>
@@ -30,13 +29,13 @@ export default function More() {
 					<Link href="http://nsfpgaming.com">
 						<a className="btn cta more-links">NSFP Gaming</a>
 					</Link>
-				</Section>
-				<Section>
+				</section>
+				<section>
 					<ContactIcons />
-				</Section>
-				<Section style={{ fontSize: "small" }}>
+				</section>
+				<section className="copyright">
 					<p>&copy; {new Date().getFullYear()} Isaac Litzenberger &mdash; All rights reserved.</p>
-				</Section>
+				</section>
 			</main>
 		</div>
 	);

@@ -2,7 +2,6 @@ import BaseMeta from "../../components/BaseMeta";
 import WorkBrowser from "../../components/WorkBrowser";
 import Header from "../../components/Header";
 import NavBar from "../../components/NavBar";
-import Section from "../../components/Section";
 import Footer from "../../components/Footer";
 import { getAllWorkMetadata } from "../../lib/work";
 import { useRouter } from "next/router";
@@ -25,8 +24,8 @@ const Index = ({ allWorkMetadata }) => {
 			<BaseMeta title='Isaac "Yak" Litzenberger&apos;s work and projects' desc="Look at detailed information about yak's current and past work." />
 			<NavBar active="work" />
 			<Header heading="Work" />
-			<main className="max-page-width" role="main">
-				<p style={{ marginBottom: "0.5rem" }}>Browse my work experience and personal projects. I have included codebase links, summaries, performance metrics, tech stack details, screenshots, demos, and tools used.</p>
+			<main className="max-page-width">
+				<section>Browse my work experience and personal projects. I have included codebase links, summaries, performance metrics, tech stack details, screenshots, demos, and tools used.</section>
 				<WorkBrowser workMetadata={allWorkMetadata} tagQuery={router.query.q} onQueryUpdate={updateURLQuery} />
 			</main>
 			<Footer>

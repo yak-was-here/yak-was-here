@@ -155,7 +155,7 @@ div.hamburger svg {
 ul.nav-menu {
 	list-style-type: none;
 	transition: all 0.5s 0s ease;
-	max-height: 10em;
+	max-height: 12em;
 	overflow: hidden;
 	padding: 0rem;
 	background-color: var(--background-color);
@@ -374,7 +374,7 @@ footer * {
 	font-size: 0.75rem;
 }
 
-div.footer-container {
+div.footer-branding {
 	width: var(--container-width);
 	margin: auto;
 	text-align: center;
@@ -513,6 +513,16 @@ div.work-browser a {
 	color: var(--text-color);
 }
 
+section.work-view {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+div.work-card a {
+	display: block;
+}
+
 div.work-card {
 	transition: all 0.5s ease;
 	overflow: hidden;
@@ -553,11 +563,13 @@ div.work-card p.summary-body {
 	content: "";
 	position: relative;
 }
+
 /* 
 Sources:
 https://stackoverflow.com/questions/22808040/fading-out-text-on-overflow-with-css-if-the-text-is-bigger-than-allowed
 http://jsfiddle.net/b9vtW/4/
 */
+
 div.work-card p.summary-body:after {
 	content: "";
 	width: 100%;
@@ -612,6 +624,55 @@ em.highlight {
 	text-decoration-color: #048a2c;
 }
 
+.copyright {
+	font-size: small;
+}
+
+main.more {
+	text-align: center;
+}
+
+.more-link-container {
+	margin: auto;
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
 a.more-links {
 	transition: all 0.25s 0s ease;
+}
+
+div.more-background {
+	background-image: url("/img/isaacyakl-hero-background-4k.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	min-height: 100vh;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.resumeBackground {
+	width: 100%;
+	background-image: url("/img/isaacyakl-hero-background-4k.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	min-height: 100vh;
+	padding-top: 0.25in;
+}
+
+.resumePaper {
+	background-color: white;
+	width: 8.5in;
+	height: 11in;
+	max-width: 8.5in;
+	max-height: 11in;
+	padding: 0.25in;
+	box-shadow: #4242425e 4px 9px 8px 0px;
+	font-size: 16pt;
+}
+
+.resumePaper h1 {
+	font-size: 32pt;
 }

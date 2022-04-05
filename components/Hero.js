@@ -2,23 +2,24 @@ import ContactIcons from "./ContactIcons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
+import { fName, lName, title, location } from "../data/meta";
 
 function Hero() {
 	return (
 		<header className="hero no-select">
 			<div className="header-container max-page-width">
 				<h1 className="hero-title">
-					Isaac
+					{fName}
 					<br />
-					Litzenberger
+					{lName}
 				</h1>
 				<hr />
 				<div className="seeking">
 					<FontAwesomeIcon icon={faCode} />
-					Web Developer
+					{title}
 					<br />
 					<FontAwesomeIcon icon={faMapMarkerAlt} />
-					San Francisco Bay Area
+					{location}
 				</div>
 				<ContactIcons id="contact" />
 			</div>
