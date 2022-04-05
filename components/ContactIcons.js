@@ -4,17 +4,18 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faAt } from "@fortawesome/free-solid-svg-icons";
 import EmailLink from "./EmailLink";
+import { twitter, github, instagram } from "../data/meta";
 
 const ContactIcons = ({ id }) => {
 	return (
 		<div id={id} className="social-icons no-select">
-			<a href="https://www.twitter.com/isaacyakl" title="yak on Twitter">
+			<a href={twitter} title="yak on Twitter">
 				<FontAwesomeIcon icon={faTwitter} />
 			</a>
-			<a href="https://www.github.com/isaacyakl" title="yak on GitHub">
+			<a href={github} title="yak on GitHub">
 				<FontAwesomeIcon icon={faGithub} />
 			</a>
-			<a href="https://www.instagram.com/isaacyakl" title="yak on Insta">
+			<a href={instagram} title="yak on Insta">
 				<FontAwesomeIcon icon={faInstagram} />
 			</a>
 			<EmailLink>
