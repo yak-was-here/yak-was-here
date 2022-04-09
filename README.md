@@ -19,10 +19,11 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
    -  isaacyakl.com
    -  nsfphax.com
    -  fairhaven-bc-vbs-2019-soundboard
--  Create blog
 -  Create web-based resume
+-  Create blog
 -  Add structured data
--  Make sure BaseMeta html entities are rendering
+-  Make sure BaseMeta html entities (e.g. `&amp;`) are rendering
+-  [CUBE CSS](https://www.smashingmagazine.com/2021/07/global-local-styling-nextjs/)
 -  Customize Error Pages
 -  Gracefully close nav menu when opening a link from it to another page (e.g. Home -> Experience page)
 -  Implement React-based [Javascript solution for nav menu collapse animation](https://css-tricks.com/using-css-transitions-auto-dimensions/#technique-3-javascript) instead of hard-coded CSS max-height
