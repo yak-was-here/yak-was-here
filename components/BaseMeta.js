@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 function BaseMeta({ title, desc, absoluteURL, robots, googlebot, author }) {
 	return (
 		<Head>
-			{/* Next.js already adds <meta charset="utf-8"/> */}
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
 			<title>{title}</title>
 			<meta name="theme-color" content="#03C03C" />

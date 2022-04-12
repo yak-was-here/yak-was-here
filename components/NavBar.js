@@ -18,25 +18,25 @@ const NavBar = ({ active }) => {
 				</div>
 			</div>
 			<ul className={`nav-menu${isNavMenuOpen ? " hidden" : ""}`}>
-				<li id="home-menuitem" className={`${active === "home" ? " active" : ""}`} role="menuitem">
+				<li id="home-menuitem" className={`${active === "home" ? "active" : ""}`} role="menuitem">
 					<Link href="/">
 						<a>Home</a>
 					</Link>
 				</li>
-				<li id="work-menuitem" className={`${active === "work" ? " active" : ""}`} title="Browse work" role="menuitem">
+				<li id="work-menuitem" className={`${active === "work" ? "active" : ""}`} title="Browse work" role="menuitem">
 					<Link href="/work">
 						<a>Work</a>
 					</Link>
 				</li>
-				<li id="resume-menuitem" className={`${active === "resume" ? " active" : ""}`} title="View resume" role="menuitem">
+				<li id="resume-menuitem" className={`${active === "resume" ? "active" : ""}`} title="View resume" role="menuitem">
 					<Link href="/resume">
 						<a>Resume</a>
 					</Link>
 				</li>
-				<li id="contact-menuitem" className={`${active === "contact" ? " active" : ""}`} role="menuitem">
+				<li id="contact-menuitem" className={`${active === "contact" ? "active" : ""}`} role="menuitem">
 					<EmailLink>Contact</EmailLink>
 				</li>
-				<li id="more-menuitem" className={`${active === "more" ? " active" : ""}`} title="More links" role="menuitem">
+				<li id="more-menuitem" className={`${active === "more" ? "active" : ""}`} title="More links" role="menuitem">
 					<Link href="/more">
 						<a>More</a>
 					</Link>

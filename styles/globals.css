@@ -13,10 +13,17 @@
 
 	/* Sizing */
 	--cta-btn-font-size: 1.4rem;
+
+	/* Resume */
+	--resume-width: calc(8.5 * 96px);
+	--resume-height: calc(11 * 96px);
+	--resume-margin: calc(0.5 * 96px);
 }
 
 /* All */
-* {
+*,
+*::after,
+*::before {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
@@ -106,9 +113,9 @@ ul {
 
 /* Navigation */
 nav {
-	width: 95vw;
+	width: 98vw;
 	margin: auto;
-	padding: var(--space-unit) 0rem;
+	padding: var(--space-unit);
 }
 
 div.nav-dash {
@@ -654,25 +661,62 @@ div.more-background {
 }
 
 .resumeBackground {
-	width: 100%;
+	margin: 0 auto;
 	background-image: url("/img/isaacyakl-hero-background-4k.jpg");
 	background-size: cover;
-	background-attachment: fixed;
-	min-height: 100vh;
-	padding-top: 0.25in;
+	padding: calc(var(--resume-margin) / 2);
+	max-height: 100%;
+	max-width: 100%;
+	overflow: scroll;
 }
 
 .resumePaper {
 	background-color: white;
-	width: 8.5in;
-	height: 11in;
-	max-width: 8.5in;
-	max-height: 11in;
-	padding: 0.25in;
+	width: var(--resume-width);
+	height: var(--resume-height);
+	margin: auto;
+	padding: var(--resume-margin);
 	box-shadow: #4242425e 4px 9px 8px 0px;
-	font-size: 16pt;
 }
 
-.resumePaper h1 {
+.resumeContent {
+	font-size: 16pt;
+	width: 100%;
+	max-height: calc(var(--resume-height) - var(--resume-margin) * 2);
+	overflow: hidden;
+}
+
+.resumeContent h1 {
 	font-size: 32pt;
+	padding: 0;
+}
+
+.resumeContent h1 + h2 {
+	font-size: 20pt;
+	padding: 0;
+}
+
+.resumeContent p {
+	font-size: 12pt;
+}
+
+@media print {
+	nav,
+	footer {
+		display: none;
+	}
+
+	.resumeBackground {
+		background: none;
+		padding: 0in;
+		margin: 0in;
+	}
+
+	.resumePaper {
+		width: initial;
+		height: initial;
+		margin: 0in;
+		padding: 0in;
+		box-shadow: none;
+	}
 }
