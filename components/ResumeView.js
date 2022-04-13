@@ -2,10 +2,25 @@ import { fName, lName, tagline, intro, github, linkedin } from "../data/meta";
 import EmailLink from "./EmailLink";
 import Skill from "./Skill";
 import TelLink, { telNum } from "./TelLink";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload, faPrint } from "@fortawesome/free-solid-svg-icons";
 
 function ResumeView() {
 	return (
 		<div className="resumeBackground">
+			<div className="resumeActions">
+				<Link href="/">
+					<a title="Download">
+						<FontAwesomeIcon icon={faDownload} />
+					</a>
+				</Link>
+				<Link href="/">
+					<a title="Print">
+						<FontAwesomeIcon icon={faPrint} />
+					</a>
+				</Link>
+			</div>
 			<div className="resumePaper">
 				<main className="resumeContent">
 					<h1>

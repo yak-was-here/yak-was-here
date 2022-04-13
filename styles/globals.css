@@ -670,6 +670,34 @@ div.more-background {
 	overflow: scroll;
 }
 
+.resumeActions {
+	position: relative;
+	width: var(--resume-width);
+	height: 0px;
+	font-size: calc(var(--resume-margin) / 2);
+	margin: 0 auto;
+	text-align: right;
+	top: 10px;
+	right: 10px;
+}
+
+.resumeActions svg {
+	color: var(--primary-accent);
+	height: calc(var(--resume-margin) / 2);
+	width: calc(var(--resume-margin) / 2);
+	padding: 5px;
+	margin-left: 5px;
+	vertical-align: middle;
+	box-sizing: content-box;
+	border-radius: 3px;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.resumeActions svg:hover {
+	color: white;
+	background-color: var(--primary-accent);
+}
+
 .resumePaper {
 	background-color: white;
 	width: var(--resume-width);
@@ -703,6 +731,10 @@ div.more-background {
 @media print {
 	nav,
 	footer {
+		display: none;
+	}
+
+	.resumeActions {
 		display: none;
 	}
 
