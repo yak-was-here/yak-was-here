@@ -41,10 +41,17 @@ a:active {
 	transition: all 0.25s ease-in;
 	color: var(--primary-accent);
 	text-decoration: none;
+	cursor: pointer;
 }
 
 a:hover {
 	color: #048a2c;
+}
+
+button.link {
+	border: none;
+	background: none;
+	cursor: pointer;
 }
 
 hr {
@@ -742,6 +749,7 @@ div.more-background {
 		background: none;
 		padding: 0in;
 		margin: 0in;
+		overflow: hidden;
 	}
 
 	.resumePaper {

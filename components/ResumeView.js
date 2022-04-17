@@ -7,19 +7,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload, faPrint } from "@fortawesome/free-solid-svg-icons";
 
 function ResumeView() {
+	const printResume = () => {
+		window.print();
+	};
+
 	return (
 		<div className="resumeBackground">
 			<div className="resumeActions">
-				<Link href="/">
-					<a title="Download">
+				<Link href="./litzenberger-isaac-web-developer-resume.pdf">
+					<button className="link" title="Download">
 						<FontAwesomeIcon icon={faDownload} />
-					</a>
+					</button>
 				</Link>
-				<Link href="/">
-					<a title="Print">
-						<FontAwesomeIcon icon={faPrint} />
-					</a>
-				</Link>
+				<button className="link" title="Print" onClick={printResume}>
+					<FontAwesomeIcon icon={faPrint} />
+				</button>
 			</div>
 			<div className="resumePaper">
 				<main className="resumeContent">
