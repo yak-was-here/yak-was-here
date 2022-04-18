@@ -715,24 +715,38 @@ div.more-background {
 }
 
 .resumeContent {
-	font-size: 16pt;
 	width: 100%;
 	max-height: calc(var(--resume-height) - var(--resume-margin) * 2);
 	overflow: hidden;
 }
 
+.resumeContent * {
+	font-size: 12pt;
+	padding: 0;
+	margin: 0 0 0.125in 0;
+	box-sizing: border-box;
+}
+
 .resumeContent h1 {
 	font-size: 32pt;
-	padding: 0;
+	text-align: center;
 }
 
 .resumeContent h1 + h2 {
-	font-size: 20pt;
-	padding: 0;
+	font-size: 18pt;
+	text-align: center;
 }
 
-.resumeContent p {
-	font-size: 12pt;
+.resumeContent .contact-info {
+	text-align: center;
+}
+
+.resumeContent h2 {
+	font-size: 18pt;
+}
+
+.resumeContent p,
+.intro {
 }
 
 @media print {

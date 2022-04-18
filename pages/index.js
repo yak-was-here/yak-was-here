@@ -16,7 +16,10 @@ export default function Home() {
 			<main className="max-page-width">
 				<section>
 					<h2>About</h2>
-					{intro}
+					<div className="intro">
+						<p>{intro}</p>
+						<p>I am seeking work that offers experience with modern web architecture (Web3) and attempts to solve meaningful problems.</p>
+					</div>
 				</section>
 				<section>
 					<h2>Skills</h2>

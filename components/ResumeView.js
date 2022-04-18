@@ -47,10 +47,14 @@ function ResumeView() {
 						</a>
 					</p>
 					<h2>Intro</h2>
-					{intro}
+					<p>{intro}</p>
 					<h2>Work Experience</h2>
 					<h2>Education</h2>
-					<Skill />
+					<ul>
+						<Skill />
+						<Skill />
+						<Skill />
+					</ul>
 					<h2>Projects</h2>
 					<h2>Courses</h2>
 				</main>
