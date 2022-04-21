@@ -36,10 +36,26 @@ export default function Home() {
 						<ul className="skills">
 							<h3>Back end</h3>
 							<Skill>Next.js</Skill>
-							<Skill>PHP</Skill>
 							<Skill>Node.js</Skill>
+							<Skill>PHP</Skill>
 							<Skill>Express.js</Skill>
 							<Skill>MongoDB</Skill>
+						</ul>
+						<ul className="skills">
+							<h3>Languages</h3>
+							<Skill>JavaScript</Skill>
+							<Skill>TypeScript</Skill>
+							<Skill>Python</Skill>
+							<Skill>PHP</Skill>
+							<Skill>HTML</Skill>
+							<Skill>CSS</Skill>
+						</ul>
+						<ul className="skills">
+							<h3>APIs</h3>
+							<Skill>Shopify</Skill>
+							<Skill>YouTube</Skill>
+							<Skill>Twitch</Skill>
+							<Skill>Spotify</Skill>
 						</ul>
 						<ul className="skills">
 							<h3>Tools</h3>
