@@ -28,7 +28,7 @@ export default function Home() {
 							<h3>Front end</h3>
 							<Skill>Next.js</Skill>
 							<Skill>React.js</Skill>
-							<Skill q="Liquid">Shopify Liquid</Skill>
+							<Skill>Liquid</Skill>
 							<Skill>TailwindCSS</Skill>
 							<Skill>jQuery</Skill>
 							<Skill>Bootstrap</Skill>
