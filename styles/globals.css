@@ -77,31 +77,31 @@ h6 {
 }
 
 h1 {
-	font-size: 3.15rem;
+	font-size: 3rem;
 }
 
 h2 {
-	font-size: 2.95rem;
+	font-size: 2rem;
+	color: #333333;
 }
 
 h3 {
-	font-size: 2.65rem;
-	color: #424242;
+	font-size: 1.7rem;
+	color: #666666;
 }
 
 h4 {
-	font-size: 2.35rem;
-	color: #424242;
+	font-size: 1.5rem;
+	color: #999999;
 }
 
 h5 {
-	font-size: 2.25rem;
-	color: #666666;
+	font-size: 1.4rem;
+	color: #999999;
 }
 
 h6 {
-	font-size: 2.1rem;
-	color: #666666;
+	font-size: 1.3rem;
 }
 
 p {
@@ -459,10 +459,6 @@ a.cta:hover,
 	content: " \2197";
 }
 
-#tags {
-	font-size: 2.1rem;
-}
-
 ul.work-tags {
 	padding: 0rem;
 }
@@ -560,15 +556,6 @@ div.work-card:hover {
 
 .work-card-summary h3 {
 	font-size: 1rem;
-}
-
-.work-date {
-	font-size: 1.7rem;
-	color: #666666;
-}
-
-.work-role {
-	font-size: 2rem;
 }
 
 div.work-card p.summary-body {
