@@ -19,8 +19,8 @@ const Work = ({ title, date, images, tags, results, role, summary, links, htmlCo
 					<Image src={`/img/work/${images[0]}`} layout="responsive" width="100%" height="60vh" objectFit="cover" objectPosition="center top" alt={title} />
 				</section>
 				<section>
-					<h2 className="work-date">{date}</h2>
-					<h2 className="work-role">{role}</h2>
+					<h2>{role}</h2>
+					<h3>{date}</h3>
 					<ul>
 						{results.map((r, i) => {
 							return <li key={`result${i}`}>{r}</li>;
@@ -28,11 +28,11 @@ const Work = ({ title, date, images, tags, results, role, summary, links, htmlCo
 					</ul>
 					<p dangerouslySetInnerHTML={{ __html: summary }}></p>
 					{links !== undefined ? (
-						<p className="text-center">
+						<p className="work-links text-center">
 							{links.map((l) => {
 								return (
 									<Link href={l.url} key={l.title}>
-										<a className="btn cta-link work-links" target="_blank" rel="noopener">
+										<a className="btn cta-link work-link" target="_blank" rel="noopener">
 											{l.title}
 										</a>
 									</Link>
@@ -42,7 +42,7 @@ const Work = ({ title, date, images, tags, results, role, summary, links, htmlCo
 					) : (
 						``
 					)}
-					<h3 id="tags">Tags</h3>
+					<h3 id="tags">Skills & tools used</h3>
 					{tags !== undefined ? <WorkTags tags={tags} /> : ``}
 				</section>
 				<section dangerouslySetInnerHTML={{ __html: htmlContent }}></section>

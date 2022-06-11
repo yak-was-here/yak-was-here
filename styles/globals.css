@@ -7,7 +7,7 @@
 	--text-color: #000000;
 
 	/* Utilities */
-	--container-width: 85vw;
+	--container-width: 83vw;
 	--space-unit: 0.5rem;
 	--border-radius: 0.1rem;
 
@@ -73,7 +73,7 @@ h5,
 h6 {
 	font-family: "Bebas Neue", serif;
 	font-weight: 100;
-	padding-bottom: var(--space-unit);
+	padding-bottom: calc(var(--space-unit) * 2);
 }
 
 h1 {
@@ -459,6 +459,10 @@ a.cta:hover,
 	content: " \2197";
 }
 
+.work-links {
+	padding: calc(var(--space-unit) * 2) 0rem;
+}
+
 ul.work-tags {
 	padding: 0rem;
 }
@@ -485,7 +489,7 @@ ul.work-tags a:hover {
 	background-color: rgba(0, 0, 0, 0);
 }
 
-a.work-links {
+a.work-link {
 	font-size: 1.2rem;
 	color: white;
 	background-color: white;
@@ -493,7 +497,7 @@ a.work-links {
 	background-color: var(--primary-accent);
 }
 
-a.work-links:hover {
+a.work-link:hover {
 	color: var(--primary-accent);
 	background-color: rgba(0, 0, 0, 0);
 }
@@ -552,10 +556,15 @@ div.work-card:hover {
 
 .work-card-summary h2 {
 	font-size: 2rem;
+	padding: 0 0 var(--space-unit) 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .work-card-summary h3 {
 	font-size: 1rem;
+	padding: 0 0 var(--space-unit) 0;
 }
 
 div.work-card p.summary-body {
@@ -583,8 +592,9 @@ div.work-card p.summary-body:after {
 }
 
 div.work-card-summary {
+	font-size: 0.65rem;
 	margin-top: 10px;
-	padding: calc(var(--space-unit) * 2);
+	padding: var(--space-unit);
 }
 
 div.work-card-border {

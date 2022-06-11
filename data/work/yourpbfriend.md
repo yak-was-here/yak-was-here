@@ -25,7 +25,7 @@ links:
     url: https://www.facebook.com/YourPBfriend/
   - title: 'Best Paintball Setups Video'
     url: https://www.youtube.com/watch?v=IGxCeL8g8hI
-summary: 'I worked as a Web Developer and Digital Marketer for YourPbFriend from 2014-2016. During that time, I helped YourPbFriend.com become the fastest growing online Paintball retailer &mdash; peaking at #2 by sales in 2015-2016 &mdash; and the #1 choice for Paintball gear trade-ins. I aggressively focused on our competitive advantage in used Paintball markers. This took shape in SEO, an in-depth trade-in
+summary: 'I worked as a Web Developer and Digital Marketer for YourPbFriend from 2014-2016. During that time, I helped YourPbFriend.com become the fastest growing online Paintball retailer &mdash; peaking at #2 by sales in 2015-2016 &mdash; and the #1 choice for Paintball gear trade-ins. This was made possible by focusing on our experience with used Paintball markers. I made this competitive advantage central to our business model with tasks including SEO, an in-depth trade-in
 web application, a robust used gun rating system, and delivery of high-quality product photos and videos. Our trade-in program is emulated by virtually every other online paintball
 retailer today.'
 tags:

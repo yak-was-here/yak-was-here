@@ -6,6 +6,7 @@ import Footer from "../../components/Footer";
 import { getAllWorkMetadata } from "../../lib/work";
 import { useRouter } from "next/router";
 import ContactBtn from "../../components/ContactBtn";
+import Link from "next/link";
 
 const Index = ({ allWorkMetadata }) => {
 	const router = useRouter();
@@ -25,7 +26,9 @@ const Index = ({ allWorkMetadata }) => {
 			<NavBar active="work" />
 			<Header heading="Work" />
 			<main className="max-page-width">
-				<section>Browse my work experience and personal projects. I have included codebase links, summaries, performance metrics, tech stack details, screenshots, demos, and tools used.</section>
+				<section>
+					Browse my work experience and personal projects. In many cases I have included codebase links, tech stack details, screenshots, demos, performance metrics, and tools used. Even more work and projects can be found on my <Link href="https://github.com/isaacyakl">GitHub</Link>.
+				</section>
 				<WorkBrowser workMetadata={allWorkMetadata} tagQuery={router.query.q} onQueryUpdate={updateURLQuery} />
 			</main>
 			<Footer>

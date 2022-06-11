@@ -8,7 +8,7 @@ export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate }) {
 
 	// Format a raw work data array into an WorkCard components array
 	const formatWork = (e) => {
-		return e.map((xp) => <WorkCard id={xp.id} key={xp.id} image={xp.images[0]} title={xp.title} date={xp.date} role={xp.role} summary={xp.summary} />);
+		return e.map((xp) => <WorkCard id={xp.id} key={xp.id} image={xp.images[0]} title={xp.title} summary={xp.summary} />);
 	};
 
 	// Filter the raw work data array based on the search query
