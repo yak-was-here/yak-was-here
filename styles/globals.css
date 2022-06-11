@@ -568,6 +568,8 @@ div.work-card:hover {
 }
 
 div.work-card p.summary-body {
+	padding: 0;
+	margin: 0;
 	max-height: 6em;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -663,6 +665,29 @@ div.more-background {
 
 .text-center {
 	text-align: center;
+}
+
+.drop-shadow {
+	-webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
+	box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
+}
+
+.page-meta {
+	padding: var(--space-unit) 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: center;
+	align-content: space-around;
+	margin: auto;
+}
+
+.breadcrumbs {
+	font-size: 0.5rem;
+}
+
+.breadcrumbs a {
+	text-decoration: underline;
 }
 
 .resumeBackground {

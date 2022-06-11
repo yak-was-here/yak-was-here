@@ -7,6 +7,7 @@ import { getAllWorkMetadata } from "../../lib/work";
 import { useRouter } from "next/router";
 import ContactBtn from "../../components/ContactBtn";
 import Link from "next/link";
+import Breadcrumbs from "../../components/Breadcrumbs";
 
 const Index = ({ allWorkMetadata }) => {
 	const router = useRouter();
@@ -24,6 +25,12 @@ const Index = ({ allWorkMetadata }) => {
 		<>
 			<BaseMeta title='Isaac "Yak" Litzenberger&apos;s work and projects' desc="Look at detailed information about yak's current and past work." />
 			<NavBar active="work" />
+			<Breadcrumbs
+				trail={[
+					{ text: "Home", link: "/" },
+					{ text: "Work", link: "/work" },
+				]}
+			/>
 			<Header heading="Work" />
 			<main className="max-page-width">
 				<section>

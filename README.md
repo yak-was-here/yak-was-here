@@ -19,7 +19,10 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
    -  isaacyakl.com
    -  nsfphax.com
    -  fairhaven-bc-vbs-2019-soundboard
+-  Sort all work in WorkBrowser by date (newest first)
 -  Create web-based resume
+-  Printing should include branding and copyright
+-  Create sitemap generator
 -  Make sure BaseMeta html entities (e.g. `&amp;`) are rendering
 -  Customize Error Pages
 -  Create blog

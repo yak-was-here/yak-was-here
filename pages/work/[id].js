@@ -7,26 +7,36 @@ import { getAllWorkIds, getWorkFileData } from "../../lib/work";
 import Link from "next/link";
 import WorkTags from "../../components/WorkTags";
 import ContactBtn from "../../components/ContactBtn";
+import Breadcrumbs from "../../components/Breadcrumbs";
 
 const Work = ({ title, date, images, tags, results, role, summary, links, htmlContent }) => {
 	return (
 		<>
 			<BaseMeta title={`The ${title} development process`} desc={`Read about the development process of ${title} and how yak was involved.`} />
 			<NavBar active="work" />
+			<Breadcrumbs
+				trail={[
+					{ text: "Home", link: "/" },
+					{ text: "Work", link: "/work" },
+					{ text: title, link: "" },
+				]}
+			/>
 			<Header heading={title} />
 			<main className="max-page-width">
 				<section>
-					<Image src={`/img/work/${images[0]}`} layout="responsive" width="100%" height="60vh" objectFit="cover" objectPosition="center top" alt={title} />
+					<div className="drop-shadow" style={{ border: "1px solid rgba(0,0,0,0.4)" }}>
+						<Image src={`/img/work/${images[0]}`} layout="responsive" width="100%" height="60vh" objectFit="cover" objectPosition="center top" alt={title} />
+					</div>
 				</section>
 				<section>
-					<h2>{role}</h2>
-					<h3>{date}</h3>
+					<h2>Summary</h2>
 					<ul>
 						{results.map((r, i) => {
 							return <li key={`result${i}`}>{r}</li>;
 						})}
 					</ul>
 					<p dangerouslySetInnerHTML={{ __html: summary }}></p>
+					<h3>Links</h3>
 					{links !== undefined ? (
 						<p className="work-links text-center">
 							{links.map((l) => {
