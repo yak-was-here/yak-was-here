@@ -6,7 +6,7 @@ import { fName, lName, title, location } from "../data/meta";
 
 function Hero() {
 	return (
-		<header className="hero no-select">
+		<header className="hero">
 			<div className="header-container max-page-width">
 				<h1 className="hero-title">
 					{fName}
