@@ -13,7 +13,7 @@ function ResumeView() {
 
 	return (
 		<div className="resumeBackground">
-			<div className="resumeActions">
+			<div className="resumeActions dont-print">
 				<Link href="./litzenberger-isaac-web-developer-resume.pdf">
 					<button className="link" title="Download">
 						<FontAwesomeIcon icon={faDownload} />

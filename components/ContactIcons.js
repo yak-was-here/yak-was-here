@@ -6,9 +6,9 @@ import { faAt } from "@fortawesome/free-solid-svg-icons";
 import EmailLink from "./EmailLink";
 import { twitter, github, instagram } from "../data/meta";
 
-const ContactIcons = ({ id }) => {
+const ContactIcons = ({ id, className = "" }) => {
 	return (
-		<div id={id} className="social-icons no-select">
+		<div id={id} className={`social-icons no-select ${className}`}>
 			<a href={twitter} title="yak on Twitter">
 				<FontAwesomeIcon icon={faTwitter} />
 			</a>

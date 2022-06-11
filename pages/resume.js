@@ -8,8 +8,9 @@ function Resume() {
 	return (
 		<>
 			<BaseMeta title={`${fName} ${lName}'s Resume`} desc={`${fName} ${lName} &mdash; ${tagline.toLowerCase()} &mdash; Resume`} />
-			<NavBar active="resume" />
+			<NavBar active="resume" className="dont-print" />
 			<Breadcrumbs
+				className="dont-print no-select"
 				trail={[
 					{ text: "Home", link: "/" },
 					{ text: "Resume", link: "/resume" },

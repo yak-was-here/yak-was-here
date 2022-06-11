@@ -6,18 +6,18 @@ import { useState } from "react";
 import Branding from "../components/Branding";
 import EmailLink from "./EmailLink";
 
-const NavBar = ({ active }) => {
+const NavBar = ({ active, className = "" }) => {
 	const [isNavMenuOpen, setNavMenuState] = useState(true); // Nav menu starts open
 
 	return (
-		<nav className="no-select">
+		<nav className={`no-select ${className}`}>
 			<div id="top" className="nav-dash">
 				<Branding />
-				<div className="hamburger" onClick={() => setNavMenuState(!isNavMenuOpen)} role="menu" aria-owns="home-menuitem work-menuitem resume-menuitem contact-menuitem more-menuitem">
+				<div className="hamburger dont-print" onClick={() => setNavMenuState(!isNavMenuOpen)} role="menu" aria-owns="home-menuitem work-menuitem resume-menuitem contact-menuitem more-menuitem">
 					<FontAwesomeIcon icon={faBars} />
 				</div>
 			</div>
-			<ul className={`nav-menu${isNavMenuOpen ? " hidden" : ""}`}>
+			<ul className={`nav-menu dont-print${isNavMenuOpen ? " hidden" : ""}`}>
 				<li id="home-menuitem" className={`${active === "home" ? "active" : ""}`} role="menuitem">
 					<Link href="/">
 						<a>Home</a>

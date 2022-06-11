@@ -77,7 +77,7 @@ h6 {
 }
 
 h1 {
-	font-size: 3rem;
+	font-size: 2.25rem;
 }
 
 h2 {
@@ -116,6 +116,7 @@ ul {
 
 .max-page-width {
 	max-width: var(--container-width);
+	margin: auto;
 }
 
 /* Navigation */
@@ -672,18 +673,14 @@ div.more-background {
 	box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
 }
 
-.page-meta {
+.breadcrumbs {
+	font-size: 0.5rem;
 	padding: var(--space-unit) 0;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-end;
 	align-items: center;
 	align-content: space-around;
-	margin: auto;
-}
-
-.breadcrumbs {
-	font-size: 0.5rem;
 }
 
 .breadcrumbs a {
@@ -773,13 +770,24 @@ div.more-background {
 }
 
 @media print {
-	nav,
-	footer {
+	.dont-print {
 		display: none;
 	}
 
-	.resumeActions {
+	div.work-card p.summary-body:after {
 		display: none;
+	}
+
+	div.work-card p.summary-body {
+		max-height: 7em;
+	}
+
+	footer {
+		background: none;
+	}
+
+	div.more-background {
+		background-attachment: initial;
 	}
 
 	.resumeBackground {
