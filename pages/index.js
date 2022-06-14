@@ -16,7 +16,7 @@ export default function Home() {
 					<h2>About</h2>
 					<div className="intro">
 						<p>{intro}</p>
-						<p>I am seeking work that offers experience with modern web architecture (Web3) and attempts to solve meaningful problems.</p>
+						<p>I am seeking work that offers experience with modern web architecture and attempts to solve meaningful problems.</p>
 					</div>
 				</section>
 			</main>
