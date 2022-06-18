@@ -22,13 +22,15 @@ const Work = ({ title, date, images, tags, results, role, summary, links, htmlCo
 				]}
 			/>
 			<Header heading={title} />
-			<main className="max-page-width">
+			<main className="work">
 				<section>
-					<div className="drop-shadow" style={{ border: "1px solid rgba(0,0,0,0.4)" }}>
-						<Image src={`/img/work/${images[0]}`} layout="responsive" width="100%" height="60vh" objectFit="cover" objectPosition="center top" alt={title} />
+					<div className="drop-shadow ss">
+						<Link href={`/img/work/${images[0]}`} passHref>
+							<a title="Enlarge screenshot">
+								<Image src={`/img/work/${images[0]}`} layout="responsive" width="100%" height="60vh" objectFit="cover" objectPosition="center top" alt={`${title} screenshot`} />
+							</a>
+						</Link>
 					</div>
-				</section>
-				<section>
 					<h2>Summary</h2>
 					<ul>
 						{results.map((r, i) => {
@@ -36,7 +38,6 @@ const Work = ({ title, date, images, tags, results, role, summary, links, htmlCo
 						})}
 					</ul>
 					<p dangerouslySetInnerHTML={{ __html: summary }}></p>
-					<h3>Links</h3>
 					{links !== undefined ? (
 						<p className="work-links text-center">
 							{links.map((l) => {
@@ -55,7 +56,9 @@ const Work = ({ title, date, images, tags, results, role, summary, links, htmlCo
 					<h3 id="tags">Skills & tools used</h3>
 					{tags !== undefined ? <WorkTags tags={tags} /> : ``}
 				</section>
-				<section dangerouslySetInnerHTML={{ __html: htmlContent }}></section>
+				<div className="work-details-body">
+					<section dangerouslySetInnerHTML={{ __html: htmlContent }}></section>
+				</div>
 			</main>
 			<Footer>
 				<ContactBtn />
