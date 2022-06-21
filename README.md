@@ -7,7 +7,6 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 # To-Do
 
 -  Add all work
-   -  YourPbFriend
    -  New Breed Paintball & Airsoft
    -  MAP Training
    -  ypbf-shopify-theme
