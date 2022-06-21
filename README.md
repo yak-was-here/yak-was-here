@@ -22,6 +22,7 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 -  Sort all work in WorkBrowser by date (newest first)
 -  Create web-based resume
 -  Create sitemap generator
+-  Add services landing page and services component
 -  Make sure BaseMeta html entities (e.g. `&amp;`) are rendering
 -  Customize Error Pages
 -  Create blog
