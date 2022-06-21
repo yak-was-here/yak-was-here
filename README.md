@@ -18,7 +18,6 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
    -  isaacyakl.com
    -  nsfphax.com
    -  fairhaven-bc-vbs-2019-soundboard
--  Sort all work in WorkBrowser by date (newest first)
 -  Create web-based resume
 -  Create sitemap generator
 -  Add services landing page and services component
