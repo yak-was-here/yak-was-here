@@ -53,7 +53,7 @@ export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate }) {
 				autoFocus
 				autoComplete="off"
 			/>
-			{searchQuery !== "" && filteredWorkComponents.length > 1 ? <p>Work found under &ldquo;{searchQuery}&rdquo;:</p> : ""}
+			{searchQuery !== "" && filterWork().length !== 0 ? <p>Work found under &ldquo;{searchQuery}&rdquo;:</p> : ""}
 			<section className="work-view">{filteredWorkComponents}</section>
 		</div>
 	);
