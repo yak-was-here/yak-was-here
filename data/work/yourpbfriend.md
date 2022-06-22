@@ -2,16 +2,7 @@
 title: YourPbFriend
 date: 2014-2016
 images:
-  - yourpbfriend-ss1-frontpage.png
-  - yourpbfriend-ss2-usedguns.png
-  - yourpbfriend-ss3-footer.png
-  - yourpbfriend-ss4-about.png
-  - yourpbfriend-ss5-tradeinform.png
-  - yourpbfriend-ss6-newguns.png
-  - yourpbfriend-ss7-product.png
-  - yourpbfriend-ss8-social.png
-  - yourpbfriend-ss9-responsive.png
-  - yourpbfriend-ss10-responsivemenu.png
+  - yourpbfriend-ss1-frontpage2.jpg
 role: "Web Developer, Digital Marketer"
 results:
   - "Developed the #1 most-used Paintball trade-in web app of 2015-2016"
@@ -123,6 +114,8 @@ YourPbFriend digital marketing campaigns primarily utilized website banners, ema
 [![YourPbFriend ad samples image](/img/work/yourpbfriend-ss17-ad-samples.jpg)](/img/work/yourpbfriend-ss17-ad-samples.jpg)
 
 The ads either served products that customers had viewed or promoted the trade program and seasonal deals. I placed them on [PbNation](https://pbnation.com), the Google Display Network, and the Facebook (Meta) Ads Network, and I optimized the ad results with A/B testing. However, the latter two ad networks eventually restricted Paintball and Airsoft advertisements. Because of this, we attempted to only market gear (without guns) as a way around the Google and Facebook restrictions, but ultimately failed.
+
+[![YourPbFriend banner samples image](/img/work/yourpbfriend-ss20-banner-samples2.jpg)](/img/work/yourpbfriend-ss20-banner-samples2.jpg)
 
 [![YourPbFriend banner samples image](/img/work/yourpbfriend-ss18-banner-samples.jpg)](/img/work/yourpbfriend-ss18-banner-samples.jpg)
 
