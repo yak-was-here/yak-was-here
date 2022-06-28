@@ -688,7 +688,7 @@ div.more-background {
 }
 
 .breadcrumbs {
-	font-size: 0.5rem;
+	font-size: 0.75rem;
 	padding: var(--space-unit) 0;
 	display: flex;
 	flex-wrap: wrap;
