@@ -110,6 +110,8 @@ I perform many essential one-time and daily SEO tasks. Much of my time in this r
 
 ### E-commerce
 
+[![NBPA product screenshot](/img/work/nbpa-ss14-product.jpg)](/img/work/nbpa-ss14-product.jpg)
+
 My e-commerce tasks involve product, process, and staff management. I routinely verify the work of staff members in the backend of Shopify. This includes the correction, addition, and management of a +3,000 product catalog. Product details (e.g. descriptions, MPNs/SKUs, UPCs, costs, prices, etc.) must be kept up-to-date and compliant with manufacturer MAP prices, especially in the current economy. I make an effort to include the most accurate and helpful details, including videos, high-quality images, product compatibility, and what is included with each purchase.
 
 [![NBPA SOP screenshot](/img/work/nbpa-ss7-sop.jpg)](/img/work/nbpa-ss7-sop.jpg)
