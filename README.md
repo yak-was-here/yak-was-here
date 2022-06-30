@@ -21,10 +21,11 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 -  Create web-based resume
 -  Create sitemap generator
 -  Add services landing page and services component
+-  Create "TOC" for work headings
 -  Make sure BaseMeta html entities (e.g. `&amp;`) are rendering
 -  Customize Error Pages
+-  Add RichSnippets (including blog structured data for work)
 -  Create blog
--  Add RichSnippets
 -  Add [react icons](https://react-icons.github.io/react-icons) to work tags/skills/tools
 -  Use JS to make nav menu sticky on resume page
 -  [CUBE CSS](https://www.smashingmagazine.com/2021/07/global-local-styling-nextjs/)
