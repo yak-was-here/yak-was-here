@@ -10,7 +10,7 @@ links:
      url: https://github.com/isaacyakl/remote-jackbox-player
    - title: Player
      url: https://remote-jackbox-player.isaacyakl.com
-summary: "Find and play Jackbox games remotely even if you don't own any. Enter a stream URL or connect a Twitch account to start playing. This player was designed during 2020 when COVID-19 was keeping everyone apart, and it aims to bring friends and family together through Jackbox games. This player was designed with mobile devices in mind, so it offers a few viewing options that make it easy to move between stream and game panes. Try it on your 📲 smartphone and tablet!"
+summary: "Find and play Jackbox games remotely, even if you don't own any. Enter a stream URL or connect a Twitch account to start playing. This player was written in 2020 when COVID-19 was keeping everyone apart, and it aims to bring friends and family together through Jackbox games. This player was designed with mobile devices in mind, so it offers a few viewing options that make it easy to move between the stream and game panes. Try it on your 📲 smartphone and tablet!"
 tags:
    - JavaScript
    - Tailwind CSS
