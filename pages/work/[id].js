@@ -10,6 +10,18 @@ import ContactBtn from "../../components/ContactBtn";
 import Breadcrumbs from "../../components/Breadcrumbs";
 
 const Work = ({ title, date, images, tags, results, role, summary, links, htmlContent }) => {
+	const getResults = () => {
+		if (results && results.length > 0) {
+			return (
+				<ul>
+					{results.map((r, i) => {
+						return <li key={`result${i}`}>{r}</li>;
+					})}
+				</ul>
+			);
+		} else return "";
+	};
+
 	return (
 		<>
 			<BaseMeta title={`The ${title} development process`} desc={`Read about the development process of ${title} and how yak was involved.`} />
@@ -32,11 +44,7 @@ const Work = ({ title, date, images, tags, results, role, summary, links, htmlCo
 						</Link>
 					</div>
 					<h2>Summary</h2>
-					<ul>
-						{results.map((r, i) => {
-							return <li key={`result${i}`}>{r}</li>;
-						})}
-					</ul>
+					{getResults()}
 					<p dangerouslySetInnerHTML={{ __html: summary }}></p>
 					{links !== undefined ? (
 						<p className="work-links text-center">

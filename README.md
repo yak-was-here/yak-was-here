@@ -7,11 +7,7 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 # To-Do
 
 -  Add all work
-   -  New Breed Paintball & Airsoft
    -  MAP Training
-   -  ypbf-shopify-theme
-   -  new-breed-shopify-theme
-   -  nbpa-trade-form
    -  remote-jackbox-player
    -  brandojs
    -  Alive in Christ
@@ -19,11 +15,12 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
    -  nsfphax.com
    -  fairhaven-bc-vbs-2019-soundboard
 -  Create web-based resume
--  Create sitemap generator
 -  Add services landing page and services component
+-  Do not oversize small images in work cover pictures
 -  Create "TOC" for work headings
 -  Make sure BaseMeta html entities (e.g. `&amp;`) are rendering
 -  Customize Error Pages
+-  Create sitemap generator
 -  Add RichSnippets (including blog structured data for work)
 -  Create blog
 -  Add [react icons](https://react-icons.github.io/react-icons) to work tags/skills/tools
