@@ -2,47 +2,31 @@
 title: Remote Jackbox Player
 date: 2020
 images:
-  - yourpbfriend-ss1-frontpage.png
-  - yourpbfriend-ss2-usedguns.png
-  - yourpbfriend-ss3-footer.png
-  - yourpbfriend-ss4-about.png
-  - yourpbfriend-ss5-tradeinform.png
-  - yourpbfriend-ss6-newguns.png
-  - yourpbfriend-ss7-product.png
-  - yourpbfriend-ss8-social.png
-  - yourpbfriend-ss9-responsive.png
-  - yourpbfriend-ss10-responsivemenu.png
+   - remote-jackbox-player-ss1-cover.jpg
 role: ""
 results:
-  - "Launched an online trade-in program that became #1 in the industry by volume"
-  - Developed a Shopify web store that increased revenue by 10x in 2 years
 links:
-  - title: Theme Code
-    url: https://github.com/isaacyakl/ypbf-shopify-theme
-  - title: Facebook Page
-    url: https://www.facebook.com/YourPBfriend/
-  - title: 'Popular Video'
-    url: https://www.youtube.com/watch?v=IGxCeL8g8hI
-summary: 'I was a brought on as a Web Developer and Digital Marketer for YourPbFriend from 2014-2016. During that time, we brought
-YourPbFriend.com to the #2 online Paintball retailer by sales from 2015-2016 and were the fastest growing Paintball retailer at the time.
-We differentiated ourselves from the competition with an in-depth Paintball trade-in
-program featuring a robust rating system, high-quality photos/videos, and 30-day
-return policy. Our program is emulated by virtually every other online paintball
-retailer today.'
+   - title: Code
+     url: https://github.com/isaacyakl/remote-jackbox-player
+   - title: Player
+     url: https://remote-jackbox-player.isaacyakl.com
+summary: "Find and play Jackbox games remotely even if you don't own any. Enter a stream URL or connect a Twitch account to start playing. This player was designed during 2020 when COVID-19 was keeping everyone apart, and it aims to bring friends and family together through Jackbox games. This player was designed with mobile devices in mind, so it offers a few viewing options that make it easy to move between stream and game panes. Try it on your 📲 smartphone and tablet!"
 tags:
-- JavaScript
-- Twitch API
-- Font Awesome
+   - JavaScript
+   - Tailwind CSS
+   - Twitch API
+   - Font Awesome
+   - Project
 ---
 
-## Shopify Liquid
+[![Remote Jackbox Player controls screenshot](/img/work/remote-jackbox-player-ss3-controls.jpg)](/img/work/remote-jackbox-player-ss3-controls.jpg)
 
-## Trade-In System
+The user interface was built using Tailwind CSS and Font Awesome to create controls and two panes: a stream pane and a game pane. Controls give options for reloading the stream if it falls behind, toggling the controls, changing the view, searching for a stream, and sharing the current stream view.
 
-![Trade-In Program](/img/work/yourpbfriend-ss5-tradeinform.png)
+[![Remote Jackbox Player swap view screen capture](/img/work/remote-jackbox-player-ss2-swap-view.gif)](/img/work/remote-jackbox-player-ss2-swap-view.gif)
 
-## YouTube Feed
+Because it was designed with mobile devices in mind, it offers a few pane viewing options suitable for small screen sizes. Swap View, Swipe View, and Scroll View make each pane full screen and allow easy pane switching. It also captures exit intent actions and double checks if the user wants to close or reload the game site so that a seat in the game isn't accidentally lost.
 
-We chose the Shopify e-commerce platform due to its growing third-party application ecosystem. I
+[![Remote Jackbox Player stream pane screenshot](/img/work/remote-jackbox-player-ss4-stream-pane.jpg)](/img/work/remote-jackbox-player-ss4-stream-pane.jpg)
 
-## Graphic Design
+In the background, Remote Jackbox Player uses JavaScript to access the Twitch API. After connecting a Twitch account, clicking in the stream URL field will display a list of streamers from your follower list if they are actively playing a Jackbox game. It also has the option to randomly find a streamer from Twitch who is playing one of the games found in the [feature-random-stream-game-ids.json](https://github.com/isaacyakl/remote-jackbox-player/blob/master/feature-random-stream-game-ids.json). If a stream URL is entered into the field instead, the stream frame is updated with the appropriate embed code if it is from Twitch or a generic iframe for other stream URLs. Virtually any web streaming platform should be supported.
