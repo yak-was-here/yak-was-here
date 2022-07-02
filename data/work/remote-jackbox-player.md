@@ -16,6 +16,8 @@ tags:
    - Tailwind CSS
    - Twitch API
    - Font Awesome
+   - HTML
+   - CSS
    - Project
 ---
 
