@@ -8,12 +8,10 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 
 -  Add all work
    -  MAP Training
-   -  remote-jackbox-player
    -  brandojs
    -  Alive in Christ
    -  isaacyakl.com
    -  nsfphax.com
-   -  fairhaven-bc-vbs-2019-soundboard
 -  Create web-based resume
 -  Add services landing page and services component
 -  Do not oversize small images in work cover pictures
