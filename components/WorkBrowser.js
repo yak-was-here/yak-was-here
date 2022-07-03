@@ -2,7 +2,7 @@ import WorkCard from "./WorkCard";
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 
-export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate }) {
+export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate, focus }) {
 	const [searchQuery, setSearchQuery] = useState(tagQuery);
 	const [filteredWorkComponents, setFilteredWorkComponents] = useState([]);
 
@@ -50,7 +50,7 @@ export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate }) {
 					setSearchQuery(e.target.value);
 				}}
 				value={searchQuery}
-				autoFocus
+				autoFocus={focus === true ? true : null}
 				autoComplete="off"
 			/>
 			{searchQuery !== "" && filterWork().length !== 0 ? <p>Work found under &ldquo;{searchQuery}&rdquo;:</p> : ""}
@@ -63,9 +63,11 @@ WorkBrowser.defaultProps = {
 	workMetadata: [],
 	tagQuery: "",
 	onQueryUpdate: undefined,
+	focus: false,
 };
 WorkBrowser.propTypes = {
 	workMetadata: PropTypes.array,
 	tagQuery: PropTypes.string,
 	onQueryUpdate: PropTypes.func,
+	focus: PropTypes.bool,
 };
