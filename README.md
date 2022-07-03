@@ -7,11 +7,11 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 # To-Do
 
 -  Add all work
-   -  MAP Training
    -  brandojs
    -  Alive in Christ
    -  isaacyakl.com
    -  nsfphax.com
+   -  nsfpgaming.com
 -  Create web-based resume
 -  Add services landing page and services component
 -  Do not oversize small images in work cover pictures
@@ -21,6 +21,7 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 -  Create sitemap generator
 -  Add RichSnippets (including blog structured data for work)
 -  Create blog
+-  Add search icon to work search field
 -  Add [react icons](https://react-icons.github.io/react-icons) to work tags/skills/tools
 -  Use JS to make nav menu sticky on resume page
 -  [CUBE CSS](https://www.smashingmagazine.com/2021/07/global-local-styling-nextjs/)
