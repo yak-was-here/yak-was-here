@@ -558,6 +558,7 @@ div.work-card {
 	border-radius: calc(var(--border-radius) * 3);
 	cursor: pointer;
 	max-width: calc(var(--container-width) / 2 - var(--space-unit) / 2);
+	width: calc(var(--container-width) / 2 - var(--space-unit) / 2);
 	margin-bottom: var(--space-unit);
 }
 
