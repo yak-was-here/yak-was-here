@@ -8,7 +8,6 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 
 -  Add all work
    -  brandojs
-   -  Alive in Christ
    -  isaacyakl.com
    -  nsfphax.com
    -  nsfpgaming.com
