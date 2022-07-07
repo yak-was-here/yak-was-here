@@ -7,13 +7,13 @@ import { fName, lName, tagline } from "../data/meta";
 function Resume() {
 	return (
 		<>
-			<BaseMeta title={`${fName} ${lName}'s Resume`} desc={`${fName} ${lName} &mdash; ${tagline.toLowerCase()} &mdash; Resume`} />
+			<BaseMeta title={`${fName} ${lName}'s Résumé`} desc={`${fName} ${lName} &mdash; ${tagline.toLowerCase()} &mdash; Résumé`} />
 			<NavBar active="resume" className="dont-print" />
 			<Breadcrumbs
 				className="dont-print no-select"
 				trail={[
 					{ text: "Home", link: "/" },
-					{ text: "Resume", link: "/resume" },
+					{ text: "Résumé", link: "/resume" },
 				]}
 			/>
 			<ResumeView />

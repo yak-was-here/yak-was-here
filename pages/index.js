@@ -8,7 +8,7 @@ import { intro } from "../data/meta";
 export default function Home() {
 	return (
 		<>
-			<BaseMeta title='Isaac "Yak" Litzenberger&apos;s Portfolio' desc="Have a look at yak's portfolio of work details and included resume." />
+			<BaseMeta title='Isaac "Yak" Litzenberger&apos;s Portfolio' desc="Have a look at yak's portfolio of work details and included résumé." />
 			<NavBar active="home" />
 			<Hero />
 			<main className="max-page-width">

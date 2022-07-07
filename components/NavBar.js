@@ -28,9 +28,9 @@ const NavBar = ({ active, className = "" }) => {
 						<a>Work</a>
 					</Link>
 				</li>
-				<li id="resume-menuitem" className={`${active === "resume" ? "active" : ""}`} title="View resume" role="menuitem">
+				<li id="resume-menuitem" className={`${active === "resume" ? "active" : ""}`} title="View résumé" role="menuitem">
 					<Link href="/resume">
-						<a>Resume</a>
+						<a>Résumé</a>
 					</Link>
 				</li>
 				<li id="contact-menuitem" className={`${active === "contact" ? "active" : ""}`} role="menuitem">

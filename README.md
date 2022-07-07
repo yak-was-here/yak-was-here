@@ -10,7 +10,7 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
    -  isaacyakl.com
    -  nsfphax.com
    -  nsfpgaming.com
--  Create web-based resume
+-  Create web-based résumé
 -  Add services landing page and services component
 -  Do not oversize small images in work cover pictures
 -  Create "TOC" for work headings
@@ -21,7 +21,7 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 -  Create blog
 -  Add search icon to work search field
 -  Add [react icons](https://react-icons.github.io/react-icons) to work tags/skills/tools
--  Use JS to make nav menu sticky on resume page
+-  Use JS to make nav menu sticky on résumé page
 -  [CUBE CSS](https://www.smashingmagazine.com/2021/07/global-local-styling-nextjs/)
 -  Gracefully close nav menu when opening a link from it to another page (e.g. Home -> Experience page)
 -  Implement React-based [Javascript solution for nav menu collapse animation](https://css-tricks.com/using-css-transitions-auto-dimensions/#technique-3-javascript) instead of hard-coded CSS max-height
