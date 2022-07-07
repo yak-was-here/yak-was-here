@@ -14,10 +14,18 @@ const Index = ({ allWorkMetadata }) => {
 
 	const updateURLQuery = (q) => {
 		if (q !== "") {
-			router.query.q = q;
+			router.query.q = encodeURIComponent(q);
 			router.push(router);
 		} else {
 			router.push("");
+		}
+	};
+
+	const setSearchQuery = () => {
+		try {
+			return router.query.q === undefined ? "" : decodeURIComponent(router.query.q);
+		} catch (e) {
+			console.error(e);
 		}
 	};
 
@@ -36,7 +44,7 @@ const Index = ({ allWorkMetadata }) => {
 				<section>
 					Here you can read about my work experience and personal projects. In these summaries, I primarily write with a focus on my problem-solving thought process and the results. You may also find code links, tech stack details, screenshots, demos, performance metrics, and tools used. Even more work and projects can be found on my <Link href="https://github.com/isaacyakl">GitHub</Link>.
 				</section>
-				<WorkBrowser workMetadata={allWorkMetadata} tagQuery={router.query.q} onQueryUpdate={updateURLQuery} />
+				<WorkBrowser workMetadata={allWorkMetadata} tagQuery={setSearchQuery()} onQueryUpdate={updateURLQuery} />
 			</main>
 			<Footer>
 				<ContactBtn />

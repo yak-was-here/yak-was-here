@@ -6,7 +6,7 @@ const WorkTags = ({ tags }) => {
 			{tags.map((t) => {
 				return (
 					<li key={t}>
-						<Link href={`/work?q=${t}`}>
+						<Link href={`/work?q=${encodeURIComponent(t)}`}>
 							<a title={`Browse more ${t} work`}>{t}</a>
 						</Link>
 					</li>
