@@ -22,6 +22,7 @@ tags:
    - YouTube API
    - Adobe Photoshop
    - Adobe Illustrator
+   - C++
    - Project
 ---
 
