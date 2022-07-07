@@ -17,5 +17,6 @@ tags:
    - JavaScript
    - HTML
    - CSS
+   - Git
    - NPM
 ---

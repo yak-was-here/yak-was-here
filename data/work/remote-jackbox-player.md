@@ -18,6 +18,7 @@ tags:
    - Font Awesome
    - HTML
    - CSS
+   - Git
    - Project
 ---
 
