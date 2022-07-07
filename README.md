@@ -7,7 +7,6 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 # To-Do
 
 -  Add all work
-   -  brandojs
    -  isaacyakl.com
    -  nsfphax.com
    -  nsfpgaming.com
