@@ -43,7 +43,7 @@ export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate, foc
 		<div className="work-browser">
 			<input
 				type="text"
-				placeholder={`Search... (try "React")`}
+				placeholder={`Search... (try "JavaScript")`}
 				id="workSearch"
 				onChange={(e) => {
 					if (onQueryUpdate instanceof Function) onQueryUpdate(e.target.value);
