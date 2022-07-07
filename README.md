@@ -8,8 +8,6 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 
 -  Add all work
    -  isaacyakl.com
-   -  nsfphax.com
-   -  nsfpgaming.com
 -  Create web-based résumé
 -  Add services landing page and services component
 -  Do not oversize small images in work cover pictures
