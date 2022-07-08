@@ -6,15 +6,14 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 
 # To-Do
 
--  Add all work
-   -  isaacyakl.com
 -  Create web-based résumé
+-  Create sitemap generator
 -  Add services landing page and services component
+-  Customize Error Pages
+-  Add Google Search Console and Analytics
+-  Make sure BaseMeta html entities (e.g. `&amp;`) are rendering
 -  Do not oversize small images in work cover pictures
 -  Create "TOC" for work headings
--  Make sure BaseMeta html entities (e.g. `&amp;`) are rendering
--  Customize Error Pages
--  Create sitemap generator
 -  Add RichSnippets (including blog structured data for work)
 -  Create blog
 -  Add search icon to work search field
