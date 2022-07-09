@@ -31,7 +31,7 @@ const Index = ({ allWorkMetadata }) => {
 
 	return (
 		<>
-			<BaseMeta title='Isaac "Yak" Litzenberger&apos;s work and projects' desc="Read about yak's work experience and projects." />
+			<BaseMeta title='Isaac "yak" Litzenberger&apos;s Portfolio: work and projects' desc="Read about yak's work experience and projects." />
 			<NavBar active="work" />
 			<Breadcrumbs
 				trail={[
@@ -42,7 +42,7 @@ const Index = ({ allWorkMetadata }) => {
 			<Header heading="Work" />
 			<main className="max-page-width">
 				<section>
-					Here you can read about my work experience and personal projects. In these summaries, I primarily write with a focus on my problem-solving thought process and the results. You may also find code links, tech stack details, screenshots, demos, performance metrics, and tools used. Even more work and projects can be found on my <Link href="https://github.com/isaacyakl">GitHub</Link>.
+					Below you will find my portfolio, where you can read about my work experience and personal projects. In these summaries, I primarily write with a focus on my problem-solving thought process and the results. You may also find code links, tech stack details, screenshots, demos, performance metrics, and tools used. Even more work and projects can be found on my <Link href="https://github.com/isaacyakl">GitHub</Link>.
 				</section>
 				<WorkBrowser workMetadata={allWorkMetadata} tagQuery={setSearchQuery()} onQueryUpdate={updateURLQuery} />
 			</main>

@@ -10,7 +10,7 @@ const Branding = () => {
 					<div className="logo">
 						<Image src={logo} alt="" />
 					</div>
-					<span className="site-wordmark">Yak</span>
+					<span className="site-wordmark">yak</span>
 				</a>
 			</Link>
 		</div>

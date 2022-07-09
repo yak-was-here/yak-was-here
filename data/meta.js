@@ -1,9 +1,9 @@
 export const fName = "Isaac";
 export const mI = "D";
 export const lName = "Litzenberger";
-export const nick = "Yak";
+export const nick = "yak";
 export const title = "Web Developer";
-export const tagline = `${title} | "Yak"`;
+export const tagline = `${title} | "yak"`;
 export const location = "San Francisco Bay Area";
 export const twitter = "https://twitter.com/isaacyakl";
 export const instagram = "https://instagram.com/isaacyakl";

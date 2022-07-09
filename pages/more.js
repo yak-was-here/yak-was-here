@@ -7,7 +7,7 @@ import { fName, lName, tagline } from "../data/meta";
 export default function More() {
 	return (
 		<div className="more-background">
-			<BaseMeta title="Links to Yak's businesses, projects, and more." desc="Browse a list of Yak's businesses, projects, and more." />
+			<BaseMeta title="Links to yak's businesses, projects, and more." desc="Browse a list of yak's businesses, projects, and more." />
 			<NavBar active="more" />
 			<main className="max-page-width more">
 				<section>
@@ -18,7 +18,7 @@ export default function More() {
 				</section>
 				<section className="more-link-container" style={{ maxWidth: `${fName.length + lName.length + 3}rem` }}>
 					<Link href="/">
-						<a className="btn cta more-links">Yak&apos;s Portfolio</a>
+						<a className="btn cta more-links">yak&apos;s Website</a>
 					</Link>
 					<Link href="https://iamaliveinchrist.com">
 						<a className="btn cta more-links">Alive in Christ Apparel</a>

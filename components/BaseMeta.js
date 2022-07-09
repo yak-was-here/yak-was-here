@@ -54,19 +54,19 @@ function BaseMeta({ title, desc, absoluteURL, robots, googlebot, author }) {
 			<meta name="og:description" content={desc} />
 			<meta name="og:image" content="https://isaacyakl.com/yak-social-image.jpg" />
 			<meta name="og:url" content={absoluteURL} />
-			<meta name="og:site_name" content='Isaac  "Yak" Litzenberger&apos;s Website' />
+			<meta name="og:site_name" content='Isaac  "yak" Litzenberger&apos;s Website' />
 			<meta name="og:type" content="website" />
 		</Head>
 	);
 }
 
 BaseMeta.defaultProps = {
-	title: `Isaac "Yak" Litzenberger's Website`,
+	title: `Isaac "yak" Litzenberger's Website`,
 	desc: "yak's personal website.",
 	absoluteURL: "https://isaacyakl.com/",
 	robots: "index,follow",
 	googlebot: "index,follow",
-	author: 'Isaac "Yak" L.',
+	author: 'Isaac "yak" L.',
 };
 
 BaseMeta.propTypes = {
