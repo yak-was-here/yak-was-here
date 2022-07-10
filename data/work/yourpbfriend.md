@@ -10,7 +10,7 @@ results:
   - Identified key areas to successfully improve over competitors
   - Created a used gun rating system to successfully build buyer trust
   - Embedded YouTube content to educate and create value for customers
-  - Created e-commerce SOPs for training and workflow optimization
+  - Wrote e-commerce SOPs for training and workflow optimization
 links:
   - title: Theme Code
     url: https://github.com/isaacyakl/ypbf-shopify-theme
