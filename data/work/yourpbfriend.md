@@ -5,10 +5,12 @@ images:
   - yourpbfriend-ss1-frontpage2.jpg
 role: "Web Developer, Digital Marketer"
 results:
-  - "Developed the #1 most-used paintball trade-in web app of 2015-2016"
-  - Harnessed the Shopify platform to increase revenue 10x in 2 years
-  - Created a used gun rating system to build buyer trust
+  - "Developed the #1 most-used paintball trade-in web application of 2015-2016"
+  - Increased revenue 10x in 2 years by switching to the Shopify platform
+  - Identified key areas to successfully improve over competitors
+  - Created a used gun rating system to successfully build buyer trust
   - Embedded YouTube content to educate and create value for customers
+  - Created e-commerce SOPs for training and workflow optimization
 links:
   - title: Theme Code
     url: https://github.com/isaacyakl/ypbf-shopify-theme

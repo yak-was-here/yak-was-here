@@ -5,12 +5,13 @@ images:
    - nbpa-ss2.png
 role: "Web Developer, Digital Marketer, E-commerce Manager"
 results:
-   - Developed industry-leading trade-in web app
-   - Added features normally costing monthly app subs
-   - Increased average monthly revenue by $2000+
+   - Developed website features to save $100s/mo in third-party application subscriptions
+   - Programmed industry-leading, trade-in web application
+   - Automated structured data generation with JavaScript
+   - Generated average monthly revenue of $2,000+
+   - Increased domain authority by 33% through SEO tasks
    - Wrote industry specific blogs and reviews
-   - Programmed automatic structured data generation
-   - Authored e-commerce SOPs
+   - Created e-commerce SOPs for training and workflow optimization
 links:
    - title: Website
      url: https://newbreedpb.com/
