@@ -23,6 +23,8 @@ tags:
    - Adobe Photoshop
    - Adobe Illustrator
    - C++
+   - REST
+   - JSON
    - Project
 ---
 

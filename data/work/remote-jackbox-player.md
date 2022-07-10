@@ -19,6 +19,8 @@ tags:
    - HTML
    - CSS
    - Git
+   - REST
+   - JSON
    - Project
 ---
 

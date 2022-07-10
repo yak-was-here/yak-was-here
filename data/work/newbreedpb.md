@@ -28,6 +28,7 @@ tags:
    - Git
    - PHP
    - JSON-LD
+   - Bootstrap
    - SASS
    - Meta Ads
    - Adobe Photoshop

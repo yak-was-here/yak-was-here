@@ -15,5 +15,7 @@ tags:
    - Discord Bot
    - Bot
    - Git
+   - REST
+   - JSON
    - Project
 ---
