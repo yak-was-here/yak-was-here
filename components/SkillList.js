@@ -7,8 +7,8 @@ function SkillList() {
 			<div className="skills-container">
 				<ul className="skills">
 					<h3>Front end</h3>
-					<Skill>Next.js</Skill>
-					<Skill>React.js</Skill>
+					<Skill>NextJS</Skill>
+					<Skill>ReactJS</Skill>
 					<Skill>Liquid</Skill>
 					<Skill>TailwindCSS</Skill>
 					<Skill>jQuery</Skill>
@@ -16,7 +16,7 @@ function SkillList() {
 				</ul>
 				<ul className="skills">
 					<h3>Back end</h3>
-					<Skill>Next.js</Skill>
+					<Skill>NextJS</Skill>
 					<Skill>Node.js</Skill>
 					<Skill>PHP</Skill>
 					<Skill>Express.js</Skill>
