@@ -1,7 +1,7 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
 
-function Skill({ children, q }) {
+function Skill({ children, q, absoluteURL }) {
 	const childToString = () => {
 		return Array.isArray(children) ? children[0].props.children : typeof children === "object" ? children.props.children : children;
 	};
@@ -9,9 +9,13 @@ function Skill({ children, q }) {
 		return q ? encodeURIComponent(q) : encodeURIComponent(childToString());
 	};
 
+	const checkAbsoluteURL = () => {
+		return absoluteURL ? "https://isaacyakl.com" : "";
+	};
+
 	return (
 		<li>
-			<Link href={`/work?q=${setQueryString()}`}>
+			<Link href={`${checkAbsoluteURL()}/work?q=${setQueryString()}`}>
 				<a title={`Browse ${childToString()} work`}>{children}</a>
 			</Link>
 		</li>
@@ -20,11 +24,13 @@ function Skill({ children, q }) {
 
 Skill.defaultProps = {
 	children: "Skill example",
+	absoluteURL: false,
 };
 
 Skill.propTypes = {
 	children: PropTypes.string,
 	q: PropTypes.string,
+	absoluteURL: PropTypes.bool,
 };
 
 export default Skill;
