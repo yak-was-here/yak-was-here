@@ -9,17 +9,17 @@ function SkillList() {
 					<h3>Front end</h3>
 					<Skill>NextJS</Skill>
 					<Skill>ReactJS</Skill>
-					<Skill>Liquid</Skill>
-					<Skill>TailwindCSS</Skill>
+					<Skill q="Liquid">Shopify Liquid</Skill>
+					<Skill>Tailwind CSS</Skill>
 					<Skill>jQuery</Skill>
 					<Skill>Bootstrap</Skill>
 				</ul>
 				<ul className="skills">
 					<h3>Back end</h3>
 					<Skill>NextJS</Skill>
-					<Skill>Node.js</Skill>
+					<Skill q="NodeJS">Node.js</Skill>
 					<Skill>PHP</Skill>
-					<Skill>Express.js</Skill>
+					<Skill q="ExpressJS">Express.js</Skill>
 					<Skill>MongoDB</Skill>
 				</ul>
 				<ul className="skills">
@@ -28,15 +28,16 @@ function SkillList() {
 					<Skill>TypeScript</Skill>
 					<Skill>Python</Skill>
 					<Skill>PHP</Skill>
-					<Skill>HTML</Skill>
-					<Skill>CSS</Skill>
+					<Skill>HTML5</Skill>
+					<Skill q="CSS">CSS3/SASS</Skill>
 				</ul>
 				<ul className="skills">
 					<h3>APIs</h3>
-					<Skill>Shopify</Skill>
-					<Skill>YouTube</Skill>
-					<Skill>Twitch</Skill>
-					<Skill>Spotify</Skill>
+					<Skill>REST APIs</Skill>
+					<Skill>Shopify API</Skill>
+					<Skill>YouTube API</Skill>
+					<Skill>Twitch API</Skill>
+					<Skill>Spotify API</Skill>
 				</ul>
 				<ul className="skills">
 					<h3>Tools</h3>

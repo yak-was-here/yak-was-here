@@ -18,6 +18,7 @@
 	--resume-width: calc(8.5 * 96px);
 	--resume-height: calc(11 * 96px);
 	--resume-margin: calc(0.5 * 96px);
+	--resume-body-size: 10pt;
 }
 
 /* All */
@@ -750,38 +751,97 @@ div.more-background {
 }
 
 .resumeContent {
+	font-size: var(--resume-body-size);
 	width: 100%;
 	max-height: calc(var(--resume-height) - var(--resume-margin) * 2);
 	overflow: hidden;
 }
 
 .resumeContent * {
-	font-size: 12pt;
+	font-size: var(--resume-body-size);
+	line-height: calc(var(--resume-body-size) * 1.45);
 	padding: 0;
-	margin: 0 0 0.125in 0;
 	box-sizing: border-box;
 }
 
 .resumeContent h1 {
-	font-size: 32pt;
+	font-size: 28pt;
+	line-height: 28pt;
 	text-align: center;
 }
 
 .resumeContent h1 + h2 {
 	font-size: 18pt;
+	line-height: 18pt;
 	text-align: center;
+	margin-bottom: 4pt;
+	text-decoration: none;
 }
 
 .resumeContent .contact-info {
 	text-align: center;
+	margin: 0 0 0.05in 0;
+}
+
+.resumeContent p {
+	margin: 0 0 0.07in 0;
 }
 
 .resumeContent h2 {
 	font-size: 18pt;
+	margin: 0 0 0.05in 0;
 }
 
-.resumeContent p,
-.intro {
+.resumeContent .skills-container {
+	margin: 0.05in 0;
+	padding: 0;
+}
+
+.resumeContent ul {
+	font-size: var(--resume-body-size);
+	margin: 0.05in 0 0 1em;
+	padding-left: 1em;
+	border: none;
+	list-style-type: disc;
+}
+
+.resumeContent ul.skills {
+	min-width: 7em;
+}
+
+.resumeContent ul.courses {
+	min-width: 7em;
+}
+
+.resumeContent ul li {
+	margin: 0;
+	padding: 0;
+	line-height: 1.35em;
+}
+
+.resumeContent ul.skills li a {
+	color: var(--primary-accent);
+}
+
+.resume-work-entry {
+	margin: 0.05in 0;
+}
+
+.resume-work-entry > strong:nth-child(1) {
+	font-size: calc(var(--resume-body-size) + 1pt);
+	line-height: 1.7em;
+}
+
+.resume-two-column {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+}
+
+.resume-two-column > * {
+	width: 50%;
+	margin: 0 0 0.05in 0;
+	padding-right: 0.05in;
 }
 
 @media print {

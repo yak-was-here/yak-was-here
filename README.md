@@ -6,7 +6,6 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 
 # To-Do
 
--  Create web-based résumé
 -  Create sitemap generator
 -  Add services landing page and services component
 -  Customize Error Pages
