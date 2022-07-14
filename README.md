@@ -6,10 +6,11 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 
 # To-Do
 
--  Create sitemap generator
--  Add services landing page and services component
--  Customize Error Pages
 -  Add website work links to LinkedIn
+-  Customize Error Pages
+-  Add services landing page and services component
+-  Improve more page (button, font, and space sizing) and add to social media links
+-  Create sitemap generator
 -  Add Google Search Console and Analytics
 -  Make sure BaseMeta html entities (e.g. `&amp;`) are rendering
 -  Do not oversize small images in work cover pictures
