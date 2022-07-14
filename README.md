@@ -8,17 +8,20 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 
 -  Improve more page (button, font, and space sizing) and add to social media links
 -  Customize Error Pages
+-  Copy descriptions from website to GitHub and update repos
 -  Fix social media share images
 -  Add services landing page and services component
 -  Create sitemap generator
 -  Add Google Search Console and Analytics
 -  Make sure BaseMeta html entities (e.g. `&amp;`) are rendering
+-  Resume education section not showing up in portrait mobile-view
 -  Do not oversize small images in work cover pictures
 -  Add "Back to Top" button
 -  Create "TOC" for work headings
 -  Add RichSnippets (including blog structured data for work)
 -  Create blog
 -  Optimize for keyword phrase including "Portfolio" or "Work"
+-  Auto-unobfuscate contact links in resume when printing
 -  Add search icon to work search field
 -  Add [react icons](https://react-icons.github.io/react-icons) to work tags/skills/tools
 -  Use JS to make nav menu sticky on résumé page

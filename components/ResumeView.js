@@ -8,17 +8,20 @@ import { faDownload, faPrint } from "@fortawesome/free-solid-svg-icons";
 
 function ResumeView() {
 	const printResume = () => {
-		// Print to PDF in Firefox for best text recognition. Edit PDF to correct "fl" and "fi" ligatures.
+		// Print to PDF in Firefox for best text recognition.
+		// Mouseover contact links before saving.
 		window.print();
 	};
 
 	return (
 		<div className="resumeBackground">
 			<div className="resumeActions dont-print">
-				<Link href="./litzenberger-isaac-web-developer-resume.pdf" passHref>
-					<button className="link" title="Download">
-						<FontAwesomeIcon icon={faDownload} />
-					</button>
+				<Link href="/litzenberger-isaac-web-developer-resume.pdf" passHref>
+					<a>
+						<button className="link" title="Download">
+							<FontAwesomeIcon icon={faDownload} />
+						</button>
+					</a>
 				</Link>
 				<button className="link" title="Print" onClick={printResume}>
 					<FontAwesomeIcon icon={faPrint} />

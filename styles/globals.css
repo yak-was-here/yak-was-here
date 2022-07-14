@@ -6,6 +6,10 @@
 	--background-color: #ffffff;
 	--text-color: #000000;
 
+	/* Fonts */
+	--font-family-headings: "Bebas Neue", "Arial Narrow", Arial, Helvetica, sans-serif;
+	--font-family-body: Arial, Helvetica, sans-serif;
+
 	/* Utilities */
 	--container-width: 83vw;
 	--space-unit: 0.5rem;
@@ -32,7 +36,7 @@
 
 html,
 body {
-	font-family: "Roboto", Arial, "Bebas Neue", serif;
+	font-family: var(--font-family-body);
 	font-size: 2vmax;
 }
 
@@ -72,9 +76,10 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Bebas Neue", serif;
+	font-family: var(--font-family-headings);
 	font-weight: 100;
 	padding: 0.5em 0em 1em 0em;
+	text-transform: uppercase;
 }
 
 h1 {
@@ -148,7 +153,7 @@ div.branding-container a:hover {
 }
 
 span.site-wordmark {
-	font-family: "Bebas Neue", serif;
+	font-family: var(--font-family-headings);
 	font-weight: 100;
 	font-size: 2.25rem;
 	padding-left: 0.1rem;
@@ -175,7 +180,7 @@ ul.nav-menu {
 	overflow: hidden;
 	padding: 0rem;
 	background-color: var(--background-color);
-	font-family: "Bebas Neue", serif;
+	font-family: var(--font-family-headings);
 	font-weight: 100;
 	text-align: right;
 	letter-spacing: 0.15em;
@@ -222,8 +227,6 @@ header.hero {
 }
 
 div.header-container h1 {
-	font-family: "Bebas Neue", serif;
-	font-weight: 100;
 	padding: 0;
 }
 
@@ -321,7 +324,7 @@ section {
 }
 
 div.position-experience-container {
-	font-family: "Bebas Neue", serif;
+	font-family: var(--font-family-headings);
 	font-weight: 100;
 	text-transform: uppercase;
 	display: grid;
@@ -622,7 +625,7 @@ div.work-card-border {
 }
 
 div.experience-timeline {
-	font-family: "Bebas Neue", serif;
+	font-family: var(--font-family-headings);
 	font-weight: 100;
 	font-size: 1.5rem;
 	letter-spacing: 0.1rem;
@@ -758,10 +761,16 @@ div.more-background {
 }
 
 .resumeContent * {
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: var(--resume-body-size);
 	line-height: calc(var(--resume-body-size) * 1.45);
 	padding: 0;
 	box-sizing: border-box;
+}
+
+.resumeContent h1,
+.resumeContent h2 {
+	font-family: var(--font-family-headings);
 }
 
 .resumeContent h1 {
@@ -788,7 +797,7 @@ div.more-background {
 }
 
 .resumeContent h2 {
-	font-size: 18pt;
+	font-size: 16pt;
 	margin: 0 0 0.05in 0;
 }
 
