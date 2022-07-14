@@ -6,7 +6,6 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 
 # To-Do
 
--  Customize Error Pages
 -  Copy descriptions from website to GitHub and update repos
 -  Fix social media share images
 -  Add services landing page and services component
