@@ -21,7 +21,7 @@ export default function Home() {
 				</section>
 			</main>
 			<Footer>
-				<CtaBtn ctaText="Browse work" ctaHref="/work" />
+				<CtaBtn text="Browse work" href="/work" />
 			</Footer>
 		</>
 	);
