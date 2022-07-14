@@ -6,9 +6,9 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 
 # To-Do
 
--  Add website work links to LinkedIn
 -  Improve more page (button, font, and space sizing) and add to social media links
 -  Customize Error Pages
+-  Fix social media share images
 -  Add services landing page and services component
 -  Create sitemap generator
 -  Add Google Search Console and Analytics
