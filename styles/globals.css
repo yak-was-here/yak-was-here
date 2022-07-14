@@ -665,13 +665,24 @@ main.more {
 	text-align: center;
 }
 
+main.more h1,
+main.more p {
+	padding: 0;
+}
+
+main.more section {
+	padding: var(--space-unit) 0 var(--space-unit) 0;
+}
+
 .more-link-container {
+	max-width: 14rem;
 	margin: auto;
 	display: grid;
 	grid-template-columns: 1fr;
 }
 
 a.more-links {
+	font-size: 2vmax;
 	transition: all 0.25s 0s ease;
 }
 

@@ -16,7 +16,7 @@ export default function More() {
 					</h1>
 					<p>{tagline}</p>
 				</section>
-				<section className="more-link-container" style={{ maxWidth: `${fName.length + lName.length + 3}rem` }}>
+				<section className="more-link-container">
 					<Link href="/">
 						<a className="btn cta more-links">yak&apos;s Website</a>
 					</Link>

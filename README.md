@@ -6,7 +6,6 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 
 # To-Do
 
--  Improve more page (button, font, and space sizing) and add to social media links
 -  Customize Error Pages
 -  Copy descriptions from website to GitHub and update repos
 -  Fix social media share images
