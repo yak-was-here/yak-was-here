@@ -19,6 +19,19 @@ tags:
    - Figma
 ---
 
+## Features
+
+Below is a list of many of the features of my website, all of which I have coded myself:
+
+-  Portfolio work and projects
+-  Web resume
+-  Linktree style "more" page
+-  Blog
+-  Sitemap generator
+-  Custom error pages
+-  Landing pages
+-  Redirection for old pages
+
 ## Prototyping
 
 [![Figma screenshot](/img/work/isaacyakl-com-ss1-figma.jpg)](/img/work/isaacyakl-com-ss1-figma.jpg)

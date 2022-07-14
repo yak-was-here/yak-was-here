@@ -36,11 +36,13 @@ tags:
    - CSS
 ---
 
-### Frontend
+## Frontend
 
 [![NBPA frontend mobile screenshot](/img/work/nbpa-ss6-frontend-mobile.jpg)](/img/work/nbpa-ss6-frontend-mobile.jpg)
 
-The web store is built with Shopify using a customized version of the [Venture theme](https://themes.shopify.com/themes/venture/styles/snowboards). I chose to build upon an existing theme to streamline setup and rapidly deliver value to my client. This choice allowed me to get right to developing and implementing customer-specific features not usually present in themes by default, instead of first needing to build a custom theme from the ground up. Additionally, by coding some of these features myself, I have been able to save New Breed money because many of these features usually involve installing several 3rd party applications &mdash; most of which normally cost monthly subscriptions. These features include:
+The web store is built with Shopify using a customized version of the [Venture theme](https://themes.shopify.com/themes/venture/styles/snowboards). I chose to build upon an existing theme to streamline setup and rapidly deliver value to my client. This choice allowed me to get right to developing and implementing customer-specific features not usually present in themes by default, instead of first needing to build a custom theme from the ground up. Additionally, by coding some of these features myself, I have been able to save New Breed money because many of these features usually involve installing several 3rd party applications &mdash; most of which normally cost monthly subscriptions.
+
+### Features
 
 -  Product second image display on hover
 -  Product YouTube videos and 3D model support
@@ -56,23 +58,23 @@ The web store is built with Shopify using a customized version of the [Venture t
 
 These features make use of the Shopify Liquid templating language, JavaScript (ESNext transpiled to ES5), HTML, and CSS/SASS. My workflow utilizes the [Shopify Theme Kit](https://shopify.dev/themes/tools/theme-kit) and Git/GitHub, and the procedure can be found in the theme's [README.md](https://github.com/isaacyakl/new-breed-shopify-theme#new-version-procedure) on GitHub.
 
-#### Automatic FAQ Formatting
+### Automatic FAQ Formatting
 
 [![NBPA FAQ page screenshot](/img/work/nbpa-ss9-faq-page.jpg)](/img/work/nbpa-ss9-faq-page.jpg)
 
 The [FAQ template page](https://github.com/isaacyakl/new-breed-shopify-theme/blob/4fd2acfdafe4bc67b8100e8d8f4e9e4ac143cc66/templates/page.faq.liquid) automatically formats and generates structured data from questions and answers the staff members add to the page. It captures what is entered for the FAQ page in Shopify Admin, parses each heading and subsequent paragraph elements from the DOM tree, creates FAQ structured data (JSON-LD), a collapsible section for each, adds anchor links to each header, and inserts everything into the DOM tree. Have a look at the [FAQ page](https://newbreedpb.com/pages/frequently-asked-questions).
 
-#### Automatic Campaign Link Formatting
+### Automatic Campaign Link Formatting
 
 New Breed blog articles are usually written to provide customers with good product recommendations. Because of this, product links are placed in the articles, but there is no easy way to measure the clickthrough rates. Usually, the solution is to create special campaign URLs with tracking parameters one-by-one for each product and replace each link manually. However, this is a pain when there are many product recommendations, such as a list of the top 10 best products. So rather than manually generating and pasting links into the text editor, I wrote JavaScript code that parses the article body text for links and automatically adds campaign URL parameters based on the article type and topic. This has made it possible to generate articles more quickly and monitor the performance of marketing efforts using Google Analytics.
 
-#### Automatic Structured Data Generation
+### Automatic Structured Data Generation
 
 [![NBPA rich results screenshot](/img/work/nbpa-ss10-rich-results.jpg)](/img/work/nbpa-ss10-rich-results.jpg)
 
 Because Rich Results are so helpful to searchers, I wrote JavaScript to automatically generate thorough structured data (JSON-LD) for all products, articles, and page breadcrumbs. There are many 3rd party apps which perform this but tend to only focus on specific properties, miss other necessary ones, or become redundant. They also cost an added monthly subscription and, when used together, end up being pricey and slow down page load times. To avoid the extra cost, thoroughly cover all properties needed, and keep load times low, I enhanced the existing structured schema and wrote code to automatically generate additional structured data. Each article, product, and page uses properties from Shopify Liquid objects to create JSON-LD script nodes which are inserted into the DOM tree at load time. This has proven successful and many Rich Results are now available for top-ranking pages.
 
-### Trade-in Web Application
+## Trade-in Web Application
 
 [![NBPA trade web app screenshot](/img/work/nbpa-ss3-trade-app.jpg)](/img/work/nbpa-ss3-trade-app.jpg)
 
@@ -82,7 +84,7 @@ Creating a quality trade-in application system begins with making a form that is
 
 The trade system has seen moderate use, but not nearly as much success as in prior experience. This is largely due to changes in the industry and the decreasing popularity of Paintball. Many trades are now taking place in Facebook groups; ironically, Facebook is strongly opposed to the paintball and airsoft industries and has banned all advertising of related products.
 
-### Digital Marketing
+## Digital Marketing
 
 [![NBPA product review article screenshot](/img/work/nbpa-ss11-product-review-article.jpg)](/img/work/nbpa-ss11-product-review-article.jpg)
 
@@ -94,7 +96,7 @@ My strategy for New Breed is to generate fun and informative content on social m
 
 When I first started working with New Breed, we attempted to run Meta and Google retargeting campaigns using a limited product catalog. We did this to avoid getting flagged for advertising paintball and airsoft guns. However, we still ran into product restriction issues. Even advertising related products such as jerseys and masks caused problems. Because of this, we have had to rely on boosting social media posts and SEO.
 
-#### SEO
+### SEO
 
 I perform many essential one-time and daily SEO tasks. Much of my time in this role is spent optimizing and generating content for keyword phrases that target customers' needs along the purchase path. By doing so consistently, I am able to acquire backlinks manually and, hopefully, organically in the future. A few tasks performed are as follows:
 
@@ -110,7 +112,7 @@ I perform many essential one-time and daily SEO tasks. Much of my time in this r
    -  Breadcrumbs
    -  FAQ
 
-### E-commerce
+## E-commerce
 
 [![NBPA product screenshot](/img/work/nbpa-ss14-product.jpg)](/img/work/nbpa-ss14-product.jpg)
 

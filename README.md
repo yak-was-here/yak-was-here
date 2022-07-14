@@ -7,13 +7,14 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 # To-Do
 
 -  Add website work links to LinkedIn
+-  Improve more page (button, font, and space sizing) and add to social media links
 -  Customize Error Pages
 -  Add services landing page and services component
--  Improve more page (button, font, and space sizing) and add to social media links
 -  Create sitemap generator
 -  Add Google Search Console and Analytics
 -  Make sure BaseMeta html entities (e.g. `&amp;`) are rendering
 -  Do not oversize small images in work cover pictures
+-  Add "Back to Top" button
 -  Create "TOC" for work headings
 -  Add RichSnippets (including blog structured data for work)
 -  Create blog

@@ -24,6 +24,23 @@ tags:
    - Project
 ---
 
+## Features
+
+Below are most of the features included with the web application. If you would like to make a feature request or want to see what is planned, [visit the GitHub repository](https://github.com/isaacyakl/remote-jackbox-player).
+
+-  Twitch account connection
+   -  See if streams you follow are playing Jackbox games
+   -  Find random streamers currently hosting a game
+-  Mobile-friendly views
+   -  Swap view (tap a button to swap between stream/game)
+   -  Split view (see both stream and game at once)
+   -  Scroll view (swipe up and down to see stream/game)
+   -  Swipe view (swipe left and right to see stream/game)
+-  Stream reload buttons to address delays
+-  Accidental exit/reload confirmation prompts
+-  Embed support for multiple streaming platforms
+-  UI toggling
+
 [![Remote Jackbox Player controls screenshot](/img/work/remote-jackbox-player-ss3-controls.jpg)](/img/work/remote-jackbox-player-ss3-controls.jpg)
 
 The user interface was built using Tailwind CSS and Font Awesome to create controls and two panes: a stream pane and a game pane. Controls give options for reloading the stream if it falls behind, toggling the controls, changing the view, searching for a stream, and sharing the current stream view.
