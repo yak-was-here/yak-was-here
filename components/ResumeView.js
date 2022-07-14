@@ -15,7 +15,7 @@ function ResumeView() {
 	return (
 		<div className="resumeBackground">
 			<div className="resumeActions dont-print">
-				<Link href="./litzenberger-isaac-web-developer-resume.pdf">
+				<Link href="./litzenberger-isaac-web-developer-resume.pdf" passHref>
 					<button className="link" title="Download">
 						<FontAwesomeIcon icon={faDownload} />
 					</button>
@@ -100,7 +100,7 @@ function ResumeView() {
 										<strong>Remote Jackbox Player</strong>
 									</a>
 								</Link>
-								<br />A web application to find and play Jackbox games remotely, even if you don't own any.
+								<br />A web application to find and play Jackbox games remotely, even if you don&apos;t own any.
 								<ul>
 									<li>Uses Twitch API to find people streaming games</li>
 									<li>Mobile focused design with multiple viewing formats</li>
@@ -126,7 +126,7 @@ function ResumeView() {
 										<strong>Keyboard Soundboard</strong>
 									</a>
 								</Link>
-								<br />A web browser soundboard with preset keybinds made for one of my church's events.
+								<br />A web browser soundboard with preset keybinds made for one of my church&apos;s events.
 								<ul>
 									<li>Uses JavaScript to play and stop audio elements</li>
 									<li>Animates buttons when triggered</li>
@@ -139,7 +139,7 @@ function ResumeView() {
 										<strong>Random Owen Wowson</strong>
 									</a>
 								</Link>
-								<br />A Discord bot that sends various movie clips of Owen Wilson saying "Wow", written in Python.
+								<br />A Discord bot that sends various movie clips of Owen Wilson saying &quot;Wow&quot;, written in Python.
 								<ul>
 									<li>Makes use of the Owen Wilson Wow API</li>
 									<li>Includes a small HTTP status server</li>
@@ -200,7 +200,7 @@ function ResumeView() {
 					</div>
 					<h2>Education</h2>
 					<p>
-						<strong>Bachelor of Science in Business Administration, General Management</strong> - Dean's List - CSU East Bay | <em>2020</em>
+						<strong>Bachelor of Science in Business Administration, General Management</strong> - Dean&apos;s List - CSU East Bay | <em>2020</em>
 					</p>
 				</main>
 			</div>
