@@ -1,4 +1,5 @@
 import Obfuscate from "react-obfuscate";
+import { nick } from "../data/meta";
 
 // obfuscate the tel num so web scrappers cant grab it from GitHub
 // Obfuscated by — https://anseki.github.io/gnirts/
@@ -7,7 +8,7 @@ export const telNum = (function(){var E=Array.prototype.slice.call(arguments),R=
 
 export default function TelLink({ children }) {
 	return (
-		<Obfuscate tel={`+1${telNum.replace(/\D/g, "")}`} linkText="https://youtu.be/dQw4w9WgXcQ" obfuscateChildren={false} title="Call yak">
+		<Obfuscate tel={`+1${telNum.replace(/\D/g, "")}`} linkText="https://youtu.be/dQw4w9WgXcQ" obfuscateChildren={false} title={`Call ${nick}`}>
 			{children}
 		</Obfuscate>
 	);

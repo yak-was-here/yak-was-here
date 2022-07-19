@@ -1,4 +1,5 @@
 import Obfuscate from "react-obfuscate";
+import { nick } from "../data/meta";
 
 // obfuscate the email address so web scrappers cant grab it from GitHub
 // Obfuscated by — https://anseki.github.io/gnirts/
@@ -7,7 +8,7 @@ export const emailAddress = (function(){var m=Array.prototype.slice.call(argumen
 
 export default function EmailLink({ children }) {
 	return (
-		<Obfuscate email={emailAddress} linkText="https://youtu.be/dQw4w9WgXcQ" obfuscateChildren={false} title="Email yak">
+		<Obfuscate email={emailAddress} linkText="https://youtu.be/dQw4w9WgXcQ" obfuscateChildren={false} title={`Email ${nick}`}>
 			{children}
 		</Obfuscate>
 	);

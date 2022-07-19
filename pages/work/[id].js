@@ -10,7 +10,7 @@ import ContactBtn from "../../components/ContactBtn";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import { siteURL } from "../../data/meta";
 
-const Work = ({ title, date, images, tags, results, role, summary, links, htmlContent }) => {
+const Work = ({ title, images, tags, results, summary, links, htmlContent }) => {
 	const getResults = () => {
 		if (results && results.length > 0) {
 			return (
@@ -25,7 +25,7 @@ const Work = ({ title, date, images, tags, results, role, summary, links, htmlCo
 
 	return (
 		<>
-			<BaseMeta title={`The ${title} development process`} desc={`Read about the development process of ${title} and how yak was involved.`} shareImg={`${siteURL}/img/work/${images[0]}`} />
+			<BaseMeta title={`The ${title} development process`} desc={`Read about the development process of ${title} and how ${nick} was involved.`} shareImg={`${siteURL}/img/work/${images[0]}`} />
 			<NavBar active="work" />
 			<Breadcrumbs
 				trail={[

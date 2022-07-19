@@ -8,20 +8,28 @@ import { useRouter } from "next/router";
 import ContactBtn from "../../components/ContactBtn";
 import Link from "next/link";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import { fName, lName, nick } from "../../data/meta";
 
 const Index = ({ allWorkMetadata }) => {
 	const router = useRouter();
 
-	const updateURLQuery = (q) => {
+	const updateURLSearchQuery = (q) => {
 		if (q !== "") {
-			router.query.q = encodeURIComponent(q);
-			router.push(router);
+			router.push({
+				pathname: router.pathname,
+				query: {
+					q: encodeURIComponent(q),
+				},
+			});
 		} else {
-			router.push("");
+			router.push({
+				pathname: router.pathname,
+				query: {},
+			});
 		}
 	};
 
-	const setSearchQuery = () => {
+	const getURLSearchQuery = () => {
 		try {
 			return router.query.q === undefined ? "" : decodeURIComponent(router.query.q);
 		} catch (e) {
@@ -31,7 +39,7 @@ const Index = ({ allWorkMetadata }) => {
 
 	return (
 		<>
-			<BaseMeta title='Isaac "yak" Litzenberger&apos;s Portfolio: work and projects' desc="Read about yak's work experience and projects." />
+			<BaseMeta title={`${fName} "${nick}" ${lName}'s Portfolio${getURLSearchQuery() !== "" ? ` — "${getURLSearchQuery()}" work` : ": Work and Projects"}`} desc={`Read about and view ${nick}'s work experience and projects.`} />
 			<NavBar active="work" />
 			<Breadcrumbs
 				trail={[
@@ -44,7 +52,7 @@ const Index = ({ allWorkMetadata }) => {
 				<section>
 					Below you will find my portfolio, where you can read about my work experience and personal projects. In these summaries, I primarily write with a focus on my problem-solving thought process and the results. You may also find code links, tech stack details, screenshots, demos, performance metrics, and tools used. Even more work and projects can be found on my <Link href="https://github.com/isaacyakl">GitHub</Link>.
 				</section>
-				<WorkBrowser workMetadata={allWorkMetadata} tagQuery={setSearchQuery()} onQueryUpdate={updateURLQuery} />
+				<WorkBrowser workMetadata={allWorkMetadata} tagQuery={getURLSearchQuery()} onQueryUpdate={updateURLSearchQuery} />
 			</main>
 			<Footer>
 				<ContactBtn />

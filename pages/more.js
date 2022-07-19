@@ -2,12 +2,12 @@ import Link from "next/link";
 import BaseMeta from "../components/BaseMeta";
 import ContactIcons from "../components/ContactIcons";
 import NavBar from "../components/NavBar";
-import { fName, lName, tagline } from "../data/meta";
+import { fName, lName, nick, tagline } from "../data/meta";
 
 export default function More() {
 	return (
 		<div className="more-background">
-			<BaseMeta title="Links to yak's businesses, projects, and more." desc="Browse a list of yak's businesses, projects, and more." />
+			<BaseMeta title={`Links to ${nick}'s businesses, projects, and more.`} desc={`Browse a list of ${nick}'s businesses, projects, and more.`} />
 			<NavBar active="more" />
 			<main className="max-page-width more">
 				<section>
@@ -18,7 +18,7 @@ export default function More() {
 				</section>
 				<section className="more-link-container">
 					<Link href="/">
-						<a className="btn cta more-links">yak&apos;s Website</a>
+						<a className="btn cta more-links">{nick}&apos;s Website</a>
 					</Link>
 					<Link href="https://iamaliveinchrist.com">
 						<a className="btn cta more-links">Alive in Christ Apparel</a>
@@ -34,7 +34,9 @@ export default function More() {
 					<ContactIcons />
 				</section>
 				<section className="copyright">
-					<p>&copy; {new Date().getFullYear()} Isaac Litzenberger &mdash; All rights reserved.</p>
+					<p>
+						&copy; {new Date().getFullYear()} {fName} {lName} &mdash; All rights reserved.
+					</p>
 				</section>
 			</main>
 		</div>

@@ -1,6 +1,7 @@
 import ContactIcons from "../components/ContactIcons";
 import Branding from "../components/Branding";
 import React from "react";
+import { fName, lName } from "../data/meta";
 
 const Footer = ({ children }) => {
 	return (
@@ -9,7 +10,9 @@ const Footer = ({ children }) => {
 			<div className="footer-branding">
 				<ContactIcons className="dont-print" />
 				<Branding />
-				<p>&copy; {new Date().getFullYear()} Isaac Litzenberger &mdash; All rights reserved.</p>
+				<p>
+					&copy; {new Date().getFullYear()} {fName} {lName} &mdash; All rights reserved.
+				</p>
 			</div>
 		</footer>
 	);

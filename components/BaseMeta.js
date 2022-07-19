@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { siteURL, twitter } from "../data/meta";
+import { fName, lName, nick, siteURL, twitter } from "../data/meta";
 import PropTypes from "prop-types";
 
 function BaseMeta({ title, desc, author, robots, googlebot, shareURL, shareImg, shareType }) {
@@ -37,7 +37,7 @@ function BaseMeta({ title, desc, author, robots, googlebot, shareURL, shareImg, 
 			<meta name="theme-color" content="#000000" />
 			{/* Source: https://realfavicongenerator.net/favicon_result?file_id=p1fap77nug1fdj1rdl1f447ld93g6#.YPJMAuhKguU */}
 			<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png" />
-			<meta name="application-name" content="yak's Website" />
+			<meta name="application-name" content={`${nick}'s Website`} />
 			<meta name="msapplication-tooltip" content="Tooltip" />
 			<meta name="msapplication-config" content="/browserconfig.xml" />
 
@@ -67,12 +67,12 @@ function BaseMeta({ title, desc, author, robots, googlebot, shareURL, shareImg, 
 }
 
 BaseMeta.defaultProps = {
-	title: 'Isaac "yak" Litzenberger\'s Website',
-	desc: "yak's personal website: have a look at yak's portfolio, résumé, and businesses or contact information.",
+	title: `${fName} "${nick}" ${lName}\'s Website`,
+	desc: `${nick}'s personal website: have a look at ${nick}'s portfolio, résumé, and businesses or contact information.`,
 	shareURL: siteURL,
 	robots: "index,follow",
 	googlebot: "index,follow",
-	author: 'Isaac "yak" L.',
+	author: `${fName} "${nick}" ${lName.substring(0, 1)}.`,
 	shareImg: siteURL + "yak-social-image.jpg",
 	shareType: "website",
 };
