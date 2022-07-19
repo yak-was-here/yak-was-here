@@ -1,7 +1,14 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { siteURL, twitter } from "../data/meta";
 import PropTypes from "prop-types";
 
-function BaseMeta({ title, desc, absoluteURL, robots, googlebot, author }) {
+function BaseMeta({ title, desc, author, robots, googlebot, shareURL, shareImg, shareType }) {
+	if (typeof shareURL == "string" && shareURL == BaseMeta.defaultProps.shareURL) {
+		const router = useRouter();
+		shareURL = siteURL.substring(0, siteURL.length - 1) + router.asPath;
+	}
+
 	return (
 		<Head>
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -35,47 +42,50 @@ function BaseMeta({ title, desc, absoluteURL, robots, googlebot, author }) {
 			<meta name="msapplication-config" content="/browserconfig.xml" />
 
 			{/* Social Media Meta Tags */}
-			{/* Source: https://megatags.co/#generate-tags */}
+			{/* Sources: https://css-tricks.com/essential-meta-tags-social-media/, https://megatags.co/#generate-tags */}
 			{/* Search Engines */}
 			<meta name="description" content={desc} />
-			<meta name="image" content="https://isaacyakl.com/yak-social-image.jpg" />
+			<meta name="image" content={shareImg} />
 			{/* Schema.org for Google */}
 			<meta itemProp="name" content={title} />
 			<meta itemProp="description" content={desc} />
-			<meta itemProp="image" content="https://isaacyakl.com/yak-social-image.jpg" />
-			{/* Twitter  */}
-			<meta name="twitter:card" content="summary" />
+			<meta itemProp="image" content={shareImg} />
+			{/* Twitter */}
 			<meta name="twitter:title" content={title} />
 			<meta name="twitter:description" content={desc} />
-			<meta name="twitter:creator" content="@isaacyakl" />
-			<meta name="twitter:image:src" content="https://isaacyakl.com/yak-social-image.jpg" />
-			{/* Open Graph general (Facebook, Pinterest & Google+)  */}
-			<meta name="og:title" content={title} />
-			<meta name="og:description" content={desc} />
-			<meta name="og:image" content="https://isaacyakl.com/yak-social-image.jpg" />
-			<meta name="og:url" content={absoluteURL} />
-			<meta name="og:site_name" content='Isaac  "yak" Litzenberger&apos;s Website' />
-			<meta name="og:type" content="website" />
+			<meta name="twitter:image" content={shareImg} />
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:creator" content={`@${twitter.substring(twitter.lastIndexOf("/") + 1)}`} />
+			{/* Open Graph general (Facebook & Pinterest)  */}
+			<meta property="og:title" content={title} />
+			<meta property="og:type" content={shareType} />
+			<meta property="og:url" content={shareURL} />
+			<meta property="og:image" content={shareImg} />
+			<meta property="og:description" content={desc} />
 		</Head>
 	);
 }
 
 BaseMeta.defaultProps = {
-	title: `Isaac "yak" Litzenberger's Website`,
-	desc: "yak's personal website.",
-	absoluteURL: "https://isaacyakl.com/",
+	title: 'Isaac "yak" Litzenberger\'s Website',
+	desc: "yak's personal website: have a look at yak's portfolio, résumé, and businesses or contact information.",
+	shareURL: siteURL,
 	robots: "index,follow",
 	googlebot: "index,follow",
 	author: 'Isaac "yak" L.',
+	shareImg: siteURL + "yak-social-image.jpg",
+	shareType: "website",
 };
 
 BaseMeta.propTypes = {
 	title: PropTypes.string,
 	desc: PropTypes.string,
-	absoluteURL: PropTypes.string,
+	shareURL: PropTypes.string,
 	robots: PropTypes.string,
 	googlebot: PropTypes.string,
 	author: PropTypes.string,
+	shareImg: PropTypes.string,
+	shareType: PropTypes.string,
 };
 
 export default BaseMeta;

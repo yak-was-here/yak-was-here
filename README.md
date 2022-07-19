@@ -6,14 +6,12 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 
 # To-Do
 
--  Fix social media share images
--  Include skill tag in page title of work search
 -  Use work cover photo as shareImg
+-  Include skill tag in page title of work search
 -  Copy descriptions from website to GitHub and update repos
 -  Add services landing page and services component
 -  Create sitemap generator
 -  Add Google Search Console and Analytics
--  Make sure BaseMeta html entities (e.g. `&amp;`) are rendering
 -  Resume education section not showing up in portrait mobile-view
 -  Do not oversize small images in work cover pictures
 -  Add "Back to Top" button
