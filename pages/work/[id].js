@@ -8,7 +8,7 @@ import Link from "next/link";
 import WorkTags from "../../components/WorkTags";
 import ContactBtn from "../../components/ContactBtn";
 import Breadcrumbs from "../../components/Breadcrumbs";
-import { siteURL } from "../../data/meta";
+import { nick, siteURL } from "../../data/meta";
 
 const Work = ({ title, images, tags, results, summary, links, htmlContent }) => {
 	const getResults = () => {
@@ -25,7 +25,7 @@ const Work = ({ title, images, tags, results, summary, links, htmlContent }) => 
 
 	return (
 		<>
-			<BaseMeta title={`The ${title} development process`} desc={`Read about the development process of ${title} and how ${nick} was involved.`} shareImg={`${siteURL}/img/work/${images[0]}`} />
+			<BaseMeta title={`The ${title} development process`} desc={`Read about the development process of ${title} and how ${nick} was involved.`} shareImg={`${siteURL}img/work/${images[0]}`} />
 			<NavBar active="work" />
 			<Breadcrumbs
 				trail={[

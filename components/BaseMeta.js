@@ -4,8 +4,9 @@ import { fName, lName, nick, siteURL, twitter } from "../data/meta";
 import PropTypes from "prop-types";
 
 function BaseMeta({ title, desc, author, robots, googlebot, shareURL, shareImg, shareType }) {
+	const router = useRouter();
+
 	if (typeof shareURL == "string" && shareURL == BaseMeta.defaultProps.shareURL) {
-		const router = useRouter();
 		shareURL = siteURL.substring(0, siteURL.length - 1) + router.asPath;
 	}
 
