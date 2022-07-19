@@ -83,6 +83,11 @@ module.exports = {
 				permanent: true,
 			},
 			{
+				source: "/projects/k9wppc",
+				destination: "https://github.com/isaacyakl/k9wppc",
+				permanent: true,
+			},
+			{
 				source: "/projects/yourpbfriend/:slug*",
 				destination: "/work/yourpbfriend",
 				permanent: true,
