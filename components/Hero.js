@@ -21,7 +21,7 @@ function Hero() {
 					<FontAwesomeIcon icon={faMapMarkerAlt} />
 					{location}
 				</div>
-				<ContactIcons id="contact" />
+				<ContactIcons id="social" />
 			</div>
 		</header>
 	);

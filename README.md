@@ -7,14 +7,13 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 # To-Do
 
 -  Copy descriptions from website to GitHub and update repos
--  Create sitemap generator
 -  Add services landing page and services component
--  Add Google Search Console and Analytics
--  Resume education section not showing up in portrait mobile-view
 -  Add "Back to Top" button
--  Create "TOC" for work headings
--  Add RichSnippets (including blog structured data for work)
 -  Create blog
+-  Add RichSnippets (including article structured data for work)
+-  Create sitemap generator (not as important since site is small)
+-  Create "TOC" for work and blog headings
+-  Resume education section not showing up in portrait mobile-view
 -  Do not oversize small images in work cover pictures
 -  Auto-unobfuscate contact links in resume when printing
 -  Add search icon to work search field

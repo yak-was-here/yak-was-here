@@ -8,7 +8,7 @@ const Footer = ({ children }) => {
 		<footer>
 			<div className="dont-print">{children}</div>
 			<div className="footer-branding">
-				<ContactIcons className="dont-print" />
+				<ContactIcons id="contact" className="dont-print" />
 				<Branding />
 				<p>
 					&copy; {new Date().getFullYear()} {fName} {lName} &mdash; All rights reserved.

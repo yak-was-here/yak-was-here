@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import Script from "next/script";
 import { fName, lName, nick, siteURL, twitter } from "../data/meta";
 import PropTypes from "prop-types";
 
@@ -58,6 +59,18 @@ function BaseMeta({ title, desc, author, robots, googlebot, shareURL, shareImg, 
 			<meta property="og:url" content={shareURL} />
 			<meta property="og:image" content={shareImg} />
 			<meta property="og:description" content={desc} />
+
+			{/* Global site tag (gtag.js) - Google Analytics */}
+			<Script src="https://www.googletagmanager.com/gtag/js?id=G-KTQBNQ49BV" strategy="afterInteractive" />
+			<Script id="google-analytics" strategy="afterInteractive">
+				{`
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+
+					gtag('config', 'G-KTQBNQ49BV');
+				`}
+			</Script>
 		</Head>
 	);
 }
