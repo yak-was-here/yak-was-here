@@ -6,8 +6,10 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 
 # To-Do
 
--  Copy descriptions from website to GitHub and update repos
 -  Fix social media share images
+-  Include skill tag in page title of work search
+-  Use work cover photo as shareImg
+-  Copy descriptions from website to GitHub and update repos
 -  Add services landing page and services component
 -  Create sitemap generator
 -  Add Google Search Console and Analytics

@@ -1,3 +1,4 @@
+export const siteURL = "https://www.isaacyakl.com/";
 export const fName = "Isaac";
 export const mI = "D";
 export const lName = "Litzenberger";

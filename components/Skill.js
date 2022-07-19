@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
+import { siteURL } from "../data/meta";
 
 function Skill({ children, q, absoluteURL }) {
 	const childToString = () => {
@@ -10,7 +11,7 @@ function Skill({ children, q, absoluteURL }) {
 	};
 
 	const checkAbsoluteURL = () => {
-		return absoluteURL ? "https://isaacyakl.com" : "";
+		return absoluteURL ? siteURL.substring(0, siteURL.length - 1) : "";
 	};
 
 	return (

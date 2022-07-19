@@ -1,4 +1,4 @@
-import { fName, lName, tagline, resumeIntroWebDev, github, linkedin } from "../data/meta";
+import { fName, lName, tagline, resumeIntroWebDev, github, linkedin, siteURL } from "../data/meta";
 import EmailLink from "./EmailLink";
 import Skill from "./Skill";
 import TelLink, { telNum } from "./TelLink";
@@ -38,7 +38,7 @@ function ResumeView() {
 						&nbsp;&#8226;&nbsp;
 						<TelLink>{telNum}</TelLink>
 						<br />
-						<a href="https://isaacyakl.com" title="Portfolio">
+						<a href={siteURL} title="Portfolio">
 							isaacyakl.com
 						</a>
 						&nbsp;&#8226;&nbsp;
