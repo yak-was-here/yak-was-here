@@ -8,6 +8,11 @@ module.exports = {
 	async redirects() {
 		return [
 			{
+				source: "/index.html",
+				destination: "/",
+				permanent: true,
+			},
+			{
 				source: "/projects/nah-son-free-pie-gaming",
 				destination: "/work/nsfpgaming",
 				permanent: true,
