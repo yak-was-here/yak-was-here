@@ -6,7 +6,6 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 
 # To-Do
 
--  Use work cover photo as shareImg
 -  Include skill tag in page title of work search
 -  Copy descriptions from website to GitHub and update repos
 -  Add services landing page and services component
