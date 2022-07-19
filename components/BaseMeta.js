@@ -20,11 +20,6 @@ function BaseMeta({ title, desc, author, robots, googlebot, shareURL, shareImg, 
 			<meta name="googlebot" content={googlebot} />
 			<meta name="author" content={author} />
 
-			{/* Fonts */}
-			<link rel="preconnect" href="https://fonts.googleapis.com" />
-			<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-			<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
-
 			{/* Favicons */}
 			{/* Source: https://github.com/audreyfeldroy/favicon-cheat-sheet */}
 			<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
