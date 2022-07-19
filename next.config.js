@@ -13,12 +13,32 @@ module.exports = {
 				permanent: true,
 			},
 			{
+				source: "/projects.html",
+				destination: "/work",
+				permanent: true,
+			},
+			{
+				source: "/500.html",
+				destination: "/500",
+				permanent: true,
+			},
+			{
 				source: "/projects/nah-son-free-pie-gaming",
 				destination: "/work/nsfpgaming",
 				permanent: true,
 			},
 			{
+				source: "/projects/nah-son-free-pie-gaming/:slug*",
+				destination: "/work/nsfpgaming",
+				permanent: true,
+			},
+			{
 				source: "/projects/alive-in-christ-apparel",
+				destination: "/work/aic",
+				permanent: true,
+			},
+			{
+				source: "/projects/alive-in-christ-apparel/:slug*",
 				destination: "/work/aic",
 				permanent: true,
 			},
@@ -33,8 +53,38 @@ module.exports = {
 				permanent: true,
 			},
 			{
+				source: "/projects/map-training/:slug*",
+				destination: "/work/map-training",
+				permanent: true,
+			},
+			{
 				source: "/projects/k9-web-protection-password-cracker",
 				destination: "https://github.com/isaacyakl/k9wppc",
+				permanent: true,
+			},
+			{
+				source: "/projects/k9-web-protection-password-cracker/main.cpp",
+				destination: "https://github.com/isaacyakl/k9wppc/blob/master/main.cpp",
+				permanent: true,
+			},
+			{
+				source: "/projects/k9-web-protection-password-cracker/K9%20Web%20Protection%20Password%20Cracker.exe",
+				destination: "https://github.com/isaacyakl/k9wppc/blob/master/K9%20Web%20Protection%20Password%20Cracker.zip",
+				permanent: true,
+			},
+			{
+				source: "/projects/k9-web-protection-password-cracker/K9%20Web%20Protection%20Password%20Cracker.zip",
+				destination: "https://github.com/isaacyakl/k9wppc/blob/master/K9%20Web%20Protection%20Password%20Cracker.zip",
+				permanent: true,
+			},
+			{
+				source: "/projects/k9-web-protection-password-cracker/:slug*",
+				destination: "https://github.com/isaacyakl/k9wppc",
+				permanent: true,
+			},
+			{
+				source: "/projects/yourpbfriend/:slug*",
+				destination: "/work/yourpbfriend",
 				permanent: true,
 			},
 			{
