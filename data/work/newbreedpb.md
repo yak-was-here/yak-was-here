@@ -15,10 +15,12 @@ results:
 links:
    - title: Website
      url: https://newbreedpb.com/
+   - title: Trade App
+     url: https://trade.newbreedpb.com/
    - title: Theme Code
      url: https://github.com/isaacyakl/new-breed-shopify-theme
-   - title: Trade App
-     url: https://trade.newbreedpb.com
+   - title: Trade App Code
+     url: https://github.com/isaacyakl/new-breed-trade-app
 summary: "Since late 2020, I have managed the e-commerce side of New Breed Paintball & Airsoft. My main concern has been to continue providing a friendly, reliable customer experience as they have since 2008. This has encompassed setting them up with Shopify for both their e-commerce and retail locations; developing web improvements; creating marketing content; and authoring SOPs to better enhance workflows. In all, the web store has stiff competition from well-established online paintball and airsoft retailers but is still managing to grow and generate consistent revenue."
 tags:
    - Shopify
@@ -29,6 +31,7 @@ tags:
    - PHP
    - JSON-LD
    - Bootstrap
+   - jQuery
    - SASS
    - Meta Ads
    - Adobe Photoshop
@@ -78,7 +81,7 @@ Because Rich Results are so helpful to searchers, I wrote JavaScript to automati
 
 [![NBPA trade web app screenshot](/img/work/nbpa-ss3-trade-app.jpg)](/img/work/nbpa-ss3-trade-app.jpg)
 
-Creating a quality trade-in application system begins with making a form that is both clear for the customer and detailed enough for the trade processors. My past experience developing a trade application system for [YourPbFriend](/work/yourpbfriend) helped me understand what was required and what pitfalls to avoid. I made sure to provide clear instruction, visually indicate required information, flexibility for multiple trade items, and a straight-forward email ticket system.
+Creating a quality trade-in application system begins with making a form that is both clear for the customer and detailed enough for the trade processors. My past experience developing a trade application system for [YourPbFriend](/work/yourpbfriend) helped me understand what was required and what pitfalls to avoid. I made sure to provide clear instruction, visually indicate required information, flexibility for multiple trade items with picture and video attachment, and a straight-forward email ticket system.
 
 [![NBPA trade email screenshot](/img/work/nbpa-ss5-trade-app-email.jpg)](/img/work/nbpa-ss5-trade-app-email.jpg)
 
