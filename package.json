@@ -19,6 +19,7 @@
     "next": "^12.1.0",
     "nextjs-google-analytics": "^1.2.1",
     "react": "^18.2.0",
+    "react-device-detect": "^2.2.2",
     "react-obfuscate": "^3.6.8",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1"

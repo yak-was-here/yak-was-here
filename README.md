@@ -7,7 +7,6 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 # To-Do
 
 -  Copy descriptions from website to GitHub and update repos
--  Automatically focus the search bar on work page if desktop browser is detected
 -  Add canonical URL html tags
 -  Add services landing page and services component
 -  Add "Back to Top" button

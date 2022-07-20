@@ -1,6 +1,7 @@
 import WorkCard from "./WorkCard";
 import PropTypes from "prop-types";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { isDesktop } from "react-device-detect";
 
 export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate, focus }) {
 	const [searchQuery, setSearchQuery] = useState(tagQuery);
@@ -39,6 +40,11 @@ export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate, foc
 		setSearchQuery(tagQuery);
 	}, [tagQuery]);
 
+	const searchInputRef = useRef(null);
+	useEffect(() => {
+		if (focus === true || isDesktop === true) searchInputRef.current.focus();
+	}, []);
+
 	return (
 		<div className="work-browser">
 			<input
@@ -50,8 +56,8 @@ export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate, foc
 					setSearchQuery(e.target.value);
 				}}
 				value={searchQuery}
-				autoFocus={focus === true ? true : null}
 				autoComplete="off"
+				ref={searchInputRef}
 			/>
 			{searchQuery !== "" && filterWork().length !== 0 ? <p>Work found under &ldquo;{searchQuery}&rdquo;:</p> : ""}
 			<section className="work-view">{filteredWorkComponents}</section>
@@ -63,7 +69,7 @@ WorkBrowser.defaultProps = {
 	workMetadata: [],
 	tagQuery: "",
 	onQueryUpdate: undefined,
-	focus: false,
+	focus: undefined,
 };
 WorkBrowser.propTypes = {
 	workMetadata: PropTypes.array,
