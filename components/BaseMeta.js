@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Script from "next/script";
 import { fName, lName, nick, siteURL, twitter } from "../data/meta";
 import PropTypes from "prop-types";
 
@@ -14,6 +13,7 @@ function BaseMeta({ title, desc, author, robots, googlebot, shareURL, shareImg, 
 	return (
 		<Head>
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
+			<link rel="canonical" href={siteURL.substring(0, siteURL.length - 1) + router.asPath} />
 			<title>{title}</title>
 			<meta name="theme-color" content="#03C03C" />
 			{/*Theme Color for Chrome, Firefox OS and Opera*/}
