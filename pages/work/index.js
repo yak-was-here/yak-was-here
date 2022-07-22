@@ -5,10 +5,10 @@ import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 import { getAllWorkMetadata } from "../../lib/work";
 import { useRouter } from "next/router";
-import ContactBtn from "../../components/ContactBtn";
 import Link from "next/link";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import { fName, lName, nick } from "../../data/meta";
+import CtaSection from "../../components/CtaSection";
 
 const Index = ({ allWorkMetadata }) => {
 	const router = useRouter();
@@ -53,10 +53,9 @@ const Index = ({ allWorkMetadata }) => {
 					Below you will find my portfolio, where you can read about my work experience and personal projects. In these summaries, I primarily write with a focus on my problem-solving thought process and the results. You may also find code links, tech stack details, screenshots, demos, performance metrics, and tools used. Even more work and projects can be found on my <Link href="https://github.com/isaacyakl">GitHub</Link>.
 				</section>
 				<WorkBrowser workMetadata={allWorkMetadata} tagQuery={getURLSearchQuery()} onQueryUpdate={updateURLSearchQuery} />
+				<CtaSection />
 			</main>
-			<Footer>
-				<ContactBtn />
-			</Footer>
+			<Footer />
 		</>
 	);
 };

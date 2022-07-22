@@ -16,7 +16,7 @@
 	--border-radius: 0.1rem;
 
 	/* Sizing */
-	--cta-btn-font-size: 1.4rem;
+	--cta-btn-font-size: 1.2rem;
 
 	/* Résumé */
 	--resume-width: calc(8.5 * 96px);
@@ -60,7 +60,12 @@ button.link {
 }
 
 hr {
+	margin: calc(var(--space-unit) * 2) auto;
+}
+
+h1 + hr {
 	border: 0;
+	margin: 0;
 	background-color: var(--text-color);
 	height: 0.05rem;
 	width: 7vw;
@@ -426,19 +431,15 @@ footer span.site-wordmark {
 	font-size: 1rem;
 }
 
-footer > div.cta-btn-container {
-	margin-top: var(--cta-btn-font-size);
+footer p {
+	font-size: 2vmax;
 }
 
 div.cta-btn-container {
-	position: relative;
-	top: calc(var(--cta-btn-font-size) * (-1));
-	width: var(--container-width);
 	margin: auto;
-	margin-bottom: calc(var(--cta-btn-font-size) * (-1));
+	padding: var(--space-unit) 0;
 	text-align: center;
 	filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
-	z-index: 1;
 }
 
 a.btn,
@@ -475,6 +476,15 @@ a.cta:hover,
 
 .cta-link::after {
 	content: " \2197";
+}
+
+section.cta-section {
+	font-size: calc(var(--cta-btn-font-size) * 0.95);
+	max-width: 50vmax;
+}
+
+section.cta-section > hr {
+	width: 12vmax;
 }
 
 .work-links {

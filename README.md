@@ -6,8 +6,8 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 
 # To-Do
 
--  Create services landing page and services component
 -  Add "Back to Top" button
+-  Create services landing page and services component
 -  Create blog
 -  Add RichSnippets (including article structured data for work and update [share metadata](https://ogp.me/#no_vertical))
 -  Add automatic heading id attribute generation

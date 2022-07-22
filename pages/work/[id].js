@@ -6,9 +6,9 @@ import Image from "next/image";
 import { getAllWorkIds, getWorkFileData } from "../../lib/work";
 import Link from "next/link";
 import WorkTags from "../../components/WorkTags";
-import ContactBtn from "../../components/ContactBtn";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import { nick, siteURL } from "../../data/meta";
+import CtaSection from "../../components/CtaSection";
 
 const Work = ({ title, images, tags, results, summary, links, htmlContent }) => {
 	const getResults = () => {
@@ -21,6 +21,16 @@ const Work = ({ title, images, tags, results, summary, links, htmlContent }) => 
 				</ul>
 			);
 		} else return "";
+	};
+
+	const getBody = () => {
+		if (htmlContent !== "") {
+			return (
+				<div className="work-details-body">
+					<section dangerouslySetInnerHTML={{ __html: htmlContent }}></section>
+				</div>
+			);
+		}
 	};
 
 	return (
@@ -65,13 +75,10 @@ const Work = ({ title, images, tags, results, summary, links, htmlContent }) => 
 					<h3 id="tags">Skills & tools used</h3>
 					{tags !== undefined ? <WorkTags tags={tags} /> : ``}
 				</section>
-				<div className="work-details-body">
-					<section dangerouslySetInnerHTML={{ __html: htmlContent }}></section>
-				</div>
+				{getBody()}
+				<CtaSection />
 			</main>
-			<Footer>
-				<ContactBtn />
-			</Footer>
+			<Footer />
 		</>
 	);
 };

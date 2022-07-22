@@ -16,13 +16,11 @@ export default function Home() {
 					<h2>About</h2>
 					<div className="intro">
 						<p>{intro}</p>
-						<p>I am seeking work that offers experience with modern web architecture and attempts to solve meaningful problems.</p>
 					</div>
+					<CtaBtn text="Browse work" href="/work" />
 				</section>
 			</main>
-			<Footer>
-				<CtaBtn text="Browse work" href="/work" />
-			</Footer>
+			<Footer />
 		</>
 	);
 }
