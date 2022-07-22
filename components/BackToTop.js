@@ -3,7 +3,7 @@ import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-export default function () {
+export default function BackToTop() {
 	const router = useRouter();
 	const [showBTT, setShowBTT] = useState(false);
 
