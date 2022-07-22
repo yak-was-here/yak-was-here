@@ -7,7 +7,7 @@ export default function CtaSection({ ctaBody, btnText, btnHref }) {
 			<>
 				<strong>Discover new solutions and strategies.</strong>
 				<br />
-				Bring your business to the next level.
+				Take your business to the next level.
 			</>
 		);
 	};
