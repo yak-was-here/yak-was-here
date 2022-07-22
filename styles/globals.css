@@ -727,6 +727,25 @@ div.more-background {
 	text-decoration: underline;
 }
 
+#backToTop {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0);
+	border: 0;
+	z-index: 100;
+	transition: all 0.5s ease;
+}
+
+#backToTop:hover {
+	transform: translateY(-0.3rem);
+}
+
+#backToTop svg {
+	height: 3rem;
+	width: 3rem;
+}
+
 .resumeBackground {
 	margin: 0 auto;
 	background-image: url("/img/isaacyakl-hero-background-4k.jpg");
