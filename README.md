@@ -1,8 +1,8 @@
 # isaacyakl.com
 
-My personal website written with [Next.js](https://nextjs.org/)/[React.js](https://reactjs.org/).
+My personal website, created with Next.js and React.js. An experiment in using CSS relative viewport units for element sizing and layouts instead of media queries and breakpoints; a single-layout website. [Read more...](https://www.isaacyakl.com/work/isaacyakl-com)
 
-[Visit the live site &gt;&gt;](https://www.isaacyakl.com)
+[Visit the site &rarr;](https://www.isaacyakl.com)
 
 # To-Do
 
@@ -13,9 +13,11 @@ My personal website written with [Next.js](https://nextjs.org/)/[React.js](https
 -  Add automatic campaign URL generation
 -  Create sitemap generator (not as important since site is small)
 -  Create "TOC" for work and blog headings
+-  Add syntax highlighting for blogs, work, etc. Perhaps use: [https://www.npmjs.com/package/react-code-highlighter](https://www.npmjs.com/package/react-code-highlighter)
 -  Resume education section not showing up in portrait mobile-view
 -  Do not oversize small images in work cover pictures
 -  Auto-unobfuscate contact links in resume when printing
+-  [https://caniuse.com/?search=vmax](https://caniuse.com/?search=vmax)
 -  Add search icon to work search field
 -  Add [react icons](https://react-icons.github.io/react-icons) to work tags/skills/tools
 -  Use JS to make nav menu sticky on résumé page

@@ -746,6 +746,17 @@ div.more-background {
 	width: 3rem;
 }
 
+code {
+	background-color: #424242;
+	color: #e99f00;
+	padding: 0.15em;
+}
+
+strong code {
+	color: #f3f3f3;
+	font-weight: bold;
+}
+
 .resumeBackground {
 	margin: 0 auto;
 	background-image: url("/img/isaacyakl-hero-background-4k.jpg");
