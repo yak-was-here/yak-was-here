@@ -9,6 +9,7 @@ My personal website, created with Next.js and React.js. An experiment in using C
 -  Create services landing page and services component
 -  Create blog
 -  Add RichSnippets (including article structured data for work and update [share metadata](https://ogp.me/#no_vertical))
+-  Integrate remote-jackbox-player with root domain
 -  Add automatic heading id attribute generation
 -  Add automatic campaign URL generation
 -  Create sitemap generator (not as important since site is small)
