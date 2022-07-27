@@ -9,7 +9,7 @@ links:
    - title: Code
      url: https://github.com/isaacyakl?tab=repositories&q=nsfp
    - title: NSFPGaming.com
-     url: http://nsfpgaming.com
+     url: https://nsfpgaming.com
    - title: NSFPHax.com
      url: https://nsfphax.com
 summary: "I developed branding for the Nah Son, Free Pie! gaming community and deployed both NSFP Gaming.com and NSFPhax.com. The founder had a rough idea for the logo design, which I helped bring to fruition. NSFPGaming.com provides a portal to various other community resources such as social media presence, server information, an online shop, and community information. NSFPHax.com was developed as a joke site featuring gaming clips from the community."

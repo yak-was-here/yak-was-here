@@ -26,7 +26,7 @@ export default function More() {
 					<Link href="https://open.spotify.com/user/izacktheyak/playlists">
 						<a className="btn cta more-links">Spotify Playlists</a>
 					</Link>
-					<Link href="http://nsfpgaming.com">
+					<Link href="https://nsfpgaming.com">
 						<a className="btn cta more-links">NSFP Gaming</a>
 					</Link>
 				</section>
