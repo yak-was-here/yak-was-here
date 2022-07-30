@@ -18,13 +18,13 @@ export default function More() {
 				</section>
 				<section className="more-link-container">
 					<Link href="/">
-						<a className="btn cta more-links">{nick}&apos;s Website</a>
-					</Link>
-					<Link href="https://iamaliveinchrist.com">
-						<a className="btn cta more-links">Alive in Christ Apparel</a>
+						<a className="btn cta more-links">My Website</a>
 					</Link>
 					<Link href="https://open.spotify.com/user/izacktheyak/playlists">
 						<a className="btn cta more-links">Spotify Playlists</a>
+					</Link>
+					<Link href="https://iamaliveinchrist.com">
+						<a className="btn cta more-links">Alive in Christ Apparel</a>
 					</Link>
 					<Link href="http://nsfpgaming.com">
 						<a className="btn cta more-links">NSFP Gaming</a>
