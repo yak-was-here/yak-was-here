@@ -8,8 +8,11 @@ My personal website, created with Next.js and React.js. An experiment in using C
 
 -  Add "Open to Freelance Work" notification component
 -  Create services landing page and services component
+
    -  Add "Hire Me" link on More page linking to services page
    -  Change "Contact Me" CTA button on work pages to link to services page
+
+-  Optimize image loading time for word cards
 -  Create blog
 -  Add RichSnippets (including article structured data for work and update [share metadata](https://ogp.me/#no_vertical))
 -  Integrate remote-jackbox-player with root domain
