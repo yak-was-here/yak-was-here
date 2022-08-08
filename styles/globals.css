@@ -136,13 +136,13 @@ div.work-status {
 	padding: 0.5em;
 	margin: 0.5em 0em;
 	border-radius: 0.3em;
-	vertical-align: text-bottom;
+	vertical-align: middle;
 }
 
 div.work-status svg {
-	height: 1rem;
-	width: 1rem;
-	margin-right: 0.5em;
+	height: 0.8rem;
+	width: 0.8rem;
+	margin-right: 0.3em;
 }
 
 .success {

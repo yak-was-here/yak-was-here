@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import { faBan } from "@fortawesome/free-solid-svg-icons";
 import { fName, lName, title, location, acceptingWork } from "../data/meta";
 import EmailLink from "./EmailLink";
 
