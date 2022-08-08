@@ -55,7 +55,7 @@ function ResumeView() {
 						<section>
 							<h2>Experience</h2>
 							<div className="resume-work-entry">
-								<strong>Web Developer, E-commerce Manager</strong>
+								<strong>Web Developer &amp; Digital Marketer</strong>
 								<br />
 								New Breed Paintball and Airsoft | <em>08/2020 - Present</em>
 								<ul>
@@ -64,12 +64,12 @@ function ResumeView() {
 									<li>Generated average monthly revenue of $2,000+</li>
 									<li>Increased domain authority by 33% through SEO tasks</li>
 									<li>Wrote industry specific blogs and reviews</li>
-									<li>Created e-commerce SOPs for training and workflow optimization</li>
+									<li>Created ecommerce SOPs for training and workflow optimization</li>
 								</ul>
 								<strong>Key Achievement:</strong> Developed website features to save $100s/mo in third-party application subscriptions
 							</div>
 							<div className="resume-work-entry">
-								<strong>Web Developer, E-commerce Manager</strong>
+								<strong>Web Developer &amp; Digital Marketer</strong>
 								<br />
 								YourPbFriend | <em>03/2014 - 08/2016</em>
 								<ul>
@@ -77,7 +77,7 @@ function ResumeView() {
 									<li>Identified key areas to successfully improve over competitors</li>
 									<li>Created a used gun rating system to successfully build buyer trust</li>
 									<li>Embedded YouTube content to educate and create value for customers</li>
-									<li>Created e-commerce SOPs for training and workflow optimization</li>
+									<li>Created ecommerce SOPs for training and workflow optimization</li>
 								</ul>
 								<strong>Key Achievement:</strong> Developed the #1 most-used paintball trade-in web application of 2015-2016
 							</div>

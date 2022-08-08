@@ -29,7 +29,7 @@ tags:
 
 [![WooCommerce screenshot](/img/work/aic-ss5-woocommerce.jpg)](/img/work/aic-ss5-woocommerce.jpg)
 
-The main sales channel is a WooCommerce installation which I setup and manage. Because I bootstrapped this business, I wanted to use existing hosting resources, and, therefore, WordPress + WooCommerce was the best e-commerce option.
+The main sales channel is a WooCommerce installation which I setup and manage. Because I bootstrapped this business, I wanted to use existing hosting resources, and, therefore, WordPress + WooCommerce was the best ecommerce option.
 
 ## Designs
 

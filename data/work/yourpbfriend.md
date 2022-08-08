@@ -3,14 +3,14 @@ title: YourPbFriend
 date: 2014-2016
 images:
   - yourpbfriend-ss1-frontpage2.jpg
-role: "Web Developer, Digital Marketer"
+role: "Web Developer & Digital Marketer"
 results:
   - "Developed the #1 most-used paintball trade-in web application of 2015-2016"
   - Increased revenue 10x in 2 years by switching to the Shopify platform
   - Identified key areas to successfully improve over competitors
   - Created a used gun rating system to successfully build buyer trust
   - Embedded YouTube content to educate and create value for customers
-  - Wrote e-commerce SOPs for training and workflow optimization
+  - Wrote ecommerce SOPs for training and workflow optimization
 links:
   - title: Theme Code
     url: https://github.com/isaacyakl/ypbf-shopify-theme
@@ -39,7 +39,7 @@ tags:
 
 ## Shopify over BigCommerce
 
-In 2014 &mdash; after analyzing the e-commerce platform options &mdash; we moved from BigCommerce to Shopify because of its larger third-party application marketplace. These applications enabled me to quickly add features with minimal development time so that during my time with the company I successfully developed or implemented the following features:
+In 2014 &mdash; after analyzing the ecommerce platform options &mdash; we moved from BigCommerce to Shopify because of its larger third-party application marketplace. These applications enabled me to quickly add features with minimal development time so that during my time with the company I successfully developed or implemented the following features:
 
 -  Trade-In Web Application
 -  Customer Product Reviews System
