@@ -130,6 +130,31 @@ ul {
 	margin: auto;
 }
 
+div.work-status {
+	display: inline-block;
+	font-size: 1rem;
+	padding: 0.5em;
+	margin: 0.5em 0em;
+	border-radius: 0.3em;
+	vertical-align: middle;
+}
+
+div.work-status svg {
+	height: 0.8rem;
+	width: 0.8rem;
+	margin-right: 0.3em;
+}
+
+.success {
+	color: white;
+	background-color: #03c03c;
+}
+
+.failure {
+	color: white;
+	background-color: #dc3545;
+}
+
 /* Navigation */
 nav {
 	width: 98vw;

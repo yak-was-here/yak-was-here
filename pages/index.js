@@ -3,7 +3,7 @@ import NavBar from "../components/NavBar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import CtaBtn from "../components/CtaBtn";
-import { intro } from "../data/meta";
+import About from "../components/About";
 
 export default function Home() {
 	return (
@@ -13,10 +13,7 @@ export default function Home() {
 			<Hero />
 			<main className="max-page-width">
 				<section>
-					<h2>About</h2>
-					<div className="intro">
-						<p>{intro}</p>
-					</div>
+					<About />
 					<CtaBtn text="Browse work" href="/work" />
 				</section>
 			</main>

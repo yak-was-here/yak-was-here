@@ -6,7 +6,6 @@ My personal website, created with Next.js and React.js. An experiment in using C
 
 # To-Do
 
--  Add "Open to Freelance Work" notification component
 -  Create services landing page and services component
 
    -  Add "Hire Me" link on More page linking to services page

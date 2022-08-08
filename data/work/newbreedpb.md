@@ -3,7 +3,7 @@ title: New Breed
 date: 2020-Present
 images:
    - nbpa-ss2.png
-role: "Web Developer, Digital Marketer, E-commerce Manager"
+role: "Web Developer & Digital Marketer"
 results:
    - Developed website features to save $100s/mo in third-party application subscriptions
    - Programmed industry-leading, trade-in web application
@@ -11,7 +11,7 @@ results:
    - Generated average monthly revenue of $2,000+
    - Increased domain authority by 33% through SEO tasks
    - Wrote industry specific blogs and reviews
-   - Created e-commerce SOPs for training and workflow optimization
+   - Created ecommerce SOPs for training and workflow optimization
 links:
    - title: Website
      url: https://newbreedpb.com/
@@ -21,7 +21,7 @@ links:
      url: https://github.com/isaacyakl/new-breed-shopify-theme
    - title: Trade App Code
      url: https://github.com/isaacyakl/new-breed-trade-app
-summary: "Since late 2020, I have managed the e-commerce side of New Breed Paintball & Airsoft. My main concern has been to continue providing a friendly, reliable customer experience as they have since 2008. This has encompassed setting them up with Shopify for both their e-commerce and retail locations; developing web improvements; creating marketing content; and authoring SOPs to better enhance workflows. In all, the web store has stiff competition from well-established online paintball and airsoft retailers but is still managing to grow and generate consistent revenue."
+summary: "Since late 2020, I have managed the ecommerce side of New Breed Paintball & Airsoft. My main concern has been to continue providing a friendly, reliable customer experience as they have since 2008. This has encompassed setting them up with Shopify for both their ecommerce and retail locations; developing web improvements; creating marketing content; and authoring SOPs to better enhance workflows. In all, the web store has stiff competition from well-established online paintball and airsoft retailers but is still managing to grow and generate consistent revenue."
 tags:
    - Shopify
    - SEO
@@ -115,11 +115,11 @@ I perform many essential one-time and daily SEO tasks. Much of my time in this r
    -  Breadcrumbs
    -  FAQ
 
-## E-commerce
+## Ecommerce
 
 [![NBPA product screenshot](/img/work/nbpa-ss14-product.jpg)](/img/work/nbpa-ss14-product.jpg)
 
-My e-commerce tasks involve product, process, and staff management. I routinely verify the work of staff members in the backend of Shopify. This includes the correction, addition, and management of a +3,000 product catalog. Product details (e.g. descriptions, MPNs/SKUs, UPCs, costs, prices, etc.) must be kept up-to-date and compliant with manufacturer MAP prices, especially in the current economy. I make an effort to include the most accurate and helpful details, including videos, high-quality images, product compatibility, and what is included with each purchase.
+My ecommerce tasks involve product, process, and staff management. I routinely verify the work of staff members in the backend of Shopify. This includes the correction, addition, and management of a +3,000 product catalog. Product details (e.g. descriptions, MPNs/SKUs, UPCs, costs, prices, etc.) must be kept up-to-date and compliant with manufacturer MAP prices, especially in the current economy. I make an effort to include the most accurate and helpful details, including videos, high-quality images, product compatibility, and what is included with each purchase.
 
 [![NBPA SOP screenshot](/img/work/nbpa-ss7-sop.jpg)](/img/work/nbpa-ss7-sop.jpg)
 

@@ -7,7 +7,7 @@ function ExperienceTimeline() {
 			<div className="experience-timeline">
 				<h3>2020-Present</h3>
 				<p>
-					Web Developer, Digital Marketer, E-commerce Manager
+					Web Developer &amp; Digital Marketer
 					<span>
 						<Link href="/work/newbreedpb">
 							<a title="View this work experience">New Breed Paintball &amp; Airsoft</a>
@@ -20,7 +20,7 @@ function ExperienceTimeline() {
 				</p>
 				<h3>2014-2016</h3>
 				<p>
-					Web Developer, Digital Marketer
+					Web Developer &amp; Digital Marketer
 					<span>
 						<Link href="/work/yourpbfriend">
 							<a title="View this work experience">YourPbFriend</a>
