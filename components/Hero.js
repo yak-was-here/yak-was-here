@@ -1,7 +1,7 @@
 import ContactIcons from "./ContactIcons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
-import { faCode } from "@fortawesome/free-solid-svg-icons";
+import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 import { fName, lName, title, location } from "../data/meta";
 
 function Hero() {
@@ -15,7 +15,7 @@ function Hero() {
 				</h1>
 				<hr />
 				<div className="seeking">
-					<FontAwesomeIcon icon={faCode} />
+					<FontAwesomeIcon icon={faBriefcase} />
 					{title}
 					<br />
 					<FontAwesomeIcon icon={faMapMarkerAlt} />
