@@ -21,10 +21,10 @@ function DigMktgServices() {
 			<main>
 				<section>Best Deals section</section>
 				<div className="text-center" style={{ backgroundColor: "purple" }}>
-					<h3 style={{ color: "white" }}>What can I do for you?</h3>
+					<h3 style={{ color: "white", padding: "1em" }}>What can I do for you?</h3>
 				</div>
+
 				<section>
-					<h2>Services</h2>
 					<ul>
 						<li>Web Design, Development, &amp; Management</li>
 						<li>Social Media Marketing &amp; Management</li>
@@ -69,7 +69,7 @@ function DigMktgServices() {
 							<li>Search Engine Marketing (SEM)</li>
 							<li>Social Media Ads</li>
 							<li>Email Outreach</li>
-							<li>Re-targeting</li>
+							<li>Retargeting</li>
 						</ul>
 						<li>Graphic Design</li>
 						<ul>
