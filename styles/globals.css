@@ -115,6 +115,13 @@ h6 {
 	font-size: 1.3rem;
 }
 
+.section-outside-heading {
+	color: white;
+	background-color: #9f00c5;
+	padding: 1em;
+	text-align: center;
+}
+
 p {
 	padding: var(--space-unit) 0rem;
 	line-height: 1.35;
