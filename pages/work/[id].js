@@ -72,11 +72,11 @@ const Work = ({ title, images, tags, results, summary, links, htmlContent }) => 
 					) : (
 						``
 					)}
-					<h3 id="tags">Skills & tools used</h3>
+					<h3 id="tags">Skills &amp; tools used</h3>
 					{tags !== undefined ? <WorkTags tags={tags} /> : ``}
 				</section>
 				{getBody()}
-				<CtaSection />
+				<CtaSection btnText="Hire me" btnHref={"../digital-marketing-services"} />
 			</main>
 			<Footer />
 		</>
