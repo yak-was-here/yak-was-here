@@ -30,6 +30,7 @@ function DigMktgServices() {
 				</section>
 				<section>
 					<hr />
+					<p>Full-service marketing available on-retainer and package.</p>
 					<h2>Website Services</h2>
 					<ul>
 						<li>Web Design</li>
@@ -37,22 +38,36 @@ function DigMktgServices() {
 						<li>Web Content Development</li>
 						<li>Web Maintenance</li>
 					</ul>
+				</section>
+				<section>
 					<h2>Ecommerce Services</h2>
 					<ul>
 						<li>Product Management: Addition, Updating</li>
-						<li>Sales Channel Integration and Management</li>
 						<li>
-							Platforms
+							Sales Channel Integration and Management
 							<ul>
 								<li>Shopify</li>
 								<li>Amazon</li>
 								<li>eBay</li>
+								<li>Instagram / Facebook</li>
+								<li>Google Shopping</li>
 								<li>BigCommerce</li>
 								<li>Volusion</li>
 								<li>WooCommerce</li>
 							</ul>
 						</li>
 					</ul>
+				</section>
+				<section>
+					<h2>SEO (Search Engine Optimization) Services</h2>
+					<ul>
+						<li>Keyword Targeting</li>
+						<li>Technical Optimization</li>
+						<li>Blog Article Writing / Copywriting</li>
+						<li>Quality Link Building</li>
+					</ul>
+				</section>
+				<section>
 					<h2>Graphic Design Services</h2>
 					<ul>
 						<li>
@@ -68,13 +83,16 @@ function DigMktgServices() {
 						<li>Business Cards</li>
 						<li>Fliers</li>
 					</ul>
-					<h2>Search Engine Optimization (SEO) Services</h2>
+				</section>
+				<section>
+					<h2>Paid Advertising Services</h2>
 					<ul>
-						<li>Keyword Targeting</li>
-						<li>Technical Optimization</li>
-						<li>Blog Article Writing / Copywriting</li>
-						<li>Quality Link Building</li>
+						<li></li>
+						<li>Google Ads</li>
+						<li>Meta Ads</li>
 					</ul>
+				</section>
+				<section>
 					<h2>Social Media Services</h2>
 					<ul>
 						<li>Social Media Marketing</li>
