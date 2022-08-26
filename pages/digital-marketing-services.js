@@ -62,6 +62,7 @@ function DigMktgServices() {
 								<li>Product Addition</li>
 								<li>Product Information Updating</li>
 								<li>Product Description Development</li>
+								<li>Product Feed Management</li>
 							</ul>
 						</li>
 						<li>
@@ -106,11 +107,13 @@ function DigMktgServices() {
 					</ul>
 				</section>
 				<section>
-					<h2>Paid Advertising Services</h2>
+					<h2>Pay-Per-Click Advertising Services</h2>
 					<ul>
-						<li></li>
 						<li>Google Ads</li>
-						<li>Meta Ads</li>
+						<li>Bing Ads</li>
+						<li>Facebook Ads</li>
+						<li>Instagram Ads</li>
+						<li>Amazon Ads</li>
 					</ul>
 				</section>
 				<section>
