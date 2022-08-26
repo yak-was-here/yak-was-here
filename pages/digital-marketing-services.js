@@ -21,28 +21,49 @@ function DigMktgServices() {
 			<Header heading="Digital Marketing Services" />
 			<main>
 				<section>
-					<p>Display three popular package options in a grid. Link to packages section at bottom of page.</p>
+					<p>Execute your strategy with a campaign that spans multiple channels: social media, email, web content, and more. Discover which strategies will give you the greatest return on investment: Pay-Per-Click, social media influencers, retargeting, and more. Get full-service digital marketing available either in packages or on retainer.</p>
+					{/* Display three popular package options in a grid. Link to packages section at bottom of page. */}
 					<ul>
 						<li>Pack1</li>
 						<li>Pack2</li>
 						<li>Pack3</li>
 					</ul>
+					<p>Below are many of the services available on retainer and included in packages:</p>
 				</section>
 				<section>
-					<hr />
-					<p>Full-service marketing available on-retainer and package.</p>
 					<h2>Website Services</h2>
 					<ul>
-						<li>Web Design</li>
-						<li>Web Development</li>
-						<li>Web Content Development</li>
+						<li>Web Design or Redesign</li>
+						<li>
+							Web Development
+							<ul>
+								<li>Feature Additions</li>
+								<li>User Experience Improvements</li>
+							</ul>
+						</li>
+						<li>
+							Web Content Development
+							<ul>
+								<li>FAQ Page</li>
+								<li>Knowledge Bases</li>
+								<li>Product Galleries</li>
+								<li>Shipping Information</li>
+							</ul>
+						</li>
 						<li>Web Maintenance</li>
 					</ul>
 				</section>
 				<section>
 					<h2>Ecommerce Services</h2>
 					<ul>
-						<li>Product Management: Addition, Updating</li>
+						<li>
+							Product Management
+							<ul>
+								<li>Product Addition</li>
+								<li>Product Information Updating</li>
+								<li>Product Description Development</li>
+							</ul>
+						</li>
 						<li>
 							Sales Channel Integration and Management
 							<ul>
@@ -95,29 +116,23 @@ function DigMktgServices() {
 				<section>
 					<h2>Social Media Services</h2>
 					<ul>
-						<li>Social Media Marketing</li>
-						<li>Social Media Management</li>
-						<li>Account / Profile Branding</li>
-						<li>Shopping / Product Integration</li>
 						<li>
-							Platforms
+							Social Media Marketing &amp; Management
 							<ul>
-								<li>Instagram</li>
-								<li>Facebook</li>
-								<li>YouTube</li>
-								<li>Twitter</li>
-								<li>TikTok</li>
-								<li>Yelp</li>
-								<li>Google Business</li>
+								<li>Content Marketing</li>
+								<li>Ads</li>
+								<li>Influencers / Brand Advocate Relations</li>
+								<li>Chat Bots / Auto Reply</li>
 							</ul>
 						</li>
+						<li>Account / Profile Branding</li>
+						<li>Ecommerce Integration</li>
 					</ul>
 				</section>
 				<h2 className="section-outside-heading" id="packages">
 					Packages
 				</h2>
 				<section>
-					<p>Packages in detail.</p>
 					<ServicePackage name={"Multi-Channel Marketing Package"} price={"$2,500"}>
 						<ul>
 							<li>Search Engine Marketing (SEM)</li>
@@ -138,6 +153,10 @@ function DigMktgServices() {
 						</ul>
 					</ServicePackage>
 				</section>
+				<h2 className="section-outside-heading" id="on-retainer">
+					Retainer
+				</h2>
+				<section>Hire with a retainer agreement and take full advantage of all services.</section>
 				{/* 
 					- https://www.shopify.in/blog/ecommerce-marketing-analytics-how-to-measure-the-success-of-your-marketing-campaigns
 					- https://www.singlegrain.com/blog-posts/link-building/the-ultimate-guide-to-link-building-with-content/
