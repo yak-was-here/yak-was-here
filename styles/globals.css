@@ -802,6 +802,20 @@ strong code {
 	font-weight: bold;
 }
 
+.services-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.service {
+	overflow: hidden;
+	max-width: calc(var(--container-width) / 2 - var(--space-unit) / 2);
+	width: calc(var(--container-width) / 2 - var(--space-unit) / 2);
+	margin: 0;
+	margin-bottom: var(--space-unit);
+}
+
 .resumeBackground {
 	margin: 0 auto;
 	background-image: url("/img/isaacyakl-hero-background-4k.jpg");

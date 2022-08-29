@@ -49,108 +49,110 @@ function DigMktgServices() {
 						</Link>
 					</p>
 				</div>
-				<section>
-					<h2>Website Services</h2>
-					<ul>
-						<li>Web Design or Redesign</li>
-						<li>
-							Web Development
-							<ul>
-								<li>Feature Additions</li>
-								<li>User Experience Improvements</li>
-							</ul>
-						</li>
-						<li>
-							Web Content Development
-							<ul>
-								<li>FAQ Page</li>
-								<li>Knowledge Bases</li>
-								<li>Product Galleries</li>
-								<li>Shipping Information</li>
-							</ul>
-						</li>
-						<li>Web Maintenance</li>
-					</ul>
-				</section>
-				<section>
-					<h2>Ecommerce Services</h2>
-					<ul>
-						<li>
-							Product Management
-							<ul>
-								<li>Product Addition</li>
-								<li>Product Information Updating</li>
-								<li>Product Description Development</li>
-								<li>Product Feed Management</li>
-							</ul>
-						</li>
-						<li>
-							Sales Channel Integration and Management
-							<ul>
-								<li>Shopify</li>
-								<li>Amazon</li>
-								<li>eBay</li>
-								<li>Instagram / Facebook</li>
-								<li>Google Shopping</li>
-								<li>BigCommerce</li>
-								<li>Volusion</li>
-								<li>WooCommerce</li>
-							</ul>
-						</li>
-					</ul>
-				</section>
-				<section>
-					<h2>SEO (Search Engine Optimization) Services</h2>
-					<ul>
-						<li>Keyword Targeting</li>
-						<li>Technical Optimization</li>
-						<li>Blog Article Writing / Copywriting</li>
-						<li>Quality Link Building</li>
-					</ul>
-				</section>
-				<section>
-					<h2>Graphic Design Services</h2>
-					<ul>
-						<li>
-							Brand Identity
-							<ul>
-								<li>Logo Design</li>
-								<li>Competitive Differentiation</li>
-								<li>Value Communication</li>
-							</ul>
-						</li>
-						<li>Social Media Branding</li>
-						<li>Web Banner Ads</li>
-						<li>Business Cards</li>
-						<li>Fliers</li>
-					</ul>
-				</section>
-				<section>
-					<h2>Pay-Per-Click Advertising Services</h2>
-					<ul>
-						<li>Google Ads</li>
-						<li>Bing Ads</li>
-						<li>Facebook Ads</li>
-						<li>Instagram Ads</li>
-						<li>Amazon Ads</li>
-					</ul>
-				</section>
-				<section>
-					<h2>Social Media Services</h2>
-					<ul>
-						<li>
-							Social Media Marketing &amp; Management
-							<ul>
-								<li>Content Marketing</li>
-								<li>Ads</li>
-								<li>Influencers / Brand Advocate Relations</li>
-								<li>Chat Bots / Auto Reply</li>
-							</ul>
-						</li>
-						<li>Account / Profile Branding</li>
-						<li>Ecommerce Integration</li>
-					</ul>
-				</section>
+				<div className="services-container max-page-width">
+					<section className="service">
+						<h2>Website</h2>
+						<ul>
+							<li>Web Design or Redesign</li>
+							<li>
+								Web Development
+								<ul>
+									<li>Feature Additions</li>
+									<li>User Experience Improvements</li>
+								</ul>
+							</li>
+							<li>
+								Web Content Development
+								<ul>
+									<li>FAQ Page</li>
+									<li>Knowledge Bases</li>
+									<li>Product Galleries</li>
+									<li>Shipping Information</li>
+								</ul>
+							</li>
+							<li>Web Maintenance</li>
+						</ul>
+					</section>
+					<section className="service">
+						<h2>Ecommerce</h2>
+						<ul>
+							<li>
+								Product Management
+								<ul>
+									<li>Product Addition</li>
+									<li>Product Information Updating</li>
+									<li>Product Description Development</li>
+									<li>Product Feed Management</li>
+								</ul>
+							</li>
+							<li>
+								Sales Channel Integration and Management
+								<ul>
+									<li>Shopify</li>
+									<li>Amazon</li>
+									<li>eBay</li>
+									<li>Instagram / Facebook</li>
+									<li>Google Shopping</li>
+									<li>BigCommerce</li>
+									<li>Volusion</li>
+									<li>WooCommerce</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					<section className="service">
+						<h2>SEO (Search Engine Optimization)</h2>
+						<ul>
+							<li>Keyword Targeting</li>
+							<li>Technical Optimization</li>
+							<li>Blog Article Writing / Copywriting</li>
+							<li>Quality Link Building</li>
+						</ul>
+					</section>
+					<section className="service">
+						<h2>Graphic Design</h2>
+						<ul>
+							<li>
+								Brand Identity
+								<ul>
+									<li>Logo Design</li>
+									<li>Competitive Differentiation</li>
+									<li>Value Communication</li>
+								</ul>
+							</li>
+							<li>Social Media Branding</li>
+							<li>Web Banner Ads</li>
+							<li>Business Cards</li>
+							<li>Fliers</li>
+						</ul>
+					</section>
+					<section className="service">
+						<h2>Pay-Per-Click Advertising</h2>
+						<ul>
+							<li>Google Ads</li>
+							<li>Bing Ads</li>
+							<li>Facebook Ads</li>
+							<li>Instagram Ads</li>
+							<li>Amazon Ads</li>
+						</ul>
+					</section>
+					<section className="service">
+						<h2>Social Media</h2>
+						<ul>
+							<li>
+								Social Media Marketing &amp; Management
+								<ul>
+									<li>Content Marketing</li>
+									<li>Ads</li>
+									<li>Influencers / Brand Advocate Relations</li>
+									<li>Chat Bots / Auto Reply</li>
+								</ul>
+							</li>
+							<li>Account / Profile Branding</li>
+							<li>Ecommerce Integration</li>
+						</ul>
+					</section>
+				</div>
 				<div className="section-outside-heading yak-purple">
 					<h2 className="max-page-width yak-purple" style={{ letterSpacing: "0.05em" }} id="packages">
 						Packages
