@@ -156,7 +156,9 @@ function ResumeView() {
 									<Skill absoluteURL={true} q="JavaScript">
 										JavaScript / jQuery
 									</Skill>
-									<Skill absoluteURL={true}>NextJS / ReactJS</Skill>
+									<Skill absoluteURL={true} q="NextJS">
+										NextJS / ReactJS
+									</Skill>
 									<Skill absoluteURL={true} q="HTML">
 										HTML5
 									</Skill>
