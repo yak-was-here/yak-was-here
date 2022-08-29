@@ -3,8 +3,8 @@ import CtaBtn from "./CtaBtn";
 
 function ServicePackage({ children, name, href, price }) {
 	const getCTABtn = () => {
-		if (href === null || href === "") return <CtaBtn text={"Purchase"} />;
-		else <CtaBtn text={"Purchase"} href={href} />;
+		if (href === null || href === "") return <CtaBtn />;
+		else <CtaBtn href={href} />;
 	};
 
 	return (

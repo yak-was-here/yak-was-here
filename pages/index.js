@@ -14,7 +14,10 @@ export default function Home() {
 			<main className="max-page-width">
 				<section>
 					<About showHeading={false} />
-					<CtaBtn text="Browse work" href="/work" />
+					<div style={{ display: "flex", flexWrap: "wrap" }}>
+						<CtaBtn text="Browse work" href="/work" />
+						<CtaBtn text="View services" href="/digital-marketing-services" />
+					</div>
 				</section>
 			</main>
 			<Footer />

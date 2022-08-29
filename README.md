@@ -8,6 +8,7 @@ My personal website, created with NextJS and written in TypeScript. An experimen
 
 -  Convert to TypeScript
 -  Set prices for services
+-  Add links to purchase service packages
 -  Setup monorepo with Turborepo
 -  Integrate remote-jackbox-player with root domain
 -  Optimize image loading time for word cards
