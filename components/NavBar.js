@@ -28,6 +28,11 @@ const NavBar = ({ active, className = "" }) => {
 						<a>Work</a>
 					</Link>
 				</li>
+				<li id="work-menuitem" className={`${active === "services" ? "active" : ""}`} title="View services" role="menuitem">
+					<Link href="/digital-marketing-services">
+						<a>Services</a>
+					</Link>
+				</li>
 				<li id="resume-menuitem" className={`${active === "resume" ? "active" : ""}`} title="View résumé" role="menuitem">
 					<Link href="/resume">
 						<a>Résumé</a>

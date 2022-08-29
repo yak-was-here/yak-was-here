@@ -1,20 +1,18 @@
 # isaacyakl.com
 
-My personal website, created with Next.js and React.js. An experiment in using CSS relative viewport units for element sizing and layouts instead of media queries and breakpoints; a single-layout website. [Read more...](https://www.isaacyakl.com/work/isaacyakl-com)
+My personal website, created with NextJS and written in TypeScript. An experiment in using CSS relative viewport units for element sizing and layouts instead of media queries and breakpoints; a single-layout website. [Read more...](https://www.isaacyakl.com/work/isaacyakl-com)
 
 [Visit the site &rarr;](https://www.isaacyakl.com)
 
 # To-Do
 
--  Create services landing page and services component
-
-   -  Add "Hire Me" link on More page linking to services page
-   -  Change "Contact Me" CTA button on work pages to link to services page
-
+-  Convert to TypeScript
+-  Set prices for services
+-  Setup monorepo with Turborepo
+-  Integrate remote-jackbox-player with root domain
 -  Optimize image loading time for word cards
 -  Create blog
 -  Add RichSnippets (including article structured data for work and update [share metadata](https://ogp.me/#no_vertical))
--  Integrate remote-jackbox-player with root domain
 -  Add automatic heading id attribute generation
 -  Add automatic campaign URL generation
 -  Create sitemap generator (not as important since site is small)
