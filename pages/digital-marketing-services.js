@@ -22,7 +22,7 @@ function DigMktgServices() {
 			<Header heading="Digital Marketing Services" />
 			<main>
 				<div className="section-outside-heading yak-green">
-					<h2 className="max-page-width yak-green" style={{ letterSpacing: "0.05em" }} id="selling-point">
+					<h2 className="max-page-width yak-green" style={{ letterSpacing: "0.05em" }} id="get-results">
 						Grow your business.
 						<br />
 						<strong style={{ fontSize: "larger" }}>Get results.</strong>
@@ -39,7 +39,7 @@ function DigMktgServices() {
 					<p>Get recommended strategies based on competitive analysis and market research.</p>
 				</section>
 				<div className="section-outside-heading yak-cyan">
-					<h2 className="max-page-width yak-cyan" style={{ letterSpacing: "0.05em" }} id="selling-point">
+					<h2 className="max-page-width yak-cyan" style={{ letterSpacing: "0.05em" }} id="past-work">
 						Past work
 					</h2>
 					<p className="max-page-width">Browse my experience working with different brands and businesses in various industries. This includes experience developing startups, retail, and mom-and-pop shops in the paintball, airsoft, apparel, and fitness industries.</p>
