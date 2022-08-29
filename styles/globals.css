@@ -3,6 +3,7 @@
 	/* Colors */
 	--primary-accent: #03c03c;
 	--secondary-accent: #0dd1d1;
+	--tertiary-accent: #9f00c5;
 	--background-color: #ffffff;
 	--text-color: #000000;
 
@@ -116,10 +117,7 @@ h6 {
 }
 
 .section-outside-heading {
-	color: white;
-	background-color: #9f00c5;
 	padding: 1em;
-	text-align: center;
 }
 
 p {
@@ -160,6 +158,21 @@ div.work-status svg {
 .failure {
 	color: white;
 	background-color: #dc3545;
+}
+
+.yak-green {
+	color: white;
+	background-color: var(--primary-accent);
+}
+
+.yak-cyan {
+	color: white;
+	background-color: var(--secondary-accent);
+}
+
+.yak-purple {
+	color: white;
+	background-color: var(--tertiary-accent);
 }
 
 /* Navigation */
@@ -213,7 +226,7 @@ div.hamburger svg {
 ul.nav-menu {
 	list-style-type: none;
 	transition: all 0.5s 0s ease;
-	max-height: 12em;
+	max-height: 14em;
 	overflow: hidden;
 	padding: 0rem;
 	background-color: var(--background-color);

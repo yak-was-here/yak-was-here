@@ -12,7 +12,7 @@ function ServicePackage({ children, name, href, price }) {
 			<h2>{name}</h2>
 			{children}
 			<p style={{ textAlign: "right" }}>{price}</p>
-			<p className="text-center">{getCTABtn()}</p>
+			<div className="text-center">{getCTABtn()}</div>
 		</div>
 	);
 }

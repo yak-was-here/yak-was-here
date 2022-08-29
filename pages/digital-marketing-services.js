@@ -6,12 +6,13 @@ import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import { fName, lName, nick } from "../data/meta";
 import ServicePackage from "../components/ServicePackage";
+import Link from "next/link";
 
 function DigMktgServices() {
 	return (
 		<>
 			<BaseMeta title={`Digital marketing services by ${fName} "${nick}" ${lName}`} desc={`Hire yak and take your business or brand to the next level.`} />
-			<NavBar active="work" />
+			<NavBar active="services" />
 			<Breadcrumbs
 				trail={[
 					{ text: "Home", link: "/" },
@@ -20,16 +21,34 @@ function DigMktgServices() {
 			/>
 			<Header heading="Digital Marketing Services" />
 			<main>
+				<div className="section-outside-heading yak-green">
+					<h2 className="max-page-width yak-green" style={{ letterSpacing: "0.05em" }} id="selling-point">
+						Grow your business.
+						<br />
+						<strong style={{ fontSize: "larger" }}>Get results.</strong>
+					</h2>
+					<p className="max-page-width">Full-service digital marketing available packaged and on retainer.</p>
+				</div>
 				<section>
-					<p>Execute your strategy with a campaign that spans multiple channels: social media, email, web content, and more. Discover which strategies will give you the greatest return on investment: Pay-Per-Click, social media influencers, retargeting, and more. Get full-service digital marketing available either in packages or on retainer.</p>
-					{/* Display three popular package options in a grid. Link to packages section at bottom of page. */}
-					<ul>
-						<li>Pack1</li>
-						<li>Pack2</li>
-						<li>Pack3</li>
-					</ul>
-					<p>Below are many of the services available on retainer and included in packages:</p>
+					<p>Execute your strategy with a campaign that leverages multiple channels at once including social media, email, web content, ecommerce, search engines and more.</p>
+					<p>Reduce lost sales and increase brand visibility across the web.</p>
+					<p>Discover which approach or combination will drive the greatest results: Pay-Per-Click, social media influencers, retargeting, SEO, and more.</p>
+					<p>Focus on where you can make the most impact; leave behind tedious campaign management.</p>
+					<hr />
+					<h3>Not sure what your business needs to reach the next level?</h3>
+					<p>Get recommended strategies based on competitive analysis and market research.</p>
 				</section>
+				<div className="section-outside-heading yak-cyan">
+					<h2 className="max-page-width yak-cyan" style={{ letterSpacing: "0.05em" }} id="selling-point">
+						Past work
+					</h2>
+					<p className="max-page-width">Browse my experience working with different brands and businesses in various industries. This includes experience developing startups, retail, and mom-and-pop shops in the paintball, airsoft, apparel, and fitness industries.</p>
+					<p className="max-page-width text-center">
+						<Link href="./work">
+							<a className="btn">Browse work</a>
+						</Link>
+					</p>
+				</div>
 				<section>
 					<h2>Website Services</h2>
 					<ul>
@@ -132,9 +151,12 @@ function DigMktgServices() {
 						<li>Ecommerce Integration</li>
 					</ul>
 				</section>
-				<h2 className="section-outside-heading" id="packages">
-					Packages
-				</h2>
+				<div className="section-outside-heading yak-purple">
+					<h2 className="max-page-width yak-purple" style={{ letterSpacing: "0.05em" }} id="packages">
+						Packages
+					</h2>
+					<p className="max-page-width">Browse complimentary services packaged as one-time projects.</p>
+				</div>
 				<section>
 					<ServicePackage name={"Multi-Channel Marketing Package"} price={"$2,500"}>
 						<ul>
@@ -156,20 +178,18 @@ function DigMktgServices() {
 						</ul>
 					</ServicePackage>
 				</section>
-				<h2 className="section-outside-heading" id="on-retainer">
-					Retainer
-				</h2>
-				<section>Hire with a retainer agreement and take full advantage of all services.</section>
+				<div className="section-outside-heading yak-purple">
+					<h2 className="max-page-width yak-purple" style={{ letterSpacing: "0.05em" }} id="retainer">
+						Retainer
+					</h2>
+					<p className="max-page-width">Hire me to do a fixed number of hours of work for you each month, thereby, taking advantage of all my services when needed.</p>
+					<CtaBtn text={"Hire me"} />
+				</div>
 				{/* 
 					- https://www.shopify.in/blog/ecommerce-marketing-analytics-how-to-measure-the-success-of-your-marketing-campaigns
 					- https://www.singlegrain.com/blog-posts/link-building/the-ultimate-guide-to-link-building-with-content/
 					- https://rosshill.ca/
  				*/}
-				<section className="text-center">
-					<hr />
-					<h3>Take your business to the next level.</h3>
-					<CtaBtn />
-				</section>
 			</main>
 			<Footer />
 		</>
