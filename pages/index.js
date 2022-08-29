@@ -13,7 +13,7 @@ export default function Home() {
 			<Hero />
 			<main className="max-page-width">
 				<section>
-					<About />
+					<About showHeading={false} />
 					<CtaBtn text="Browse work" href="/work" />
 				</section>
 			</main>
