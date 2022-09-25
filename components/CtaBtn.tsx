@@ -2,7 +2,7 @@ import Link from "next/link";
 import EmailLink from "./EmailLink";
 import PropTypes from "prop-types";
 
-function CtaBtn({ text, href }) {
+function CtaBtn({ text, href }: { text: string; href: string }) {
 	const generateBtn = () => {
 		if (href === "") {
 			return (

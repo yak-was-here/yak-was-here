@@ -1,7 +1,7 @@
-import { fName, lName, tagline, resumeIntroWebDev, github, linkedin, siteURL } from "../data/meta";
+import { fName, lName, tagline, resumeIntroWebDev, github, linkedin, siteURL, tel, email } from "../data/meta";
 import EmailLink from "./EmailLink";
 import Skill from "./Skill";
-import TelLink, { telNum } from "./TelLink";
+import TelLink from "./TelLink";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload, faPrint } from "@fortawesome/free-solid-svg-icons";
@@ -34,9 +34,9 @@ function ResumeView() {
 					</h1>
 					<h2>{tagline}</h2>
 					<p className="contact-info">
-						<EmailLink />
+						<EmailLink>{email}</EmailLink>
 						&nbsp;&#8226;&nbsp;
-						<TelLink>{telNum}</TelLink>
+						<TelLink>{tel}</TelLink>
 						<br />
 						<a href={siteURL} title="Portfolio">
 							isaacyakl.com
