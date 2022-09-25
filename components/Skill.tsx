@@ -1,10 +1,12 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
+import React from "react";
 import { siteURL } from "../data/meta";
 
-function Skill({ children, q, absoluteURL }) {
+function Skill({ children, q, absoluteURL }: { children?: React.ReactNode; q?: string; absoluteURL?: boolean }) {
 	const childToString = () => {
-		return Array.isArray(children) ? children[0].props.children : typeof children === "object" ? children.props.children : children;
+		// React.isValidElement - https://stackoverflow.com/a/65829088/13254325
+		return Array.isArray(children) ? children[0].props.children : children && typeof children === "object" && React.isValidElement(children) ? children.props.children : children;
 	};
 	const setQueryString = () => {
 		return q ? encodeURIComponent(q) : encodeURIComponent(childToString());

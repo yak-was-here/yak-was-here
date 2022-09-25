@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { title } from "../data/meta";
 
-const WorkCard = ({ id, title, date, role, image, summary }) => {
+const WorkCard = ({ id, title, date, role, image, summary }: { id: string; title: string; date: string; role: string; image: string; summary: string }) => {
 	const roleHeading = () => {
 		return <h3>{role}</h3>;
 	};

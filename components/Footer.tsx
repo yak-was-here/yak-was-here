@@ -1,9 +1,9 @@
-import ContactIcons from "../components/ContactIcons";
-import Branding from "../components/Branding";
+import ContactIcons from "./ContactIcons";
+import Branding from "./Branding";
 import React from "react";
 import { fName, lName } from "../data/meta";
 
-const Footer = ({ children }) => {
+const Footer = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<footer>
 			<div className="dont-print">{children}</div>

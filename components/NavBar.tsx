@@ -3,10 +3,10 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import Branding from "../components/Branding";
+import Branding from "./Branding";
 import EmailLink from "./EmailLink";
 
-const NavBar = ({ active, className = "" }) => {
+const NavBar = ({ active, className = "" }: { active?: string; className?: string }) => {
 	const [isNavMenuOpen, setNavMenuState] = useState(true); // Nav menu starts open
 
 	return (

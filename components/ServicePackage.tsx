@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
+import React from "react";
 import CtaBtn from "./CtaBtn";
 
-function ServicePackage({ children, name, href, price }) {
+function ServicePackage({ children, name, href, price }: { children: React.ReactNode; name?: string; href?: string; price?: string }) {
 	const getCTABtn = () => {
 		if (href === null || href === "") return <CtaBtn />;
 		else <CtaBtn href={href} />;

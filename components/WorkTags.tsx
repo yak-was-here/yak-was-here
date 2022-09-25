@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const WorkTags = ({ tags }) => {
+const WorkTags = ({ tags }: { tags: Array<string> }) => {
 	return (
 		<ul className="work-tags">
 			{tags.map((t) => {
