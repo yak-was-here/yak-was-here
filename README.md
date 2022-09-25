@@ -6,7 +6,6 @@ My personal website, created with NextJS and written in TypeScript. An experimen
 
 # To-Do
 
--  Convert to TypeScript
 -  Set prices for services
 -  Add links to purchase service packages
 -  Setup monorepo with Turborepo
