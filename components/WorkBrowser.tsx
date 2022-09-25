@@ -1,14 +1,14 @@
 import WorkCard from "./WorkCard";
 import PropTypes from "prop-types";
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { isDesktop } from "react-device-detect";
 
-export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate, focus }) {
+export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate, focus }: { workMetadata: Array<WorkFile>; tagQuery: string; onQueryUpdate: Function; focus: boolean }) {
 	const [searchQuery, setSearchQuery] = useState(tagQuery);
-	const [filteredWorkComponents, setFilteredWorkComponents] = useState([]);
+	const [filteredWorkComponents, setFilteredWorkComponents] = useState<React.ReactNode>([]);
 
 	// Format a raw work data array into an WorkCard components array
-	const formatWork = (e) => {
+	const formatWork = (e: Array<WorkFile>) => {
 		return e.map((xp) => <WorkCard id={xp.id} key={xp.id} image={xp.images[0]} title={xp.title} summary={xp.summary} />);
 	};
 
@@ -40,9 +40,9 @@ export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate, foc
 		setSearchQuery(tagQuery);
 	}, [tagQuery]);
 
-	const searchInputRef = useRef(null);
+	const searchInputRef = useRef<HTMLInputElement>(null);
 	useEffect(() => {
-		if (focus === true || isDesktop === true) searchInputRef.current.focus();
+		if (focus === true || isDesktop === true) searchInputRef?.current?.focus();
 	}, []);
 
 	return (

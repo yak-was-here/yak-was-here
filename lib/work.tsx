@@ -26,34 +26,31 @@ export const getAllWorkIds = () => {
 
 export async function getAllWorkMetadata() {
 	const fileNames = getMDWorkFiles();
-	const workFiles = [];
+	const workFiles: Array<WorkFile> = [];
 
 	for (const fileName in fileNames) {
 		const id = fileNames[fileName].replace(/\.md$/, "");
 		const workFileData = await getWorkFileData(id);
-		workFiles.push(workFileData);
+		if (workFileData !== undefined) workFiles.push(workFileData as WorkFile);
 	}
 
 	return workFiles.sort(({ date: a }, { date: b }) => {
-		const processDateRange = (dateRange) => {
-			const dR = dateRange.toString();
-			return dR.includes("-") ? dR.split("-")[0] : dR;
+		const processDateRange = (dateRange: string) => {
+			const dR: string = dateRange.toString();
+			return Number(dR.includes("-") ? dR.split("-")[0] : dR);
 		};
 		return processDateRange(b) - processDateRange(a);
 	});
 }
 
-export async function getWorkFileData(id) {
+export async function getWorkFileData(id: string) {
 	const fullPath = path.join(workDirectory, `${id}.md`);
 	let workFile = "";
 
 	try {
 		if (fs.existsSync(fullPath)) {
-			workFile = fs.readFileSync(fullPath, "utf8", (err) => {
-				if (err) {
-					console.error("Work file read failed:", err);
-					return;
-				}
+			workFile = fs.readFileSync(fullPath, {
+				encoding: "utf8",
 			});
 		} else {
 			console.error("No work file found for id:", id);
