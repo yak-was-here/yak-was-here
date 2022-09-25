@@ -1,8 +1,9 @@
 import "../styles/globals.css";
+import type { AppProps } from "next/app";
 import { GoogleAnalytics, usePageViews } from "nextjs-google-analytics";
 import BackToTop from "../components/BackToTop";
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }: AppProps) {
 	usePageViews();
 
 	return (
@@ -13,5 +14,3 @@ function MyApp({ Component, pageProps }) {
 		</>
 	);
 }
-
-export default MyApp;

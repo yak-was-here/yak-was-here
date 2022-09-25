@@ -10,10 +10,10 @@ import Breadcrumbs from "../../components/Breadcrumbs";
 import { fName, lName, nick } from "../../data/meta";
 import CtaSection from "../../components/CtaSection";
 
-const Index = ({ allWorkMetadata }) => {
+const Index = ({ allWorkMetadata }: { allWorkMetadata: Array<WorkFile> }) => {
 	const router = useRouter();
 
-	const updateURLSearchQuery = (q) => {
+	const updateURLSearchQuery = (q: string) => {
 		if (q !== "") {
 			router.push({
 				pathname: router.pathname,
@@ -31,7 +31,7 @@ const Index = ({ allWorkMetadata }) => {
 
 	const getURLSearchQuery = () => {
 		try {
-			return router.query.q === undefined ? "" : decodeURIComponent(router.query.q);
+			return router.query.q === undefined ? "" : typeof router.query.q === "string" ? decodeURIComponent(router.query.q) : decodeURIComponent(router.query.q[0]);
 		} catch (e) {
 			console.error(e);
 		}

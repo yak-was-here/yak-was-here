@@ -9,8 +9,9 @@ import WorkTags from "../../components/WorkTags";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import { nick, siteURL } from "../../data/meta";
 import CtaSection from "../../components/CtaSection";
+import { GetStaticPaths } from "next";
 
-const Work = ({ title, images, tags, results, summary, links, htmlContent }) => {
+const Work = ({ title, images, tags, results, summary, links, htmlContent }: WorkFile) => {
 	const getResults = () => {
 		if (results && results.length > 0) {
 			return (
@@ -24,7 +25,7 @@ const Work = ({ title, images, tags, results, summary, links, htmlContent }) => 
 	};
 
 	const getBody = () => {
-		if (htmlContent !== "") {
+		if (htmlContent && htmlContent !== "") {
 			return (
 				<div className="work-details-body">
 					<section dangerouslySetInnerHTML={{ __html: htmlContent }}></section>
@@ -83,15 +84,15 @@ const Work = ({ title, images, tags, results, summary, links, htmlContent }) => 
 	);
 };
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
 	const paths = getAllWorkIds();
 	return {
 		paths,
 		fallback: false,
 	};
-}
+};
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: { params: WorkFile }) {
 	if (params.id !== undefined) {
 		const workFileData = await getWorkFileData(params.id);
 		if (workFileData) {

@@ -7,7 +7,7 @@ type Crumb = {
 	link: string;
 };
 
-function Breadcrumbs({ trail, className = "" }: { trail: Array<Crumb>; className: string }) {
+function Breadcrumbs({ trail, className = "" }: { trail: Array<Crumb>; className?: string }) {
 	return (
 		<section className={`max-page-width breadcrumbs ${className}`}>
 			{trail.map((link, index, ar) => {
