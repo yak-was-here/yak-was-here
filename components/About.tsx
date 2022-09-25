@@ -1,9 +1,9 @@
 import { intro } from "../data/meta";
 import PropTypes from "prop-types";
 
-function About({ showHeading }) {
+function About({ showHeading }: { showHeading: boolean }) {
 	const renderHeading = () => {
-		return showHeading ? <h2>About</h2> : "";
+		return showHeading ? <h2>About</h2> : <></>;
 	};
 	return (
 		<div className="intro">

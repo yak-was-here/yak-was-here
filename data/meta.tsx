@@ -2,6 +2,13 @@ export const siteURL = "https://www.isaacyakl.com/";
 export const fName = "Isaac";
 export const mI = "D";
 export const lName = "Litzenberger";
+// obfuscate the email address so web scrappers cant grab it from GitHub
+// Obfuscated using https://javascriptobfuscator.com/Javascript-Obfuscator.aspx
+// prettier-ignore
+var _0x6db9=["\x69\x40\x69\x73\x61\x61\x63\x79\x61\x6B\x6C\x2E\x63\x6F\x6D"];
+export const email = _0x6db9[0];
+var _0x6027 = ["\x31\x35\x31\x30\x39\x32\x35\x33\x31\x37\x35\u202C"];
+export const tel = _0x6027[0];
 export const nick = "yak";
 export const title = "Web Developer & Digital Marketer";
 export const tagline = `${title} | "${nick}"`;

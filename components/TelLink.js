@@ -1,4 +1,4 @@
-import Obfuscate from "react-obfuscate";
+import Obfuscate from "@south-paw/react-obfuscate-ts";
 import { nick } from "../data/meta";
 
 // obfuscate the tel num so web scrappers cant grab it from GitHub

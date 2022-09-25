@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { fName, lName, nick, siteURL, twitter } from "../data/meta";
 import PropTypes from "prop-types";
 
-function BaseMeta({ title, desc, author, robots, googlebot, shareURL, shareImg, shareType }) {
+function BaseMeta({ title, desc, author, robots, googlebot, shareURL, shareImg, shareType }: { title: string; desc: string; author: string; robots: string; googlebot: string; shareURL: string; shareImg: string; shareType: string }) {
 	const router = useRouter();
 
 	if (typeof shareURL == "string" && shareURL == BaseMeta.defaultProps.shareURL) {

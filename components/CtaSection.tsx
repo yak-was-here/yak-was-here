@@ -1,6 +1,6 @@
 import CtaBtn from "./CtaBtn";
 
-export default function CtaSection({ ctaBody, btnText, btnHref }) {
+export default function CtaSection({ ctaBody, btnText, btnHref }: { ctaBody: string; btnText: string; btnHref: string }) {
 	const getBody = () => {
 		if (ctaBody !== undefined) return ctaBody;
 		return (

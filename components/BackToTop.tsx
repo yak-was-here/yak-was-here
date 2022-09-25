@@ -3,13 +3,14 @@ import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-export default function BackToTop() {
+export default function BackToTop(): JSX.Element {
 	const router = useRouter();
 	const [showBTT, setShowBTT] = useState(false);
 
 	useEffect(() => {
 		const renderBTT = () => {
-			if (document.querySelector("main").clientHeight > window.innerHeight * 2 && window.pageYOffset > window.innerHeight * 0.85) {
+			const mainEl = document.querySelector("main") ?? document.querySelector("body") ?? document.querySelector("html") ?? null;
+			if (mainEl && mainEl.clientHeight > window.innerHeight * 2 && window.pageYOffset > window.innerHeight * 0.85) {
 				setShowBTT(true);
 				return;
 			}

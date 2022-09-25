@@ -2,7 +2,12 @@ import PropTypes from "prop-types";
 import Link from "next/link";
 import React from "react";
 
-function Breadcrumbs({ trail, className = "" }) {
+type Crumb = {
+	text: string;
+	link: string;
+};
+
+function Breadcrumbs({ trail, className = "" }: { trail: Array<Crumb>; className: string }) {
 	return (
 		<section className={`max-page-width breadcrumbs ${className}`}>
 			{trail.map((link, index, ar) => {
