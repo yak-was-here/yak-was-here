@@ -12,7 +12,7 @@ export default function More() {
 			<main className="max-page-width more">
 				<section>
 					<h1>
-						{fName}&nbsp;{lName}
+						{fName} "{nick}" {lName}
 					</h1>
 					<p>{tagline}</p>
 				</section>
@@ -28,6 +28,9 @@ export default function More() {
 					</Link>
 					<Link href="https://nsfpgaming.com">
 						<a className="btn cta more-links">NSFP Gaming</a>
+					</Link>
+					<Link href="https://www.instagram.com/iamaliveinchrist/">
+						<a className="btn cta more-links">Alive in Christ Apparel</a>
 					</Link>
 				</section>
 				<section>

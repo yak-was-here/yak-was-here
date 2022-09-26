@@ -1,4 +1,4 @@
-import { fName, lName, tagline, resumeIntroWebDev, github, linkedin, siteURL, tel, email } from "../data/meta";
+import { fName, lName, resumeTagline, resumeIntroWebDev, github, linkedin, siteURL, tel, email, nick } from "../data/meta";
 import EmailLink from "./EmailLink";
 import Skill from "./Skill";
 import TelLink from "./TelLink";
@@ -30,9 +30,9 @@ function ResumeView() {
 			<div className="resumePaper">
 				<main className="resumeContent">
 					<h1>
-						{fName} {lName}
+						{fName} "{nick}" {lName}
 					</h1>
-					<h2>{tagline}</h2>
+					<h2>{resumeTagline}</h2>
 					<p className="contact-info">
 						<EmailLink>{email}</EmailLink>
 						&nbsp;&#8226;&nbsp;

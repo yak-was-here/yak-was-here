@@ -92,6 +92,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	};
 };
 
+// Add typing https://nextjs.org/docs/basic-features/typescript#static-generation-and-server-side-rendering
+// https://github.com/vercel/next.js/discussions/16522
 export async function getStaticProps({ params }: { params: WorkFile }) {
 	if (params.id !== undefined) {
 		const workFileData = await getWorkFileData(params.id);

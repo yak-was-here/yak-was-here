@@ -11,6 +11,7 @@ My personal website, created with NextJS and written in TypeScript. An experimen
 -  Setup monorepo with Turborepo
 -  Integrate remote-jackbox-player with root domain
 -  Optimize image loading time for word cards
+-  Utilize Jest
 -  Create blog
 -  Add RichSnippets (including article structured data for work and update [share metadata](https://ogp.me/#no_vertical))
 -  Add automatic heading id attribute generation
