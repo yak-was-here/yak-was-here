@@ -918,8 +918,8 @@ strong code {
 
 .resumeContent ul {
 	font-size: var(--resume-body-size);
-	margin: 0.05in 0 0 1em;
-	padding-left: 1em;
+	margin: 0.05in 0 0 0.6em;
+	padding-left: 0.5em;
 	border: none;
 	list-style-type: disc;
 }

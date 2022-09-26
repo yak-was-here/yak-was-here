@@ -154,7 +154,7 @@ function ResumeView() {
 							<div className="skills-container">
 								<ul className="skills">
 									<Skill absoluteURL={true} q="JavaScript">
-										JavaScript / jQuery
+										TypeScript / JavaScript
 									</Skill>
 									<Skill absoluteURL={true} q="NextJS">
 										NextJS / ReactJS
