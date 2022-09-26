@@ -12,7 +12,7 @@ export default function More() {
 			<main className="max-page-width more">
 				<section>
 					<h1>
-						{fName} "{nick}" {lName}
+						{fName} &quot;{nick}&quot; {lName}
 					</h1>
 					<p>{tagline}</p>
 				</section>

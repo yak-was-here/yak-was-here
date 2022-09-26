@@ -30,7 +30,7 @@ function ResumeView() {
 			<div className="resumePaper">
 				<main className="resumeContent">
 					<h1>
-						{fName} "{nick}" {lName}
+						{fName} &quot;{nick}&quot; {lName}
 					</h1>
 					<h2>{resumeTagline}</h2>
 					<p className="contact-info">
