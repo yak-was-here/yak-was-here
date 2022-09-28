@@ -5,13 +5,29 @@ import TelLink from "./TelLink";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload, faPrint } from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from "react";
 
 function ResumeView() {
+	let revealObfsdLinks = async (): Promise<void> => {};
 	const printResume = () => {
 		// Print to PDF in Firefox for best text recognition.
-		// Mouseover contact links before saving.
-		window.print();
+		// Reveal obfuscated contact information before printing/printing to PDF
+		revealObfsdLinks().then(() => {
+			window.print();
+		});
 	};
+
+	useEffect(() => {
+		revealObfsdLinks = async (): Promise<void> => {
+			const obfsdLinks: NodeList = document.querySelectorAll('a[href="https://youtu.be/dQw4w9WgXcQ"');
+
+			for (let i = 0; i < obfsdLinks.length; i++) {
+				const obfsdLnk = obfsdLinks[i] as HTMLAnchorElement;
+				// @ts-ignore
+				obfsdLnk.focus({ preventScroll: true, focusVisible: false }); // focusVisibile is an experimental option so it needed to be ignored by TS https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus
+			}
+		};
+	});
 
 	return (
 		<div className="resumeBackground">

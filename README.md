@@ -21,7 +21,6 @@ My personal website, created with NextJS and written in TypeScript. An experimen
 -  Add syntax highlighting for blogs, work, etc. Perhaps use: [https://www.npmjs.com/package/react-code-highlighter](https://www.npmjs.com/package/react-code-highlighter)
 -  Resume education section not showing up in portrait mobile-view
 -  Do not oversize small images in work cover pictures
--  Auto-unobfuscate contact links in resume when printing
 -  [https://caniuse.com/?search=vmax](https://caniuse.com/?search=vmax)
 -  Add search icon to work search field
 -  Add [react icons](https://react-icons.github.io/react-icons) to work tags/skills/tools
