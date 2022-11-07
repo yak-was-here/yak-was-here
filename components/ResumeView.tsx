@@ -156,7 +156,7 @@ function ResumeView() {
 									</a>
 								</Link>
 								<ul>
-									<li>A python Discord bot for sending random Owen Wilson "wow" movie clips</li>
+									<li>A python Discord bot for sending random Owen Wilson &quot;wow&quot; movie clips</li>
 									<li>Makes use of the Owen Wilson Wow API</li>
 									<li>Includes a small HTTP status server</li>
 								</ul>
