@@ -37,6 +37,7 @@ tags:
    - Adobe Photoshop
    - HTML
    - CSS
+   - SEM
 ---
 
 ## Frontend

@@ -897,6 +897,10 @@ strong code {
 	text-decoration: none;
 }
 
+.resumeContent h3 {
+	text-align: center;
+}
+
 .resumeContent .contact-info {
 	text-align: center;
 	margin: 0 0 0.05in 0;
@@ -918,8 +922,8 @@ strong code {
 
 .resumeContent ul {
 	font-size: var(--resume-body-size);
-	margin: 0.05in 0 0 0.6em;
-	padding-left: 0.5em;
+	margin: 0.6em 0 0 0.6em;
+	padding: 0 0 0 0.6em;
 	border: none;
 	list-style-type: disc;
 }

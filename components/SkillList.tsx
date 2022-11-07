@@ -59,6 +59,7 @@ function SkillList() {
 				<ul className="skills">
 					<h3>Marketing</h3>
 					<Skill>SEO</Skill>
+					<Skill>SEM</Skill>
 					<Skill q="Meta Ads">Meta (Facebook/Instagram) Ads</Skill>
 					<Skill>Google Analytics</Skill>
 					<Skill>Google Console</Skill>

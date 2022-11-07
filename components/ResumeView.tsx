@@ -1,4 +1,4 @@
-import { fName, lName, resumeTagline, resumeIntroWebDev, github, linkedin, siteURL, tel, email, nick } from "../data/meta";
+import { fName, lName, resumeTagline, resumeIntroWebDev, github, linkedin, siteURL, tel, email, nick, location } from "../data/meta";
 import EmailLink from "./EmailLink";
 import Skill from "./Skill";
 import TelLink from "./TelLink";
@@ -49,6 +49,7 @@ function ResumeView() {
 						{fName} &quot;{nick}&quot; {lName}
 					</h1>
 					<h2>{resumeTagline}</h2>
+					<h3>{location}</h3>
 					<p className="contact-info">
 						<EmailLink>{email}</EmailLink>
 						&nbsp;&#8226;&nbsp;
@@ -103,14 +104,13 @@ function ResumeView() {
 							<div className="resume-work-entry">
 								<Link href="https://github.com/isaacyakl/isaacyakl.com">
 									<a>
-										<strong>isaacyakl.com</strong>
+										<strong>isaacyakl.com - Portfolio</strong>
 									</a>
 								</Link>
-								<br />
-								Personal website built with NextJS and published on Vercel.
 								<ul>
-									<li>Experiments with relative units instead of breakpoints</li>
+									<li>Built with NextJS; hosted on Vercel</li>
 									<li>Includes web-based resume</li>
+									<li>Experiments with relative units instead of breakpoints</li>
 								</ul>
 							</div>
 							<div className="resume-work-entry">
@@ -119,11 +119,10 @@ function ResumeView() {
 										<strong>Remote Jackbox Player</strong>
 									</a>
 								</Link>
-								<br />A web application to find and play Jackbox games remotely, even if you don&apos;t own any.
 								<ul>
+									<li>Web app to find and play Jackbox games remotely and for free</li>
 									<li>Uses Twitch API to find people streaming games</li>
-									<li>Mobile focused design with multiple viewing formats</li>
-									<li>Built with Tailwind CSS</li>
+									<li>Mobile focused design with multiple viewing formats built with Tailwind CSS and JS</li>
 								</ul>
 							</div>
 							<div className="resume-work-entry">
@@ -132,11 +131,10 @@ function ResumeView() {
 										<strong>bRando.js</strong>
 									</a>
 								</Link>
-								<br />A CSS background property randomizing script capable of transitioning between images, colors, and gradients, written in vanilla JavaScript.
 								<ul>
+									<li>A CSS background randomizer with support for images, colors, and gradients</li>
 									<li>Utilizes image preloading</li>
-									<li>Minified for production</li>
-									<li>Published to NPM and CDN</li>
+									<li>Minified and published to NPM and CDN</li>
 								</ul>
 							</div>
 							<div className="resume-work-entry">
@@ -145,11 +143,10 @@ function ResumeView() {
 										<strong>Keyboard Soundboard</strong>
 									</a>
 								</Link>
-								<br />A web browser soundboard with preset keybinds made for one of my church&apos;s events.
 								<ul>
+									<li>A web browser soundboard with preset keybinds and preloaded sound files</li>
 									<li>Uses JavaScript to play and stop audio elements</li>
 									<li>Animates buttons when triggered</li>
-									<li>Preloads sounds</li>
 								</ul>
 							</div>
 							<div className="resume-work-entry">
@@ -158,8 +155,8 @@ function ResumeView() {
 										<strong>Random Owen Wowson</strong>
 									</a>
 								</Link>
-								<br />A Discord bot that sends various movie clips of Owen Wilson saying &quot;Wow&quot;, written in Python.
 								<ul>
+									<li>A python Discord bot for sending random Owen Wilson "wow" movie clips</li>
 									<li>Makes use of the Owen Wilson Wow API</li>
 									<li>Includes a small HTTP status server</li>
 								</ul>
@@ -170,37 +167,44 @@ function ResumeView() {
 							<div className="skills-container">
 								<ul className="skills">
 									<Skill absoluteURL={true} q="JavaScript">
-										TypeScript / JavaScript
+										JavaScript
+									</Skill>
+									<Skill absoluteURL={true} q="TypeScript">
+										TypeScript
 									</Skill>
 									<Skill absoluteURL={true} q="NextJS">
-										NextJS / ReactJS
+										NextJS
 									</Skill>
-									<Skill absoluteURL={true} q="HTML">
-										HTML5
+									<Skill absoluteURL={true} q="ReactJS">
+										ReactJS
 									</Skill>
-									<Skill absoluteURL={true} q="CSS">
-										CSS3 / SASS
+									<Skill absoluteURL={true} q="Shopify">
+										Shopify API
 									</Skill>
-									<Skill absoluteURL={true} q="Liquid">
-										Shopify Liquid
-									</Skill>
+									<Skill absoluteURL={true}>Tailwind CSS</Skill>
 								</ul>
 								<ul className="skills">
+									<Skill absoluteURL={true}>Bootstrap</Skill>
+									<Skill absoluteURL={true} q="HTML">
+										HTML
+									</Skill>
+									<Skill absoluteURL={true} q="CSS">
+										CSS / SASS
+									</Skill>
 									<Skill absoluteURL={true} q="Git">
 										Git / GitHub
 									</Skill>
 									<Skill absoluteURL={true}>PHP</Skill>
-									<Skill absoluteURL={true}>Figma</Skill>
-									<Skill absoluteURL={true}>Bootstrap</Skill>
-									<Skill absoluteURL={true}>Tailwind CSS</Skill>
+									<Skill absoluteURL={true}>Python</Skill>
 								</ul>
 								<ul className="skills">
+									<Skill absoluteURL={true}>Figma</Skill>
 									<Skill absoluteURL={true}>JSON</Skill>
-									<Skill absoluteURL={true}>Python</Skill>
 									<Skill absoluteURL={true} q="REST">
-										REST APIs
+										REST
 									</Skill>
 									<Skill absoluteURL={true}>SEO</Skill>
+									<Skill absoluteURL={true}>SEM</Skill>
 									<Skill absoluteURL={true} q="Adobe">
 										Adobe Apps
 									</Skill>

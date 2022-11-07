@@ -35,6 +35,7 @@ tags:
   - Adobe Illustrator
   - HTML
   - CSS
+  - SEM
 ---
 
 ## Shopify over BigCommerce
