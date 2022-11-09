@@ -20,9 +20,6 @@ export default function More() {
 					<Link href="/">
 						<a className="btn cta more-links">My Website</a>
 					</Link>
-					<Link href="/digital-marketing-services">
-						<a className="btn cta cta-arrow more-links">Hire Me</a>
-					</Link>
 					<Link href="https://open.spotify.com/user/izacktheyak/playlists">
 						<a className="btn cta more-links">Spotify Playlists</a>
 					</Link>

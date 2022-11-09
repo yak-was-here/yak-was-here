@@ -77,7 +77,7 @@ const Work = ({ title, images, tags, results, summary, links, htmlContent }: Wor
 					{tags !== undefined ? <WorkTags tags={tags} /> : ``}
 				</section>
 				{getBody()}
-				<CtaSection btnText="Hire me" btnHref={"../digital-marketing-services"} />
+				<CtaSection btnText="Email me" btnHref={""} />
 			</main>
 			<Footer />
 		</>

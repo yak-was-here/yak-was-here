@@ -16,7 +16,6 @@ export default function Home() {
 					<About showHeading={false} />
 					<div style={{ display: "flex", flexWrap: "wrap" }}>
 						<CtaBtn text="Browse work" href="/work" />
-						<CtaBtn text="View services" href="/digital-marketing-services" />
 					</div>
 				</section>
 			</main>
