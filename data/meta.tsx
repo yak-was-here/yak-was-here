@@ -4,7 +4,7 @@ export const mI = "D";
 export const lName = "Litzenberger";
 export const nick = "yak";
 export const title = "Web Developer & Digital Marketer";
-export const tagline = "Entrepreneurship | Jesus | Apex Legends";
+export const tagline = "Follower of Jesus | Enjoyer of JavaScript";
 export const resumeTagline = `Web Developer & Digital Marketer`;
 // obfuscate the email address so web scrappers cant grab it from GitHub
 // Obfuscated using https://javascriptobfuscator.com/Javascript-Obfuscator.aspx

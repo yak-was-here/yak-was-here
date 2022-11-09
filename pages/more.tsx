@@ -26,9 +26,6 @@ export default function More() {
 					<Link href="https://nsfpgaming.com">
 						<a className="btn cta more-links">NSFP Gaming</a>
 					</Link>
-					<Link href="https://www.instagram.com/iamaliveinchrist/">
-						<a className="btn cta more-links">Alive in Christ Apparel</a>
-					</Link>
 				</section>
 				<section>
 					<ContactIcons />
