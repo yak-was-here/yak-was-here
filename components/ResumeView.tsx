@@ -104,7 +104,7 @@ function ResumeView() {
 							<div className="resume-work-entry">
 								<Link href="https://github.com/isaacyakl/isaacyakl.com">
 									<a>
-										<strong>isaacyakl.com - Portfolio</strong>
+										<strong>Portfolio - isaacyakl.com</strong>
 									</a>
 								</Link>
 								<ul>
@@ -157,7 +157,7 @@ function ResumeView() {
 								</Link>
 								<ul>
 									<li>A python Discord bot for sending random Owen Wilson &quot;wow&quot; movie clips</li>
-									<li>Makes use of the Owen Wilson Wow API</li>
+									<li>Makes use of the open-source Owen Wilson Wow API</li>
 									<li>Includes a small HTTP status server</li>
 								</ul>
 							</div>
@@ -215,10 +215,12 @@ function ResumeView() {
 							<h2>Courses</h2>
 							<div className="skills-container">
 								<ul className="courses">
-									<li>React For Beginners - wesbos.com</li>
-									<li>The Web Developer Bootcamp 2022 - udemy.com</li>
-									<li>Front-End Nanodegree - Grow w/ Google</li>
 									<li>Computer Science I &amp; II - CSUSM</li>
+									<li>Java Programming 1 &amp; 2 - MSJC</li>
+									<li>The Web Developer Bootcamp - udemy.com</li>
+									<li>React For Beginners - wesbos.com</li>
+									<li>Front-End Nanodegree - Grow w/ Google</li>
+									<li>Developing Innovative Ideas for New Companies - UMD</li>
 								</ul>
 							</div>
 						</section>
