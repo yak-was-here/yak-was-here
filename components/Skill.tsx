@@ -17,12 +17,14 @@ function Skill({ children, q, absoluteURL }: { children?: React.ReactNode; q?: s
 	};
 
 	return (
-		<li>
-			<Link href={`${checkAbsoluteURL()}/work?q=${setQueryString()}`}>
-				<a title={`Browse ${childToString()} work`}>{children}</a>
+        <li>
+			<Link
+                href={`${checkAbsoluteURL()}/work?q=${setQueryString()}`}
+                title={`Browse ${childToString()} work`}>
+				{children}
 			</Link>
 		</li>
-	);
+    );
 }
 
 Skill.defaultProps = {

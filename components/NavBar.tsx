@@ -10,7 +10,7 @@ const NavBar = ({ active, className = "" }: { active?: string; className?: strin
 	const [isNavMenuOpen, setNavMenuState] = useState(true); // Nav menu starts open
 
 	return (
-		<nav className={`no-select ${className}`}>
+        <nav className={`no-select ${className}`}>
 			<div id="top" className="nav-dash">
 				<Branding />
 				<div className="hamburger dont-print" onClick={() => setNavMenuState(!isNavMenuOpen)} role="menu" aria-owns="home-menuitem work-menuitem resume-menuitem contact-menuitem more-menuitem">
@@ -20,17 +20,17 @@ const NavBar = ({ active, className = "" }: { active?: string; className?: strin
 			<ul className={`nav-menu dont-print${isNavMenuOpen ? " hidden" : ""}`}>
 				<li id="home-menuitem" className={`${active === "home" ? "active" : ""}`} role="menuitem">
 					<Link href="/">
-						<a>Home</a>
+						Home
 					</Link>
 				</li>
 				<li id="work-menuitem" className={`${active === "work" ? "active" : ""}`} title="Browse work" role="menuitem">
 					<Link href="/work">
-						<a>Work</a>
+						Work
 					</Link>
 				</li>
 				<li id="resume-menuitem" className={`${active === "resume" ? "active" : ""}`} title="View résumé" role="menuitem">
 					<Link href="/resume">
-						<a>Résumé</a>
+						Résumé
 					</Link>
 				</li>
 				<li id="contact-menuitem" className={`${active === "contact" ? "active" : ""}`} role="menuitem">
@@ -38,12 +38,12 @@ const NavBar = ({ active, className = "" }: { active?: string; className?: strin
 				</li>
 				<li id="more-menuitem" className={`${active === "more" ? "active" : ""}`} title="More links" role="menuitem">
 					<Link href="/more">
-						<a>More</a>
+						More
 					</Link>
 				</li>
 			</ul>
 		</nav>
-	);
+    );
 };
 
 NavBar.defaultProps = {

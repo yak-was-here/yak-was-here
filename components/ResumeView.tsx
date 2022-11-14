@@ -30,15 +30,15 @@ function ResumeView() {
 	});
 
 	return (
-		<div className="resumeBackground">
+        <div className="resumeBackground">
 			<div className="resumeActions dont-print">
 				<Link href="/litzenberger-isaac-web-developer-resume.pdf" passHref>
-					<a>
-						<button className="link" title="Download">
-							<FontAwesomeIcon icon={faDownload} />
-						</button>
-					</a>
-				</Link>
+
+                    <button className="link" title="Download">
+                        <FontAwesomeIcon icon={faDownload} />
+                    </button>
+
+                </Link>
 				<button className="link" title="Print" onClick={printResume}>
 					<FontAwesomeIcon icon={faPrint} />
 				</button>
@@ -103,10 +103,10 @@ function ResumeView() {
 							<h2>Projects</h2>
 							<div className="resume-work-entry">
 								<Link href="https://github.com/isaacyakl/isaacyakl.com">
-									<a>
-										<strong>Portfolio - isaacyakl.com</strong>
-									</a>
-								</Link>
+
+                                    <strong>Portfolio - isaacyakl.com</strong>
+
+                                </Link>
 								<ul>
 									<li>Built with NextJS; hosted on Vercel</li>
 									<li>Includes web-based resume</li>
@@ -115,10 +115,10 @@ function ResumeView() {
 							</div>
 							<div className="resume-work-entry">
 								<Link href="https://github.com/isaacyakl/remote-jackbox-player">
-									<a>
-										<strong>Remote Jackbox Player</strong>
-									</a>
-								</Link>
+
+                                    <strong>Remote Jackbox Player</strong>
+
+                                </Link>
 								<ul>
 									<li>Web app to find and play Jackbox games remotely and for free</li>
 									<li>Uses Twitch API to find people streaming games</li>
@@ -127,10 +127,10 @@ function ResumeView() {
 							</div>
 							<div className="resume-work-entry">
 								<Link href="https://github.com/isaacyakl/brandojs">
-									<a>
-										<strong>bRando.js</strong>
-									</a>
-								</Link>
+
+                                    <strong>bRando.js</strong>
+
+                                </Link>
 								<ul>
 									<li>A CSS background randomizer with support for images, colors, and gradients</li>
 									<li>Utilizes image preloading</li>
@@ -139,10 +139,10 @@ function ResumeView() {
 							</div>
 							<div className="resume-work-entry">
 								<Link href="https://github.com/isaacyakl/fairhaven-bc-vbs-2019-soundboard">
-									<a>
-										<strong>Keyboard Soundboard</strong>
-									</a>
-								</Link>
+
+                                    <strong>Keyboard Soundboard</strong>
+
+                                </Link>
 								<ul>
 									<li>A web browser soundboard with preset keybinds and preloaded sound files</li>
 									<li>Uses JavaScript to play and stop audio elements</li>
@@ -151,10 +151,10 @@ function ResumeView() {
 							</div>
 							<div className="resume-work-entry">
 								<Link href="https://github.com/isaacyakl/random-owen-wowson">
-									<a>
-										<strong>Random Owen Wowson</strong>
-									</a>
-								</Link>
+
+                                    <strong>Random Owen Wowson</strong>
+
+                                </Link>
 								<ul>
 									<li>A python Discord bot for sending random Owen Wilson &quot;wow&quot; movie clips</li>
 									<li>Makes use of the open-source Owen Wilson Wow API</li>
@@ -232,7 +232,7 @@ function ResumeView() {
 				</main>
 			</div>
 		</div>
-	);
+    );
 }
 
 export default ResumeView;
