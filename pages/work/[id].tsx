@@ -2,7 +2,7 @@ import BaseMeta from "../../components/BaseMeta";
 import NavBar from "../../components/NavBar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { getAllWorkIds, getWorkFileData } from "../../lib/work";
 import Link from "next/link";
 import WorkTags from "../../components/WorkTags";
