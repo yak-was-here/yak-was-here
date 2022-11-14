@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import logo from "../public/img/yak-logo.svg";
 import { nick } from "../data/meta";
 
