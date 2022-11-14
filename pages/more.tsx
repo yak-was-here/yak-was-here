@@ -6,7 +6,7 @@ import { fName, lName, nick, tagline } from "../data/meta";
 
 export default function More() {
 	return (
-		<div className="more-background">
+        <div className="more-background">
 			<BaseMeta title={`Links to ${nick}'s businesses, projects, and more.`} desc={`Browse a list of ${nick}'s businesses, projects, and more.`} />
 			<NavBar active="more" />
 			<main className="max-page-width more">
@@ -17,14 +17,16 @@ export default function More() {
 					<p>{tagline}</p>
 				</section>
 				<section className="more-link-container">
-					<Link href="/">
-						<a className="btn cta more-links">My Website</a>
+					<Link href="/" className="btn cta more-links">
+						My Website
 					</Link>
-					<Link href="https://open.spotify.com/user/izacktheyak/playlists">
-						<a className="btn cta more-links">Spotify Playlists</a>
+					<Link
+                        href="https://open.spotify.com/user/izacktheyak/playlists"
+                        className="btn cta more-links">
+						Spotify Playlists
 					</Link>
-					<Link href="https://nsfpgaming.com">
-						<a className="btn cta more-links">NSFP Gaming</a>
+					<Link href="https://nsfpgaming.com" className="btn cta more-links">
+						NSFP Gaming
 					</Link>
 				</section>
 				<section>
@@ -37,5 +39,5 @@ export default function More() {
 				</section>
 			</main>
 		</div>
-	);
+    );
 }
