@@ -34,57 +34,50 @@ const Work = ({ title, images, tags, results, summary, links, htmlContent }: Wor
 		}
 	};
 
-	return <>
-        <BaseMeta title={`The ${title} development process`} desc={`Read about the development process of ${title} and how ${nick} was involved.`} shareImg={`${siteURL}img/work/${images[0]}`} />
-        <NavBar active="work" />
-        <Breadcrumbs
-            trail={[
-                { text: "Home", link: "/" },
-                { text: "Work", link: "/work" },
-                { text: title, link: "" },
-            ]}
-        />
-        <Header heading={title} />
-        <main className="work">
-            <section>
-                <div className="drop-shadow ss">
-                    <Link href={`/img/work/${images[0]}`} passHref title="Enlarge screenshot">
-
-                        <Image src={`/img/work/${images[0]}`} layout="responsive" width="100%" height="60vh" objectFit="cover" objectPosition="center top" alt={`${title} screenshot`} />
-
-                    </Link>
-                </div>
-                <h2>Summary</h2>
-                {getResults()}
-                <p dangerouslySetInnerHTML={{ __html: summary }}></p>
-                {links !== undefined ? (
-                    <p className="work-links text-center">
-                        {links.map((l) => {
-                            return (
-                                (<Link
-                                    href={l.url}
-                                    key={l.title}
-                                    className="btn cta-link work-link"
-                                    target="_blank"
-                                    rel="noopener">
-
-                                    {l.title}
-
-                                </Link>)
-                            );
-                        })}
-                    </p>
-                ) : (
-                    ``
-                )}
-                <h3 id="tags">Skills &amp; tools used</h3>
-                {tags !== undefined ? <WorkTags tags={tags} /> : ``}
-            </section>
-            {getBody()}
-            <CtaSection btnText="Email me" btnHref={""} />
-        </main>
-        <Footer />
-    </>;
+	return (
+		<>
+			<BaseMeta title={`The ${title} development process`} desc={`Read about the development process of ${title} and how ${nick} was involved.`} shareImg={`${siteURL}img/work/${images[0]}`} />
+			<NavBar active="work" />
+			<Breadcrumbs
+				trail={[
+					{ text: "Home", link: "/" },
+					{ text: "Work", link: "/work" },
+					{ text: title, link: "" },
+				]}
+			/>
+			<Header heading={title} />
+			<main className="work">
+				<section>
+					<div className="drop-shadow ss">
+						<Link href={`/img/work/${images[0]}`} passHref title="Enlarge screenshot">
+							<Image src={`/img/work/${images[0]}`} layout="responsive" width={1920} height={1080} objectFit="cover" objectPosition="center top" alt={`${title} screenshot`} />
+						</Link>
+					</div>
+					<h2>Summary</h2>
+					{getResults()}
+					<p dangerouslySetInnerHTML={{ __html: summary }}></p>
+					{links !== undefined ? (
+						<p className="work-links text-center">
+							{links.map((l) => {
+								return (
+									<Link href={l.url} key={l.title} className="btn cta-link work-link" target="_blank" rel="noopener">
+										{l.title}
+									</Link>
+								);
+							})}
+						</p>
+					) : (
+						``
+					)}
+					<h3 id="tags">Skills &amp; tools used</h3>
+					{tags !== undefined ? <WorkTags tags={tags} /> : ``}
+				</section>
+				{getBody()}
+				<CtaSection btnText="Email me" btnHref={""} />
+			</main>
+			<Footer />
+		</>
+	);
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

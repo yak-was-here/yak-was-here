@@ -10,21 +10,19 @@ const WorkCard = ({ id, title, date, role, image, summary }: { id: string; title
 		return <h3>{date}</h3>;
 	};
 	return (
-        <div className="work-card">
+		<div className="work-card">
 			<Link href={`/work/${id}`} title={`View ${title}`}>
-
-                <Image className="word-card-image" src={`/img/work/${image}`} layout="responsive" width="100%" height="60vh" objectFit="cover" objectPosition="center top" alt="" />
-                <div className="work-card-border"></div>
-                <div className="work-card-summary">
-                    <h2>{title}</h2>
-                    {role ? roleHeading() : ``}
-                    {date ? dateHeading() : ``}
-                    <p className="summary-body" dangerouslySetInnerHTML={{ __html: summary }}></p>
-                </div>
-
-            </Link>
+				<Image className="work-card-image" src={`/img/work/${image}`} layout="responsive" objectFit="cover" width={1920} height={1080} objectPosition="center top" alt="" />
+				<div className="work-card-border"></div>
+				<div className="work-card-summary">
+					<h2>{title}</h2>
+					{role ? roleHeading() : ``}
+					{date ? dateHeading() : ``}
+					<p className="summary-body" dangerouslySetInnerHTML={{ __html: summary }}></p>
+				</div>
+			</Link>
 		</div>
-    );
+	);
 };
 
 WorkCard.defaultProps = {
