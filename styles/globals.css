@@ -196,10 +196,15 @@ div.branding-container a:hover {
 	text-decoration: none;
 }
 
-.logo {
+div.logo-container {
+	position: relative;
 	display: inline-block;
 	height: 1.75rem;
 	width: 1.75rem;
+}
+
+img.logo {
+	object-fit: contain;
 }
 
 span.site-wordmark {
@@ -327,7 +332,14 @@ main img {
 }
 
 .ss {
-	border: rgba(0, 0, 0, 0.4) solid 1px;
+	position: relative;
+	width: calc(var(--container-width) - 2px);
+	height: calc(calc(var(--container-width) - 2px) / 1.778);
+	overflow: hidden;
+}
+
+.ss a img {
+	object-fit: cover;
 }
 
 .work img {
@@ -467,9 +479,13 @@ footer div.social-icons {
 	padding: calc(var(--space-unit) * 4) 0rem;
 }
 
-footer .logo {
+footer div.logo-container {
 	height: 0.9rem;
 	width: 0.9rem;
+}
+
+footer img.logo {
+	object-fit: contain;
 }
 
 footer span.site-wordmark {
@@ -626,6 +642,17 @@ div.work-card:hover {
 	transform: scale(1.01);
 	transform-origin: top center;
 	box-shadow: 0px 5px 5px #e4e4e4;
+}
+
+div.work-card-image-container {
+	position: relative;
+	width: calc(var(--container-width) / 2 - var(--space-unit) / 2);
+	height: calc(calc(var(--container-width) / 2 - var(--space-unit) / 2) / 1.778);
+	overflow: hidden;
+}
+
+img.work-card-image {
+	object-fit: cover;
 }
 
 .work-card-summary h2 {

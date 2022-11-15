@@ -2,7 +2,7 @@ import BaseMeta from "../../components/BaseMeta";
 import NavBar from "../../components/NavBar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { getAllWorkIds, getWorkFileData } from "../../lib/work";
 import Link from "next/link";
 import WorkTags from "../../components/WorkTags";
@@ -48,9 +48,9 @@ const Work = ({ title, images, tags, results, summary, links, htmlContent }: Wor
 			<Header heading={title} />
 			<main className="work">
 				<section>
-					<div className="drop-shadow ss">
+					<div className="ss drop-shadow">
 						<Link href={`/img/work/${images[0]}`} passHref title="Enlarge screenshot">
-							<Image src={`/img/work/${images[0]}`} layout="responsive" width={1920} height={1080} objectFit="cover" objectPosition="center top" alt={`${title} screenshot`} />
+							<Image src={`/img/work/${images[0]}`} alt={`${title} screenshot`} fill />
 						</Link>
 					</div>
 					<h2>Summary</h2>

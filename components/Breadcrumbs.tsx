@@ -9,22 +9,22 @@ type Crumb = {
 
 function Breadcrumbs({ trail, className = "" }: { trail: Array<Crumb>; className?: string }) {
 	return (
-        <section className={`max-page-width breadcrumbs ${className}`}>
+		<section className={`max-page-width breadcrumbs ${className}`}>
 			{trail.map((link, index, ar) => {
 				return (
-                    <React.Fragment key={link.text}>
+					<React.Fragment key={link.text}>
 						{ar.length - 1 !== index ? (
 							<>
-								<Link href={link.link} legacyBehavior>{link.text}</Link>&nbsp;&gt;&nbsp;
+								<Link href={link.link}>{link.text}</Link>&nbsp;&gt;&nbsp;
 							</>
 						) : (
 							<>{link.text}</>
 						)}
 					</React.Fragment>
-                );
+				);
 			})}
 		</section>
-    );
+	);
 }
 
 Breadcrumbs.defaultProps = {
