@@ -6,7 +6,6 @@ My personal website, created with NextJS and written in TypeScript. An experimen
 
 # To-Do
 
--  Upgrade to NextJS 13
 -  Utilize Jest
 -  Setup monorepo with Turborepo
 -  Integrate remote-jackbox-player with root domain
