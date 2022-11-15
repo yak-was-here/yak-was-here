@@ -8,7 +8,7 @@
 	--text-color: #000000;
 
 	/* Fonts */
-	--font-family-headings: "Bebas Neue", "Arial Narrow", Arial, Helvetica, sans-serif;
+	/* Heading font family variable located in _app.tsx */
 	--font-family-body: Arial, Helvetica, sans-serif;
 
 	/* Utilities */
