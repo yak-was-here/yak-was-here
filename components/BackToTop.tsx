@@ -34,6 +34,15 @@ export default function BackToTop(): JSX.Element {
 				<button
 					id="backToTop"
 					title="Back to top"
+					style={{
+						position: "fixed",
+						bottom: "0",
+						right: "0",
+						backgroundColor: "rgba(0, 0, 0, 0)",
+						border: "0",
+						zIndex: "100",
+						transition: "all 0.5s ease",
+					}}
 					onClick={() => {
 						window.scrollTo({
 							top: 0,
@@ -41,7 +50,7 @@ export default function BackToTop(): JSX.Element {
 						});
 					}}
 				>
-					<FontAwesomeIcon icon={faAngleUp} />
+					<FontAwesomeIcon icon={faAngleUp} style={{ height: "3rem", width: "3rem" }} />
 				</button>
 			)}
 		</>
