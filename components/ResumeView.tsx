@@ -30,15 +30,13 @@ function ResumeView() {
 	});
 
 	return (
-        <div className="resumeBackground">
+		<div className="resumeBackground">
 			<div className="resumeActions dont-print">
 				<Link href="/litzenberger-isaac-web-developer-resume.pdf" passHref>
-
-                    <button className="link" title="Download">
-                        <FontAwesomeIcon icon={faDownload} />
-                    </button>
-
-                </Link>
+					<button className="link" title="Download">
+						<FontAwesomeIcon icon={faDownload} />
+					</button>
+				</Link>
 				<button className="link" title="Print" onClick={printResume}>
 					<FontAwesomeIcon icon={faPrint} />
 				</button>
@@ -103,10 +101,8 @@ function ResumeView() {
 							<h2>Projects</h2>
 							<div className="resume-work-entry">
 								<Link href="https://github.com/isaacyakl/isaacyakl.com">
-
-                                    <strong>Portfolio - isaacyakl.com</strong>
-
-                                </Link>
+									<strong>Portfolio - isaacyakl.com</strong>
+								</Link>
 								<ul>
 									<li>Built with NextJS; hosted on Vercel</li>
 									<li>Includes web-based resume</li>
@@ -115,10 +111,8 @@ function ResumeView() {
 							</div>
 							<div className="resume-work-entry">
 								<Link href="https://github.com/isaacyakl/remote-jackbox-player">
-
-                                    <strong>Remote Jackbox Player</strong>
-
-                                </Link>
+									<strong>Remote Jackbox Player</strong>
+								</Link>
 								<ul>
 									<li>Web app to find and play Jackbox games remotely and for free</li>
 									<li>Uses Twitch API to find people streaming games</li>
@@ -127,10 +121,8 @@ function ResumeView() {
 							</div>
 							<div className="resume-work-entry">
 								<Link href="https://github.com/isaacyakl/brandojs">
-
-                                    <strong>bRando.js</strong>
-
-                                </Link>
+									<strong>bRando.js</strong>
+								</Link>
 								<ul>
 									<li>A CSS background randomizer with support for images, colors, and gradients</li>
 									<li>Utilizes image preloading</li>
@@ -139,10 +131,8 @@ function ResumeView() {
 							</div>
 							<div className="resume-work-entry">
 								<Link href="https://github.com/isaacyakl/fairhaven-bc-vbs-2019-soundboard">
-
-                                    <strong>Keyboard Soundboard</strong>
-
-                                </Link>
+									<strong>Keyboard Soundboard</strong>
+								</Link>
 								<ul>
 									<li>A web browser soundboard with preset keybinds and preloaded sound files</li>
 									<li>Uses JavaScript to play and stop audio elements</li>
@@ -151,10 +141,8 @@ function ResumeView() {
 							</div>
 							<div className="resume-work-entry">
 								<Link href="https://github.com/isaacyakl/random-owen-wowson">
-
-                                    <strong>Random Owen Wowson</strong>
-
-                                </Link>
+									<strong>Random Owen Wowson</strong>
+								</Link>
 								<ul>
 									<li>A python Discord bot for sending random Owen Wilson &quot;wow&quot; movie clips</li>
 									<li>Makes use of the open-source Owen Wilson Wow API</li>
@@ -178,10 +166,10 @@ function ResumeView() {
 									<Skill absoluteURL={true} q="ReactJS">
 										ReactJS
 									</Skill>
+									<Skill absoluteURL={true}>Tailwind CSS</Skill>
 									<Skill absoluteURL={true} q="Shopify">
 										Shopify API
 									</Skill>
-									<Skill absoluteURL={true}>Tailwind CSS</Skill>
 								</ul>
 								<ul className="skills">
 									<Skill absoluteURL={true}>Bootstrap</Skill>
@@ -215,12 +203,12 @@ function ResumeView() {
 							<h2>Courses</h2>
 							<div className="skills-container">
 								<ul className="courses">
-									<li>Computer Science I &amp; II - CSUSM</li>
-									<li>Java Programming 1 &amp; 2 - MSJC</li>
+									<li>Front-End Nanodegree - Grow w/ Google</li>
 									<li>The Web Developer Bootcamp - udemy.com</li>
 									<li>React For Beginners - wesbos.com</li>
-									<li>Front-End Nanodegree - Grow w/ Google</li>
 									<li>Developing Innovative Ideas for New Companies - UMD</li>
+									<li>Computer Science I &amp; II - CSUSM</li>
+									<li>Java Programming 1 &amp; 2 - MSJC</li>
 								</ul>
 							</div>
 						</section>
@@ -232,7 +220,7 @@ function ResumeView() {
 				</main>
 			</div>
 		</div>
-    );
+	);
 }
 
 export default ResumeView;
