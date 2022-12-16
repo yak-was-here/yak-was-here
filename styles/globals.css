@@ -836,7 +836,7 @@ strong code {
 	padding: calc(var(--resume-margin) / 2);
 	max-height: 100%;
 	max-width: 100%;
-	overflow: scroll;
+	overflow: auto;
 }
 
 .resumeActions {
