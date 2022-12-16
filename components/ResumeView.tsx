@@ -104,9 +104,9 @@ function ResumeView() {
 									<strong>Portfolio - isaacyakl.com</strong>
 								</Link>
 								<ul>
-									<li>Built with NextJS; hosted on Vercel</li>
+									<li>Portfolio built with NextJS using TypeScript</li>
 									<li>Includes web-based resume</li>
-									<li>Experiments with relative units instead of breakpoints</li>
+									<li>Experiments with relative css units instead of breakpoints</li>
 								</ul>
 							</div>
 							<div className="resume-work-entry">
