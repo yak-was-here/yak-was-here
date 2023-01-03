@@ -2,7 +2,7 @@ import Link from "next/link";
 import BaseMeta from "../components/BaseMeta";
 import ContactIcons from "../components/ContactIcons";
 import NavBar from "../components/NavBar";
-import { fName, lName, nick, resumeTagline } from "../data/meta";
+import { fName, lName, nick, tagline } from "../data/meta";
 
 export default function More() {
 	return (
@@ -14,7 +14,7 @@ export default function More() {
 					<h1>
 						{fName} &quot;{nick}&quot; {lName}
 					</h1>
-					<p>{resumeTagline}</p>
+					<p className="subtitle">{tagline}</p>
 				</section>
 				<section className="more-link-container">
 					<Link href="/" className="btn cta more-links">

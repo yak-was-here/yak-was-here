@@ -752,6 +752,11 @@ main.more p {
 	padding: 0;
 }
 
+main p.subtitle {
+	max-width: 20rem;
+	margin: auto;
+}
+
 main.more section {
 	padding: var(--space-unit) 0 var(--space-unit) 0;
 }
