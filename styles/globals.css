@@ -1000,11 +1000,11 @@ strong code {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	margin-left: 1em;
+	margin-left: 1.5em;
 }
 
 .resumeContent .section-education li {
-	text-indent: -1em;
+	text-indent: -1.5em;
 }
 
 .resumeContent .section-courses {

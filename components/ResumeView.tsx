@@ -223,7 +223,7 @@ function ResumeView() {
 						<h2>Education</h2>
 						<ul>
 							<li>
-								2020 &mdash;{" "}
+								2020&nbsp;&mdash;&nbsp;
 								<strong>
 									Bachelor of Science in Business Administration,
 									<br />
