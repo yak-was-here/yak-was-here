@@ -3,9 +3,8 @@ export const fName = "Isaac";
 export const mI = "D";
 export const lName = "Litzenberger";
 export const nick = "yak";
-export const title = "Web Developer";
-export const tagline = "Follower of Jesus 👨‍💻 TypeScript, NextJS, and Tailwind CSS";
-export const resumeTagline = `Web Developer & Digital Marketer`;
+export const title = "Software Engineer";
+export const tagline = "";
 // obfuscate the email address so web scrappers cant grab it from GitHub
 // Obfuscated using https://javascriptobfuscator.com/Javascript-Obfuscator.aspx
 // prettier-ignore

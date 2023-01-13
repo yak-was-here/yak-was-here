@@ -1,11 +1,13 @@
-import { fName, lName, resumeTagline, resumeIntroWebDev, github, linkedin, siteURL, tel, email, nick, location } from "../data/meta";
+import { fName, lName, resumeIntroWebDev, github, linkedin, siteURL, tel, email, nick, location } from "../data/meta";
 import EmailLink from "./EmailLink";
 import Skill from "./Skill";
 import TelLink from "./TelLink";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDownload, faPrint } from "@fortawesome/free-solid-svg-icons";
+import { faDownload, faPhone, faPrint, faBriefcase } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
+import { faAt } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 function ResumeView() {
 	let revealObfsdLinks = async (): Promise<void> => {};
@@ -43,31 +45,97 @@ function ResumeView() {
 			</div>
 			<div className="resumePaper">
 				<main className="resumeContent">
-					<h1>
-						{fName} &quot;{nick}&quot; {lName}
-					</h1>
-					<h2>{resumeTagline}</h2>
-					<h3>{location}</h3>
-					<p className="contact-info">
-						<EmailLink>{email}</EmailLink>
-						&nbsp;&#8226;&nbsp;
-						<TelLink>{tel}</TelLink>
-						<br />
-						<a href={siteURL} title="Portfolio">
-							isaacyakl.com
-						</a>
-						&nbsp;&#8226;&nbsp;
-						<a href={github} title="Github profile">
-							{github.replace("https://", "")}
-						</a>
-						&nbsp;&#8226;&nbsp;
-						<a href={linkedin} title="Linkedin profile">
-							{linkedin.replace("https://", "")}
-						</a>
-					</p>
-					<p>{resumeIntroWebDev}</p>
-					<div className="resume-two-column">
-						<section>
+					<section className="hero">
+						<h1>
+							{fName} {lName}
+						</h1>
+						<h2 className="resumeSubtitle">{location}</h2>
+					</section>
+					<section className="contact-info">
+						<ul className="contact-info">
+							<li>
+								<FontAwesomeIcon icon={faAt} style={{ width: "1em", height: "1em", marginRight: "0.65em", verticalAlign: "middle" }} />
+								<EmailLink>{email}</EmailLink>
+							</li>
+
+							<li>
+								<FontAwesomeIcon icon={faPhone} style={{ width: "1em", height: "1em", marginRight: "0.65em", verticalAlign: "middle" }} />
+								<TelLink>{tel}</TelLink>
+							</li>
+							<li>
+								<FontAwesomeIcon icon={faBriefcase} style={{ width: "1em", height: "1em", marginRight: "0.65em", verticalAlign: "middle" }} />
+								<a href={siteURL} title="Portfolio">
+									isaacyakl.com
+								</a>
+							</li>
+							<li>
+								<FontAwesomeIcon icon={faGithub} style={{ width: "1em", height: "1em", marginRight: "0.65em", verticalAlign: "middle" }} />
+								<a href={github} title="Github profile">
+									{github.replace("https://", "")}
+								</a>
+							</li>
+							<li>
+								<FontAwesomeIcon icon={faLinkedin} style={{ width: "1em", height: "1em", marginRight: "0.65em", verticalAlign: "middle" }} />
+								<a href={linkedin} title="Linkedin profile">
+									{linkedin.replace("https://", "")}
+								</a>
+							</li>
+						</ul>
+					</section>
+					<section className="about">
+						<h2>About</h2>
+						<p>{resumeIntroWebDev}</p>
+					</section>
+					<section className="section-skills">
+						<h2>Skills</h2>
+						<ul>
+							<Skill absoluteURL={true}>JavaScript</Skill>
+							<Skill absoluteURL={true}>TypeScript</Skill>
+							<Skill absoluteURL={true}>NextJS</Skill>
+							<Skill absoluteURL={true} q="ReactJS">
+								React
+							</Skill>
+							<Skill absoluteURL={true} q="JestJS">
+								Jest
+							</Skill>
+							<Skill absoluteURL={true} q="BabelJS">
+								Babel
+							</Skill>
+							<Skill absoluteURL={true}>Tailwind CSS</Skill>
+							<Skill absoluteURL={true}>Shopify</Skill>
+							<Skill absoluteURL={true}>Webpack</Skill>
+							<Skill absoluteURL={true} q="HandlebarsJS">
+								Handlebars
+							</Skill>
+							<Skill absoluteURL={true}>Vercel</Skill>
+							<Skill absoluteURL={true}>Bootstrap</Skill>
+							<Skill absoluteURL={true}>HTML</Skill>
+							<Skill absoluteURL={true}>CSS</Skill>
+							<Skill absoluteURL={true} q="CSS">
+								SASS
+							</Skill>
+							<Skill absoluteURL={true}>Git</Skill>
+							<Skill absoluteURL={true}>GitHub</Skill>
+							<Skill absoluteURL={true}>NPM</Skill>
+							<Skill absoluteURL={true}>PHP</Skill>
+							<Skill absoluteURL={true}>Python</Skill>
+							<Skill absoluteURL={true}>C++</Skill>
+							<Skill absoluteURL={true} q="Discord">
+								Discord API
+							</Skill>
+							<Skill absoluteURL={true} q="Twitch">
+								Twitch API
+							</Skill>
+							<Skill absoluteURL={true}>Figma</Skill>
+							<Skill absoluteURL={true}>REST</Skill>
+							<Skill absoluteURL={true}>SEO</Skill>
+							<Skill absoluteURL={true} q="Adobe">
+								Adobe Apps
+							</Skill>
+						</ul>
+					</section>
+					<div className="section-work">
+						<section className="section-experience">
 							<h2>Experience</h2>
 							<div className="resume-work-entry">
 								<strong>Web Developer &amp; Digital Marketer</strong>
@@ -97,7 +165,7 @@ function ResumeView() {
 								<strong>Key Achievement:</strong> Developed the #1 most-used paintball trade-in web application of 2015-2016
 							</div>
 						</section>
-						<section>
+						<section className="section-projects">
 							<h2>Projects</h2>
 							<div className="resume-work-entry">
 								<Link href="https://github.com/isaacyakl/isaacyakl.com">
@@ -150,73 +218,52 @@ function ResumeView() {
 								</ul>
 							</div>
 						</section>
-						<section>
-							<h2>Skills</h2>
-							<div className="skills-container">
-								<ul className="skills">
-									<Skill absoluteURL={true} q="JavaScript">
-										JavaScript
-									</Skill>
-									<Skill absoluteURL={true} q="TypeScript">
-										TypeScript
-									</Skill>
-									<Skill absoluteURL={true} q="NextJS">
-										NextJS
-									</Skill>
-									<Skill absoluteURL={true} q="ReactJS">
-										ReactJS
-									</Skill>
-									<Skill absoluteURL={true}>Tailwind CSS</Skill>
-									<Skill absoluteURL={true} q="Shopify">
-										Shopify API
-									</Skill>
-								</ul>
-								<ul className="skills">
-									<Skill absoluteURL={true}>Bootstrap</Skill>
-									<Skill absoluteURL={true} q="HTML">
-										HTML
-									</Skill>
-									<Skill absoluteURL={true} q="CSS">
-										CSS / SASS
-									</Skill>
-									<Skill absoluteURL={true} q="Git">
-										Git / GitHub
-									</Skill>
-									<Skill absoluteURL={true}>PHP</Skill>
-									<Skill absoluteURL={true}>Python</Skill>
-								</ul>
-								<ul className="skills">
-									<Skill absoluteURL={true}>Figma</Skill>
-									<Skill absoluteURL={true}>JSON</Skill>
-									<Skill absoluteURL={true} q="REST">
-										REST
-									</Skill>
-									<Skill absoluteURL={true}>SEO</Skill>
-									<Skill absoluteURL={true}>SEM</Skill>
-									<Skill absoluteURL={true} q="Adobe">
-										Adobe Apps
-									</Skill>
-								</ul>
-							</div>
-						</section>
-						<section>
-							<h2>Courses</h2>
-							<div className="skills-container">
-								<ul className="courses">
-									<li>Front-End Nanodegree - Grow w/ Google</li>
-									<li>The Web Developer Bootcamp - udemy.com</li>
-									<li>React For Beginners - wesbos.com</li>
-									<li>Developing Innovative Ideas for New Companies - UMD</li>
-									<li>Computer Science I &amp; II - CSUSM</li>
-									<li>Java Programming 1 &amp; 2 - MSJC</li>
-								</ul>
-							</div>
-						</section>
 					</div>
-					<h2>Education</h2>
-					<p>
-						<strong>Bachelor of Science in Business Administration, General Management</strong> - Dean&apos;s List - CSU East Bay | <em>2020</em>
-					</p>
+					<section className="section-education">
+						<h2>Education</h2>
+						<ul>
+							<li>
+								2020 &mdash;{" "}
+								<strong>
+									Bachelor of Science in Business Administration,
+									<br />
+									General Management <em>(Dean&apos;s List)</em>
+								</strong>
+								<br />
+								CSU East Bay
+							</li>
+						</ul>
+					</section>
+					<section className="section-courses">
+						<h2>Courses</h2>
+						<ul className="courses">
+							<li>
+								<strong>Computer Science I &amp; II</strong>
+								<br />
+								CSU San Marcos
+							</li>
+							<li>
+								<strong>Front-End Nanodegree</strong>
+								<br />
+								Grow w/ Google
+							</li>
+							<li>
+								<strong>The Web Developer Bootcamp</strong>
+								<br />
+								udemy.com
+							</li>
+							<li>
+								<strong>React For Beginners</strong>
+								<br />
+								wesbos.com
+							</li>
+							<li>
+								<strong>Developing Innovative Ideas for New Companies</strong>
+								<br />
+								The University of Maryland
+							</li>
+						</ul>
+					</section>
 				</main>
 			</div>
 		</div>
