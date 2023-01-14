@@ -194,66 +194,90 @@ function ResumeView() {
 							<div className="resume-work-entry">
 								<div className="resume-work-details">
 									<h3>
-										<Link href="https://github.com/isaacyakl/isaacyakl.com">Portfolio - isaacyakl.com</Link>
+										<Link href="https://github.com/isaacyakl/brandojs">bRando.js</Link> &mdash; Website Background Randomizer Library
 									</h3>
 									<div></div>
 								</div>
 								<ul>
-									<li>Portfolio built with NextJS using TypeScript</li>
-									<li>Includes web-based resume</li>
+									<li>Automatically changes CSS backgrounds on any DOM element</li>
+									<li>
+										Published on <Link href="https://www.npmjs.com/package/brandojs">NPM</Link>; downloaded hundreds of times per week
+									</li>
+									<li>100% code coverage and API documentation</li>
+								</ul>
+								<h4>Tools:</h4>
+								<ul className="resume-work-tools">
+									<li>TypeScript</li>
+									<li>Jest</li>
+									<li>Webpack</li>
+									<li>Babel</li>
+									<li>Git</li>
+								</ul>
+							</div>
+							<div className="resume-work-entry">
+								<div className="resume-work-details">
+									<h3>
+										<Link href="https://github.com/isaacyakl/isaacyakl.com">isaacyakl.com</Link> &mdash; Personal Website
+									</h3>
+									<div></div>
+								</div>
+								<ul>
+									<li>Features a portfolio, web-based resume, and blog</li>
+									<li>Work entires generated statically using remark.js and gray-matter</li>
 									<li>Experiments with relative css units instead of breakpoints</li>
 								</ul>
-							</div>
-							<div className="resume-work-entry">
-								<div className="resume-work-details">
-									<h3>
-										<Link href="https://github.com/isaacyakl/remote-jackbox-player">Remote Jackbox Player</Link>
-									</h3>
-									<div></div>
-								</div>
-								<ul>
-									<li>Web app to find and play Jackbox games remotely and for free</li>
-									<li>Uses Twitch API to find people streaming games</li>
-									<li>Mobile focused design with multiple viewing formats built with Tailwind CSS and JS</li>
+								<h4>Tools:</h4>
+								<ul className="resume-work-tools">
+									<li>NextJS</li>
+									<li>TypeScript</li>
+									<li>React</li>
+									<li>TSX/JSX</li>
+									<li>YAML</li>
+									<li>Git</li>
 								</ul>
 							</div>
 							<div className="resume-work-entry">
 								<div className="resume-work-details">
 									<h3>
-										<Link href="https://github.com/isaacyakl/brandojs">bRando.js</Link>
+										<Link href="https://github.com/isaacyakl/remote-jackbox-player">Remote Jackbox Player</Link> &mdash; Single-screen Jackbox Interface
 									</h3>
 									<div></div>
 								</div>
 								<ul>
-									<li>A CSS background randomizer with support for images, colors, and gradients</li>
-									<li>Utilizes image preloading</li>
-									<li>Minified and published to NPM and CDN</li>
+									<li>Mobile-first web app to find and play Jackbox games remotely for free</li>
+									<li>Simultaneously watch a stream and use Jackbox.tv on one screen</li>
+									<li>Uses Twitch API to find channels streaming Jackbox games</li>
+								</ul>
+								<h4>Tools:</h4>
+								<ul className="resume-work-tools">
+									<li>JavaScript</li>
+									<li>Babel</li>
+									<li>Tailwind CSS</li>
+									<li>Twitch API</li>
+									<li>JSON</li>
+									<li>Git</li>
 								</ul>
 							</div>
 							<div className="resume-work-entry">
 								<div className="resume-work-details">
 									<h3>
-										<Link href="https://github.com/isaacyakl/fairhaven-bc-vbs-2019-soundboard">Keyboard Soundboard</Link>
+										<Link href="https://github.com/isaacyakl/random-owen-wowson">Random Owen Wowson</Link> &mdash; Discord bot to send Owen Wilson clips
 									</h3>
 									<div></div>
 								</div>
 								<ul>
-									<li>A web browser soundboard with preset keybinds and preloaded sound files</li>
-									<li>Uses JavaScript to play and stop audio elements</li>
-									<li>Animates buttons when triggered</li>
-								</ul>
-							</div>
-							<div className="resume-work-entry">
-								<div className="resume-work-details">
-									<h3>
-										<Link href="https://github.com/isaacyakl/random-owen-wowson">Random Owen Wowson</Link>
-									</h3>
-									<div></div>
-								</div>
-								<ul>
-									<li>A python Discord bot for sending random Owen Wilson &quot;wow&quot; movie clips</li>
+									<li>Gets random Owen Wilson &quot;wow&quot; movie clips</li>
 									<li>Makes use of the open-source Owen Wilson Wow API</li>
 									<li>Includes a small HTTP status server</li>
+								</ul>
+								<h4>Tools:</h4>
+								<ul className="resume-work-tools">
+									<li>Python</li>
+									<li>Discord API</li>
+									<li>JSON</li>
+									<li>Git</li>
+									<li>hikari</li>
+									<li>hikari-lightbulb</li>
 								</ul>
 							</div>
 						</section>

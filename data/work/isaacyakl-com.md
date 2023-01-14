@@ -14,6 +14,7 @@ tags:
    - TypeScript
    - JavaScript
    - ReactJS
+   - YAML
    - HTML
    - CSS
    - Git
