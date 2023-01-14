@@ -101,22 +101,22 @@ function ResumeView() {
 							<Skill absoluteURL={true} q="BabelJS">
 								Babel
 							</Skill>
-							<Skill absoluteURL={true}>Tailwind CSS</Skill>
 							<Skill absoluteURL={true}>Shopify</Skill>
 							<Skill absoluteURL={true}>Webpack</Skill>
 							<Skill absoluteURL={true} q="HandlebarsJS">
 								Handlebars
 							</Skill>
+							<Skill absoluteURL={true}>Git</Skill>
+							<Skill absoluteURL={true}>GitHub</Skill>
+							<Skill absoluteURL={true}>NPM</Skill>
 							<Skill absoluteURL={true}>Vercel</Skill>
 							<Skill absoluteURL={true}>Bootstrap</Skill>
 							<Skill absoluteURL={true}>HTML</Skill>
 							<Skill absoluteURL={true}>CSS</Skill>
 							<Skill absoluteURL={true} q="CSS">
-								SASS
+								SCSS
 							</Skill>
-							<Skill absoluteURL={true}>Git</Skill>
-							<Skill absoluteURL={true}>GitHub</Skill>
-							<Skill absoluteURL={true}>NPM</Skill>
+							<Skill absoluteURL={true}>Tailwind CSS</Skill>
 							<Skill absoluteURL={true}>PHP</Skill>
 							<Skill absoluteURL={true}>Python</Skill>
 							<Skill absoluteURL={true}>C++</Skill>
@@ -129,6 +129,8 @@ function ResumeView() {
 							<Skill absoluteURL={true}>Figma</Skill>
 							<Skill absoluteURL={true}>REST</Skill>
 							<Skill absoluteURL={true}>SEO</Skill>
+							<Skill absoluteURL={true}>SEM</Skill>
+							<Skill absoluteURL={true}>SMM</Skill>
 							<Skill absoluteURL={true} q="Adobe">
 								Adobe Apps
 							</Skill>
@@ -138,39 +140,64 @@ function ResumeView() {
 						<section className="section-experience">
 							<h2>Experience</h2>
 							<div className="resume-work-entry">
-								<strong>Web Developer &amp; Digital Marketer</strong>
-								<br />
-								New Breed Paintball and Airsoft | <em>08/2020 - Present</em>
+								<div className="resume-work-details">
+									<h3>Web Developer & E-commerce Manager</h3>
+									<div>08/2020 - Present</div>
+								</div>
+								<h4>New Breed Paintball and Airsoft &mdash; Remote</h4>
 								<ul>
-									<li>Programmed industry-leading, trade-in web application</li>
-									<li>Automated structured data generation with JavaScript</li>
+									<li>
+										<u>Developed website features; saved $100s/mo in 3rd-party app subs</u>
+									</li>
+									<li>Coded industry-leading, trade-in web app; mitigated follow-up clarification</li>
+									<li>Automated structured data generation; improved Google results</li>
+									<li>Performed SEO tasks; increased clicks 400% and impressions 600%</li>
 									<li>Generated average monthly revenue of $2,000+</li>
-									<li>Increased domain authority by 33% through SEO tasks</li>
-									<li>Wrote industry specific blogs and reviews</li>
-									<li>Created ecommerce SOPs for training and workflow optimization</li>
 								</ul>
-								<strong>Key Achievement:</strong> Developed website features to save $100s/mo in third-party application subscriptions
+								<h4>Tools:</h4>
+								<ul className="resume-work-tools">
+									<li>JavaScript</li>
+									<li>Shopify Liquid</li>
+									<li>JSON</li>
+									<li>PHP</li>
+									<li>Git</li>
+									<li>Adobe Apps</li>
+								</ul>
 							</div>
 							<div className="resume-work-entry">
-								<strong>Web Developer &amp; Digital Marketer</strong>
-								<br />
-								YourPbFriend | <em>03/2014 - 08/2016</em>
+								<div className="resume-work-details">
+									<h3>Web Developer</h3>
+									<div>03/2014 - 08/2016</div>
+								</div>
+								<h4>YourPbFriend &mdash; Fremont, CA</h4>
 								<ul>
-									<li>Increased revenue 10x in 2 years by switching to the Shopify platform</li>
-									<li>Identified key areas to successfully improve over competitors</li>
-									<li>Created a used gun rating system to successfully build buyer trust</li>
+									<li>
+										<u>Wrote the #1 most-used paintball trade-in web app of 2015-2016</u>
+									</li>
+									<li>Identified key website improvements; became #2 online paintball store</li>
 									<li>Embedded YouTube content to educate and create value for customers</li>
-									<li>Created ecommerce SOPs for training and workflow optimization</li>
+									<li>Increased revenue 10x in 2 years by utilizing the Shopify ecosystem</li>
+									<li>Created a used-gun, rating system calculator; increased buyer trust</li>
 								</ul>
-								<strong>Key Achievement:</strong> Developed the #1 most-used paintball trade-in web application of 2015-2016
+								<h4>Tools:</h4>
+								<ul className="resume-work-tools">
+									<li>jQuery</li>
+									<li>Shopify Liquid</li>
+									<li>Bootstrap</li>
+									<li>PHP</li>
+									<li>Adobe Apps</li>
+								</ul>
 							</div>
 						</section>
 						<section className="section-projects">
 							<h2>Projects</h2>
 							<div className="resume-work-entry">
-								<Link href="https://github.com/isaacyakl/isaacyakl.com">
-									<strong>Portfolio - isaacyakl.com</strong>
-								</Link>
+								<div className="resume-work-details">
+									<h3>
+										<Link href="https://github.com/isaacyakl/isaacyakl.com">Portfolio - isaacyakl.com</Link>
+									</h3>
+									<div></div>
+								</div>
 								<ul>
 									<li>Portfolio built with NextJS using TypeScript</li>
 									<li>Includes web-based resume</li>
@@ -178,9 +205,12 @@ function ResumeView() {
 								</ul>
 							</div>
 							<div className="resume-work-entry">
-								<Link href="https://github.com/isaacyakl/remote-jackbox-player">
-									<strong>Remote Jackbox Player</strong>
-								</Link>
+								<div className="resume-work-details">
+									<h3>
+										<Link href="https://github.com/isaacyakl/remote-jackbox-player">Remote Jackbox Player</Link>
+									</h3>
+									<div></div>
+								</div>
 								<ul>
 									<li>Web app to find and play Jackbox games remotely and for free</li>
 									<li>Uses Twitch API to find people streaming games</li>
@@ -188,9 +218,12 @@ function ResumeView() {
 								</ul>
 							</div>
 							<div className="resume-work-entry">
-								<Link href="https://github.com/isaacyakl/brandojs">
-									<strong>bRando.js</strong>
-								</Link>
+								<div className="resume-work-details">
+									<h3>
+										<Link href="https://github.com/isaacyakl/brandojs">bRando.js</Link>
+									</h3>
+									<div></div>
+								</div>
 								<ul>
 									<li>A CSS background randomizer with support for images, colors, and gradients</li>
 									<li>Utilizes image preloading</li>
@@ -198,9 +231,12 @@ function ResumeView() {
 								</ul>
 							</div>
 							<div className="resume-work-entry">
-								<Link href="https://github.com/isaacyakl/fairhaven-bc-vbs-2019-soundboard">
-									<strong>Keyboard Soundboard</strong>
-								</Link>
+								<div className="resume-work-details">
+									<h3>
+										<Link href="https://github.com/isaacyakl/fairhaven-bc-vbs-2019-soundboard">Keyboard Soundboard</Link>
+									</h3>
+									<div></div>
+								</div>
 								<ul>
 									<li>A web browser soundboard with preset keybinds and preloaded sound files</li>
 									<li>Uses JavaScript to play and stop audio elements</li>
@@ -208,9 +244,12 @@ function ResumeView() {
 								</ul>
 							</div>
 							<div className="resume-work-entry">
-								<Link href="https://github.com/isaacyakl/random-owen-wowson">
-									<strong>Random Owen Wowson</strong>
-								</Link>
+								<div className="resume-work-details">
+									<h3>
+										<Link href="https://github.com/isaacyakl/random-owen-wowson">Random Owen Wowson</Link>
+									</h3>
+									<div></div>
+								</div>
 								<ul>
 									<li>A python Discord bot for sending random Owen Wilson &quot;wow&quot; movie clips</li>
 									<li>Makes use of the open-source Owen Wilson Wow API</li>

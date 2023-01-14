@@ -32,7 +32,7 @@ tags:
    - JSON-LD
    - Bootstrap
    - jQuery
-   - SASS
+   - SCSS
    - Meta Ads
    - Adobe Photoshop
    - HTML
@@ -60,7 +60,7 @@ The web store is built with Shopify using a customized version of the [Venture t
 -  Automatic structured data (Product, Breadcrumbs, FAQ, Blog Articles)
 -  Automatic campaign link formatting for blog articles
 
-These features make use of the Shopify Liquid templating language, JavaScript (ESNext transpiled to ES5), HTML, and CSS/SASS. My workflow utilizes the [Shopify Theme Kit](https://shopify.dev/themes/tools/theme-kit) and Git/GitHub, and the procedure can be found in the theme's [README.md](https://github.com/isaacyakl/new-breed-shopify-theme#new-version-procedure) on GitHub.
+These features make use of the Shopify Liquid templating language, JavaScript (ESNext transpiled to ES5), HTML, and CSS/SCSS. My workflow utilizes the [Shopify Theme Kit](https://shopify.dev/themes/tools/theme-kit) and Git/GitHub, and the procedure can be found in the theme's [README.md](https://github.com/isaacyakl/new-breed-shopify-theme#new-version-procedure) on GitHub.
 
 ### Automatic FAQ Formatting
 

@@ -14,7 +14,7 @@ tags:
    - WooCommerce
    - PHP
    - JavaScript
-   - SASS
+   - SCSS
    - Meta Ads
    - Adobe Photoshop
    - Adobe Illustrator

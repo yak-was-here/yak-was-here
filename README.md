@@ -7,6 +7,7 @@ My personal website, created with NextJS and written in TypeScript. An experimen
 # To-Do
 
 -  Add bRando.js and link from bRando repo to isaacyakl.com article
+-  Add highlight.js
 -  Utilize Jest
 -  Setup monorepo with Turborepo
 -  Integrate remote-jackbox-player with root domain

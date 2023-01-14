@@ -29,7 +29,7 @@ tags:
   - JavaScript
   - jQuery
   - Bootstrap
-  - SASS
+  - SCSS
   - Meta Ads
   - Adobe Photoshop
   - Adobe Illustrator
@@ -84,7 +84,7 @@ I also created a feed on the homepage to display uploads from the YouTube channe
 
 [![Code Editor screenshot](/img/work/yourpbfriend-ss11-codeeditor.jpg)](/img/work/yourpbfriend-ss11-codeeditor.jpg)
 
-My development and customization workflow involved the Shopify code editor at first, but eventually a local environment thanks to the [Shopify Theme Kit](https://shopify.dev/themes/tools/theme-kit). Modification of the frontend involved the Shopify Liquid templating language, JavaScript, jQuery, and of course HTML and CSS/SASS.
+My development and customization workflow involved the Shopify code editor at first, but eventually a local environment thanks to the [Shopify Theme Kit](https://shopify.dev/themes/tools/theme-kit). Modification of the frontend involved the Shopify Liquid templating language, JavaScript, jQuery, and of course HTML and CSS/SCSS.
 
 ## Trade-In Web Application
 

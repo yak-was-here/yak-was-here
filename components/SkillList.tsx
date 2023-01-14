@@ -29,7 +29,7 @@ function SkillList() {
 					<Skill>Python</Skill>
 					<Skill>PHP</Skill>
 					<Skill>HTML5</Skill>
-					<Skill q="CSS">CSS3/SASS</Skill>
+					<Skill q="CSS">CSS3/SCSS</Skill>
 				</ul>
 				<ul className="skills">
 					<h3>APIs</h3>
