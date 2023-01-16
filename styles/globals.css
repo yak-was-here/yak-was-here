@@ -1024,6 +1024,11 @@ strong code {
 	text-indent: -1.5em;
 }
 
+section.section-experience,
+section.section-projects {
+	max-width: 100%;
+}
+
 div.resume-work-entry {
 	margin-bottom: 0.3em;
 	margin-left: 1em;
