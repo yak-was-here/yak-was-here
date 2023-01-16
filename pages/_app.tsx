@@ -7,6 +7,7 @@ import BackToTop from "../components/BackToTop";
 const bebasNeue = Bebas_Neue({
 	weight: "400",
 	display: "swap",
+	subsets: ["latin"],
 });
 
 export default function MyApp({ Component, pageProps }: AppProps) {

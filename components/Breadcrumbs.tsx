@@ -9,7 +9,7 @@ type Crumb = {
 
 function Breadcrumbs({ trail, className = "" }: { trail: Array<Crumb>; className?: string }) {
 	return (
-		<section className={`max-page-width breadcrumbs ${className}`}>
+		<section className={`max-w-screen-lg m-auto breadcrumbs ${className}`}>
 			{trail.map((link, index, ar) => {
 				return (
 					<React.Fragment key={link.text}>

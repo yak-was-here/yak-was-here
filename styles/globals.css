@@ -1,58 +1,54 @@
-/* Variables */
-:root {
-	/* Colors */
-	--primary-accent: #03c03c;
-	--secondary-accent: #0dd1d1;
-	--tertiary-accent: #9f00c5;
-	--background-color: #ffffff;
-	--text-color: #000000;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-	/* Fonts */
-	/* Heading font family variable located in _app.tsx */
-	--font-family-body: Arial, Helvetica, sans-serif;
-	--font-family-resume-body: Arial, Helvetica, sans-serif;
+@layer base {
+	/* Variables */
+	:root {
+		/* Colors */
+		--yak-green: #03c03c;
+		--yak-green-hover: #048a2c;
+		--yak-cyan: #0dd1d1;
+		--yak-magenta: #9f00c5;
 
-	/* Utilities */
-	--container-width: 83vw;
-	--space-unit: 0.5rem;
-	--border-radius: 0.1rem;
+		/* Fonts */
+		/* Heading font family variable located in _app.tsx */
+		--font-family-body: Arial, Helvetica, sans-serif;
+		--font-family-resume-body: Arial, Helvetica, sans-serif;
 
-	/* Sizing */
-	--cta-btn-font-size: 1.2rem;
+		/* Utilities */
+		--container-width: 83vw;
+		--space-unit: 0.5rem;
+		--border-radius: 0.1rem;
 
-	/* Résumé */
-	--resume-width: calc(8.5 * 96px);
-	--resume-height: calc(11 * 96px);
-	--resume-margin: calc(0.5 * 96px);
-	--resume-body-size: 10pt;
-}
+		/* Sizing */
+		--cta-btn-font-size: 1.2rem;
 
-/* All */
-*,
-*::after,
-*::before {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+		/* Résumé */
+		--resume-width: calc(8.5 * 96px);
+		--resume-height: calc(11 * 96px);
+		--resume-margin: calc(0.5 * 96px);
+		--resume-body-size: 10pt;
+	}
 }
 
 html,
 body {
 	font-family: var(--font-family-body);
-	font-size: 2vmax;
+	font-size: 18px;
 }
 
 a,
 a:visited,
 a:active {
+	color: var(--yak-green);
 	transition: all 0.25s ease-in;
-	color: var(--primary-accent);
 	text-decoration: none;
 	cursor: pointer;
 }
 
 a:hover {
-	color: #048a2c;
+	color: var(--yak-green-hover);
 }
 
 button.link {
@@ -131,11 +127,6 @@ ul {
 	padding-left: calc(var(--space-unit) * 4);
 }
 
-.max-page-width {
-	max-width: var(--container-width);
-	margin: auto;
-}
-
 div.work-status {
 	display: inline-block;
 	font-size: 1rem;
@@ -163,17 +154,17 @@ div.work-status svg {
 
 .yak-green {
 	color: white;
-	background-color: var(--primary-accent);
+	background-color: var(--yak-green);
 }
 
 .yak-cyan {
 	color: white;
-	background-color: var(--secondary-accent);
+	background-color: var(--yak-cyan);
 }
 
 .yak-purple {
 	color: white;
-	background-color: var(--tertiary-accent);
+	background-color: var(--yak-magenta);
 }
 
 /* Navigation */
@@ -255,12 +246,12 @@ ul.nav-menu a {
 }
 
 ul.nav-menu a:hover {
-	color: var(--primary-accent);
+	color: var(--yak-green);
 	background-color: #f3f3f3;
 }
 
 ul.nav-menu li.active a {
-	color: var(--secondary-accent);
+	color: var(--yak-cyan);
 	background-color: #e0e0e0;
 }
 
@@ -368,7 +359,7 @@ div.social-icons svg {
 }
 
 div.social-icons svg:hover {
-	color: var(--secondary-accent);
+	color: var(--yak-cyan);
 }
 
 section {
@@ -510,7 +501,7 @@ a.btn,
 	margin: calc(var(--space-unit) / 2);
 	padding: 0.33em 1em;
 	color: white;
-	background: var(--primary-accent);
+	background: var(--yak-green);
 	border-radius: var(--border-radius);
 	transition: all 0.5s 0s ease;
 }
@@ -565,17 +556,17 @@ ul.work-tags a {
 	font-size: 1rem;
 	display: inline-block;
 	color: white;
-	background-color: var(--secondary-accent);
+	background-color: var(--yak-cyan);
 	border-radius: var(--border-radius);
 	padding: var(--space-unit) calc(var(--space-unit) * 2);
 	margin-bottom: calc(var(--space-unit));
 	margin-right: calc(var(--space-unit));
 	transition: all 0.5s 0s ease;
-	border: 1px solid var(--secondary-accent);
+	border: 1px solid var(--yak-cyan);
 }
 
 ul.work-tags a:hover {
-	color: var(--secondary-accent);
+	color: var(--yak-cyan);
 	background-color: rgba(0, 0, 0, 0);
 }
 
@@ -583,12 +574,12 @@ a.work-link {
 	font-size: 1.2rem;
 	color: white;
 	background-color: white;
-	border: 1px solid var(--primary-accent);
-	background-color: var(--primary-accent);
+	border: 1px solid var(--yak-green);
+	background-color: var(--yak-green);
 }
 
 a.work-link:hover {
-	color: var(--primary-accent);
+	color: var(--yak-green);
 	background-color: rgba(0, 0, 0, 0);
 }
 
@@ -737,7 +728,7 @@ div.experience-timeline span {
 em.highlight {
 	font-style: normal;
 	text-decoration: underline;
-	text-decoration-color: #048a2c;
+	text-decoration-color: var(--yak-green-hover);
 }
 
 .copyright {
@@ -857,7 +848,7 @@ strong code {
 }
 
 .resumeActions svg {
-	color: var(--primary-accent);
+	color: var(--yak-green);
 	height: calc(var(--resume-margin) / 2);
 	width: calc(var(--resume-margin) / 2);
 	padding: 5px;
@@ -870,7 +861,7 @@ strong code {
 
 .resumeActions svg:hover {
 	color: white;
-	background-color: var(--primary-accent);
+	background-color: var(--yak-green);
 }
 
 .resumePaper {

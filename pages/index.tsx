@@ -11,7 +11,7 @@ export default function Home() {
 			<BaseMeta />
 			<NavBar active="home" />
 			<Hero />
-			<main className="max-page-width">
+			<main className="max-w-screen-lg m-auto">
 				<section>
 					<About showHeading={false} />
 					<div style={{ display: "flex", flexWrap: "wrap" }}>

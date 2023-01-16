@@ -11,7 +11,7 @@ function Hero() {
 		if (acceptingWork) {
 			return (
 				<EmailLink>
-					<div className="work-status success">
+					<div className="work-status bg-yak-green">
 						<FontAwesomeIcon icon={faCheck} />
 						Accepting work
 					</div>
@@ -22,7 +22,7 @@ function Hero() {
 
 	return (
 		<header className="hero">
-			<div className="header-container max-page-width">
+			<div className="header-container max-w-screen-lg m-auto">
 				<h1 className="hero-title">
 					{fName}
 					<br />

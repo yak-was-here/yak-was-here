@@ -9,7 +9,7 @@ export default function Error500() {
 			<div className="more-background">
 				<BaseMeta title="An error occurred" desc="Whoops! Something went wrong..." robots="noindex" googlebot="noindex" />
 				<NavBar />
-				<main className="max-page-width">
+				<main className="max-w-screen-lg m-auto">
 					<section className="text-center">
 						<h2>Error ⚠️</h2>
 						<p>An error occurred. It&apos;s probably not your fault...right?! 😳</p>
