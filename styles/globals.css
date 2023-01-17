@@ -5,12 +5,6 @@
 @layer base {
 	/* Variables */
 	:root {
-		/* Colors */
-		--yak-green: #03c03c;
-		--yak-green-hover: #048a2c;
-		--yak-cyan: #0dd1d1;
-		--yak-magenta: #9f00c5;
-
 		/* Fonts */
 		/* Heading font family variable located in _app.tsx */
 		--font-family-body: Arial, Helvetica, sans-serif;
@@ -31,33 +25,13 @@
 		--resume-margin: calc(0.5 * 96px);
 		--resume-body-size: 10pt;
 	}
+	.heading-font-family {
+		font-family: var(--font-family-headings);
+	}
 	html,
 	body {
 		font-family: var(--font-family-body);
 		font-size: var(--default-font-size);
-	}
-	a,
-	a:visited,
-	a:active {
-		color: var(--yak-green);
-		transition: all 0.25s ease-in;
-		text-decoration: none;
-		cursor: pointer;
-	}
-	a:hover {
-		color: var(--yak-green-hover);
-	}
-	p {
-		padding: var(--space-unit) 0rem;
-		line-height: 1.35;
-	}
-	hr {
-		margin: calc(var(--space-unit) * 2) auto;
-		border: none;
-		background-color: black;
-		width: 1.25rem;
-		height: 0.05rem;
-		margin: 0;
 	}
 	h1,
 	h2,
@@ -66,37 +40,43 @@
 	h5,
 	h6 {
 		font-family: var(--font-family-headings);
-		font-weight: 100;
-		padding: 0.5em 0em 1em 0em;
-		text-transform: uppercase;
+		@apply font-thin pt-2 pb-4 uppercase;
 	}
-
 	h1 {
-		font-size: 2.25rem;
+		@apply text-4xl;
 	}
-
 	h2 {
-		font-size: 2rem;
+		@apply text-3xl;
 		color: #333333;
 	}
-
 	h3 {
-		font-size: 1.7rem;
+		@apply text-2xl;
 		color: #666666;
 	}
-
 	h4 {
-		font-size: 1.5rem;
+		@apply text-xl;
 		color: #999999;
 	}
-
 	h5 {
-		font-size: 1.4rem;
+		@apply text-lg;
 		color: #999999;
 	}
-
 	h6 {
-		font-size: 1.3rem;
+		@apply text-base;
+	}
+	a,
+	a:visited,
+	a:active {
+		@apply text-yak-green transition-all duration-[250ms] ease-in no-underline cursor-pointer;
+	}
+	a:hover {
+		@apply text-yak-green-hover;
+	}
+	p {
+		@apply py-2 leading-[1.35rem];
+	}
+	hr {
+		@apply my-4 mx-auto border-0 bg-black w-5 h-[0.05rem];
 	}
 }
 
@@ -158,80 +138,7 @@ div.work-status svg {
 }
 
 /* Navigation */
-nav {
-	width: 98vw;
-	margin: auto;
-	padding: var(--space-unit);
-}
-
-div.nav-dash {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	align-items: center;
-}
-
-div.branding-container a,
-div.branding-container a:visited,
-div.branding-container a:active,
-div.branding-container a:hover {
-	color: black;
-	text-decoration: none;
-}
-
-div.logo-container {
-	position: relative;
-	display: inline-block;
-	height: 1.75rem;
-	width: 1.75rem;
-}
-
-img.logo {
-	object-fit: contain;
-}
-
-span.site-wordmark {
-	font-family: var(--font-family-headings);
-	font-weight: 100;
-	font-size: 2.25rem;
-	padding-left: 0.1rem;
-}
-
-div.branding-container {
-	justify-self: left;
-}
-
-div.hamburger {
-	justify-self: right;
-	cursor: pointer;
-}
-
-div.hamburger svg {
-	width: 1.68rem;
-	height: 1.68rem;
-}
-
-ul.nav-menu {
-	list-style-type: none;
-	transition: all 0.5s 0s ease;
-	max-height: 14em;
-	overflow: hidden;
-	padding: 0rem;
-	background-color: var(--background-color);
-	font-family: var(--font-family-headings);
-	font-weight: 100;
-	text-align: right;
-	letter-spacing: 0.15em;
-}
-
-ul.nav-menu.hidden {
-	max-height: 0em;
-	padding: 0em;
-}
-
 ul.nav-menu a {
-	display: block;
-	transition: none;
-	color: var(--text-color);
 	padding: var(--space-unit) calc(var(--space-unit) * 2);
 }
 

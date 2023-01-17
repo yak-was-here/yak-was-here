@@ -5,12 +5,12 @@ import { nick } from "../data/meta";
 
 const Branding = () => {
 	return (
-		<div className="branding-container">
-			<Link href="/" title="Home">
-				<div className="logo-container">
-					<Image className="logo" src={logo} alt="yak logo" fill />
+		<div className="justify-self-start">
+			<Link href="/" title="Home" className="text-black no-underline">
+				<div className="relative inline-block h-7 w-7">
+					<Image className="object-contain" src={logo} alt="yak logo" fill />
 				</div>
-				<span className="site-wordmark">{nick}</span>
+				<span className="heading-font-family text-black text-4xl font-thin pl-1">{nick}</span>
 			</Link>
 		</div>
 	);

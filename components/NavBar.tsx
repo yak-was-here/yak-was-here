@@ -10,28 +10,36 @@ const NavBar = ({ active, className = "" }: { active?: string; className?: strin
 	const [isNavMenuOpen, setNavMenuState] = useState(true); // Nav menu starts open
 
 	return (
-		<nav className={`select-none ${className}`}>
-			<div id="top" className="nav-dash">
+		<nav className={`max-w-screen-xl m-auto p-2 select-none ${className}`}>
+			<div id="top" className="grid grid-cols-2 items-center">
 				<Branding />
-				<div className="hamburger dont-print" onClick={() => setNavMenuState(!isNavMenuOpen)} role="menu" aria-owns="home-menuitem work-menuitem resume-menuitem contact-menuitem more-menuitem">
-					<FontAwesomeIcon icon={faBars} />
+				<div className="justify-self-end cursor-pointer dont-print" onClick={() => setNavMenuState(!isNavMenuOpen)} role="menu" aria-owns="home-menuitem work-menuitem resume-menuitem contact-menuitem more-menuitem">
+					<FontAwesomeIcon icon={faBars} className="w-[1.68rem] h-[1.68rem]" />
 				</div>
 			</div>
-			<ul className={`nav-menu dont-print${isNavMenuOpen ? " hidden" : ""}`}>
-				<li id="home-menuitem" className={`${active === "home" ? "active" : ""}`} role="menuitem">
-					<Link href="/">Home</Link>
+			<ul className={`heading-font-family list-none transition-all ease duration-500 max-h-56 overflow-hidden p-0 bg-white font-thin text-right tracking-[0.15rem] dont-print${isNavMenuOpen ? " max-h-0" : ""}`}>
+				<li id="home-menuitem" role="menuitem">
+					<Link href="/">
+						<span className={`block transition-none py-2 px-2 ${active === "home" ? "text-yak-cyan bg-gray-200" : "text-black bg-white hover:text-yak-green hover:bg-gray-200 "}`}>Home</span>
+					</Link>
 				</li>
-				<li id="work-menuitem" className={`${active === "work" ? "active" : ""}`} title="Browse work" role="menuitem">
-					<Link href="/work">Work</Link>
+				<li id="work-menuitem" title="Browse work" role="menuitem">
+					<Link href="/work">
+						<span className={`block transition-none py-2 px-2 ${active === "work" ? "text-yak-cyan bg-gray-200" : "text-black bg-white hover:text-yak-green hover:bg-gray-200 "}`}>Work</span>
+					</Link>
 				</li>
-				<li id="resume-menuitem" className={`${active === "resume" ? "active" : ""}`} title="View résumé" role="menuitem">
-					<Link href="/resume">Résumé</Link>
+				<li id="resume-menuitem" title="View résumé" role="menuitem">
+					<Link href="/resume">
+						<span className={`block transition-none py-2 px-2 ${active === "resume" ? "text-yak-cyan bg-gray-200" : "text-black bg-white hover:text-yak-green hover:bg-gray-200 "}`}>Résumé</span>
+					</Link>
 				</li>
-				<li id="contact-menuitem" className={`${active === "contact" ? "active" : ""}`} role="menuitem">
-					<EmailLink>Contact</EmailLink>
+				<li id="contact-menuitem" role="menuitem">
+					<EmailLink className={`block transition-none py-2 px-2 ${active === "contact" ? "text-yak-cyan bg-gray-200" : "text-black bg-white hover:text-yak-green hover:bg-gray-200 "}`}>Contact</EmailLink>
 				</li>
-				<li id="more-menuitem" className={`${active === "more" ? "active" : ""}`} title="More links" role="menuitem">
-					<Link href="/more">More</Link>
+				<li id="more-menuitem" title="More links" role="menuitem">
+					<Link href="/more">
+						<span className={`block transition-none py-2 px-2 ${active === "more" ? "text-yak-cyan bg-gray-200" : "text-black bg-white hover:text-yak-green hover:bg-gray-200 "}`}>More</span>
+					</Link>
 				</li>
 			</ul>
 		</nav>
