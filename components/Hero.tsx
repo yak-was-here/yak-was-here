@@ -23,12 +23,12 @@ function Hero() {
 	return (
 		<header className="min-h-screen opacity-95 overflow-hidden flex">
 			<div className="max-width px-2 py-20">
-				<h1 className="text-[20vw] leading-[16vw] py-2">
+				<h1 className="text-[20vw] leading-[16vw] py-2 -ml-[0.039em]">
 					{fName}
 					<br />
 					{lName}
 				</h1>
-				<hr className="m-0 w-[20vw]" />
+				<hr className="m-0 w-[20vw] my-1" />
 				<div className="py-2 text-lg">
 					<div className="flex flex-nowrap mb-[0.33em]">
 						<FontAwesomeIcon icon={faBriefcase} className="h-[1.3em] w-[1.3em] mr-[0.33em]" />
