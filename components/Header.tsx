@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 const Header = ({ heading }: { heading?: string }) => {
 	return (
 		<header>
-			<div className="max-w-screen-lg m-auto">
+			<div className="max-w-screen-lg m-auto p-4">
 				<h1>{heading}</h1>
-				<hr />
+				<hr className="m-0" />
 			</div>
 		</header>
 	);

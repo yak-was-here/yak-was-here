@@ -14,7 +14,7 @@ export default function Home() {
 			<main className="max-w-screen-lg m-auto">
 				<section>
 					<About showHeading={false} />
-					<div style={{ display: "flex", flexWrap: "wrap" }}>
+					<div className="flex flex-wrap">
 						<CtaBtn text="Browse work" href="/work" />
 					</div>
 				</section>

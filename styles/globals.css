@@ -78,6 +78,11 @@
 	hr {
 		@apply my-4 mx-auto border-0 bg-black w-5 h-[0.05rem];
 	}
+	/* Header */
+	header {
+		background-image: url("/img/isaacyakl-hero-background-4k.jpg");
+		@apply bg-no-repeat bg-center bg-cover min-h-[5rem];
+	}
 }
 
 /*=========WIP========*/
@@ -95,99 +100,6 @@ button.link {
 ul {
 	padding: var(--space-unit) 0rem;
 	padding-left: calc(var(--space-unit) * 4);
-}
-
-div.work-status {
-	display: inline-block;
-	font-size: 1rem;
-	padding: 0.5em;
-	margin: 0.5em 0em;
-	border-radius: 0.3em;
-	vertical-align: middle;
-}
-
-div.work-status svg {
-	height: 0.8rem;
-	width: 0.8rem;
-	margin-right: 0.3em;
-}
-
-.success {
-	color: white;
-	background-color: #03c03c;
-}
-
-.failure {
-	color: white;
-	background-color: #dc3545;
-}
-
-.yak-green {
-	color: white;
-	background-color: var(--yak-green);
-}
-
-.yak-cyan {
-	color: white;
-	background-color: var(--yak-cyan);
-}
-
-.yak-purple {
-	color: white;
-	background-color: var(--yak-magenta);
-}
-
-/* Navigation */
-ul.nav-menu a {
-	padding: var(--space-unit) calc(var(--space-unit) * 2);
-}
-
-ul.nav-menu a:hover {
-	color: var(--yak-green);
-	background-color: #f3f3f3;
-}
-
-ul.nav-menu li.active a {
-	color: var(--yak-cyan);
-	background-color: #e0e0e0;
-}
-
-/* Header */
-header {
-	background-image: url("/img/isaacyakl-hero-background-4k.jpg");
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	min-height: 5rem;
-	display: flex;
-	align-items: center;
-	align-content: center;
-}
-
-header.hero {
-	min-height: 100vh;
-	opacity: 0.95;
-	overflow: hidden;
-}
-
-div.header-container h1 {
-	padding: 0;
-}
-
-div.header-container hr {
-	margin-bottom: 1rem;
-}
-
-h1.hero-title {
-	font-size: 14vw;
-	line-height: 11vw;
-	flex-grow: 1;
-	padding: var(--space-unit) 0rem;
-}
-
-header.hero hr {
-	width: 20vw;
-	margin: var(--space-unit) 0rem;
 }
 
 div.seeking,
@@ -977,7 +889,7 @@ ul.resume-work-tools li:not(:last-child) {
 
 @media print {
 	.dont-print {
-		display: none;
+		@apply hidden;
 	}
 
 	div.work-card p.summary-body:after {
