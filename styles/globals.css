@@ -86,6 +86,9 @@
 	main {
 		@apply m-auto;
 	}
+	ul {
+		@apply list-disc py-2 pl-8;
+	}
 }
 
 /*=========WIP========*/
@@ -98,11 +101,6 @@ button.link {
 
 .section-outside-heading {
 	padding: 1em;
-}
-
-ul {
-	padding: var(--space-unit) 0rem;
-	padding-left: calc(var(--space-unit) * 4);
 }
 
 div.seeking,

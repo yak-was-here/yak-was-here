@@ -223,8 +223,8 @@ function ResumeView() {
 								</div>
 								<ul>
 									<li>Features a portfolio, web-based resume, and blog</li>
-									<li>Work entires generated statically using remark.js and gray-matter</li>
-									<li>Experiments with relative css units instead of breakpoints</li>
+									<li>Work entries statically generated using remark.js and gray-matter</li>
+									<li>Experiments with relative CSS units instead of breakpoints</li>
 								</ul>
 								<h4>Tools:</h4>
 								<ul className="resume-work-tools">
