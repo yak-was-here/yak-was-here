@@ -10,7 +10,7 @@ const NavBar = ({ active, className = "" }: { active?: string; className?: strin
 	const [isNavMenuOpen, setNavMenuState] = useState(true); // Nav menu starts open
 
 	return (
-		<nav className={`max-w-screen-xl m-auto p-2 select-none ${className}`}>
+		<nav className={`max-width p-2 select-none ${className}`}>
 			<div id="top" className="grid grid-cols-2 items-center">
 				<Branding />
 				<div className="justify-self-end cursor-pointer dont-print" onClick={() => setNavMenuState(!isNavMenuOpen)} role="menu" aria-owns="home-menuitem work-menuitem resume-menuitem contact-menuitem more-menuitem">

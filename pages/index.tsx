@@ -11,7 +11,7 @@ export default function Home() {
 			<BaseMeta />
 			<NavBar active="home" />
 			<Hero />
-			<main className="max-w-screen-xl m-auto">
+			<main>
 				<section>
 					<About showHeading={false} />
 					<div className="flex flex-wrap">

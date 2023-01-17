@@ -28,6 +28,9 @@
 	.heading-font-family {
 		font-family: var(--font-family-headings);
 	}
+	.max-width {
+		@apply max-w-screen-xl m-auto;
+	}
 	html,
 	body {
 		font-family: var(--font-family-body);
@@ -79,15 +82,15 @@
 	hr {
 		@apply my-4 mx-auto border-0 bg-black w-5 h-[0.05rem];
 	}
+	ul {
+		@apply list-disc py-2 pl-8;
+	}
 	header {
 		background-image: url("/img/isaacyakl-hero-background-4k.jpg");
 		@apply bg-no-repeat bg-center bg-cover min-h-[5rem];
 	}
-	main {
-		@apply m-auto;
-	}
-	ul {
-		@apply list-disc py-2 pl-8;
+	section {
+		@apply max-w-screen-xl m-auto p-2;
 	}
 }
 
@@ -140,12 +143,6 @@ main img {
 	background-color: #f3f3f3;
 	margin-top: calc(var(--space-unit) * 4);
 	padding-top: calc(var(--space-unit) * 4);
-}
-
-section {
-	max-width: var(--container-width);
-	margin: auto;
-	padding: calc(var(--space-unit) * 2) 0rem calc(var(--space-unit) * 4) 0rem;
 }
 
 #position-experience {

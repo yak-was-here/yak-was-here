@@ -9,7 +9,7 @@ export default function More() {
 		<div className="more-background">
 			<BaseMeta title={`Links to ${nick}'s businesses, projects, and more.`} desc={`Browse a list of ${nick}'s businesses, projects, and more.`} />
 			<NavBar active="more" />
-			<main className="max-w-screen-xl m-auto more">
+			<main className="max-width more">
 				<section>
 					<h1>
 						{fName} &quot;{nick}&quot; {lName}
