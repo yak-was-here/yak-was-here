@@ -22,7 +22,7 @@ function Hero() {
 
 	return (
 		<header className="hero">
-			<div className="header-container max-w-screen-lg m-auto">
+			<div className="max-w-screen-lg m-auto">
 				<h1 className="hero-title">
 					{fName}
 					<br />

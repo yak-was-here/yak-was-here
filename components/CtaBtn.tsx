@@ -12,15 +12,13 @@ function CtaBtn({ text, href }: { text: string; href: string }) {
 			);
 		}
 		return (
-            (<Link href={href} passHref>
-
-                <button className="btn cta cta-arrow">{text}</button>
-
-            </Link>)
-        );
+			<Link href={href} passHref>
+				<button className="btn cta cta-arrow">{text}</button>
+			</Link>
+		);
 	};
 
-	return <div className="cta-btn-container no-select">{generateBtn()}</div>;
+	return <div className="cta-btn-container select-none">{generateBtn()}</div>;
 }
 
 CtaBtn.defaultProps = {

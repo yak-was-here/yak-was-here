@@ -10,7 +10,7 @@ function Resume() {
 			<BaseMeta title={`${fName} ${lName}'s Résumé`} desc={`${fName} ${lName}: ${resumeIntroWebDev.substring(0, 100)}...`} />
 			<NavBar active="resume" className="dont-print" />
 			<Breadcrumbs
-				className="dont-print no-select"
+				className="dont-print select-none"
 				trail={[
 					{ text: "Home", link: "/" },
 					{ text: "Résumé", link: "/resume" },

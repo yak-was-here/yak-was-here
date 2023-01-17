@@ -9,7 +9,7 @@ import { twitter, github, instagram, linkedin, nick } from "../data/meta";
 
 const ContactIcons = ({ id, className = "" }: { id?: string; className?: string }) => {
 	return (
-		<div id={id} className={`social-icons no-select ${className}`}>
+		<div id={id} className={`social-icons select-none ${className}`}>
 			<a href={twitter} title={`${nick} on Twitter`}>
 				<FontAwesomeIcon icon={faTwitter} />
 			</a>
