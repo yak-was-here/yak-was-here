@@ -32,6 +32,7 @@
 	body {
 		font-family: var(--font-family-body);
 		font-size: var(--default-font-size);
+		@apply bg-white;
 	}
 	h1,
 	h2,
@@ -78,10 +79,12 @@
 	hr {
 		@apply my-4 mx-auto border-0 bg-black w-5 h-[0.05rem];
 	}
-	/* Header */
 	header {
 		background-image: url("/img/isaacyakl-hero-background-4k.jpg");
 		@apply bg-no-repeat bg-center bg-cover min-h-[5rem];
+	}
+	main {
+		@apply m-auto;
 	}
 }
 
@@ -114,15 +117,6 @@ div.seeking svg {
 	padding-right: 0.25rem;
 }
 
-/* Body */
-body {
-	background-color: var(--background-color);
-}
-
-main {
-	margin: auto;
-}
-
 main img {
 	max-width: var(--container-width);
 }
@@ -148,22 +142,6 @@ main img {
 	background-color: #f3f3f3;
 	margin-top: calc(var(--space-unit) * 4);
 	padding-top: calc(var(--space-unit) * 4);
-}
-
-div.social-icons {
-	padding: var(--space-unit) 0rem;
-}
-
-div.social-icons svg {
-	color: var(--text-color);
-	transition: color 0.5s 0s ease;
-	width: 1.85rem;
-	height: 1.85rem;
-	margin-right: calc(var(--space-unit) * 1.5);
-}
-
-div.social-icons svg:hover {
-	color: var(--yak-cyan);
 }
 
 section {

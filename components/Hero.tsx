@@ -21,21 +21,21 @@ function Hero() {
 	};
 
 	return (
-		<header className="min-h-screen opacity-95 overflow-hidden">
-			<div className="min-h-screen max-w-screen-lg m-auto p-4">
+		<header className="min-h-screen opacity-95 overflow-hidden flex">
+			<div className="max-w-screen-xl m-auto p-2">
 				<h1 className="text-[20vw] leading-[16vw] py-2">
 					{fName}
 					<br />
 					{lName}
 				</h1>
 				<hr className="m-0 w-[20vw]" />
-				<div className="py-2">
-					<div className="flex flex-nowrap mb-1">
-						<FontAwesomeIcon icon={faBriefcase} className="h-[1.3em] w-[1.3em] mr-[0.25em]" />
+				<div className="py-2 text-lg">
+					<div className="flex flex-nowrap mb-[0.33em]">
+						<FontAwesomeIcon icon={faBriefcase} className="h-[1.3em] w-[1.3em] mr-[0.33em]" />
 						<span className="block h-[1.3em]">{title}</span>
 					</div>
 					<div className="flex flex-nowrap">
-						<FontAwesomeIcon icon={faMapMarkerAlt} className="h-[1.3em] w-[1.3em] mr-[0.25em]" />
+						<FontAwesomeIcon icon={faMapMarkerAlt} className="h-[1.3em] w-[1.3em] mr-[0.33em]" />
 						<span className="block h-[1.3em]">{location}</span>
 					</div>
 				</div>

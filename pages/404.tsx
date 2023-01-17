@@ -17,7 +17,7 @@ export default function Error404() {
 			<div className="more-background">
 				<BaseMeta title="Page not found" desc="Guess that page does not exist..." robots="noindex" googlebot="noindex" />
 				<NavBar />
-				<main className="max-w-screen-lg m-auto">
+				<main className="max-w-screen-xl m-auto">
 					<section className="text-center">
 						<h2>Page not found 😔</h2>
 						<p>
