@@ -4,18 +4,18 @@ import CtaBtn from "../components/CtaBtn";
 
 export default function Error500() {
 	return (
-		<>
-			<div className="more-background">
-				<BaseMeta title="An error occurred" desc="Whoops! Something went wrong..." robots="noindex" googlebot="noindex" />
-				<NavBar />
-				<main className="max-width">
-					<section className="text-center">
-						<h2>Error ⚠️</h2>
-						<p>An error occurred. It&apos;s probably not your fault...right?! 😳</p>
-					</section>
-					<CtaBtn text="🏠 Home" href="/" />
-				</main>
-			</div>
-		</>
+		<div className="more-background">
+			<BaseMeta title="An error occurred" desc="Whoops! Something went wrong..." robots="noindex" googlebot="noindex" />
+			<NavBar />
+			<main className="max-width text-center">
+				<section>
+					<h2>⚠️ Error</h2>
+					<p>An error occurred. It&apos;s probably not your fault...right?! 😳</p>
+					<p className="max-w-[10rem] m-auto">
+						<CtaBtn text="Go home" href="/" />
+					</p>
+				</section>
+			</main>
+		</div>
 	);
 }

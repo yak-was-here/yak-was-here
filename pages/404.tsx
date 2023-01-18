@@ -13,20 +13,20 @@ export default function Error404() {
 	}, [pathName]);
 
 	return (
-		<>
-			<div className="more-background">
-				<BaseMeta title="Page not found" desc="Guess that page does not exist..." robots="noindex" googlebot="noindex" />
-				<NavBar />
-				<main className="max-width">
-					<section className="text-center">
-						<h2>Page not found 😔</h2>
-						<p>
-							That page doesn&apos;t exist. Perhaps you can <Link href={`/work?q=${pathName}`}>try searching for it</Link>?
-						</p>
-					</section>
-					<CtaBtn text="🏠 Home" href="/" />
-				</main>
-			</div>
-		</>
+		<div className="more-background">
+			<BaseMeta title="Page not found" desc="Guess that page does not exist..." robots="noindex" googlebot="noindex" />
+			<NavBar />
+			<main className="max-width text-center">
+				<section>
+					<h2>😔 Page not found</h2>
+					<p>
+						That page doesn&apos;t exist. Perhaps you can <Link href={`/work?q=${pathName}`}>try searching for it</Link>?
+					</p>
+					<p className="max-w-[10rem] m-auto">
+						<CtaBtn text="Go home" href="/" />
+					</p>
+				</section>
+			</main>
+		</div>
 	);
 }
