@@ -5,9 +5,10 @@ export default function CtaSection({ ctaBody, btnText, btnHref }: { ctaBody?: st
 		if (ctaBody !== undefined) return ctaBody;
 		return (
 			<>
-				<strong>Discover new solutions and strategies.</strong>
-				<br />
-				Take your business to the next level.
+				<span className="block m-2">
+					<strong>Take your business to the next level!</strong>
+				</span>
+				<span className="block m-2">Discover new solutions and strategies.</span>
 			</>
 		);
 	};
