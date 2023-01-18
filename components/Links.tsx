@@ -3,7 +3,7 @@ import { FaBriefcase, FaSpotify } from "react-icons/fa";
 import { IoDocumentText } from "react-icons/io5";
 import { RxCrosshair1 } from "react-icons/rx";
 
-export default function ({ showHeading = false }: { showHeading?: boolean }) {
+export default function Links({ showHeading = false }: { showHeading?: boolean }) {
 	const getHeading = () => {
 		if (showHeading) return <h2>Links</h2>;
 		else return;
