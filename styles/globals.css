@@ -103,6 +103,10 @@
 		@apply inline-block text-xl m-1 py-2 px-3 w-80 text-white bg-yak-green rounded transition-all duration-300 ease-in-out border-0 hover:bg-gray-400 hover:no-underline;
 		filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
 	}
+	div.more-background {
+		background-image: url("/img/isaacyakl-hero-background-4k.jpg");
+		@apply bg-cover bg-fixed min-h-screen;
+	}
 }
 @layer utilities {
 	.max-width {
@@ -432,22 +436,9 @@ em.highlight {
 	font-size: small;
 }
 
-main.more {
-	text-align: center;
-}
-
-main.more h1,
-main.more p {
-	padding: 0;
-}
-
 main p.subtitle {
 	max-width: 20rem;
 	margin: auto;
-}
-
-main.more section {
-	padding: var(--space-unit) 0 var(--space-unit) 0;
 }
 
 .more-link-container {
@@ -460,13 +451,6 @@ main.more section {
 a.more-links {
 	font-size: 2vmax;
 	transition: all 0.25s 0s ease;
-}
-
-div.more-background {
-	background-image: url("/img/isaacyakl-hero-background-4k.jpg");
-	background-size: cover;
-	background-attachment: fixed;
-	min-height: 100vh;
 }
 
 .drop-shadow {

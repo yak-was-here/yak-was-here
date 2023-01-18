@@ -3,12 +3,13 @@ import Branding from "./Branding";
 import React from "react";
 import { fName, lName } from "../data/meta";
 import { useEffect, useState } from "react";
+import { getYear } from "../lib/browser";
 
 const Footer = ({ children }: { children?: React.ReactNode }) => {
-	const [currentDate, setCurrentDate] = useState(new Date().getFullYear());
+	const [currentDate, setCurrentDate] = useState(getYear());
 
 	useEffect(() => {
-		setCurrentDate(new Date().getFullYear());
+		setCurrentDate(getYear());
 	}, []);
 
 	return (

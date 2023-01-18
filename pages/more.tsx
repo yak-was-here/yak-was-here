@@ -3,17 +3,23 @@ import BaseMeta from "../components/BaseMeta";
 import ContactIcons from "../components/ContactIcons";
 import NavBar from "../components/NavBar";
 import { fName, lName, nick, tagline } from "../data/meta";
+import { useEffect, useState } from "react";
+import { getYear } from "../lib/browser";
 
 export default function More() {
+	const [currentDate, setCurrentDate] = useState(getYear());
+
+	useEffect(() => {
+		setCurrentDate(getYear());
+	}, []);
+
 	return (
 		<div className="more-background">
 			<BaseMeta title={`Links to ${nick}'s businesses, projects, and more.`} desc={`Browse a list of ${nick}'s businesses, projects, and more.`} />
 			<NavBar active="more" />
-			<main className="max-width more">
+			<main className="max-width text-center">
 				<section>
-					<h1>
-						{fName} &quot;{nick}&quot; {lName}
-					</h1>
+					<h1>@isaacyakl</h1>
 					<p className="subtitle">{tagline}</p>
 				</section>
 				<section className="more-link-container">
@@ -32,7 +38,7 @@ export default function More() {
 				</section>
 				<section className="copyright">
 					<p>
-						&copy; {new Date().getFullYear()} {fName} {lName} &mdash; All rights reserved.
+						&copy; {currentDate} {fName} {lName} &mdash; All rights reserved.
 					</p>
 				</section>
 			</main>
