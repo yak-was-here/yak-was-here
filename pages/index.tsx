@@ -1,7 +1,7 @@
 import BaseMeta from "../components/BaseMeta";
 import NavBar from "../components/NavBar";
 import Hero from "../components/Hero";
-import Footer from "../components/Footer";
+import PageFooter from "../components/PageFooter";
 import About from "../components/About";
 import Links from "../components/Links";
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
 				</section>
 				<Links showHeading={true} />
 			</main>
-			<Footer />
+			<PageFooter />
 		</>
 	);
 }

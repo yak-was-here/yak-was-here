@@ -1,7 +1,7 @@
 import BaseMeta from "../../components/BaseMeta";
 import NavBar from "../../components/NavBar";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import PageHeader from "../../components/PageHeader";
+import PageFooter from "../../components/PageFooter";
 import Image from "next/image";
 import { getAllWorkIds, getWorkFileData } from "../../lib/work";
 import Link from "next/link";
@@ -45,7 +45,7 @@ const Work = ({ title, images, tags, results, summary, links, htmlContent }: Wor
 					{ text: title, link: "" },
 				]}
 			/>
-			<Header heading={title} />
+			<PageHeader heading={title} />
 			<main className="work">
 				<section>
 					<div className="ss drop-shadow">
@@ -75,7 +75,7 @@ const Work = ({ title, images, tags, results, summary, links, htmlContent }: Wor
 				{getBody()}
 				<CtaSection btnText="Email me" btnHref={""} />
 			</main>
-			<Footer />
+			<PageFooter />
 		</>
 	);
 };

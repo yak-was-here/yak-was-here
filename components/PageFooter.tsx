@@ -5,7 +5,7 @@ import { fName, lName } from "../data/meta";
 import { useEffect, useState } from "react";
 import { getYear } from "../lib/browser";
 
-const Footer = ({ children }: { children?: React.ReactNode }) => {
+const PageFooter = ({ children }: { children?: React.ReactNode }) => {
 	const [currentDate, setCurrentDate] = useState(getYear());
 
 	useEffect(() => {
@@ -28,4 +28,4 @@ const Footer = ({ children }: { children?: React.ReactNode }) => {
 	);
 };
 
-export default Footer;
+export default PageFooter;
