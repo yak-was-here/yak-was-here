@@ -1,4 +1,3 @@
-import Link from "next/link";
 import BaseMeta from "../components/BaseMeta";
 import NavBar from "../components/NavBar";
 import CtaBtn from "../components/CtaBtn";

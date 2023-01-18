@@ -7,11 +7,12 @@ My personal website, created with NextJS and written in TypeScript. An experimen
 # To-Do
 
 -  Add bRando.js and link from bRando repo to isaacyakl.com article
--  Add highlight.js
+-  Change all icons to use React-icons
+-  Add [react icons](https://react-icons.github.io/react-icons) to work tags/skills/tools
 -  Grab tagline from Twitter API
--  Utilize Jest
+-  Add highlight.js
 -  Setup monorepo with Turborepo
--  Integrate remote-jackbox-player with root domain
+-  Utilize Jest
 -  Optimize image loading time for word cards
 -  Create blog
 -  Add RichSnippets (including article structured data for work and update [share metadata](https://ogp.me/#no_vertical))
@@ -24,7 +25,6 @@ My personal website, created with NextJS and written in TypeScript. An experimen
 -  Do not oversize small images in work cover pictures
 -  [https://caniuse.com/?search=vmax](https://caniuse.com/?search=vmax)
 -  Add search icon to work search field
--  Add [react icons](https://react-icons.github.io/react-icons) to work tags/skills/tools
 -  Use JS to make nav menu sticky on résumé page
 -  [CUBE CSS](https://www.smashingmagazine.com/2021/07/global-local-styling-nextjs/)
 -  Gracefully close nav menu when opening a link from it to another page (e.g. Home -> Experience page)
