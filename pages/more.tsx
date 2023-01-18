@@ -21,7 +21,7 @@ export default function More() {
 				<section>
 					<h1>@isaacyakl</h1>
 					<p className="subtitle">{tagline}</p>
-					<ContactIcons />
+					<ContactIcons id="contact" />
 				</section>
 				<div className="w-64">
 					<Links showHeading={false} />
