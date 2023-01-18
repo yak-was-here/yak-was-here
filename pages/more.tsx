@@ -20,7 +20,7 @@ export default function More() {
 			<main className="max-width text-center">
 				<section>
 					<h1>@isaacyakl</h1>
-					<p className="subtitle">{tagline}</p>
+					<p>{tagline}</p>
 					<ContactIcons id="contact" />
 				</section>
 				<div className="w-64">
