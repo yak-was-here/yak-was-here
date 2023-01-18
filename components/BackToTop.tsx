@@ -1,7 +1,6 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { TfiAngleUp } from "react-icons/tfi";
 
 export default function BackToTop(): JSX.Element {
 	const router = useRouter();
@@ -34,15 +33,7 @@ export default function BackToTop(): JSX.Element {
 				<button
 					id="backToTop"
 					title="Back to top"
-					style={{
-						position: "fixed",
-						bottom: "0",
-						right: "0",
-						backgroundColor: "rgba(0, 0, 0, 0)",
-						border: "0",
-						zIndex: "100",
-						transition: "all 0.5s ease",
-					}}
+					className="fixed w-auto bottom-0 right-0 text-black cursor-pointer bg-transparent z-[100] transition-all duration-500 ease-in-out hover:bg-transparent"
 					onClick={() => {
 						window.scrollTo({
 							top: 0,
@@ -50,7 +41,7 @@ export default function BackToTop(): JSX.Element {
 						});
 					}}
 				>
-					<FontAwesomeIcon icon={faAngleUp} style={{ height: "3rem", width: "3rem" }} />
+					<TfiAngleUp className="h-12 w-12" />
 				</button>
 			)}
 		</>

@@ -107,6 +107,9 @@
 		background-image: url("/img/isaacyakl-hero-background-4k.jpg");
 		@apply bg-cover bg-fixed min-h-screen;
 	}
+	#backToTop:hover {
+		transform: translateY(-0.25rem);
+	}
 }
 @layer utilities {
 	.max-width {
@@ -455,11 +458,6 @@ main p.subtitle {
 
 .breadcrumbs a {
 	text-decoration: underline;
-}
-
-#backToTop:hover {
-	transform: translateY(-0.3rem);
-	cursor: pointer;
 }
 
 code {

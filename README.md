@@ -12,6 +12,7 @@ My personal website, created with NextJS and written in TypeScript. An experimen
 -  Grab tagline from Twitter API
 -  Add highlight.js
 -  Setup monorepo with Turborepo
+-  Add TikTok to social icons
 -  Utilize Jest
 -  Optimize image loading time for word cards
 -  Create blog
