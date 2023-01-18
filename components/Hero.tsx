@@ -21,8 +21,8 @@ function Hero() {
 	};
 
 	return (
-		<header className="min-h-screen opacity-95 overflow-hidden flex">
-			<div className="max-width px-2 py-20">
+		<header className="min-h-screen opacity-95 overflow-hidden flex justify-center items-center">
+			<div className="max-width w-screen p-2">
 				<h1 className="text-[20vw] leading-[16vw] py-2 -ml-[0.039em]">
 					{fName}
 					<br />

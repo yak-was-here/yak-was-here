@@ -13,7 +13,6 @@
 		/* Utilities */
 		--container-width: 83vw;
 		--space-unit: 0.5rem;
-		--border-radius: 0.1rem;
 
 		/* Sizing */
 		--default-font-size: 18px;
@@ -28,9 +27,7 @@
 	.heading-font-family {
 		font-family: var(--font-family-headings);
 	}
-	.max-width {
-		@apply max-w-screen-xl m-auto;
-	}
+
 	html,
 	body {
 		font-family: var(--font-family-body);
@@ -71,13 +68,13 @@
 	a,
 	a:visited,
 	a:active {
-		@apply text-yak-green transition-all duration-[250ms] ease-in no-underline cursor-pointer;
+		@apply text-yak-green transition-all duration-[250ms] ease-in-out no-underline cursor-pointer;
 	}
 	a:hover {
-		@apply text-yak-green-hover;
+		@apply underline;
 	}
 	p {
-		@apply py-2 leading-[1.35rem];
+		@apply pb-2 last:pb-0 leading-[1.35rem];
 	}
 	hr {
 		@apply my-4 mx-auto border-0 bg-black w-5 h-[0.05rem];
@@ -89,22 +86,35 @@
 		background-image: url("/img/isaacyakl-hero-background-4k.jpg");
 		@apply bg-no-repeat bg-center bg-cover min-h-[5rem];
 	}
+	main {
+		@apply flex flex-wrap justify-center items-center;
+	}
 	section {
-		@apply max-w-screen-xl m-auto p-2;
+		@apply max-w-screen-xl m-auto w-screen p-2;
+	}
+	footer {
+		@apply text-sm bg-no-repeat bg-center bg-cover;
+		background-image: url("/img/isaacyakl-hero-background-4k.jpg");
+	}
+}
+@layer components {
+	button,
+	.btn {
+		@apply inline-block text-xl m-1 py-2 px-3 w-[300px] text-white bg-yak-green rounded transition-all duration-300 ease-in-out border-0 hover:bg-gray-400 hover:no-underline;
+		filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
+	}
+}
+@layer utilities {
+	.max-width {
+		@apply max-w-screen-xl;
+	}
+	.cta-arrow::after {
+		color: inherit;
+		content: " \2192";
 	}
 }
 
 /*=========WIP========*/
-
-button.link {
-	border: none;
-	background: none;
-	cursor: pointer;
-}
-
-.section-outside-heading {
-	padding: 1em;
-}
 
 div.seeking,
 div.seeking strong {
@@ -227,96 +237,6 @@ ul.skills a {
 	color: var(--text-color);
 }
 
-footer {
-	background-image: url("/img/isaacyakl-hero-background-4k.jpg");
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-}
-
-footer * {
-	font-size: 0.75rem;
-}
-
-div.footer-branding {
-	width: var(--container-width);
-	margin: auto;
-	text-align: center;
-}
-
-footer div.social-icons {
-	padding: calc(var(--space-unit) * 4) 0rem;
-}
-
-footer div.logo-container {
-	height: 0.9rem;
-	width: 0.9rem;
-}
-
-footer img.logo {
-	object-fit: contain;
-}
-
-footer span.site-wordmark {
-	font-size: 1rem;
-}
-
-footer p {
-	font-size: 2vmax;
-}
-
-div.cta-btn-container {
-	margin: auto;
-	padding: var(--space-unit) 0;
-	text-align: center;
-	filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
-}
-
-a.btn,
-.btn {
-	display: inline-block;
-	margin: calc(var(--space-unit) / 2);
-	padding: 0.33em 1em;
-	color: white;
-	background: var(--yak-green);
-	border-radius: var(--border-radius);
-	transition: all 0.5s 0s ease;
-}
-
-a.btn:hover,
-.btn:hover {
-	filter: saturate(115%);
-}
-
-a.cta,
-.cta {
-	font-size: var(--cta-btn-font-size);
-	border: 0;
-	cursor: pointer;
-}
-
-a.cta:hover,
-.cta:hover {
-	transform: scale(1.04, 1.04);
-}
-
-.cta-arrow::after {
-	content: " \2192";
-}
-
-.cta-link::after {
-	content: " \2197";
-}
-
-section.cta-section {
-	font-size: calc(var(--cta-btn-font-size) * 0.95);
-	max-width: 50vmax;
-}
-
-section.cta-section > hr {
-	width: 12vmax;
-}
-
 .work-links {
 	padding: calc(var(--space-unit) * 2) 0rem;
 }
@@ -330,11 +250,11 @@ ul.work-tags li {
 }
 
 ul.work-tags a {
+	@apply rounded-sm;
 	font-size: 1rem;
 	display: inline-block;
 	color: white;
 	background-color: var(--yak-cyan);
-	border-radius: var(--border-radius);
 	padding: var(--space-unit) calc(var(--space-unit) * 2);
 	margin-bottom: calc(var(--space-unit));
 	margin-right: calc(var(--space-unit));
@@ -373,10 +293,10 @@ div.swiper-slide {
 }
 
 input[type="text"] {
+	@apply rounded-md;
 	font-size: 1rem;
 	width: 100%;
 	background-color: #dcdcdc;
-	border-radius: calc(var(--border-radius) * 3);
 	padding: var(--space-unit);
 	border: none;
 	box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1);
@@ -397,9 +317,9 @@ div.work-card a {
 }
 
 div.work-card {
+	@apply rounded-md;
 	transition: all 0.5s ease;
 	overflow: hidden;
-	border-radius: calc(var(--border-radius) * 3);
 	cursor: pointer;
 	max-width: calc(var(--container-width) / 2 - var(--space-unit) / 2);
 	width: calc(var(--container-width) / 2 - var(--space-unit) / 2);
@@ -547,10 +467,6 @@ div.more-background {
 	background-size: cover;
 	background-attachment: fixed;
 	min-height: 100vh;
-}
-
-.text-center {
-	text-align: center;
 }
 
 .drop-shadow {

@@ -14,8 +14,8 @@ export default function CtaSection({ ctaBody, btnText, btnHref }: { ctaBody?: st
 
 	return (
 		<>
-			<section className="cta-section max-width select-none dont-print">
-				<hr className="m-auto" />
+			<section className="text-xl max-w-screen-sm min-h-[300px] select-none dont-print">
+				<hr className="m-auto mb-4 mt-6" />
 				<p className="text-center">{getBody()}</p>
 				<CtaBtn text={btnText} href={btnHref} />
 			</section>

@@ -60,7 +60,7 @@ const Work = ({ title, images, tags, results, summary, links, htmlContent }: Wor
 						<p className="work-links text-center">
 							{links.map((l) => {
 								return (
-									<Link href={l.url} key={l.title} className="btn cta-link work-link" target="_blank" rel="noopener">
+									<Link href={l.url} key={l.title} className="btn cta-arrow work-link" target="_blank" rel="noopener">
 										{l.title}
 									</Link>
 								);

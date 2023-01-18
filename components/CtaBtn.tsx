@@ -7,18 +7,18 @@ function CtaBtn({ text, href }: { text: string; href: string }) {
 		if (href === "") {
 			return (
 				<EmailLink>
-					<button className="btn cta cta-arrow">{text}</button>
+					<button className="btn cta-arrow">{text}</button>
 				</EmailLink>
 			);
 		}
 		return (
 			<Link href={href} passHref>
-				<button className="btn cta cta-arrow">{text}</button>
+				<button className="btn cta-arrow">{text}</button>
 			</Link>
 		);
 	};
 
-	return <div className="cta-btn-container select-none">{generateBtn()}</div>;
+	return <div className="m-auto py-2 text-center select-none">{generateBtn()}</div>;
 }
 
 CtaBtn.defaultProps = {

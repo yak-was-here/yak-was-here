@@ -17,13 +17,13 @@ export default function More() {
 					<p className="subtitle">{tagline}</p>
 				</section>
 				<section className="more-link-container">
-					<Link href="/" className="btn cta more-links">
+					<Link href="/" className="btn more-links">
 						My Website
 					</Link>
-					<Link href="https://open.spotify.com/user/izacktheyak/playlists" className="btn cta more-links">
+					<Link href="https://open.spotify.com/user/izacktheyak/playlists" className="btn more-links">
 						Spotify Playlists
 					</Link>
-					<Link href="https://nsfpgaming.com" className="btn cta more-links">
+					<Link href="https://nsfpgaming.com" className="btn more-links">
 						NSFP Gaming
 					</Link>
 				</section>

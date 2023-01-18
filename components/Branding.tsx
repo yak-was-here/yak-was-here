@@ -3,17 +3,32 @@ import Image from "next/image";
 import logo from "../public/img/yak-logo.svg";
 import { nick } from "../data/meta";
 
-const Branding = () => {
-	return (
-		<div className="justify-self-start">
-			<Link href="/" title="Home" className="text-black no-underline">
-				<div className="relative inline-block h-7 w-7">
-					<Image className="object-contain" src={logo} alt="yak logo" fill />
+const Branding = ({ inFooter = false }: { inFooter?: boolean }) => {
+	const createBranding = () => {
+		if (inFooter) {
+			return (
+				<div className="justify-self-start">
+					<div className="relative inline-block h-[0.85rem] w-[0.85rem] pr-1">
+						<Image className="object-contain" src={logo} alt="yak logo" fill />
+					</div>
+					<span className="heading-font-family text-black text-lg font-thin">{nick}</span>
 				</div>
-				<span className="heading-font-family text-black text-4xl font-thin pl-1">{nick}</span>
-			</Link>
-		</div>
-	);
+			);
+		} else {
+			return (
+				<div className="justify-self-start">
+					<Link href="/" title="Home" className="text-black no-underline">
+						<div className="relative inline-block h-7 w-7 pr-1">
+							<Image className="object-contain" src={logo} alt="yak logo" fill />
+						</div>
+						<span className="heading-font-family text-black text-4xl font-thin">{nick}</span>
+					</Link>
+				</div>
+			);
+		}
+	};
+
+	return createBranding();
 };
 
 export default Branding;

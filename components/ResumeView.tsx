@@ -1,4 +1,4 @@
-import { fName, lName, resumeIntroWebDev, github, linkedin, siteURL, tel, email, nick, location } from "../data/meta";
+import { fName, lName, resumeIntroWebDev, github, linkedin, siteURL, tel, email, location } from "../data/meta";
 import EmailLink from "./EmailLink";
 import Skill from "./Skill";
 import TelLink from "./TelLink";
@@ -35,11 +35,11 @@ function ResumeView() {
 		<div className="resumeBackground">
 			<div className="resumeActions dont-print">
 				<Link href="/litzenberger-isaac-resume.pdf" passHref>
-					<button className="link" title="Download">
+					<button title="Download">
 						<FontAwesomeIcon icon={faDownload} />
 					</button>
 				</Link>
-				<button className="link" title="Print" onClick={printResume}>
+				<button title="Print" onClick={printResume}>
 					<FontAwesomeIcon icon={faPrint} />
 				</button>
 			</div>
