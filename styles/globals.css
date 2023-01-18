@@ -446,20 +446,6 @@ main p.subtitle {
 	box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
 }
 
-.breadcrumbs {
-	font-size: 0.75rem;
-	padding: var(--space-unit) 0;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-end;
-	align-items: center;
-	align-content: space-around;
-}
-
-.breadcrumbs a {
-	text-decoration: underline;
-}
-
 code {
 	background-color: #424242;
 	color: #e99f00;

@@ -9,13 +9,16 @@ type Crumb = {
 
 function Breadcrumbs({ trail, className = "" }: { trail: Array<Crumb>; className?: string }) {
 	return (
-		<section className={`max-width breadcrumbs ${className}`}>
+		<div className={`max-width flex flex-wrap content-around items-center justify-end text-xs p-2 ${className}`}>
 			{trail.map((link, index, ar) => {
 				return (
 					<React.Fragment key={link.text}>
 						{ar.length - 1 !== index ? (
 							<>
-								<Link href={link.link}>{link.text}</Link>&nbsp;&gt;&nbsp;
+								<Link href={link.link} className="underline">
+									{link.text}
+								</Link>
+								&nbsp;&#47;&nbsp;
 							</>
 						) : (
 							<>{link.text}</>
@@ -23,7 +26,7 @@ function Breadcrumbs({ trail, className = "" }: { trail: Array<Crumb>; className
 					</React.Fragment>
 				);
 			})}
-		</section>
+		</div>
 	);
 }
 
