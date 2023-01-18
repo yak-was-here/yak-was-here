@@ -432,25 +432,9 @@ em.highlight {
 	text-decoration-color: var(--yak-green-hover);
 }
 
-.copyright {
-	font-size: small;
-}
-
 main p.subtitle {
 	max-width: 20rem;
 	margin: auto;
-}
-
-.more-link-container {
-	max-width: 14rem;
-	margin: auto;
-	display: grid;
-	grid-template-columns: 1fr;
-}
-
-a.more-links {
-	font-size: 2vmax;
-	transition: all 0.25s 0s ease;
 }
 
 .drop-shadow {

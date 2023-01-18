@@ -1,10 +1,10 @@
-import Link from "next/link";
 import BaseMeta from "../components/BaseMeta";
 import ContactIcons from "../components/ContactIcons";
 import NavBar from "../components/NavBar";
 import { fName, lName, nick, tagline } from "../data/meta";
 import { useEffect, useState } from "react";
 import { getYear } from "../lib/browser";
+import Links from "../components/Links";
 
 export default function More() {
 	const [currentDate, setCurrentDate] = useState(getYear());
@@ -21,22 +21,12 @@ export default function More() {
 				<section>
 					<h1>@isaacyakl</h1>
 					<p className="subtitle">{tagline}</p>
-				</section>
-				<section className="more-link-container">
-					<Link href="/" className="btn more-links">
-						My Website
-					</Link>
-					<Link href="https://open.spotify.com/user/izacktheyak/playlists" className="btn more-links">
-						Spotify Playlists
-					</Link>
-					<Link href="https://nsfpgaming.com" className="btn more-links">
-						NSFP Gaming
-					</Link>
-				</section>
-				<section>
 					<ContactIcons />
 				</section>
-				<section className="copyright">
+				<div className="w-64">
+					<Links showHeading={false} />
+				</div>
+				<section className="text-xs">
 					<p>
 						&copy; {currentDate} {fName} {lName} &mdash; All rights reserved.
 					</p>

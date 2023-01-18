@@ -36,11 +36,6 @@ const NavBar = ({ active, className = "" }: { active?: string; className?: strin
 				<li id="contact-menuitem" role="menuitem">
 					<EmailLink className={`block transition-none py-2 px-2 ${active === "contact" ? "text-yak-cyan bg-gray-200" : "text-black bg-white hover:text-yak-green hover:bg-gray-200 "}`}>Contact</EmailLink>
 				</li>
-				<li id="more-menuitem" title="More links" role="menuitem">
-					<Link href="/more">
-						<span className={`block transition-none py-2 px-2 ${active === "more" ? "text-yak-cyan bg-gray-200" : "text-black bg-white hover:text-yak-green hover:bg-gray-200 "}`}>More</span>
-					</Link>
-				</li>
 			</ul>
 		</nav>
 	);
