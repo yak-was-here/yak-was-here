@@ -45,7 +45,7 @@ const Work = ({ title, images, tags, results, summary, links, htmlContent }: Wor
 			<main className="m-auto flex-col">
 				<section>
 					<Link href={`/img/work/${images[0]}`} className="block" passHref title="Enlarge screenshot">
-						<div className="relative w-full portrait:h-[98vw] landscape:h-[90vh] drop-shadow overflow-hidden">
+						<div className="relative w-full portrait:h-[65vw] landscape:h-[70vh] drop-shadow overflow-hidden">
 							<Image src={`/img/work/${images[0]}`} alt={`${title} screenshot`} className="object-cover" fill />
 						</div>
 					</Link>

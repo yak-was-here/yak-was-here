@@ -113,6 +113,9 @@
 	#backToTop:hover {
 		transform: translateY(-0.25rem);
 	}
+	section img {
+		@apply m-auto;
+	}
 }
 @layer utilities {
 	.max-width {
