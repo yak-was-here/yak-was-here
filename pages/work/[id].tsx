@@ -26,11 +26,7 @@ const Work = ({ title, images, tags, results, summary, links, htmlContent }: Wor
 
 	const getBody = () => {
 		if (htmlContent && htmlContent !== "") {
-			return (
-				<div className="work-details-body">
-					<section dangerouslySetInnerHTML={{ __html: htmlContent }}></section>
-				</div>
-			);
+			return <section dangerouslySetInnerHTML={{ __html: htmlContent }}></section>;
 		}
 	};
 
@@ -46,21 +42,21 @@ const Work = ({ title, images, tags, results, summary, links, htmlContent }: Wor
 				]}
 			/>
 			<PageHeader heading={title} />
-			<main className="m-auto work">
+			<main className="m-auto flex-col">
 				<section>
-					<div className="ss drop-shadow">
-						<Link href={`/img/work/${images[0]}`} passHref title="Enlarge screenshot">
-							<Image src={`/img/work/${images[0]}`} alt={`${title} screenshot`} fill />
-						</Link>
-					</div>
+					<Link href={`/img/work/${images[0]}`} className="block" passHref title="Enlarge screenshot">
+						<div className="relative w-full portrait:h-[98vw] landscape:h-[90vh] drop-shadow overflow-hidden">
+							<Image src={`/img/work/${images[0]}`} alt={`${title} screenshot`} className="object-cover" fill />
+						</div>
+					</Link>
 					<h2>Summary</h2>
 					{getResults()}
 					<p dangerouslySetInnerHTML={{ __html: summary }}></p>
 					{links !== undefined ? (
-						<p className="work-links text-center">
+						<p className="flex flex-wrap justify-center items-center">
 							{links.map((l) => {
 								return (
-									<Link href={l.url} key={l.title} className="btn cta-arrow work-link" target="_blank" rel="noopener">
+									<Link href={l.url} key={l.title} className="btn cta-arrow text-center" target="_blank" rel="noopener">
 										{l.title}
 									</Link>
 								);
@@ -73,7 +69,7 @@ const Work = ({ title, images, tags, results, summary, links, htmlContent }: Wor
 					{tags !== undefined ? <WorkTags tags={tags} /> : ``}
 				</section>
 				{getBody()}
-				<CtaSection btnText="Email me" btnHref={""} />
+				<CtaSection btnText="Ask me how" btnHref={""} />
 			</main>
 			<PageFooter />
 		</>
