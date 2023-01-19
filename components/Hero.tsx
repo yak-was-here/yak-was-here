@@ -21,8 +21,8 @@ function Hero() {
 	};
 
 	return (
-		<header className="min-h-screen opacity-95 overflow-hidden flex justify-center items-center">
-			<div className="max-width w-screen p-2">
+		<header className="min-h-screen">
+			<div className="max-width m-auto min-h-screen p-2 flex flex-col justify-center items-start overflow-hidden">
 				<h1 className="text-[20vw] leading-[16vw] py-2 -ml-[0.039em]">
 					{fName}
 					<br />
@@ -32,11 +32,11 @@ function Hero() {
 				<div className="py-2 text-lg">
 					<div className="flex flex-nowrap mb-[0.33em]">
 						<FontAwesomeIcon icon={faBriefcase} className="h-[1.3em] w-[1.3em] mr-[0.33em]" />
-						<span className="block h-[1.3em]">{title}</span>
+						<span className="inline-block h-[1.3em]">{title}</span>
 					</div>
 					<div className="flex flex-nowrap">
 						<FontAwesomeIcon icon={faMapMarkerAlt} className="h-[1.3em] w-[1.3em] mr-[0.33em]" />
-						<span className="block h-[1.3em]">{location}</span>
+						<span className="inline-block h-[1.3em]">{location}</span>
 					</div>
 				</div>
 				<ContactIcons id="social" />
