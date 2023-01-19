@@ -56,7 +56,7 @@ const Work = ({ title, images, tags, results, summary, links, htmlContent }: Wor
 						<p className="flex flex-wrap justify-center items-center">
 							{links.map((l) => {
 								return (
-									<Link href={l.url} key={l.title} className="btn cta-arrow text-center" target="_blank" rel="noopener">
+									<Link href={l.url} key={l.title} className="btn cta-arrow text-center !text-white" target="_blank" rel="noopener">
 										{l.title}
 									</Link>
 								);

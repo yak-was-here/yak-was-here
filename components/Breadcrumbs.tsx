@@ -15,9 +15,7 @@ function Breadcrumbs({ trail, className = "" }: { trail: Array<Crumb>; className
 					<React.Fragment key={link.text}>
 						{ar.length - 1 !== index ? (
 							<>
-								<Link href={link.link} className="underline">
-									{link.text}
-								</Link>
+								<Link href={link.link}>{link.text}</Link>
 								&nbsp;&#47;&nbsp;
 							</>
 						) : (

@@ -122,12 +122,6 @@
 		color: inherit;
 		content: " \2192";
 	}
-	a.clear-link-styles,
-	a.clear-link-styles:visited,
-	a.clear-link-styles:active,
-	a.clear-link-styles:hover {
-		@apply text-inherit no-underline !important;
-	}
 }
 
 /*=========WIP========*/

@@ -19,22 +19,22 @@ const NavBar = ({ active, className = "" }: { active?: string; className?: strin
 			</div>
 			<ul className={`heading-font-family list-none transition-all ease-in-out duration-500 max-h-56 overflow-hidden p-0 bg-white font-thin text-right tracking-[0.15rem] dont-print${isNavMenuOpen ? " max-h-0" : ""}`}>
 				<li id="home-menuitem" role="menuitem">
-					<Link href="/">
+					<Link href="/" className="hover:!no-underline">
 						<span className={`block transition-none py-2 px-2 ${active === "home" ? "text-yak-cyan bg-gray-200" : "text-black bg-white hover:text-yak-green hover:bg-gray-200 "}`}>Home</span>
 					</Link>
 				</li>
 				<li id="work-menuitem" title="Browse work" role="menuitem">
-					<Link href="/work">
+					<Link href="/work" className="hover:!no-underline">
 						<span className={`block transition-none py-2 px-2 ${active === "work" ? "text-yak-cyan bg-gray-200" : "text-black bg-white hover:text-yak-green hover:bg-gray-200 "}`}>Work</span>
 					</Link>
 				</li>
 				<li id="resume-menuitem" title="View résumé" role="menuitem">
-					<Link href="/resume">
+					<Link href="/resume" className="hover:!no-underline">
 						<span className={`block transition-none py-2 px-2 ${active === "resume" ? "text-yak-cyan bg-gray-200" : "text-black bg-white hover:text-yak-green hover:bg-gray-200 "}`}>Résumé</span>
 					</Link>
 				</li>
 				<li id="contact-menuitem" role="menuitem">
-					<Link href="/more#contact">
+					<Link href="/more#contact" className="hover:!no-underline">
 						<span className={`block transition-none py-2 px-2 ${active === "contact" ? "text-yak-cyan bg-gray-200" : "text-black bg-white hover:text-yak-green hover:bg-gray-200 "}`}>Contact</span>
 					</Link>
 				</li>

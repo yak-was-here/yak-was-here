@@ -10,7 +10,7 @@ const WorkCard = ({ id, title, date, role, image, summary }: { id: string; title
 		return <h3>{date}</h3>;
 	};
 	return (
-		<Link href={`/work/${id}`} title={`View ${title}`} className="clear-link-styles block col-span-1 row-span-1 transition-all duration-500 ease-in-out saturate-[80%] hover:saturate-[125%]">
+		<Link href={`/work/${id}`} title={`View ${title}`} className="block !text-black hover:!no-underline col-span-1 row-span-1 transition-all duration-500 ease-in-out saturate-[80%] hover:saturate-[125%]">
 			<div className="flex flex-col h-[500px] rounded overflow-hidden border border-neutral-200">
 				<div className="relative w-full h-[250px] grow shrink-0 overflow-hidden">
 					<Image src={`/img/work/${image}`} className="object-cover" alt={`${title} screenshot`} fill />
