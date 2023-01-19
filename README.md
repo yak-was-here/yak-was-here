@@ -6,6 +6,7 @@ My personal website, created with NextJS and written in TypeScript. An experimen
 
 # To-Do
 
+-  Correct flexbox issues
 -  Add bRando.js and link from bRando repo to isaacyakl.com article
 -  Change all icons to use React-icons
 -  Add [react icons](https://react-icons.github.io/react-icons) to work tags/skills/tools

@@ -46,7 +46,7 @@ const Work = ({ title, images, tags, results, summary, links, htmlContent }: Wor
 				]}
 			/>
 			<PageHeader heading={title} />
-			<main className="work">
+			<main className="m-auto work">
 				<section>
 					<div className="ss drop-shadow">
 						<Link href={`/img/work/${images[0]}`} passHref title="Enlarge screenshot">

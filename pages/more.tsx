@@ -17,7 +17,7 @@ export default function More() {
 		<div className="more-background">
 			<BaseMeta title={`Links to ${nick}'s businesses, projects, and more.`} desc={`Browse a list of ${nick}'s businesses, projects, and more.`} />
 			<NavBar active="more" />
-			<main className="max-width text-center">
+			<main className="flex-col text-center">
 				<section>
 					<h1>@isaacyakl</h1>
 					<p>{tagline}</p>

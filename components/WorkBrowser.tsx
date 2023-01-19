@@ -26,11 +26,7 @@ export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate, foc
 			setFilteredWorkComponents(formatWork(workMetadata));
 			return;
 		} else if (filterWork().length === 0) {
-			setFilteredWorkComponents([
-				<section key="no-exp">
-					<p>No work found for that search term.</p>
-				</section>,
-			]);
+			setFilteredWorkComponents([<p key="no-exp">No work found for that search term.</p>]);
 			return;
 		}
 		setFilteredWorkComponents(formatWork(filterWork()));
@@ -46,11 +42,13 @@ export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate, foc
 	}, []);
 
 	return (
-		<div className="work-browser">
+		<div>
 			<input
 				type="text"
 				placeholder={`Search... (try "JavaScript")`}
 				id="workSearch"
+				className="rounded w-full bg-neutral-200 p-2 border-0 mb-2 placeholder:text-neutral-500"
+				style={{ boxShadow: "inset 0px 4px 4px rgba(0, 0, 0, 0.1)" }}
 				onChange={(e) => {
 					if (onQueryUpdate instanceof Function) onQueryUpdate(e.target.value);
 					setSearchQuery(e.target.value);
@@ -60,7 +58,7 @@ export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate, foc
 				ref={searchInputRef}
 			/>
 			{searchQuery !== "" && filterWork().length !== 0 ? <p>Work found under &ldquo;{searchQuery}&rdquo;:</p> : ""}
-			<section className="work-view">{filteredWorkComponents}</section>
+			<div className="grid grid-cols-1 gap-2 overflow-hidden">{filteredWorkComponents}</div>
 		</div>
 	);
 }

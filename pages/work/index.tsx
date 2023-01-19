@@ -49,7 +49,7 @@ const Index = ({ allWorkMetadata }: { allWorkMetadata: Array<WorkFile> }) => {
 				]}
 			/>
 			<PageHeader heading="Work" />
-			<main>
+			<main className="m-auto flex-col justify-around">
 				<section>
 					<p>
 						Below you will find my portfolio where you can read about my work experience and personal projects. In these summaries, I primarily write with a focus on my problem-solving, thought process and the results. You may also find code links, tech stack details, screenshots, demos, performance metrics, and tools used. Even more work and projects can be found on my{" "}
@@ -60,9 +60,7 @@ const Index = ({ allWorkMetadata }: { allWorkMetadata: Array<WorkFile> }) => {
 					</p>
 					<WorkBrowser workMetadata={allWorkMetadata} tagQuery={getURLSearchQuery()} onQueryUpdate={updateURLSearchQuery} />
 				</section>
-				<section>
-					<CtaSection btnText={"Ask me how"} btnHref="" />
-				</section>
+				<CtaSection btnText={"Ask me how"} btnHref="" />
 			</main>
 			<PageFooter />
 		</>
