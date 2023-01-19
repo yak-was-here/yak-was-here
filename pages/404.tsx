@@ -13,7 +13,7 @@ export default function Error404() {
 	}, [pathName]);
 
 	return (
-		<div className="more-background">
+		<div className="yakground-image">
 			<BaseMeta title="Page not found" desc="Guess that page does not exist..." robots="noindex" googlebot="noindex" />
 			<NavBar />
 			<main className="text-center">

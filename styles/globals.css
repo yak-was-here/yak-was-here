@@ -106,7 +106,7 @@
 		@apply inline-block text-xl m-1 py-2 px-3 w-80 text-white bg-yak-green rounded transition-all duration-300 ease-in-out border-0 hover:bg-gray-400 hover:no-underline;
 		filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
 	}
-	div.more-background {
+	.yakground-image {
 		background-image: url("/img/isaacyakl-hero-background-4k.jpg");
 		@apply bg-cover bg-fixed min-h-screen;
 	}

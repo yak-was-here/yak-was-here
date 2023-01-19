@@ -4,7 +4,7 @@ import CtaBtn from "../components/CtaBtn";
 
 export default function Error500() {
 	return (
-		<div className="more-background">
+		<div className="yakground-image">
 			<BaseMeta title="An error occurred" desc="Whoops! Something went wrong..." robots="noindex" googlebot="noindex" />
 			<NavBar />
 			<main className="text-center">

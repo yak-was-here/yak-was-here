@@ -14,7 +14,7 @@ export default function More() {
 	}, []);
 
 	return (
-		<div className="more-background">
+		<div className="yakground-image">
 			<BaseMeta title={`Links to ${nick}'s businesses, projects, and more.`} desc={`Browse a list of ${nick}'s businesses, projects, and more.`} />
 			<NavBar active="more" />
 			<main className="flex-col text-center">
