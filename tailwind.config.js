@@ -9,6 +9,9 @@ module.exports = {
 				"yak-cyan": "#0dd1d1",
 				"yak-magenta": "#9f00c5",
 			},
+			fontFamily: {
+				"resume-body": ["Arial", "Helvetica", "sans-serif"],
+			},
 		},
 	},
 	plugins: [],

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { siteURL } from "../data/meta";
 
-function Skill({ children, q, absoluteURL }: { children?: React.ReactNode; q?: string; absoluteURL?: boolean }) {
+function Skill({ children, q, absoluteURL, className = "" }: { children?: React.ReactNode; q?: string; absoluteURL?: boolean; className?: string }) {
 	const childToString = () => {
 		// React.isValidElement - https://stackoverflow.com/a/65829088/13254325
 		return Array.isArray(children) ? children[0].props.children : children && typeof children === "object" && React.isValidElement(children) ? children.props.children : children;
@@ -17,14 +17,12 @@ function Skill({ children, q, absoluteURL }: { children?: React.ReactNode; q?: s
 	};
 
 	return (
-        <li>
-			<Link
-                href={`${checkAbsoluteURL()}/work?q=${setQueryString()}`}
-                title={`Browse ${childToString()} work`}>
+		<li className={`${className}`}>
+			<Link href={`${checkAbsoluteURL()}/work?q=${setQueryString()}`} title={`Browse ${childToString()} work`}>
 				{children}
 			</Link>
 		</li>
-    );
+	);
 }
 
 Skill.defaultProps = {

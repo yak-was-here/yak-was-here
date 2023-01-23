@@ -31,7 +31,7 @@ export default function Links({ showHeading = false }: { showHeading?: boolean }
 					</span>
 					<span className="inline-block align-middle text-white">Browse work</span>
 				</Link>
-				<Link href="./work" className="btn cta-arrow text-center">
+				<Link href="./resume" className="btn cta-arrow text-center">
 					<span className="inline-block align-middle mr-1 text-white">
 						<IoDocumentText className="h-[1em] w-[1em]" />
 					</span>
