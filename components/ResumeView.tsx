@@ -260,9 +260,9 @@ function ResumeView() {
 									<div className="m-0 p-0"></div>
 								</div>
 								<ul className="indent-0 m-0 ml-5 mb-0.5 p-0">
-									<li>Features a portfolio, web-based resume, and blog</li>
+									<li>Portfolio, web-based resume, and blog</li>
 									<li>Work entries statically generated using remark.js and gray-matter</li>
-									<li>Experiments with relative CSS units instead of breakpoints</li>
+									<li>An experiment in using relative CSS units instead of breakpoints</li>
 								</ul>
 								<h4 className="font-resume-body inline-block normal-case text-[10pt] leading-none text-black m-0 ml-3 p-0">Tools:</h4>
 								<ul className="resume-work-tools list-none inline-block m-0 ml-4 mb-0.5 p-0">
@@ -271,6 +271,7 @@ function ResumeView() {
 									<li className="inline m-0 mx-1 p-0 underline">React</li>
 									<li className="inline m-0 mx-1 p-0 underline">TSX/JSX</li>
 									<li className="inline m-0 mx-1 p-0 underline">YAML</li>
+									<li className="inline m-0 mx-1 p-0 underline">Markdown</li>
 									<li className="inline m-0 mx-1 p-0 underline">Git</li>
 								</ul>
 							</div>

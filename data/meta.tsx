@@ -8,7 +8,7 @@ export const tagline = "";
 // obfuscate the email address so web scrappers cant grab it from GitHub
 // Obfuscated using https://javascriptobfuscator.com/Javascript-Obfuscator.aspx
 // prettier-ignore
-var _0x6db9=["\x69\x40\x69\x73\x61\x61\x63\x79\x61\x6B\x6C\x2E\x63\x6F\x6D"];
+var _0x6db9=["\x79\x61\x6B\x40\x69\x73\x61\x61\x63\x79\x61\x6B\x6C\x2E\x63\x6F\x6D"];
 export const email = _0x6db9[0];
 var _0x6027 = ["\x2B\x31\x2D\x35\x31\x30\x2D\x39\x32\x35\x2D\x33\x31\x37\x35"];
 export const tel = _0x6027[0];
