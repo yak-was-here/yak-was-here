@@ -58,7 +58,7 @@ export default function WorkBrowser({ workMetadata, tagQuery, onQueryUpdate, foc
 				ref={searchInputRef}
 			/>
 			{searchQuery !== "" && filterWork().length !== 0 ? <p>Work found under &ldquo;{searchQuery}&rdquo;:</p> : ""}
-			<div className="grid grid-cols-1 gap-2 overflow-hidden">{filteredWorkComponents}</div>
+			<div className="grid grid-cols-2 gap-2 overflow-hidden">{filteredWorkComponents}</div>
 		</div>
 	);
 }
