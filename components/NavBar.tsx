@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import Branding from "./Branding";
-import EmailLink from "./EmailLink";
 
 const NavBar = ({ active, className = "" }: { active?: string; className?: string }) => {
 	const [isNavMenuOpen, setNavMenuState] = useState(true); // Nav menu starts open
@@ -17,7 +16,7 @@ const NavBar = ({ active, className = "" }: { active?: string; className?: strin
 					<FontAwesomeIcon icon={faBars} className="w-[1.68rem] h-[1.68rem]" />
 				</div>
 			</div>
-			<ul className={`heading-font-family list-none transition-all ease-in-out duration-500 max-h-56 overflow-hidden p-0 bg-white font-thin text-right tracking-[0.15rem] dont-print${isNavMenuOpen ? " max-h-0" : ""}`}>
+			<ul className={`heading-font-family flex flex-col items-stretch text-lg xl:text-base list-none transition-all ease-in-out duration-500 max-h-56 overflow-hidden p-0 bg-white font-thin text-right tracking-[0.15rem] dont-print${isNavMenuOpen ? " max-h-0" : ""}`}>
 				<li id="home-menuitem" role="menuitem">
 					<Link href="/" className="hover:!no-underline">
 						<span className={`block transition-none py-2 px-2 ${active === "home" ? "text-yak-cyan bg-gray-200" : "text-black bg-white hover:text-yak-green hover:bg-gray-200 "}`}>Home</span>
