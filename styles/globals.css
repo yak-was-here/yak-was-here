@@ -138,35 +138,3 @@
 		box-shadow: none;
 	}
 }
-/*
-	div.work-card p.summary-body:after {
-		display: none;
-	}
-
-	div.work-card p.summary-body {
-		max-height: 7em;
-	}
-
-	footer {
-		background: none;
-	}
-
-	div.more-background {
-		background-attachment: initial;
-	}
-
-	.resumeBackground {
-		background: none;
-		padding: 0in;
-		margin: 0in;
-		overflow: hidden;
-	}
-
-	.resumePaper {
-		width: initial;
-		height: initial;
-		margin: 0in;
-		padding: 0in;
-		box-shadow: none;
-	}
- */

@@ -13,7 +13,7 @@ const PageFooter = ({ children }: { children?: React.ReactNode }) => {
 	}, []);
 
 	return (
-		<footer>
+		<footer className="print:bg-none">
 			<div className="max-width m-auto p-2">
 				<div className="dont-print">{children}</div>
 				<div className="text-center">

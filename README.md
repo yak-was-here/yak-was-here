@@ -6,6 +6,7 @@ My personal website, created with NextJS and written in TypeScript. Originally, 
 
 # To-Do
 
+-  Make large device layout
 -  Update bRando.js article and link from bRando demo site to it
 -  Grab tagline from Twitter API
 -  Add highlight.js
