@@ -17,7 +17,7 @@ export default function More() {
 		<div className="yakground-image print:bg-none">
 			<BaseMeta title={`Links to ${nick}'s businesses, projects, and more.`} desc={`Browse a list of ${nick}'s businesses, projects, and more.`} />
 			<NavBar active="more" />
-			<main className="flex-col text-center">
+			<main className="text-center">
 				<section>
 					<h1>@isaacyakl</h1>
 					<p>{tagline}</p>

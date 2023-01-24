@@ -42,7 +42,7 @@ const Work = ({ title, images, tags, results, summary, links, htmlContent }: Wor
 				]}
 			/>
 			<PageHeader heading={title} />
-			<main className="m-auto flex-col">
+			<main className="m-auto">
 				<section>
 					<Link href={`/img/work/${images[0]}`} className="block" passHref title="Enlarge screenshot">
 						<div className="relative w-full portrait:h-[65vw] landscape:h-[70vh] drop-shadow overflow-hidden">

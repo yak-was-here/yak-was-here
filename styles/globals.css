@@ -87,7 +87,7 @@
 		@apply bg-no-repeat bg-center bg-cover min-h-[5rem];
 	}
 	main {
-		@apply flex flex-wrap justify-center items-center;
+		@apply flex flex-col flex-wrap justify-center items-center;
 	}
 	section {
 		@apply max-w-screen-xl m-auto w-screen p-2;
