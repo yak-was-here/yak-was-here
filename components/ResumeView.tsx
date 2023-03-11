@@ -180,7 +180,7 @@ function ResumeView() {
 							<div className="-indent-4 m-0 ml-4 my-1 p-0">
 								<div className="flex flex-wrap justify-between m-0 mb-1 p-0">
 									<h3 className="font-resume-body normal-case font-bold text-[10pt] leading-none text-black m-0 p-0">Web Developer & E-commerce Manager</h3>
-									<div className="m-0 p-0">08/2020 - Present</div>
+									<div className="m-0 p-0">08/2020 - 02/2023</div>
 								</div>
 								<h4 className="font-resume-body normal-case text-[10pt] leading-none text-black m-0 ml-3 mb-0.5 p-0">New Breed Paintball and Airsoft &mdash; Remote</h4>
 								<ul className="indent-0 m-0 ml-5 mb-0.5 p-0">

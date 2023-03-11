@@ -1,6 +1,6 @@
 ---
 title: New Breed
-date: 2020-Present
+date: 2020-2023
 images:
    - nbpa-ss2.png
 role: "Web Developer & Digital Marketer"
