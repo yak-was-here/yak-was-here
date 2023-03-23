@@ -1,4 +1,4 @@
-import { fName, lName, resumeIntroWebDev, github, linkedin, siteURL, tel, email, location } from "../data/meta";
+import { fName, lName, resumeIntroWebDev, github, linkedin, siteURL, tel, email, location, title } from "../data/meta";
 import EmailLink from "./EmailLink";
 import Skill from "./Skill";
 import TelLink from "./TelLink";
@@ -41,330 +41,327 @@ function ResumeView() {
 						<FaPrint className="inline m-0 p-0" />
 					</Link>
 				</div>
-				<div id="resumeContent" className="text-[10pt] leading-[1.45] w-full h-full print:max-h-full print:max-w-full grid grid-cols-[repeat(6,1fr)] grid-rows-[repeat(6,1fr)] gap-[0.5em] m-0 p-0 items-stretch justify-items-stretch overflow-hidden">
-					<div id="resumeHero" className="col-start-1 col-end-5 row-start-1 row-end-2 self-center justify-self-start m-0 p-0">
-						<h1 className="text-[42pt] leading-[0.8] m-0 p-0">
-							{fName} {lName}
-						</h1>
-						<h2 className="text-[22pt] leading-[0.8] m-0 p-0">{location}</h2>
-					</div>
-					<div id="resumeContactInfo" className="font-semibold col-start-5 col-end-7 row-start-1 row-end-2 self-center justify-self-end m-0 p-0">
-						<ul className="list-none m-0 p-0">
-							<li>
-								<FaAt className="inline w-[1.1em] h-[1.1em] mr-2" />
-								<EmailLink className="hover:underline">{email}</EmailLink>
-							</li>
-							<li>
-								<FaPhoneAlt className="inline w-[1.1em] h-[1.1em] mr-2" />
-								<TelLink className="hover:underline">{tel}</TelLink>
-							</li>
-							<li>
-								<FaBriefcase className="inline w-[1.1em] h-[1.1em] mr-2" />
-								<a href={siteURL} title="Portfolio">
-									isaacyakl.com
-								</a>
-							</li>
-							<li>
-								<FaGithub className="inline w-[1.1em] h-[1.1em] mr-2" />
-								<a href={github} title="Github profile">
-									{github.replace("https://", "")}
-								</a>
-							</li>
-							<li>
-								<FaLinkedin className="inline w-[1.1em] h-[1.1em] mr-2" />
-								<a href={linkedin} title="Linkedin profile">
-									{linkedin.replace("https://", "")}
-								</a>
-							</li>
-						</ul>
-					</div>
-					<div id="resumeAbout" className="col-start-1 col-end-3 row-start-2 row-end-3 justify-self-start m-0 p-0">
-						<h2 className="text-[20pt] leading-[1.45] -mb-1 p-0">About</h2>
-						<p className="leading-[1.35]">{resumeIntroWebDev}</p>
-					</div>
-					<div id="resumeSkills" className="col-start-1 col-end-3 row-start-3 row-end-4 self-center m-0 p-0">
-						<h2 className="text-[20pt] leading-[1.45] -mb-1 p-0">Skills</h2>
-						<ul className="list-none m-0 p-0">
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true}>
-								JavaScript
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true}>
-								TypeScript
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true}>
-								NextJS
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true} q="ReactJS">
-								React
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true} q="JestJS">
-								Jest
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true} q="BabelJS">
-								Babel
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true}>
-								Shopify
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true}>
-								Webpack
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true} q="HandlebarsJS">
-								Handlebars
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true}>
-								Git
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true}>
-								GitHub
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true}>
-								NPM
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true}>
-								Vercel
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true}>
-								Bootstrap
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true}>
-								HTML
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true}>
-								CSS
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true} q="CSS">
-								SCSS
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true}>
-								Tailwind CSS
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true}>
-								PHP
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true}>
-								Python
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true}>
-								C++
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true} q="Discord">
-								Discord API
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true} q="Twitch">
-								Twitch API
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true}>
-								Figma
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true}>
-								REST
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true}>
-								SEO
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true}>
-								SEM
-							</Skill>
-							<Skill className="inline-block after:content-['\00a0\002f\00a0']" absoluteURL={true}>
-								SMM
-							</Skill>
-							<Skill className="inline-block" absoluteURL={true} q="Adobe">
-								Adobe Apps
-							</Skill>
-						</ul>
-					</div>
-					<div id="resumeWork" className="col-start-3 col-end-7 row-start-2 row-end-7 m-0 p-0">
-						<div id="resumeExperience" className="m-0 p-0">
-							<h2 className="text-[20pt] leading-[1.45] -mb-1 p-0">Experience</h2>
-							<div className="-indent-4 m-0 ml-4 my-1 p-0">
-								<div className="flex flex-wrap justify-between m-0 mb-1 p-0">
-									<h3 className="font-resume-body normal-case font-bold text-[10pt] leading-none text-black m-0 p-0">Web Developer & E-commerce Manager</h3>
-									<div className="m-0 p-0">08/2020 - 02/2023</div>
-								</div>
-								<h4 className="font-resume-body normal-case text-[10pt] leading-none text-black m-0 ml-3 mb-0.5 p-0">New Breed Paintball and Airsoft &mdash; Remote</h4>
-								<ul className="indent-0 m-0 ml-5 mb-0.5 p-0">
-									<li>
-										<u>Developed website features; saved $100s/mo in 3rd-party app subs</u>
-									</li>
-									<li>Coded industry-leading, trade-in web app; mitigated follow-up clarification</li>
-									<li>Automated structured data generation; improved Google results</li>
-									<li>Performed SEO tasks; increased clicks 400% and impressions 600%</li>
-									<li>Generated average monthly revenue of $2,000+</li>
-								</ul>
-								<h4 className="font-resume-body inline-block normal-case text-[10pt] leading-none text-black m-0 ml-3 p-0">Tools:</h4>
-								<ul className="resume-work-tools list-none inline-block m-0 ml-4 mb-0.5 p-0">
-									<li className="inline m-0 mx-1 p-0 underline">JavaScript</li>
-									<li className="inline m-0 mx-1 p-0 underline">Shopify Liquid</li>
-									<li className="inline m-0 mx-1 p-0 underline">JSON</li>
-									<li className="inline m-0 mx-1 p-0 underline">PHP</li>
-									<li className="inline m-0 mx-1 p-0 underline">Git</li>
-									<li className="inline m-0 mx-1 p-0 underline">Adobe Apps</li>
-								</ul>
-							</div>
-							<div className="-indent-4 m-0 ml-4 my-1 p-0">
-								<div className="flex flex-wrap justify-between m-0 mb-1 p-0">
-									<h3 className="font-resume-body normal-case font-bold text-[10pt] leading-none text-black m-0 p-0">Web Developer</h3>
-									<div className="m-0 p-0">03/2014 - 08/2016</div>
-								</div>
-								<h4 className="font-resume-body normal-case text-[10pt] leading-none text-black m-0 ml-3 mb-0.5 p-0">YourPbFriend &mdash; Fremont, CA</h4>
-								<ul className="indent-0 m-0 ml-5 mb-0.5 p-0">
-									<li>
-										<u>Wrote the #1 most-used paintball trade-in web app of 2015-2016</u>
-									</li>
-									<li>Identified key website improvements; became #2 online paintball store</li>
-									<li>Embedded YouTube content to educate and create value for customers</li>
-									<li>Increased revenue 10x in 2 years by utilizing the Shopify ecosystem</li>
-									<li>Created a used-gun, rating system calculator; increased buyer trust</li>
-								</ul>
-								<h4 className="font-resume-body inline-block normal-case text-[10pt] leading-none text-black m-0 ml-3 p-0">Tools:</h4>
-								<ul className="resume-work-tools list-none inline-block m-0 ml-4 mb-0.5 p-0">
-									<li className="inline m-0 mx-1 p-0 underline">jQuery</li>
-									<li className="inline m-0 mx-1 p-0 underline">Shopify Liquid</li>
-									<li className="inline m-0 mx-1 p-0 underline">Bootstrap</li>
-									<li className="inline m-0 mx-1 p-0 underline">PHP</li>
-									<li className="inline m-0 mx-1 p-0 underline">Adobe Apps</li>
-								</ul>
-							</div>
+				<div id="resumeContent" className="text-[10pt] leading-[1.45] w-full h-full print:max-h-full print:max-w-full grid grid-cols-6 grid-rows-6 gap-3 m-0 p-0 items-stretch justify-items-stretch overflow-hidden">
+					{/* Software Resume tips
+					https://www.linkedin.com/posts/dthompsondev_this-was-the-resume-that-led-someone-who-activity-7043567215891156992-Tryi */}
+					<div id="resumeHeader" className="col-span-6 row-span-1 flex justify-between m-0 p-0">
+						<div id="resumeHero" className="self-center m-0 p-0">
+							<h1 className="text-[42pt] leading-[0.8] m-0 p-0">
+								{fName} {lName}
+							</h1>
+							<h2 className="text-[25pt] leading-[0.8] m-0 p-0">{title}</h2>
+							<h3 className="text-[15pt] leading-4 m-0 p-0">{location}</h3>
 						</div>
-						<div id="resumeProjects" className="m-0 p-0">
+						<div id="resumeContactInfo" className="self-center m-0 p-0 font-semibold">
+							<ul className="list-none m-0 p-0">
+								<li>
+									<FaPhoneAlt className="inline w-[1.1em] h-[1.1em] mr-2" />
+									<TelLink className="hover:underline">{tel}</TelLink>
+								</li>
+								<li>
+									<FaAt className="inline w-[1.1em] h-[1.1em] mr-2" />
+									<EmailLink className="hover:underline">{email}</EmailLink>
+								</li>
+								<li>
+									<FaGithub className="inline w-[1.1em] h-[1.1em] mr-2" />
+									<a href={github} title="Github profile">
+										{github.replace("https://", "")}
+									</a>
+								</li>
+								<li>
+									<FaLinkedin className="inline w-[1.1em] h-[1.1em] mr-2" />
+									<a href={linkedin} title="Linkedin profile">
+										{linkedin.replace("https://", "")}
+									</a>
+								</li>
+								<li>
+									<FaBriefcase className="inline w-[1.1em] h-[1.1em] mr-2" />
+									<a href={siteURL} title="Portfolio">
+										isaacyakl.com
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div id="resumeSidebar" className="col-span-2 row-span-5 flex flex-col">
+						<div id="resumeAbout" className="col-span-2 row-span-2 justify-self-start m-0 mb-2 p-0">
+							<h2 className="text-[20pt] leading-[1.45] -mb-1 p-0">About</h2>
+							<p className="leading-[1.35]">{resumeIntroWebDev}</p>
+						</div>
+						<div id="resumeSkills" className="col-span-2 row-start-5 row-span-4 justify-self-start m-0 mb-2 p-0">
+							<h2 className="text-[20pt] leading-[1.45] -mb-1 p-0">Skills</h2>
+							<h3 className="text-base tracking-wide text-zinc-700 m-0 p-0">Languages</h3>
+							<ul className="list-none m-0 mb-1 p-0">
+								<Skill className="inline-block" absoluteURL={true}>
+									JavaScript
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true}>
+									TypeScript
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true}>
+									HTML
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true}>
+									CSS
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true}>
+									SQL
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true}>
+									Python
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true}>
+									Java
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true}>
+									PHP
+								</Skill>
+							</ul>
+							<h3 className="text-base tracking-wide text-zinc-700 m-0 p-0">Frameworks</h3>
+							<ul className="list-none m-0 mb-1 p-0">
+								<Skill className="inline-block" absoluteURL={true}>
+									NextJS
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true} q="ReactJS">
+									React
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true}>
+									Tailwind CSS
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true}>
+									Bootstrap
+								</Skill>
+							</ul>
+							<h3 className="text-base tracking-wide text-zinc-700 m-0 p-0">Tools</h3>
+							<ul className="list-none m-0 p-0">
+								<Skill className="inline-block" absoluteURL={true}>
+									Webpack
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true} q="BabelJS">
+									Babel
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true} q="JestJS">
+									Jest
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true}>
+									MySQL
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true}>
+									Git
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true} q="Git">
+									GitHub
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true}>
+									Agile
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true} q="Continuous Integration">
+									CI
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true}>
+									Unit Testing
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true}>
+									MVC
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true}>
+									AWS
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true}>
+									Vercel
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true}>
+									Figma
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true}>
+									SEO
+								</Skill>
+								,&nbsp;
+								<Skill className="inline-block" absoluteURL={true} q="Adobe">
+									Adobe Apps
+								</Skill>
+							</ul>
+						</div>
+						<div id="resumeCourses" className="col-start-1 col-span-2 row-span-4 justify-self-start m-0 mb-2 p-0">
+							<h2 className="text-[20pt] leading-[1.45] -mb-1 p-0">Courses</h2>
+							<ul className="list-none m-0 p-0 ml-4 -indent-4 leading-[1.35]">
+								<li className="mb-1">
+									<strong className="text-zinc-700">Computer Science I &amp; II</strong>
+									<br />
+									CSU San Marcos
+								</li>
+								<li className="mb-1">
+									<strong className="text-zinc-700">Front-End Nanodegree</strong>
+									<br />
+									Grow with Google
+								</li>
+								<li className="mb-1">
+									<strong className="text-zinc-700">The Web Developer Bootcamp</strong>
+									<br />
+									udemy.com
+								</li>
+								<li className="mb-1">
+									<strong className="text-zinc-700">React For Beginners</strong>
+									<br />
+									wesbos.com
+								</li>
+								<li className="mb-1">
+									<strong className="text-zinc-700">Developing Innovative Ideas for New Companies</strong>
+									<br />
+									The University of Maryland
+								</li>
+							</ul>
+						</div>
+						<div id="resumeEducation" className="col-start-1 col-span-2 row-start-12 row-span-1 justify-self-start m-0 mb-2 p-0">
+							<h2 className="text-[20pt] leading-[1.45] -mb-1 p-0">Education</h2>
+							<ul className="list-none m-0 p-0 ml-4 -indent-4 leading-[1.35]">
+								<li>
+									<strong className="text-zinc-700">Bachelor of Science in Business Administration, Management</strong>
+									<br />
+									2020&nbsp;&mdash;&nbsp;CSU East Bay
+									<br />
+									<em>Dean&apos;s List</em>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div id="resumeMain" className="col-span-4 row-span-5 flex flex-col">
+						<div id="resumeProjects" className="m-0 mb-2 p-0">
 							<h2 className="text-[20pt] leading-[1.45] -mb-1 p-0">Projects</h2>
 							<div className="-indent-4 m-0 ml-4 my-1 p-0">
 								<div className="flex flex-wrap justify-between m-0 mb-1 p-0">
-									<h3 className="font-resume-body normal-case font-bold text-[10pt] leading-none text-black m-0 p-0">
+									<h3 className="inline-block font-resume-body normal-case font-bold text-[11pt] leading-none text-zinc-700 m-0 p-0">
+										<Link href="https://github.com/isaacyakl/isaacyakl.com">isaacyakl.com</Link> &mdash; Personal Website
+									</h3>
+									<div className="m-0 p-0"></div>
+								</div>
+								<ul className="indent-0 m-0 ml-5 mb-0.5 p-0">
+									<li>Features a portfolio, web-based resume, and blog</li>
+									<li>Statically generates work entries using remark.js and gray-matter</li>
+									<li>Experimented with relative CSS units in lieu of breakpoints</li>
+								</ul>
+								<h4 className="font-resume-body inline-block normal-case text-[10pt] leading-none text-black m-0 ml-3 mr-1 p-0">Skills used:</h4>
+								<ul className="resume-work-tools list-none inline-block m-0 ml-4 mb-0.5 p-0">
+									<li className="inline m-0 p-0">NextJS</li>,&nbsp;
+									<li className="inline m-0 p-0">TypeScript</li>,&nbsp;
+									<li className="inline m-0 p-0">React</li>,&nbsp;
+									<li className="inline m-0 p-0">YAML</li>,&nbsp;
+									<li className="inline m-0 p-0">Markdown</li>
+								</ul>
+							</div>
+							<div className="-indent-4 m-0 ml-4 my-1 p-0">
+								<div className="flex flex-wrap justify-between m-0 mb-1 p-0">
+									<h3 className="inline-block font-resume-body normal-case font-bold text-[11pt] leading-none text-zinc-700 m-0 p-0">
 										<Link href="https://github.com/isaacyakl/brandojs">bRando.js</Link> &mdash; Website Background Randomizer Library
 									</h3>
 									<div className="m-0 p-0"></div>
 								</div>
 								<ul className="indent-0 m-0 ml-5 mb-0.5 p-0">
 									<li>Automatically changes CSS backgrounds on any DOM element</li>
-									<li>
-										Published on <Link href="https://www.npmjs.com/package/brandojs">NPM</Link>; downloaded hundreds of times per week
-									</li>
-									<li>100% code coverage and API documentation</li>
+									<li>Supports sequential or random mode and all CSS background props</li>
+									<li>Full code coverage and API documentation</li>
+									<li>Published on NPM; downloaded hundreds of times</li>
 								</ul>
-								<h4 className="font-resume-body inline-block normal-case text-[10pt] leading-none text-black m-0 ml-3 p-0">Tools:</h4>
+								<h4 className="font-resume-body inline-block normal-case text-[10pt] leading-none text-black m-0 ml-3 mr-1 p-0">Skills used:</h4>
 								<ul className="resume-work-tools list-none inline-block m-0 ml-4 mb-0.5 p-0">
-									<li className="inline m-0 mx-1 p-0 underline">TypeScript</li>
-									<li className="inline m-0 mx-1 p-0 underline">Jest</li>
-									<li className="inline m-0 mx-1 p-0 underline">Webpack</li>
-									<li className="inline m-0 mx-1 p-0 underline">Babel</li>
-									<li className="inline m-0 mx-1 p-0 underline">Git</li>
+									<li className="inline m-0 p-0">TypeScript</li>,&nbsp;
+									<li className="inline m-0 p-0">Jest</li>,&nbsp;
+									<li className="inline m-0 p-0">Webpack</li>,&nbsp;
+									<li className="inline m-0 p-0">Babel</li>
 								</ul>
 							</div>
+
 							<div className="-indent-4 m-0 ml-4 my-1 p-0">
 								<div className="flex flex-wrap justify-between m-0 mb-1 p-0">
-									<h3 className="font-resume-body normal-case font-bold text-[10pt] leading-none text-black m-0 p-0">
-										<Link href="https://github.com/isaacyakl/isaacyakl.com">isaacyakl.com</Link> &mdash; Personal Website
-									</h3>
-									<div className="m-0 p-0"></div>
-								</div>
-								<ul className="indent-0 m-0 ml-5 mb-0.5 p-0">
-									<li>Portfolio, web-based resume, and blog</li>
-									<li>Work entries statically generated using remark.js and gray-matter</li>
-									<li>An experiment in using relative CSS units instead of breakpoints</li>
-								</ul>
-								<h4 className="font-resume-body inline-block normal-case text-[10pt] leading-none text-black m-0 ml-3 p-0">Tools:</h4>
-								<ul className="resume-work-tools list-none inline-block m-0 ml-4 mb-0.5 p-0">
-									<li className="inline m-0 mx-1 p-0 underline">NextJS</li>
-									<li className="inline m-0 mx-1 p-0 underline">TypeScript</li>
-									<li className="inline m-0 mx-1 p-0 underline">React</li>
-									<li className="inline m-0 mx-1 p-0 underline">TSX/JSX</li>
-									<li className="inline m-0 mx-1 p-0 underline">YAML</li>
-									<li className="inline m-0 mx-1 p-0 underline">Markdown</li>
-									<li className="inline m-0 mx-1 p-0 underline">Git</li>
-								</ul>
-							</div>
-							<div className="-indent-4 m-0 ml-4 my-1 p-0">
-								<div className="flex flex-wrap justify-between m-0 mb-1 p-0">
-									<h3 className="font-resume-body normal-case font-bold text-[10pt] leading-none text-black m-0 p-0">
+									<h3 className="inline-block font-resume-body normal-case font-bold text-[11pt] leading-none text-zinc-700 m-0 p-0">
 										<Link href="https://github.com/isaacyakl/remote-jackbox-player">Remote Jackbox Player</Link> &mdash; Single-screen Jackbox Interface
 									</h3>
 									<div className="m-0 p-0"></div>
 								</div>
 								<ul className="indent-0 m-0 ml-5 mb-0.5 p-0">
 									<li>Mobile-first web app to find and play Jackbox games remotely for free</li>
-									<li>Simultaneously watch a stream and use Jackbox.tv on one screen</li>
 									<li>Uses Twitch API to find channels streaming Jackbox games</li>
+									<li>Simultaneously watch a stream and use Jackbox.tv on one screen</li>
 								</ul>
-								<h4 className="font-resume-body inline-block normal-case text-[10pt] leading-none text-black m-0 ml-3 p-0">Tools:</h4>
+								<h4 className="font-resume-body inline-block normal-case text-[10pt] leading-none text-black m-0 ml-3 mr-1 p-0">Skills used:</h4>
 								<ul className="resume-work-tools list-none inline-block m-0 ml-4 mb-0.5 p-0">
-									<li className="inline m-0 mx-1 p-0 underline">JavaScript</li>
-									<li className="inline m-0 mx-1 p-0 underline">Babel</li>
-									<li className="inline m-0 mx-1 p-0 underline">Tailwind CSS</li>
-									<li className="inline m-0 mx-1 p-0 underline">Twitch API</li>
-									<li className="inline m-0 mx-1 p-0 underline">JSON</li>
-									<li className="inline m-0 mx-1 p-0 underline">Git</li>
+									<li className="inline m-0 p-0">JavaScript</li>,&nbsp;
+									<li className="inline m-0 p-0">Babel</li>,&nbsp;
+									<li className="inline m-0 p-0">Tailwind CSS</li>,&nbsp;
+									<li className="inline m-0 p-0">Twitch API</li>,&nbsp;
+									<li className="inline m-0 p-0">JSON</li>
+								</ul>
+							</div>
+						</div>
+						<div id="resumeExperience" className="m-0 mb-2 p-0">
+							<h2 className="text-[20pt] leading-[1.45] -mb-1 p-0">Experience</h2>
+							<div className="-indent-4 m-0 ml-4 my-1 p-0">
+								<div className="flex flex-wrap justify-between m-0 mb-1 p-0">
+									<h3 className="inline-block font-resume-body normal-case font-bold text-[11pt] leading-none text-zinc-700 m-0 p-0">Web Developer & E-commerce Manager</h3>
+									<div className="m-0 p-0">08/2020 - 02/2023</div>
+								</div>
+								<h4 className="font-resume-body normal-case text-[10pt] leading-none text-black m-0 ml-3 mb-0.5 p-0">New Breed Paintball and Airsoft &mdash; Remote</h4>
+								<ul className="indent-0 m-0 ml-5 mb-0.5 p-0">
+									<li>Automated structured data generation with JS; improved Google ranking</li>
+									<li>Coded industry-leading, trade-in web app; mitigated need for follow-ups</li>
+									<li>Built Shopify theme with product tagging and 3D model support</li>
+									<li>Performed SEO tasks; increased clicks 400% and impressions 600%</li>
+								</ul>
+								<h4 className="font-resume-body inline-block normal-case text-[10pt] leading-none text-black m-0 ml-3 mr-1 p-0">Skills used:</h4>
+								<ul className="resume-work-tools list-none inline-block m-0 ml-4 mb-0.5 p-0">
+									<li className="inline m-0 p-0">JavaScript</li>,&nbsp;
+									<li className="inline m-0 p-0">Shopify Liquid</li>,&nbsp;
+									<li className="inline m-0 p-0">JSON</li>,&nbsp;
+									<li className="inline m-0 p-0">PHP</li>,&nbsp;
+									<li className="inline m-0 p-0">Git</li>,&nbsp;
+									<li className="inline m-0 p-0">Adobe Apps</li>
 								</ul>
 							</div>
 							<div className="-indent-4 m-0 ml-4 my-1 p-0">
 								<div className="flex flex-wrap justify-between m-0 mb-1 p-0">
-									<h3 className="font-resume-body normal-case font-bold text-[10pt] leading-none text-black m-0 p-0">
-										<Link href="https://github.com/isaacyakl/random-owen-wowson">Random Owen Wowson</Link> &mdash; Discord bot to send Owen Wilson clips
-									</h3>
-									<div className="m-0 p-0"></div>
+									<h3 className="inline-block font-resume-body normal-case font-bold text-[11pt] leading-none text-zinc-700 m-0 p-0">Web Developer</h3>
+									<div className="m-0 p-0">03/2014 - 08/2016</div>
 								</div>
+								<h4 className="font-resume-body normal-case text-[10pt] leading-none text-black m-0 ml-3 mb-0.5 p-0">YourPbFriend &mdash; Fremont, CA</h4>
 								<ul className="indent-0 m-0 ml-5 mb-0.5 p-0">
-									<li>Gets random Owen Wilson &quot;wow&quot; movie clips</li>
-									<li>Makes use of the open-source Owen Wilson Wow API</li>
-									<li>Includes a small HTTP status server</li>
+									<li>Wrote the #1 most-used paintball trade-in web app of 2015-2016</li>
+									<li>Coded product tagging system; increased customer satisfaction</li>
+									<li>Embedded YouTube content dynamically; increased value for customers</li>
+									<li>Leveraged Shopify platform; increased revenue 10x in 2 years</li>
 								</ul>
-								<h4 className="font-resume-body inline-block normal-case text-[10pt] leading-none text-black m-0 ml-3 p-0">Tools:</h4>
+								<h4 className="font-resume-body inline-block normal-case text-[10pt] leading-none text-black m-0 ml-3 mr-1 p-0">Skills used:</h4>
 								<ul className="resume-work-tools list-none inline-block m-0 ml-4 mb-0.5 p-0">
-									<li className="inline m-0 mx-1 p-0 underline">Python</li>
-									<li className="inline m-0 mx-1 p-0 underline">Discord API</li>
-									<li className="inline m-0 mx-1 p-0 underline">JSON</li>
-									<li className="inline m-0 mx-1 p-0 underline">Git</li>
-									<li className="inline m-0 mx-1 p-0 underline">hikari</li>
-									<li className="inline m-0 mx-1 p-0 underline">hikari-lightbulb</li>
+									<li className="inline m-0 p-0">jQuery</li>,&nbsp;
+									<li className="inline m-0 p-0">Shopify Liquid</li>,&nbsp;
+									<li className="inline m-0 p-0">Bootstrap</li>,&nbsp;
+									<li className="inline m-0 p-0">PHP</li>,&nbsp;
+									<li className="inline m-0 p-0">Adobe Apps</li>
 								</ul>
 							</div>
 						</div>
-					</div>
-					<div id="resumeEducation" className="col-start-1 col-end-3 row-start-4 row-end-5 self-center m-0 p-0">
-						<h2 className="text-[20pt] leading-[1.45] -mb-1 p-0">Education</h2>
-						<ul className="list-none m-0 p-0 ml-4 -indent-4 leading-[1.35]">
-							<li>
-								2020&nbsp;&mdash;&nbsp;
-								<strong>
-									Bachelor of Science in Business Administration,
-									<br />
-									General Management <em>(Dean&apos;s List)</em>
-								</strong>
-								<br />
-								CSU East Bay
-							</li>
-						</ul>
-					</div>
-					<div id="resumeCourses" className="col-start-1 col-end-3 row-start-5 row-end-7 m-0 p-0">
-						<h2 className="text-[20pt] leading-[1.45] -mb-1 p-0">Courses</h2>
-						<ul className="list-none m-0 p-0 ml-4 -indent-4 leading-[1.35]">
-							<li className="mb-1">
-								<strong>Computer Science I &amp; II</strong>
-								<br />
-								CSU San Marcos
-							</li>
-							<li className="mb-1">
-								<strong>Front-End Nanodegree</strong>
-								<br />
-								Grow w/ Google
-							</li>
-							<li className="mb-1">
-								<strong>The Web Developer Bootcamp</strong>
-								<br />
-								udemy.com
-							</li>
-							<li className="mb-1">
-								<strong>React For Beginners</strong>
-								<br />
-								wesbos.com
-							</li>
-							<li className="mb-1">
-								<strong>Developing Innovative Ideas for New Companies</strong>
-								<br />
-								The University of Maryland
-							</li>
-						</ul>
 					</div>
 				</div>
 			</main>
