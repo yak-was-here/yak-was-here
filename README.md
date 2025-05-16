@@ -6,7 +6,7 @@ A monorepo of my personal websites.
 
 [`/isaacyak`](./isaacyak/)
 
-My personal website created with NextJS and Material UI. [Read more...](https://www.isaacyak.com/work/isaacyak)
+My personal website created with NextJS and Chakra UI. [Read more...](https://www.isaacyak.com/work/isaacyak)
 
 ## [isaacyakl.com](https://www.isaacyakl.com)
 
