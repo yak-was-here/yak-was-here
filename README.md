@@ -2,17 +2,17 @@
 
 A monorepo of my personal websites.
 
-## [isaacyak.com](https://www.isaacyak.com)
+## [yak-was-here.com](https://www.yak-was-here.com)
 
-[`/isaacyak`](./isaacyak/)
+[`/yak-was-here-web`](./yak-was-here-web/)
 
-My personal website created with NextJS and Chakra UI. [Read more...](https://www.isaacyak.com/work/isaacyak)
+My personal website created with NextJS and Chakra UI. [Read more...](https://www.yak-was-here.com/article/personal-website)
 
 ## [isaacyakl.com](https://www.isaacyakl.com)
 
 [`/isaacyakl`](./isaacyakl/)
 
-An old version of my personal website created with NextJS without a component library. Originally, this was an experiment in using CSS relative viewport units (REM) for element sizing and layouts in lieu of media queries and breakpoints so that it would only need a single-layout. However, after testing, I learned — though not impossible — it does pose many challenges. [Read more...](https://www.isaacyakl.com/work/isaacyakl-com)
+An old version of my personal website created with NextJS without a component library. Originally, this was an experiment in using CSS relative viewport units (REM) for element sizing and layouts in lieu of media queries and breakpoints so that it would only need a single-layout. However, after testing, I learned — though not impossible — it does pose many challenges. [Read more...](https://www.yak-was-here.com/article/isaacyakl-com)
 
 ## To-Do
 

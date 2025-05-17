@@ -1,4 +1,5 @@
-import { Button, HStack } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react/button";
+import { HStack } from "@chakra-ui/react/stack";
 
 export default function Home() {
     return (
