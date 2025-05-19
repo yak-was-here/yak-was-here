@@ -5,9 +5,6 @@ images:
    - aic-ss1-cover.jpg
 role: "Founder"
 results:
-links:
-   - title: Website
-     url: https://iamaliveinchrist.com
 summary: "I founded Alive in Christ with the vision of inspiring a generation of Christians to actively share their faith. We do this by making and selling biblically inspired clothing designed to create opportunities for sharing the gospel. Our next goal is to offer learning resources."
 tags:
    - WordPress
