@@ -8,7 +8,7 @@ results:
 links:
    - title: Code
      url: https://github.com/isaacyakl/isaacyakl.com
-summary: "This is my personal website, built using NextJS and written in TypeScript. It features my portfolio, contact info, blog, social media links, and a web-based résumé. My site experiments with using CSS relative viewport units for element sizing and layouts instead of media queries and breakpoints, meaning it has a single layout."
+summary: "This is my personal website, built using NextJS and written in TypeScript. It features my portfolio, contact info, blog, social media links, and a web-based resume. My site experiments with using CSS relative viewport units for element sizing and layouts instead of media queries and breakpoints, meaning it has a single layout."
 tags:
    - NextJS
    - TypeScript
@@ -27,7 +27,7 @@ tags:
 Below are many of the features I have developed for my website:
 
 -  Portfolio work and projects
--  Web résumé
+-  Web resume
 -  Work search and tagging system with URL query support
 -  Linktree style "more" page
 -  Blog
