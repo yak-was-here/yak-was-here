@@ -8,7 +8,6 @@ import Link from "next/link";
 import WorkTags from "../../components/WorkTags";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import { nick, siteURL } from "../../data/meta";
-import CtaSection from "../../components/CtaSection";
 import { GetStaticPaths } from "next";
 
 const Work = ({ title, images, tags, results, summary, links, htmlContent }: WorkFile) => {
@@ -31,49 +30,68 @@ const Work = ({ title, images, tags, results, summary, links, htmlContent }: Wor
 	};
 
 	return (
-		<>
-			<BaseMeta title={`The ${title} development process`} desc={`Read about the development process of ${title} and how ${nick} was involved.`} shareImg={`${siteURL}img/work/${images[0]}`} />
-			<NavBar active="work" />
-			<Breadcrumbs
-				trail={[
-					{ text: "Home", link: "/" },
-					{ text: "Work", link: "/work" },
-					{ text: title, link: "" },
-				]}
-			/>
-			<PageHeader heading={title} />
-			<main className="m-auto">
-				<section>
-					<Link href={`/img/work/${images[0]}`} className="block" passHref title="Enlarge screenshot">
-						<div className="relative w-full portrait:h-[65vw] landscape:h-[70vh] drop-shadow overflow-hidden">
-							<Image src={`/img/work/${images[0]}`} alt={`${title} screenshot`} className="object-cover" fill />
-						</div>
-					</Link>
-					<h2>Summary</h2>
-					{getResults()}
-					<p dangerouslySetInnerHTML={{ __html: summary }}></p>
-					{links !== undefined ? (
-						<p className="flex flex-wrap justify-center items-center">
-							{links.map((l) => {
-								return (
-									<Link href={l.url} key={l.title} className="btn cta-arrow text-center !text-white" target="_blank" rel="noopener">
-										{l.title}
-									</Link>
-								);
-							})}
-						</p>
-					) : (
-						``
-					)}
-					<h3 id="tags">Skills &amp; tools used</h3>
-					{tags !== undefined ? <WorkTags tags={tags} /> : ``}
-				</section>
-				{getBody()}
-				<CtaSection btnText="Ask me how" btnHref={""} />
-			</main>
-			<PageFooter />
-		</>
-	);
+        <>
+            <BaseMeta
+                title={`The ${title} development process`}
+                desc={`Read about the development process of ${title} and how ${nick} was involved.`}
+                shareImg={`${siteURL}img/work/${images[0]}`}
+            />
+            <NavBar active="work" />
+            <Breadcrumbs
+                trail={[
+                    { text: "Home", link: "/" },
+                    { text: "Work", link: "/work" },
+                    { text: title, link: "" },
+                ]}
+            />
+            <PageHeader heading={title} />
+            <main className="m-auto">
+                <section>
+                    <Link
+                        href={`/img/work/${images[0]}`}
+                        className="block"
+                        passHref
+                        title="Enlarge screenshot"
+                    >
+                        <div className="relative w-full portrait:h-[65vw] landscape:h-[70vh] drop-shadow overflow-hidden">
+                            <Image
+                                src={`/img/work/${images[0]}`}
+                                alt={`${title} screenshot`}
+                                className="object-cover"
+                                fill
+                            />
+                        </div>
+                    </Link>
+                    <h2>Summary</h2>
+                    {getResults()}
+                    <p dangerouslySetInnerHTML={{ __html: summary }}></p>
+                    {links !== undefined ? (
+                        <p className="flex flex-wrap justify-center items-center">
+                            {links.map((l) => {
+                                return (
+                                    <Link
+                                        href={l.url}
+                                        key={l.title}
+                                        className="btn cta-arrow text-center !text-white"
+                                        target="_blank"
+                                        rel="noopener"
+                                    >
+                                        {l.title}
+                                    </Link>
+                                );
+                            })}
+                        </p>
+                    ) : (
+                        ``
+                    )}
+                    <h3 id="tags">Skills &amp; tools used</h3>
+                    {tags !== undefined ? <WorkTags tags={tags} /> : ``}
+                </section>
+                {getBody()}
+            </main>
+            <PageFooter />
+        </>
+    );
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
