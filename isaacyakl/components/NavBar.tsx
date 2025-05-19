@@ -5,7 +5,7 @@ import { useState } from "react";
 import Branding from "./Branding";
 
 const NavBar = ({ active = "home", className = "" }) => {
-    const [isNavMenuOpen, setNavMenuState] = useState(true); // Nav menu starts open
+    const [isNavMenuOpen, setNavMenuState] = useState(false);
 
     return (
         <nav className={`max-width m-auto p-2 select-none ${className}`}>
@@ -24,8 +24,8 @@ const NavBar = ({ active = "home", className = "" }) => {
                 </div>
             </div>
             <ul
-                className={`heading-font-family flex flex-col items-stretch text-lg xl:text-base list-none transition-all ease-in-out duration-500 max-h-56 overflow-hidden p-0 bg-white font-thin text-right tracking-[0.15rem] dont-print${
-                    isNavMenuOpen ? " max-h-0" : ""
+                className={`heading-font-family flex flex-col items-stretch text-lg xl:text-base list-none transition-all ease-in-out duration-500 overflow-hidden p-0 bg-white font-thin text-right tracking-[0.15rem] dont-print${
+                    isNavMenuOpen ? " max-h-56" : " max-h-0"
                 }`}
             >
                 <li id="home-menuitem" role="menuitem">
