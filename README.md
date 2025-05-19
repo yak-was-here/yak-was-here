@@ -12,7 +12,7 @@ My personal website created with NextJS and Chakra UI. [Read more...](https://ww
 
 [`/isaacyakl`](./isaacyakl/)
 
-An old version of my personal website created with NextJS without a component library. Originally, this was an experiment in using CSS relative viewport units (REM) for element sizing and layouts in lieu of media queries and breakpoints so that it would only need a single-layout. However, after testing, I learned — though not impossible — it does pose many challenges. [Read more...](https://www.yak-was-here.com/article/isaacyakl-com)
+An old version of my personal website created with NextJS without a component library. Originally, this was an experiment in using CSS relative viewport units (REM) for element sizing and layouts in lieu of media queries and breakpoints so that it would only need a single-layout. However, after testing, I learned — though not impossible — it does pose many challenges. [Read more...](https://www.isaacyakl.com/work/isaacyakl-com)
 
 ## To-Do
 
