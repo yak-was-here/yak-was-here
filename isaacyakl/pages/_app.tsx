@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import { Bebas_Neue } from "@next/font/google";
+import { Bebas_Neue } from "next/font/google";
 import type { AppProps } from "next/app";
 import { GoogleAnalytics, usePageViews } from "nextjs-google-analytics";
 import BackToTop from "../components/BackToTop";

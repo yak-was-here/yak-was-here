@@ -1,12 +1,20 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { fName, lName, nick, siteURL, twitter } from "../data/meta";
-import PropTypes from "prop-types";
 
-function BaseMeta({ title, desc, author, robots, googlebot, shareURL, shareImg, shareType }: { title: string; desc: string; author: string; robots: string; googlebot: string; shareURL: string; shareImg: string; shareType: string }) {
+function BaseMeta({ 
+        title = `${fName} "${nick}" ${lName}\'s Website`,
+        desc = `${nick}'s personal website: have a look at ${nick}'s portfolio, résumé, and businesses or contact information.`,
+        shareURL = siteURL,
+        robots = "index,follow",
+        googlebot = "index,follow",
+        author = `${fName} "${nick}" ${lName.substring(0, 1)}.`,
+        shareImg = siteURL + "yak-social-image.jpg",
+        shareType = "website",
+    }) {
 	const router = useRouter();
 
-	if (typeof shareURL == "string" && shareURL == BaseMeta.defaultProps.shareURL) {
+	if (typeof shareURL == "string" && shareURL == siteURL) {
 		shareURL = siteURL.substring(0, siteURL.length - 1) + router.asPath;
 	}
 
@@ -62,27 +70,5 @@ function BaseMeta({ title, desc, author, robots, googlebot, shareURL, shareImg, 
 		</Head>
 	);
 }
-
-BaseMeta.defaultProps = {
-	title: `${fName} "${nick}" ${lName}\'s Website`,
-	desc: `${nick}'s personal website: have a look at ${nick}'s portfolio, résumé, and businesses or contact information.`,
-	shareURL: siteURL,
-	robots: "index,follow",
-	googlebot: "index,follow",
-	author: `${fName} "${nick}" ${lName.substring(0, 1)}.`,
-	shareImg: siteURL + "yak-social-image.jpg",
-	shareType: "website",
-};
-
-BaseMeta.propTypes = {
-	title: PropTypes.string,
-	desc: PropTypes.string,
-	shareURL: PropTypes.string,
-	robots: PropTypes.string,
-	googlebot: PropTypes.string,
-	author: PropTypes.string,
-	shareImg: PropTypes.string,
-	shareType: PropTypes.string,
-};
 
 export default BaseMeta;
