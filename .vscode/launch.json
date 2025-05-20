@@ -7,9 +7,9 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Launch isaacyak in Chrome", 
+            "name": "Launch yak-was-here-web in Chrome",
             "url": "http://localhost:3000",
-            "webRoot": "${workspaceFolder}/isaacyak",
+            "webRoot": "${workspaceFolder}/yak-was-here-web"
         }
     ]
 }
