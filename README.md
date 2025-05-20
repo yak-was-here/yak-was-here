@@ -6,7 +6,7 @@ A monorepo of my personal websites.
 
 [`/yak-was-here-web`](./yak-was-here-web/)
 
-My personal website created with NextJS and Chakra UI. [Read more...](https://www.yak-was-here.com/article/personal-website)
+My personal website created with NextJS and Shadcn/ui. [Read more...](https://www.yak-was-here.com/article/personal-website)
 
 ## [isaacyakl.com](https://www.isaacyakl.com)
 
@@ -17,7 +17,7 @@ An old version of my personal website created with NextJS without a component li
 ## To-Do
 
 - Move to NextJS 15
-- Move to Material UI
+- Move to Shadcn/ui
 - Grab tagline from Twitter API
 - Use an icon library
 - Add code highlighter
