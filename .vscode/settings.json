@@ -1,8 +1,5 @@
 {
-    "cSpell.words": [
-        "chakra",
-        "isaacyak",
-        "Litzenberger",
-        "turbopack"
-    ]
+    "cSpell.words": ["isaacyak", "Litzenberger", "turbopack", "isaacyakl"],
+    "nxConsole.nxWorkspacePath": "",
+    "nxConsole.generateAiAgentRules": true
 }
