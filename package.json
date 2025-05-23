@@ -1,5 +1,26 @@
 {
-  "dependencies": {
-    "nx": "^21.1.1"
-  }
+  "name": "yak-was-here",
+  "version": "1.0.0",
+  "description": "A monorepo of my personal websites.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaacyakl/yak-was-here.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isaacyakl/yak-was-here/issues"
+  },
+  "homepage": "https://github.com/isaacyakl/yak-was-here#readme",
+  "devDependencies": {
+    "@nx/eslint": "21.1.1",
+    "@nx/next": "^21.1.1",
+    "nx": "21.1.1"
+  },
+  "nx": {}
 }
