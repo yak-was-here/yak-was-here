@@ -18,6 +18,7 @@ An old version of my personal website created with NextJS without a component li
 
 - Move to NextJS 15
 - Move to Shadcn/ui
+- Update resume
 - Grab tagline from Twitter API
 - Use an icon library
 - Add code highlighter
