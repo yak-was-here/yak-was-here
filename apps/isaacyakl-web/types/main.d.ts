@@ -1,4 +1,4 @@
-interface WorkFile extends Object {
+interface WorkFile extends object {
 	htmlContent?: string;
 	id: string;
 	title: string;

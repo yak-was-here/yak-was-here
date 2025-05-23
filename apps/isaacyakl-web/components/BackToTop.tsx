@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { JSX, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { TfiAngleUp } from "react-icons/tfi";
 

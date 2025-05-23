@@ -9,7 +9,7 @@ export default function WorkBrowser({
 }: {
     workMetadata: Array<WorkFile>;
     tagQuery: string | undefined;
-    onQueryUpdate: Function | undefined;
+    onQueryUpdate?: (query: string) => void;
 }) {
     const [searchQuery, setSearchQuery] = useState(tagQuery);
     const [filteredWorkComponents, setFilteredWorkComponents] =
@@ -70,7 +70,7 @@ export default function WorkBrowser({
                 id="workSearch"
                 className="rounded w-full bg-neutral-200 p-2 border-0 mb-2 placeholder:text-neutral-500"
                 style={{ boxShadow: "inset 0px 4px 4px rgba(0, 0, 0, 0.1)" }}
-                onChange={(e, onQueryUpdate?: Function) => {
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                     if (onQueryUpdate instanceof Function)
                         onQueryUpdate(e.target.value);
                     setSearchQuery(e.target.value);

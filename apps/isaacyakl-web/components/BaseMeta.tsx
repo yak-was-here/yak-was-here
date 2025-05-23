@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { fName, lName, nick, siteURL, twitter } from "../data/meta";
 
 function BaseMeta({
-    title = `${fName} "${nick}" ${lName}\'s Website`,
+    title = `${fName} "${nick}" ${lName}'s Website`,
     desc = `${nick}'s personal website: have a look at ${nick}'s portfolio, resume, and businesses or contact information.`,
     shareURL = siteURL,
     robots = "index,follow",

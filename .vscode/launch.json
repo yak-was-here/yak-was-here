@@ -7,9 +7,8 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Launch yak-was-here-web in Chrome",
-            "url": "http://localhost:3000",
-            "webRoot": "${workspaceFolder}/apps/yak-was-here-web"
+            "name": "Launch Next app in Chrome",
+            "url": "http://localhost:3000"
         }
     ]
 }
