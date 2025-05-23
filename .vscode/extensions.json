@@ -3,6 +3,9 @@
         "ms-playwright.playwright",
         "esbenp.prettier-vscode",
         "firsttris.vscode-jest-runner",
-        "nrwl.angular-console"
+        "nrwl.angular-console",
+        "github.vscode-github-actions",
+        "editorconfig.editorconfig",
+        "dbaeumer.vscode-eslint"
     ]
 }

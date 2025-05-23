@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Launch yak-was-here-web in Chrome",
             "url": "http://localhost:3000",
-            "webRoot": "${workspaceFolder}/yak-was-here-web"
+            "webRoot": "${workspaceFolder}/apps/yak-was-here-web"
         }
     ]
 }
