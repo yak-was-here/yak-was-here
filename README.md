@@ -4,13 +4,14 @@ A monorepo of my personal websites.
 
 ## [yak-was-here.com](https://www.yak-was-here.com)
 
-[`/yak-was-here-web`](./yak-was-here-web/)
+[`apps/yak-was-here-web`](./apps/yak-was-here-web/)
+[`apps/yak-was-here-web-e2e`](./apps/yak-was-here-web-e2e/)
 
-My personal website created with NextJS and Shadcn/ui. [Read more...](https://www.yak-was-here.com/article/personal-website)
+My personal website created with NextJS and shadcn/ui. [Read more...](https://www.yak-was-here.com/article/personal-website)
 
 ## [isaacyakl.com](https://www.isaacyakl.com)
 
-[`/isaacyakl`](./isaacyakl/)
+[`apps/isaacyakl-web`](./apps/isaacyakl-web/)
 
 An old version of my personal website created with NextJS without a component library. Originally, this was an experiment in using CSS relative viewport units (REM) for element sizing and layouts in lieu of media queries and breakpoints so that it would only need a single-layout. However, after testing, I learned — though not impossible — it does pose many challenges. [Read more...](https://www.isaacyakl.com/work/isaacyakl-com)
 
