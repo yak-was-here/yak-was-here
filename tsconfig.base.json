@@ -14,7 +14,12 @@
         "skipLibCheck": true,
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
-        "paths": {}
+        "paths": {
+            "@yak-was-here/yaku": ["library/@yak-was-here/yaku/src/index.ts"],
+            "@yak-was-here/yaku/server": [
+                "library/@yak-was-here/yaku/src/server.ts"
+            ]
+        }
     },
     "exclude": ["node_modules", "tmp"]
 }
