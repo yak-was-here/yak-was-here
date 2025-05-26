@@ -9,6 +9,12 @@ A monorepo of my personal websites.
 
 My personal website created with NextJS and shadcn/ui. [Read more...](https://www.yak-was-here.com/article/personal-website)
 
+## Yaku
+
+[`library/@yak-was-here/yaku`](./library/@yak-was-here/yaku/)
+
+My UI component library.
+
 ## [isaacyakl.com](https://www.isaacyakl.com)
 
 [`apps/isaacyakl-web`](./apps/isaacyakl-web/)
@@ -22,6 +28,7 @@ An old version of my personal website created with NextJS without a component li
 - Update resume
 - Grab tagline from Twitter API
 - Use an icon library
+- Move public images to a shared library package
 - Add code highlighter
 - yak's Thoughts (Blog Articles)
   - Add GitHub action to published articles
