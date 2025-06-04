@@ -1,14 +1,12 @@
-declare const chrome: any;
-
-const elementSelector = '#your-specific-element-id'; // Change this to the specific element you want to detect.
+const twitchAdOverlaySelector = '[aria-label="Ad"]';
 
 function checkElement() {
-  const element = document.querySelector(elementSelector);
-  if (element) {
-    chrome.runtime.sendMessage({ action: "mute" });
-  } else {
-    chrome.runtime.sendMessage({ action: "unmute" });
-  }
+    const element = document.querySelector(twitchAdOverlaySelector);
+    if (element) {
+        chrome.runtime.sendMessage({ action: 'mute' });
+    } else {
+        chrome.runtime.sendMessage({ action: 'unmute' });
+    }
 }
 
 // Check once on load

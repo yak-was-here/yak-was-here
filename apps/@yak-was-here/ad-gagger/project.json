@@ -12,28 +12,43 @@
             "options": {
                 "platform": "node",
                 "outputPath": "dist/apps/@yak-was-here/ad-gagger",
-                "format": ["cjs"],
                 "bundle": false,
                 "main": "apps/@yak-was-here/ad-gagger/src/content.ts",
                 "tsConfig": "apps/@yak-was-here/ad-gagger/tsconfig.app.json",
                 "assets": [
                     {
-                        "input": "apps/@yak-was-here/ad-gagger/src/assets",
-                        "glob": "*.{html,json,css,png,svg}",
-                        "output": "/"
+                        "input": "apps/@yak-was-here/ad-gagger/src/",
+                        "glob": "*.html",
+                        "output": "./"
+                    },
+                    {
+                        "input": "apps/@yak-was-here/ad-gagger/src/",
+                        "glob": "*.json",
+                        "output": "./"
+                    },
+                    {
+                        "input": "apps/@yak-was-here/ad-gagger/src/assets/images",
+                        "glob": "*.png",
+                        "output": "images/"
                     }
                 ],
                 "generatePackageJson": false,
                 "esbuildOptions": {
-                    "sourcemap": true,
+                    "sourcemap": false,
                     "outExtension": {
                         ".js": ".js"
                     }
                 }
             },
+            "inputs": [
+                "{projectRoot}/src/*.ts",
+                "{projectRoot}/src/*.html",
+                "{projectRoot}/src/*.json"
+            ],
             "configurations": {
                 "development": {},
                 "production": {
+                    "minify": true,
                     "esbuildOptions": {
                         "sourcemap": false,
                         "outExtension": {
