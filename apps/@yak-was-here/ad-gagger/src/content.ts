@@ -1,17 +1,5 @@
-/**
- * @property {string} uriMatcher - The URI matcher for the site this configuration applies to
- * @property {string} adDetectionElementSelector - The selector for the element that indicates an ad is playing
- * @property {string} parentToAdSelector - The selector for the parent element that contains the ad; this is used to minimize the number of elements that need to be watched for changes
- * @property {KeyboardEvent['key'][]} muteKeyBind - The key bind to mute the player containing the ad; each string in the array represents a key to press
- * @property {KeyboardEvent['key'][]} unmuteKeyBind - The key bind to unmute the player containing the ad; each string in the array represents a key to press
- */
-type SiteConfiguration = {
-    uriMatcher: string;
-    adDetectionElementSelector: string;
-    parentToAdSelector: string;
-    muteKeyBind: KeyboardEvent['key'][];
-    unmuteKeyBind: KeyboardEvent['key'][];
-};
+import { SiteConfiguration } from './types';
+import { MuteMethod, StorageKeys } from './types';
 
 // All possible site configurations
 const siteConfigurations: SiteConfiguration[] = [
@@ -23,11 +11,6 @@ const siteConfigurations: SiteConfiguration[] = [
         unmuteKeyBind: ['m'],
     },
 ];
-
-enum MuteMethod {
-    Tab = 'tab',
-    Player = 'player',
-}
 
 /**
  * Set site settings based on current URL
@@ -91,7 +74,7 @@ async function sendKeysToPage(keys: KeyboardEvent['key'][]) {
 function handleElementChange(siteSettings: SiteConfiguration) {
     const element = checkForElement(siteSettings.adDetectionElementSelector);
 
-    chrome.storage.sync.get(['muteMethod'], async (result) => {
+    chrome.storage.sync.get([StorageKeys.MuteMethod], async (result) => {
         const muteMethod: MuteMethod = result.muteMethod || MuteMethod.Tab;
 
         // Element was added

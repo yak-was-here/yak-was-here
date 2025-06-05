@@ -10,10 +10,16 @@
             "outputs": ["{options.outputPath}"],
             "defaultConfiguration": "production",
             "options": {
-                "platform": "node",
+                "platform": "browser",
                 "outputPath": "dist/apps/@yak-was-here/ad-gagger",
-                "bundle": false,
+                "bundle": true,
+                "format": ["esm"],
                 "main": "apps/@yak-was-here/ad-gagger/src/content.ts",
+                "additionalEntryPoints": [
+                    "apps/@yak-was-here/ad-gagger/src/content.ts",
+                    "apps/@yak-was-here/ad-gagger/src/background.ts",
+                    "apps/@yak-was-here/ad-gagger/src/popup.ts"
+                ],
                 "tsConfig": "apps/@yak-was-here/ad-gagger/tsconfig.app.json",
                 "assets": [
                     {
@@ -40,11 +46,6 @@
                     }
                 }
             },
-            "inputs": [
-                "{projectRoot}/src/*.ts",
-                "{projectRoot}/src/assets/*.html",
-                "{projectRoot}/src/assets/*.json"
-            ],
             "configurations": {
                 "development": {},
                 "production": {
