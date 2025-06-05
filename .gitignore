@@ -13,4 +13,4 @@ out
 
 node_modules
 
-dist/ # Ignore dist folders throughout the repo
+dist/*
