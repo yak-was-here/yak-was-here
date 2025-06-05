@@ -46,6 +46,11 @@
                     }
                 }
             },
+            "inputs": [
+                "{projectRoot}/src/*.ts",
+                "{projectRoot}/src/assets/*.html",
+                "{projectRoot}/src/assets/*.json"
+            ],
             "configurations": {
                 "development": {},
                 "production": {
