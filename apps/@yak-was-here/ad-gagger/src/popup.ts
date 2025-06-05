@@ -5,7 +5,7 @@ chrome.storage.sync.get([StorageKeys.MuteMethod], (result) => {
     const select = document.getElementById(
         StorageKeys.MuteMethod
     ) as HTMLSelectElement;
-    select.value = result.muteMethod || MuteMethod.Tab;
+    select.value = result.muteMethod || MuteMethod.Gag;
 });
 
 // Save the setting when changed

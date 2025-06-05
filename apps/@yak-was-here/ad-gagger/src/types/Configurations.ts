@@ -7,6 +7,4 @@
 export type SiteConfiguration = {
     uriMatcher: string;
     adDetectionElementSelector: string;
-    muteKeyBind: KeyboardEvent['key'][];
-    unmuteKeyBind: KeyboardEvent['key'][];
 };

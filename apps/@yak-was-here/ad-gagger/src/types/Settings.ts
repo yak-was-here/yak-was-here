@@ -1,6 +1,5 @@
 export enum MuteMethod {
-    Tab = 'tab',
-    Player = 'player',
+    Gag = 'gag',
 }
 
 export enum StorageKeys {

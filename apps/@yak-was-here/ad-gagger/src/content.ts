@@ -6,8 +6,6 @@ const siteConfigurations: SiteConfiguration[] = [
     {
         uriMatcher: 'https://www.twitch.tv/',
         adDetectionElementSelector: '[data-a-target="video-ad-label"]',
-        muteKeyBind: ['m'],
-        unmuteKeyBind: ['m'],
     },
 ];
 
@@ -74,26 +72,26 @@ function handleElementChange(siteSettings: SiteConfiguration) {
     const element = checkForElement(siteSettings.adDetectionElementSelector);
 
     chrome.storage.sync.get([StorageKeys.MuteMethod], async (result) => {
-        const muteMethod: MuteMethod = result.muteMethod || MuteMethod.Tab;
+        const muteMethod: MuteMethod = result.muteMethod || MuteMethod.Gag;
 
         // Element was added
         if (element && !didMutedAd) {
             didMutedAd = true;
             console.info('Ad Gagger: Ad element detected', element);
-            if (muteMethod === MuteMethod.Tab) {
+            if (muteMethod === MuteMethod.Gag) {
                 chrome.runtime.sendMessage({ action: 'mute' });
             } else {
-                await sendKeysToPage(siteSettings.muteKeyBind);
+                chrome.runtime.sendMessage({ action: 'mute' });
             }
         }
         // Element was removed
         else if (!element && didMutedAd) {
             didMutedAd = false;
             console.info('Ad Gagger: Ad element no longer detected');
-            if (muteMethod === MuteMethod.Tab) {
+            if (muteMethod === MuteMethod.Gag) {
                 chrome.runtime.sendMessage({ action: 'unmute' });
             } else {
-                await sendKeysToPage(siteSettings.unmuteKeyBind);
+                chrome.runtime.sendMessage({ action: 'unmute' });
             }
         }
     });
