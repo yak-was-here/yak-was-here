@@ -4,12 +4,12 @@
     "description": "Automatically mute ads on websites such as YouTube, Twitch, and more.",
     "version": "1.0",
     "permissions": [],
+    "host_permissions": ["<all_urls>"],
     "background": {
         "service_worker": "background.js"
     },
     "content_scripts": [
         {
-            "matches": ["https://www.twitch.tv/*", "https://www.youtube.com/*"],
             "matches": ["https://www.twitch.tv/*", "https://www.youtube.com/*"],
             "js": ["content.js"]
         }
