@@ -1,1 +1,0 @@
-const t="#your-specific-element-id";function e(){document.querySelector(t)?chrome.runtime.sendMessage({action:"mute"}):chrome.runtime.sendMessage({action:"unmute"})}e();const n=new MutationObserver(e);n.observe(document.body,{childList:!0,subtree:!0});

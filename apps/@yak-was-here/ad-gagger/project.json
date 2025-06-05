@@ -17,17 +17,17 @@
                 "tsConfig": "apps/@yak-was-here/ad-gagger/tsconfig.app.json",
                 "assets": [
                     {
-                        "input": "apps/@yak-was-here/ad-gagger/src/",
-                        "glob": "*.html",
+                        "input": "apps/@yak-was-here/ad-gagger/src/assets/",
+                        "glob": "*.{html,css}",
                         "output": "./"
                     },
                     {
-                        "input": "apps/@yak-was-here/ad-gagger/src/",
+                        "input": "apps/@yak-was-here/ad-gagger/src/assets/",
                         "glob": "*.json",
                         "output": "./"
                     },
                     {
-                        "input": "apps/@yak-was-here/ad-gagger/src/assets/images",
+                        "input": "apps/@yak-was-here/ad-gagger/src/assets/images/",
                         "glob": "*.png",
                         "output": "images/"
                     }
@@ -42,8 +42,8 @@
             },
             "inputs": [
                 "{projectRoot}/src/*.ts",
-                "{projectRoot}/src/*.html",
-                "{projectRoot}/src/*.json"
+                "{projectRoot}/src/assets/*.html",
+                "{projectRoot}/src/assets/*.json"
             ],
             "configurations": {
                 "development": {},
