@@ -19,10 +19,15 @@ const siteConfigurations: SiteConfiguration[] = [
         uriMatcher: 'https://www.twitch.tv/',
         adDetectionElementSelector: '[aria-label="Ad"]',
         parentToAdSelector: 'button[aria-label="Leave feedback for this Ad"]',
-        muteKeyBind: ['M'],
-        unmuteKeyBind: ['M'],
+        muteKeyBind: ['m'],
+        unmuteKeyBind: ['m'],
     },
 ];
+
+enum MuteMethod {
+    Tab = 'tab',
+    Player = 'player',
+}
 
 /**
  * Set site settings based on current URL
@@ -33,7 +38,7 @@ function setSiteSettings(): SiteConfiguration | null {
 
     for (const siteConfiguration of siteConfigurations) {
         if (currentUrl.startsWith(siteConfiguration.uriMatcher)) {
-            console.log(
+            console.info(
                 'Ad Gagger: Site configuration found',
                 siteConfiguration
             );
@@ -41,7 +46,7 @@ function setSiteSettings(): SiteConfiguration | null {
         }
     }
 
-    console.log('Ad Gagger: No site configuration found');
+    console.info('Ad Gagger: No site configuration found');
     return null;
 }
 
@@ -86,18 +91,30 @@ async function sendKeysToPage(keys: KeyboardEvent['key'][]) {
 function handleElementChange(siteSettings: SiteConfiguration) {
     const element = checkForElement(siteSettings.adDetectionElementSelector);
 
-    // Element was added
-    if (element && !didMutedAd) {
-        didMutedAd = true;
-        console.log('Ad Gagger: Target element added', element);
-        chrome.runtime.sendMessage({ action: 'mute' });
-    }
-    // Element was removed
-    else if (!element && didMutedAd) {
-        didMutedAd = false;
-        console.log('Ad Gagger: Target element removed', element);
-        chrome.runtime.sendMessage({ action: 'unmute' });
-    }
+    chrome.storage.sync.get(['muteMethod'], async (result) => {
+        const muteMethod: MuteMethod = result.muteMethod || MuteMethod.Tab;
+
+        // Element was added
+        if (element && !didMutedAd) {
+            didMutedAd = true;
+            console.info('Ad Gagger: Ad element detected', element);
+            if (muteMethod === MuteMethod.Tab) {
+                chrome.runtime.sendMessage({ action: 'mute' });
+            } else {
+                await sendKeysToPage(siteSettings.muteKeyBind);
+            }
+        }
+        // Element was removed
+        else if (!element && didMutedAd) {
+            didMutedAd = false;
+            console.info('Ad Gagger: Ad element no longer detected');
+            if (muteMethod === MuteMethod.Tab) {
+                chrome.runtime.sendMessage({ action: 'unmute' });
+            } else {
+                await sendKeysToPage(siteSettings.unmuteKeyBind);
+            }
+        }
+    });
 }
 
 // Keep track of whether the extension has already muted the tab, this way the user can unmute the tab manually if they want to listen to ads
