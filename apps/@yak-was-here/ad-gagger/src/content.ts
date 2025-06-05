@@ -5,8 +5,7 @@ import { MuteMethod, StorageKeys } from './types';
 const siteConfigurations: SiteConfiguration[] = [
     {
         uriMatcher: 'https://www.twitch.tv/',
-        adDetectionElementSelector: '[aria-label="Ad"]',
-        parentToAdSelector: 'button[aria-label="Leave feedback for this Ad"]',
+        adDetectionElementSelector: '[data-a-target="video-ad-label"]',
         muteKeyBind: ['m'],
         unmuteKeyBind: ['m'],
     },
