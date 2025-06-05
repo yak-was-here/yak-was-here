@@ -4,4 +4,5 @@ export enum MuteMethod {
 
 export enum StorageKeys {
     MuteMethod = 'muteMethod',
+    didMuteTab = 'didMuteTab',
 }

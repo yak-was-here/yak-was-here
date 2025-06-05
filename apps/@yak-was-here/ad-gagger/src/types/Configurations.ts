@@ -1,10 +1,12 @@
 /**
  * @property {string} uriMatcher - The URI matcher for the site this configuration applies to
  * @property {string} adDetectionElementSelector - The selector for the element that indicates an ad is playing
- * @property {KeyboardEvent['key'][]} muteKeyBind - The key bind to mute the player containing the ad; each string in the array represents a key to press
- * @property {KeyboardEvent['key'][]} unmuteKeyBind - The key bind to unmute the player containing the ad; each string in the array represents a key to press
+ * @property {string | null} adSkipButtonSelector - The selector for the skip button for the ad
+ * @property {string | null} adContainerSelector - The selector for the container that contains the ad; by selecting this mutation observer will perform better
  */
 export type SiteConfiguration = {
     uriMatcher: string;
     adDetectionElementSelector: string;
+    adSkipButtonSelector: string | null;
+    adContainerSelector: string | null;
 };
