@@ -165,7 +165,7 @@ function createDebouncedHandler(wait: number, handler: () => void): () => void {
     };
 }
 
-window.addEventListener('load', async () => {
+const init = async () => {
     const siteSettings: SiteConfiguration | null = selectSiteSettings(
         siteConfigurations,
         window.location.href
@@ -215,4 +215,6 @@ window.addEventListener('load', async () => {
         // Initial check
         handleElementChange(siteSettings);
     }
-});
+};
+
+window.addEventListener('load', init);
