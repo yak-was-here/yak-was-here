@@ -15,16 +15,16 @@ import { SiteConfiguration, MuteMethod } from './types';
 const siteConfigurations: SiteConfiguration[] = [
     {
         uriMatcher: 'https://www.twitch.tv/',
-        adDetectionElementSelector: '[data-a-target="video-ad-label"]',
+        adDetectorSelector: '[data-a-target="video-ad-label"]',
+        adContainerSelector: '[data-a-target="video-player"]',
         adSkipButtonSelector: null,
-        adContainerSelector: null,
     },
     {
         uriMatcher: 'https://www.youtube.com/',
-        adDetectionElementSelector: 'div.html5-video-player.ad-showing',
+        adDetectorSelector: 'div.html5-video-player.ad-showing',
+        adContainerSelector: '.html5-video-player',
         adSkipButtonSelector:
             '.ytp-ad-skip-button-container:not([style*="display: none"]) .ytp-ad-skip-button',
-        adContainerSelector: '.html5-video-player',
     },
 ];
 
@@ -42,7 +42,7 @@ function checkForElement(selector: string): Element | null {
  * @param siteSettings
  */
 async function handleElementChange(siteSettings: SiteConfiguration) {
-    const adElement = checkForElement(siteSettings.adDetectionElementSelector);
+    const adElement = checkForElement(siteSettings.adDetectorSelector);
 
     if (adElement) {
         const tabId = await getCurrentTabId();
@@ -182,7 +182,7 @@ const init = async () => {
         console.info('Ad Gagger: adContainerSelector', adContainerSelector);
         console.info(
             'Ad Gagger: adDetectionElementSelector',
-            siteSettings.adDetectionElementSelector
+            siteSettings.adDetectorSelector
         );
 
         adObserver.observe(adContainerSelector, {
