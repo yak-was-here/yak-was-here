@@ -149,18 +149,12 @@ let didClickSkipButton = false;
 
 function createDebouncedHandler(wait: number, handler: () => void): () => void {
     let timeout: number;
-    let lastCall = 0;
 
     return () => {
-        const now = Date.now();
-
-        // Ignore calls that are too frequent
-        if (now - lastCall < wait / 2) {
-            return;
-        }
-
-        lastCall = now;
+        // Clear any existing timeout
         window.clearTimeout(timeout);
+
+        // Set new timeout
         timeout = window.setTimeout(handler, wait);
     };
 }
