@@ -48,7 +48,7 @@ async function handleElementChange(siteSettings: SiteConfiguration) {
         const tabId = await getCurrentTabId();
 
         if (
-            !(await isTabIdInMutedList(tabId)) ||
+            !(await isTabIdInMutedList(tabId)) &&
             !(await isCurrentTabMuted())
         ) {
             const muteMethod = (await getMuteMethod()) || MuteMethod.Gag;
