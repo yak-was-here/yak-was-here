@@ -1,8 +1,3 @@
-export enum MuteMethod {
-    Gag = 'gag',
-}
-
 export enum StorageKeys {
-    MuteMethod = 'muteMethod',
     MutedTabIds = 'mutedTabIds',
 }

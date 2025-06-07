@@ -1,7 +1,6 @@
 import {
     addTabToMutedList,
     getCurrentTabId,
-    getMuteMethod,
     isTabIdInMutedList,
     isCurrentTabMuted,
     removeTabFromMutedList,
@@ -9,7 +8,7 @@ import {
     setTabMuteState,
     syncTabMuteStateWithStorage,
 } from './lib';
-import { SiteConfiguration, MuteMethod } from './types';
+import { SiteConfiguration } from './types';
 
 // All possible site configurations
 const siteConfigurations: SiteConfiguration[] = [
@@ -51,29 +50,21 @@ async function handleElementChange(siteSettings: SiteConfiguration) {
             !(await isTabIdInMutedList(tabId)) &&
             !(await isCurrentTabMuted())
         ) {
-            const muteMethod = (await getMuteMethod()) || MuteMethod.Gag;
-
             console.info('Ad Gagger: Ad detected. Muting.', adElement);
 
             addTabToMutedList(tabId);
 
-            if (muteMethod === MuteMethod.Gag) {
-                setTabMuteState(tabId, true);
-            }
+            setTabMuteState(tabId, true);
         }
     } else {
         const tabId = await getCurrentTabId();
 
         if ((await isTabIdInMutedList(tabId)) && (await isCurrentTabMuted())) {
-            const muteMethod = (await getMuteMethod()) || MuteMethod.Gag;
-
             console.info('Ad Gagger: Ad no longer detected. Unmuting.');
 
             removeTabFromMutedList(tabId);
 
-            if (muteMethod === MuteMethod.Gag) {
-                setTabMuteState(tabId, false);
-            }
+            setTabMuteState(tabId, false);
         }
     }
 }
