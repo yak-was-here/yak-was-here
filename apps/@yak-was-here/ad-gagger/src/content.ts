@@ -11,7 +11,7 @@ import {
 import { SiteConfiguration } from './types';
 
 // All possible site configurations
-const siteConfigurations: SiteConfiguration[] = [
+let siteConfigurations: SiteConfiguration[] = [
     {
         uriMatcher: 'https://www.twitch.tv/',
         adDetectorSelector: '[data-a-target="video-ad-label"]',
@@ -151,6 +151,12 @@ function createDebouncedHandler(wait: number, handler: () => void): () => void {
 }
 
 const init = async () => {
+    // Load configurations from storage
+    const storage = await chrome.storage.local.get('adGaggerConfigurations');
+    if (storage.adGaggerConfigurations) {
+        siteConfigurations = storage.adGaggerConfigurations;
+    }
+
     const siteSettings: SiteConfiguration | null = selectSiteSettings(
         siteConfigurations,
         window.location.href
@@ -203,3 +209,12 @@ const init = async () => {
 };
 
 window.addEventListener('load', init);
+
+// Listen for configuration updates from popup
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.type === 'CONFIGURATION_UPDATED') {
+        siteConfigurations = message.configurations;
+        // Reinitialize with new configurations
+        init();
+    }
+});
