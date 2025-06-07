@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
-    "name": "Ad Gagger - Ad Muter and Skipper",
-    "description": "Automatically mute ads on websites such as YouTube, Twitch, and more.",
+    "name": "Ad Gagger",
+    "description": "Automatically mute and skip ads on YouTube, Twitch, and any custom websites you configure.",
     "version": "1.0",
     "permissions": ["storage", "tabs"],
     "host_permissions": ["<all_urls>"],
