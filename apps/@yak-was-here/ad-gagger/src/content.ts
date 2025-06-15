@@ -7,25 +7,12 @@ import {
     selectSiteSettings,
     setTabMuteState,
     syncTabMuteStateWithStorage,
+    retrieveSavedConfiguration,
 } from './lib';
-import { SiteConfiguration } from './types';
+import { Configuration, SiteConfiguration, StorageKeys } from './types';
+import defaultConfig from './assets/default-configuration.json' assert { type: 'json' };
 
-// All possible site configurations
-let siteConfigurations: SiteConfiguration[] = [
-    {
-        uriMatcher: 'https://www.twitch.tv/',
-        adDetectorSelector: '[data-a-target="video-ad-label"]',
-        adContainerSelector: '[data-a-target="video-player"]',
-        adSkipButtonSelector: null,
-    },
-    {
-        uriMatcher: 'https://www.youtube.com/',
-        adDetectorSelector: 'div.html5-video-player.ad-showing',
-        adContainerSelector: '.html5-video-player',
-        adSkipButtonSelector:
-            '.ytp-ad-skip-button-container:not([style*="display: none"]) .ytp-ad-skip-button',
-    },
-];
+const defaultConfiguration = defaultConfig as Configuration;
 
 /**
  * Checks if a DOM element exists
@@ -71,7 +58,7 @@ async function handleElementChange(siteSettings: SiteConfiguration) {
 
 function handleSkipButtonChange(siteSettings: SiteConfiguration) {
     const skipButton = checkForElement(
-        siteSettings.adSkipButtonSelector
+        siteSettings.adCloseButtonSelector
     ) as HTMLButtonElement;
     console.log('Ad Gagger: skipButton', skipButton);
     console.log('Ad Gagger: didClickSkipButton', didClickSkipButton);
@@ -152,10 +139,11 @@ function createDebouncedHandler(wait: number, handler: () => void): () => void {
 
 const init = async () => {
     // Load configurations from storage
-    const storage = await chrome.storage.local.get('adGaggerConfigurations');
-    if (storage.adGaggerConfigurations) {
-        siteConfigurations = storage.adGaggerConfigurations;
-    }
+    const savedConfiguration = await retrieveSavedConfiguration();
+
+    let siteConfigurations: SiteConfiguration[] =
+        savedConfiguration.siteConfigurations ||
+        defaultConfiguration.siteConfigurations;
 
     const siteSettings: SiteConfiguration | null = selectSiteSettings(
         siteConfigurations,
@@ -188,7 +176,7 @@ const init = async () => {
             attributes: true, // Watch for attribute changes
         });
 
-        // if (siteSettings.adSkipButtonSelector) {
+        // if (siteSettings.adCloseButtonSelector) {
         //     const skipButtonObserver = new MutationObserver(() => {
         //         handleSkipButtonChange(siteSettings);
         //     });

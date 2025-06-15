@@ -5,18 +5,18 @@ const DEFAULT_CONFIGURATIONS: SiteConfiguration[] = [
         uriMatcher: 'https://www.twitch.tv/',
         adDetectorSelector: '[data-a-target="video-ad-label"]',
         adContainerSelector: '[data-a-target="video-player"]',
-        adSkipButtonSelector: null,
+        adCloseButtonSelector: null,
     },
     {
         uriMatcher: 'https://www.youtube.com/',
         adDetectorSelector: 'div.html5-video-player.ad-showing',
         adContainerSelector: '.html5-video-player',
-        adSkipButtonSelector:
+        adCloseButtonSelector:
             '.ytp-ad-skip-button-container:not([style*="display: none"]) .ytp-ad-skip-button',
     },
 ];
 
-const STORAGE_KEY = 'adGaggerConfigurations';
+const STORAGE_KEY = StorageKeys.Configuration;
 
 async function loadConfigurations(): Promise<SiteConfiguration[]> {
     const result = await chrome.storage.local.get(STORAGE_KEY);
