@@ -4,7 +4,7 @@ import {
     isTabIdInMutedList,
     isCurrentTabMuted,
     removeTabFromMutedList,
-    selectSiteSettings,
+    selectSiteSettings as getSiteConfiguration,
     setTabMuteState,
     syncTabMuteStateWithStorage,
     retrieveSavedSettings,
@@ -14,10 +14,10 @@ import { Settings, defaultSettings, SiteConfiguration, StorageKeys } from './typ
 /**
  *  ! This should only be called when the parent of the ad detector selector changes and it should be debounced
  * Processes changes to the DOM
- * @param siteSettings
+ * @param pageConfiguration
  */
-async function handleElementChange(siteSettings: SiteConfiguration) {
-    const adElement = document.querySelector(siteSettings.adDetectorSelector) as HTMLElement;
+async function handleElementChange(pageConfiguration: SiteConfiguration) {
+    const adElement = document.querySelector(pageConfiguration.adDetectorSelector) as HTMLElement;
 
     const tabId = await getCurrentTabId();
     const inMutedList = await isTabIdInMutedList(tabId);
@@ -25,117 +25,204 @@ async function handleElementChange(siteSettings: SiteConfiguration) {
 
     if (adElement) {
         if (!inMutedList && !muted) {
-            console.info('Ad Gagger: Ad detected. Muting.', adElement);
-
             setTabMuteState(tabId, true);
             addTabToMutedList(tabId);
+            
+            console.info('Ad Gagger: Ad detected. Muted.', adElement);
         }
     } else {
         if (inMutedList && muted) {
-            console.info('Ad Gagger: Ad no longer detected. Unmuting.');
-
             setTabMuteState(tabId, false);
             removeTabFromMutedList(tabId);
+            
+            console.info('Ad Gagger: Ad no longer detected. Unmuted.');
         }
     }
 }
 
-function handleSkipButtonChange(siteSettings: SiteConfiguration) {
-    const skipButton = document.querySelector(siteSettings.adCloseButtonSelector) as HTMLButtonElement;
-    console.log('Ad Gagger: skipButton', skipButton);
-    console.log('Ad Gagger: didClickSkipButton', didClickSkipButton);
+function conditionallyMuteTab(tabId: number, inMutedList: boolean, muted: boolean): boolean {
+    if (!inMutedList && !muted) {
+        setTabMuteState(tabId, true);
+        addTabToMutedList(tabId);
 
-    if (
-        !didClickSkipButton &&
-        skipButton &&
-        skipButton.offsetParent !== null &&
-        !skipButton.disabled
-    ) {
-        console.info('Ad Gagger: Skip button detected. Skipping ad.');
+        console.info('Ad Gagger: Ad detected. Muted.');
 
-        try {
-            // Try direct click first
-            skipButton.click();
-
-            // // If that doesn't work, try simulating a full mouse click sequence
-            // skipButton.dispatchEvent(
-            //     new MouseEvent('mouseover', {
-            //         view: window,
-            //         bubbles: true,
-            //         cancelable: true,
-            //     })
-            // );
-
-            // skipButton.dispatchEvent(
-            //     new MouseEvent('mousedown', {
-            //         view: window,
-            //         bubbles: true,
-            //         cancelable: true,
-            //     })
-            // );
-
-            // skipButton.dispatchEvent(
-            //     new MouseEvent('mouseup', {
-            //         view: window,
-            //         bubbles: true,
-            //         cancelable: true,
-            //     })
-            // );
-
-            // skipButton.dispatchEvent(
-            //     new MouseEvent('click', {
-            //         view: window,
-            //         bubbles: true,
-            //         cancelable: true,
-            //     })
-            // );
-
-            didClickSkipButton = true;
-        } catch (e) {
-            console.error('Ad Gagger: Error skipping ad', e);
-        }
+        return true;
     }
-
-    console.log('Ad Gagger: didClickSkipButton', didClickSkipButton);
-
-    setTimeout(() => {
-        didClickSkipButton = false;
-        console.log('Ad Gagger: didClickSkipButton', didClickSkipButton);
-    }, 5000);
+    return false;
 }
 
-// Keep track of whether we have simulated a skip button click so that it does not lock up the browser from too many mutations
-let didClickSkipButton = false;
+function conditionallyUnmuteTab(tabId: number, inMutedList: boolean, muted: boolean): boolean {
+    if (inMutedList && muted) {
+        setTabMuteState(tabId, false);
+        removeTabFromMutedList(tabId);
+
+        console.info('Ad Gagger: Ad no longer detected. Unmuted.');
+
+        return true;
+    }
+    return false;
+}
+
+// function handleSkipButtonChange(siteSettings: SiteConfiguration) {
+//     const skipButton = document.querySelector(siteSettings.adCloseButtonSelector) as HTMLButtonElement;
+//     console.log('Ad Gagger: skipButton', skipButton);
+//     console.log('Ad Gagger: didClickSkipButton', didClickSkipButton);
+
+//     if (
+//         !didClickSkipButton &&
+//         skipButton &&
+//         skipButton.offsetParent !== null &&
+//         !skipButton.disabled
+//     ) {
+//         console.info('Ad Gagger: Skip button detected. Skipping ad.');
+
+//         try {
+//             // Try direct click first
+//             skipButton.click();
+
+//             // // If that doesn't work, try simulating a full mouse click sequence
+//             // skipButton.dispatchEvent(
+//             //     new MouseEvent('mouseover', {
+//             //         view: window,
+//             //         bubbles: true,
+//             //         cancelable: true,
+//             //     })
+//             // );
+
+//             // skipButton.dispatchEvent(
+//             //     new MouseEvent('mousedown', {
+//             //         view: window,
+//             //         bubbles: true,
+//             //         cancelable: true,
+//             //     })
+//             // );
+
+//             // skipButton.dispatchEvent(
+//             //     new MouseEvent('mouseup', {
+//             //         view: window,
+//             //         bubbles: true,
+//             //         cancelable: true,
+//             //     })
+//             // );
+
+//             // skipButton.dispatchEvent(
+//             //     new MouseEvent('click', {
+//             //         view: window,
+//             //         bubbles: true,
+//             //         cancelable: true,
+//             //     })
+//             // );
+
+//             didClickSkipButton = true;
+//         } catch (e) {
+//             console.error('Ad Gagger: Error skipping ad', e);
+//         }
+//     }
+
+//     console.log('Ad Gagger: didClickSkipButton', didClickSkipButton);
+
+//     setTimeout(() => {
+//         didClickSkipButton = false;
+//         console.log('Ad Gagger: didClickSkipButton', didClickSkipButton);
+//     }, 5000);
+// }
+
 
 function createDebouncedHandler(wait: number, handler: () => void): () => void {
     let timeout: number;
-
+    
     return () => {
         // Clear any existing timeout
         window.clearTimeout(timeout);
-
+        
         // Set new timeout
         timeout = window.setTimeout(handler, wait);
     };
 }
 
+const getSettings = async (): Promise<Settings> => {
+    const savedSettings = await retrieveSavedSettings();
+    // const savedSettings: Settings | null = null;
+
+    if (savedSettings === null) {
+        console.error('Ad Gagger: No saved settings found, using default settings');
+    }
+
+    return savedSettings || defaultSettings;
+}
+
+function waitForElement(
+    selector: string,
+    onDisappear: (element: Element) => void,
+    root: Document | Element = document
+): Promise<Element> {
+    return new Promise((resolve) => {
+        // Check if the element already exists
+        const element: Element | null = root.querySelector(selector);
+        if (element) {
+            resolve(element);
+            // Set up observer to detect disappearance
+            const observer = new MutationObserver(() => {
+                if (!root.querySelector(selector)) {
+                    observer.disconnect();
+                    onDisappear(element);
+                }
+            });
+            observer.observe(root, {
+                childList: true,
+                subtree: true,
+            });
+            return;
+        }
+
+        // Set up observer to detect appearance
+        const observer = new MutationObserver(() => {
+            const targetElement: Element | null = root.querySelector(selector);
+            if (targetElement) {
+                resolve(targetElement);
+                // Transition to observing for disappearance
+                observer.disconnect();
+                const disappearObserver = new MutationObserver(() => {
+                    if (!root.querySelector(selector)) {
+                        disappearObserver.disconnect();
+                        onDisappear(targetElement);
+                    }
+                });
+                disappearObserver.observe(root, {
+                    childList: true,
+                    subtree: true,
+                });
+            }
+        });
+
+        observer.observe(root, {
+            childList: true,
+            subtree: true,
+        });
+    });
+}
+
+
 const init = async () => {
-    // Load settings from storage
-    const savedSettings: Settings = await retrieveSavedSettings();
+    // Keep track of whether we have simulated a skip button click so that it does not lock up the browser from too many mutations
+    // let didClickSkipButton = false;
+    
+    const settings = await getSettings();
+    const pageConfiguration = getSiteConfiguration(settings.siteConfigurations, window.location.href);
 
-    // Set site configurations from saved settings or fallback to default settings
-    const siteConfigurations: SiteConfiguration[] =
-        savedSettings.siteConfigurations ||
-        defaultSettings.siteConfigurations;
+    const tabId = await getCurrentTabId();
+    const inMutedList = await isTabIdInMutedList(tabId);
+    const muted = await isCurrentTabMuted();
 
-    //
-    const siteConfiguration: SiteConfiguration | null = selectSiteSettings(
-        siteConfigurations,
-        window.location.href
-    );
+    syncTabMuteStateWithStorage();
 
-    if (siteConfiguration) {
-        await syncTabMuteStateWithStorage();
+    if (pageConfiguration) {
+
+        // check if ad element already exists
+        const adElement = document.querySelector(
+            pageConfiguration.adDetectorSelector
+        ) as HTMLElement;
 
         const adObserver = new MutationObserver(
             createDebouncedHandler(100, () => {
@@ -177,16 +264,15 @@ const init = async () => {
 
         // Initial check
         handleElementChange(siteConfiguration);
+
     }
+
+    // Listen for settings updates from popup
+    chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+        if (message.type === 'CONFIGURATION_UPDATED') {
+            init();
+        }
+    });
 };
 
 window.addEventListener('load', init);
-
-// Listen for configuration updates from popup
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (message.type === 'CONFIGURATION_UPDATED') {
-        siteConfigurations = message.configurations;
-        // Reinitialize with new configurations
-        init();
-    }
-});

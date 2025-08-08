@@ -1,21 +1,5 @@
 import { SiteConfiguration } from './types';
 
-const DEFAULT_CONFIGURATIONS: SiteConfiguration[] = [
-    {
-        uriMatcher: 'https://www.twitch.tv/',
-        adDetectorSelector: '[data-a-target="video-ad-label"]',
-        adContainerSelector: '[data-a-target="video-player"]',
-        adCloseButtonSelector: null,
-    },
-    {
-        uriMatcher: 'https://www.youtube.com/',
-        adDetectorSelector: 'div.html5-video-player.ad-showing',
-        adContainerSelector: '.html5-video-player',
-        adCloseButtonSelector:
-            '.ytp-ad-skip-button-container:not([style*="display: none"]) .ytp-ad-skip-button',
-    },
-];
-
 const STORAGE_KEY = StorageKeys.Configuration;
 
 async function loadConfigurations(): Promise<SiteConfiguration[]> {
