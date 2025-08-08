@@ -3,7 +3,7 @@
     "name": "Ad Gagger",
     "description": "Automatically mute and skip video ads on YouTube, Twitch, and any website you configure.",
     "version": "1.0",
-    "permissions": ["storage", "tabs"],
+    "permissions": ["storage"],
     "host_permissions": ["<all_urls>"],
     "background": {
         "service_worker": "background.js"
