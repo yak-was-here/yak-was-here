@@ -1,4 +1,4 @@
-import { Configuration, SiteConfiguration, StorageKeys } from '../types';
+import { Settings, SiteConfiguration, StorageKeys } from '../types';
 
 /**
  * Select site settings based on current URL and site configurations
@@ -49,17 +49,21 @@ function isSiteConfiguration(obj: unknown): obj is SiteConfiguration {
 /**
  * Type guard to check if an object is a `Configuration`
  */
-function isConfiguration(obj: unknown): obj is Configuration {
+function isConfiguration(obj: unknown): obj is Settings {
     return (
         obj !== null &&
         typeof obj === 'object' &&
         'siteConfigurations' in obj &&
-        Array.isArray((obj as Configuration).siteConfigurations) &&
-        (obj as Configuration).siteConfigurations.every(isSiteConfiguration)
+        Array.isArray((obj as Settings).siteConfigurations) &&
+        (obj as Settings).siteConfigurations.every(isSiteConfiguration)
     );
 }
 
-export async function retrieveSavedConfiguration(): Promise<Configuration | null> {
+/**
+ * Retrieve saved settings from sync storage
+ * @returns Settings | null
+ */
+export async function retrieveSavedSettings(): Promise<Settings | null> {
     try {
         const storedData = await chrome.storage.sync.get(
             StorageKeys.Configuration
@@ -102,7 +106,7 @@ export async function clearSavedConfiguration(): Promise<boolean> {
  * Save configuration after validating it
  */
 export async function saveConfiguration(
-    config: Configuration
+    config: Settings
 ): Promise<boolean> {
     if (!isConfiguration(config)) {
         console.error(

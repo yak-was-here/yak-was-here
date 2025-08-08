@@ -7,59 +7,41 @@ import {
     selectSiteSettings,
     setTabMuteState,
     syncTabMuteStateWithStorage,
-    retrieveSavedConfiguration,
+    retrieveSavedSettings,
 } from './lib';
-import { Configuration, SiteConfiguration, StorageKeys } from './types';
-import defaultConfig from './assets/default-configuration.json' assert { type: 'json' };
-
-const defaultConfiguration = defaultConfig as Configuration;
+import { Settings, defaultSettings, SiteConfiguration, StorageKeys } from './types';
 
 /**
- * Checks if a DOM element exists
- * @param selector
- * @returns
- */
-function checkForElement(selector: string): Element | null {
-    return document.querySelector(selector);
-}
-
-/**
+ *  ! This should only be called when the parent of the ad detector selector changes and it should be debounced
  * Processes changes to the DOM
  * @param siteSettings
  */
 async function handleElementChange(siteSettings: SiteConfiguration) {
-    const adElement = checkForElement(siteSettings.adDetectorSelector);
+    const adElement = document.querySelector(siteSettings.adDetectorSelector) as HTMLElement;
+
+    const tabId = await getCurrentTabId();
+    const inMutedList = await isTabIdInMutedList(tabId);
+    const muted = await isCurrentTabMuted();
 
     if (adElement) {
-        const tabId = await getCurrentTabId();
-
-        if (
-            !(await isTabIdInMutedList(tabId)) &&
-            !(await isCurrentTabMuted())
-        ) {
+        if (!inMutedList && !muted) {
             console.info('Ad Gagger: Ad detected. Muting.', adElement);
 
-            addTabToMutedList(tabId);
-
             setTabMuteState(tabId, true);
+            addTabToMutedList(tabId);
         }
     } else {
-        const tabId = await getCurrentTabId();
-
-        if ((await isTabIdInMutedList(tabId)) && (await isCurrentTabMuted())) {
+        if (inMutedList && muted) {
             console.info('Ad Gagger: Ad no longer detected. Unmuting.');
 
-            removeTabFromMutedList(tabId);
-
             setTabMuteState(tabId, false);
+            removeTabFromMutedList(tabId);
         }
     }
 }
 
 function handleSkipButtonChange(siteSettings: SiteConfiguration) {
-    const skipButton = checkForElement(
-        siteSettings.adCloseButtonSelector
-    ) as HTMLButtonElement;
+    const skipButton = document.querySelector(siteSettings.adCloseButtonSelector) as HTMLButtonElement;
     console.log('Ad Gagger: skipButton', skipButton);
     console.log('Ad Gagger: didClickSkipButton', didClickSkipButton);
 
@@ -138,36 +120,38 @@ function createDebouncedHandler(wait: number, handler: () => void): () => void {
 }
 
 const init = async () => {
-    // Load configurations from storage
-    const savedConfiguration = await retrieveSavedConfiguration();
+    // Load settings from storage
+    const savedSettings: Settings = await retrieveSavedSettings();
 
-    let siteConfigurations: SiteConfiguration[] =
-        savedConfiguration.siteConfigurations ||
-        defaultConfiguration.siteConfigurations;
+    // Set site configurations from saved settings or fallback to default settings
+    const siteConfigurations: SiteConfiguration[] =
+        savedSettings.siteConfigurations ||
+        defaultSettings.siteConfigurations;
 
-    const siteSettings: SiteConfiguration | null = selectSiteSettings(
+    //
+    const siteConfiguration: SiteConfiguration | null = selectSiteSettings(
         siteConfigurations,
         window.location.href
     );
 
-    if (siteSettings) {
+    if (siteConfiguration) {
         await syncTabMuteStateWithStorage();
 
         const adObserver = new MutationObserver(
             createDebouncedHandler(100, () => {
-                handleElementChange(siteSettings);
+                handleElementChange(siteConfiguration);
             })
         );
 
         // Use the adContainerSelector if it exists, otherwise use the body
         const adContainerSelector =
-            document.querySelector(siteSettings.adContainerSelector) ||
+            document.querySelector(siteConfiguration.adContainerSelector) ||
             document.body;
 
         console.info('Ad Gagger: adContainerSelector', adContainerSelector);
         console.info(
             'Ad Gagger: adDetectionElementSelector',
-            siteSettings.adDetectorSelector
+            siteConfiguration.adDetectorSelector
         );
 
         adObserver.observe(adContainerSelector, {
@@ -192,7 +176,7 @@ const init = async () => {
         // }
 
         // Initial check
-        handleElementChange(siteSettings);
+        handleElementChange(siteConfiguration);
     }
 };
 

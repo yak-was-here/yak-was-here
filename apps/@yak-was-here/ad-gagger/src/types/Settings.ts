@@ -5,6 +5,26 @@ export enum StorageKeys {
     Configuration = 'configuration',
 }
 
-export interface Configuration {
+export interface Settings {
     siteConfigurations: SiteConfiguration[];
 }
+
+export const defaultSettings: Settings = {
+    siteConfigurations: [
+        {
+            active: true,
+            uriMatcher: 'https://www.twitch.tv/',
+            adDetectorSelector: '[data-a-target="video-ad-label"]',
+            adContainerSelector: '[data-a-target="video-player"]',
+            adCloseButtonSelector: '[aria-label="Return to stream"]',
+        },
+        {
+            active: true,
+            uriMatcher: 'https://www.youtube.com/',
+            adDetectorSelector: 'div.html5-video-player.ad-showing',
+            adContainerSelector: 'div.html5-video-player',
+            adCloseButtonSelector:
+                '.ytp-ad-skip-button-container:not([style*="display: none"]) .ytp-ad-skip-button',
+        },
+    ],
+};
