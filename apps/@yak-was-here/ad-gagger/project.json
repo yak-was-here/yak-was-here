@@ -87,6 +87,35 @@
             "options": {
                 "passWithNoTests": true
             }
+        },
+        "copy-to-windows": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "cp -r dist/apps/@yak-was-here/ad-gagger /mnt/c/temp/ad-gagger-extension"
+            },
+            "dependsOn": ["build"]
+        },
+        "launch-in-windows": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "mkdir -p /mnt/c/temp",
+                    "cp -r dist/apps/@yak-was-here/ad-gagger /mnt/c/temp/ad-gagger-extension",
+                    "powershell.exe -Command \"Start-Process 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe' -ArgumentList '--load-extension=C:\\temp\\ad-gagger-extension', '--new-window', '--user-data-dir=C:\\temp\\.chrome-dev-profile'\""
+                ],
+                "parallel": false
+            },
+            "dependsOn": ["build"]
+        },
+        "dev": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "npx nx build @yak-was-here/ad-gagger --watch",
+                    "npx nx copy-to-windows @yak-was-here/ad-gagger --watch"
+                ],
+                "parallel": true
+            }
         }
     }
 }
