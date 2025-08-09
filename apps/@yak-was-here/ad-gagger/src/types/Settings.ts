@@ -14,14 +14,14 @@ export const defaultSettings: Settings = {
         {
             active: true,
             uriMatcher: 'https://www.twitch.tv/',
-            adDetectorSelector: '[data-a-target="video-ad-label"]',
+            adSelector: '[data-a-target="video-ad-label"]',
             adContainerSelector: '[data-a-target="video-player"]',
             adCloseButtonSelector: '[aria-label="Return to stream"]',
         },
         {
             active: true,
             uriMatcher: 'https://www.youtube.com/',
-            adDetectorSelector: 'div.html5-video-player.ad-showing',
+            adSelector: 'div.html5-video-player.ad-showing',
             adContainerSelector: 'div.html5-video-player',
             adCloseButtonSelector:
                 '.ytp-ad-skip-button-container:not([style*="display: none"]) .ytp-ad-skip-button',

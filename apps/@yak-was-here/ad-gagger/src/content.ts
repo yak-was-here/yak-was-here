@@ -17,7 +17,7 @@ import { Settings, defaultSettings, SiteConfiguration, StorageKeys } from './typ
  * @param pageConfiguration
  */
 async function handleElementChange(pageConfiguration: SiteConfiguration) {
-    const adElement = document.querySelector(pageConfiguration.adDetectorSelector) as HTMLElement;
+    const adElement = document.querySelector(pageConfiguration.adSelector) as HTMLElement;
 
     const tabId = await getCurrentTabId();
     const inMutedList = await isTabIdInMutedList(tabId);
@@ -152,58 +152,6 @@ const getSettings = async (): Promise<Settings> => {
     return savedSettings || defaultSettings;
 }
 
-function waitForElement(
-    selector: string,
-    onDisappear: (element: Element) => void,
-    root: Document | Element = document
-): Promise<Element> {
-    return new Promise((resolve) => {
-        // Check if the element already exists
-        const element: Element | null = root.querySelector(selector);
-        if (element) {
-            resolve(element);
-            // Set up observer to detect disappearance
-            const observer = new MutationObserver(() => {
-                if (!root.querySelector(selector)) {
-                    observer.disconnect();
-                    onDisappear(element);
-                }
-            });
-            observer.observe(root, {
-                childList: true,
-                subtree: true,
-            });
-            return;
-        }
-
-        // Set up observer to detect appearance
-        const observer = new MutationObserver(() => {
-            const targetElement: Element | null = root.querySelector(selector);
-            if (targetElement) {
-                resolve(targetElement);
-                // Transition to observing for disappearance
-                observer.disconnect();
-                const disappearObserver = new MutationObserver(() => {
-                    if (!root.querySelector(selector)) {
-                        disappearObserver.disconnect();
-                        onDisappear(targetElement);
-                    }
-                });
-                disappearObserver.observe(root, {
-                    childList: true,
-                    subtree: true,
-                });
-            }
-        });
-
-        observer.observe(root, {
-            childList: true,
-            subtree: true,
-        });
-    });
-}
-
-
 const init = async () => {
     // Keep track of whether we have simulated a skip button click so that it does not lock up the browser from too many mutations
     // let didClickSkipButton = false;
@@ -219,33 +167,93 @@ const init = async () => {
 
     if (pageConfiguration) {
 
-        // check if ad element already exists
-        const adElement = document.querySelector(
-            pageConfiguration.adDetectorSelector
-        ) as HTMLElement;
+        const adContainer = (pageConfiguration.adContainerSelector && document.querySelector(pageConfiguration.adContainerSelector)) || document;
+        
+        const ad: Element | null = adContainer.querySelector(pageConfiguration.adSelector);
 
-        const adObserver = new MutationObserver(
-            createDebouncedHandler(100, () => {
-                handleElementChange(siteConfiguration);
-            })
-        );
+        // if the ad already exists
+        if (ad) {
+            conditionallyMuteTab(tabId, inMutedList, muted);
 
-        // Use the adContainerSelector if it exists, otherwise use the body
-        const adContainerSelector =
-            document.querySelector(siteConfiguration.adContainerSelector) ||
-            document.body;
+            // Set up observer to detect when the ad is over
+            const adEndObserver = new MutationObserver(() => {
+                if (!adContainer.querySelector(pageConfiguration.adSelector)) {
+                    adEndObserver.disconnect();
+                    conditionallyUnmuteTab(tabId, inMutedList, muted);
+                }
+            });
 
-        console.info('Ad Gagger: adContainerSelector', adContainerSelector);
-        console.info(
-            'Ad Gagger: adDetectionElementSelector',
-            siteConfiguration.adDetectorSelector
-        );
+            adEndObserver.observe(adContainer, {
+                childList: true,
+                subtree: true,
+            });
 
-        adObserver.observe(adContainerSelector, {
-            childList: true, // Watch for changes in direct children
-            subtree: true, // Watch for changes in all descendants
-            attributes: true, // Watch for attribute changes
+            return;
+        }
+
+        // otherwise, the ad does not exist yet, so we need to wait for it to appear
+
+        // Set up observer to detect appearance
+        const adStartObserver = new MutationObserver(() => {
+            const ad: Element | null = adContainer.querySelector(pageConfiguration.adSelector);
+            if (ad) {
+                conditionallyMuteTab(tabId, inMutedList, muted);
+
+                // Transition to observing for disappearance
+                adStartObserver.disconnect();
+                const adEndObserver = new MutationObserver(() => {
+                    if (!adContainer.querySelector(pageConfiguration.adSelector)) {
+                        adEndObserver.disconnect();
+                        conditionallyUnmuteTab(tabId, inMutedList, muted);
+                    }
+                });
+
+                adEndObserver.observe(adContainer, {
+                    childList: true,
+                    subtree: true,
+                });
+            }
         });
+
+        adStartObserver.observe(adContainer, {
+            childList: true,
+            subtree: true,
+        });
+
+        // const adObserver = new MutationObserver(
+        //     createDebouncedHandler(100, () => {
+        //         handleElementChange(siteConfiguration);
+        //     })
+        // );
+
+        // // Use the adContainerSelector if it exists, otherwise use the body
+        // const adContainerSelector =
+        //     document.querySelector(siteConfiguration.adContainerSelector) ||
+        //     document.body;
+
+        // console.info('Ad Gagger: adContainerSelector', adContainerSelector);
+        // console.info(
+        //     'Ad Gagger: adDetectionElementSelector',
+        //     siteConfiguration.adDetectorSelector
+        // );
+
+        // adObserver.observe(adContainerSelector, {
+        //     childList: true, // Watch for changes in direct children
+        //     subtree: true, // Watch for changes in all descendants
+        //     attributes: true, // Watch for attribute changes
+        // });
+
+
+
+
+
+
+
+
+
+
+
+
 
         // if (siteSettings.adCloseButtonSelector) {
         //     const skipButtonObserver = new MutationObserver(() => {
@@ -262,8 +270,18 @@ const init = async () => {
         //     handleSkipButtonChange(siteSettings);
         // }
 
+
+
+
+
+
+
+
+
+
+
         // Initial check
-        handleElementChange(siteConfiguration);
+        // handleElementChange(siteConfiguration);
 
     }
 
