@@ -1,6 +1,10 @@
 import { removeTabFromMutedList } from './lib';
 
 chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
+    if (!request || !sender || !sender.tab || !sender.tab.id || !sender.tab.mutedInfo) {
+        return;
+    }
+    
     if (request.action === 'setTabMuteState') {
         chrome.tabs.get(request.tabId, (tab) => {
             if (chrome.runtime.lastError) {
@@ -12,10 +16,11 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
         });
     } else if (request.action === 'setCurrentTabMuteState') {
         chrome.tabs.get(sender.tab.id, (tab) => {
-            if (chrome.runtime.lastError) {
+            if (chrome.runtime.lastError || !tab || !tab.id) {
                 return;
             }
-            chrome.tabs.update(sender.tab.id, {
+            // chrome.tabs.update(sender.tab.id, {
+            chrome.tabs.update(tab.id, {
                 muted: request.action === 'mute',
             });
         });

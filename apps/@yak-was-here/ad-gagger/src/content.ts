@@ -4,41 +4,12 @@ import {
     isTabIdInMutedList,
     isCurrentTabMuted,
     removeTabFromMutedList,
-    selectSiteSettings as getSiteConfiguration,
+    getSiteConfiguration,
     setTabMuteState,
     syncTabMuteStateWithStorage,
-    retrieveSavedSettings,
+    // retrieveSavedSettings,
 } from './lib';
 import { Settings, defaultSettings, SiteConfiguration, StorageKeys } from './types';
-
-/**
- *  ! This should only be called when the parent of the ad detector selector changes and it should be debounced
- * Processes changes to the DOM
- * @param pageConfiguration
- */
-async function handleElementChange(pageConfiguration: SiteConfiguration) {
-    const adElement = document.querySelector(pageConfiguration.adSelector) as HTMLElement;
-
-    const tabId = await getCurrentTabId();
-    const inMutedList = await isTabIdInMutedList(tabId);
-    const muted = await isCurrentTabMuted();
-
-    if (adElement) {
-        if (!inMutedList && !muted) {
-            setTabMuteState(tabId, true);
-            addTabToMutedList(tabId);
-            
-            console.info('Ad Gagger: Ad detected. Muted.', adElement);
-        }
-    } else {
-        if (inMutedList && muted) {
-            setTabMuteState(tabId, false);
-            removeTabFromMutedList(tabId);
-            
-            console.info('Ad Gagger: Ad no longer detected. Unmuted.');
-        }
-    }
-}
 
 function conditionallyMuteTab(tabId: number, inMutedList: boolean, muted: boolean): boolean {
     if (!inMutedList && !muted) {
@@ -142,8 +113,8 @@ function createDebouncedHandler(wait: number, handler: () => void): () => void {
 }
 
 const getSettings = async (): Promise<Settings> => {
-    const savedSettings = await retrieveSavedSettings();
-    // const savedSettings: Settings | null = null;
+    // const savedSettings = await retrieveSavedSettings();
+    const savedSettings: Settings | null = null;
 
     if (savedSettings === null) {
         console.error('Ad Gagger: No saved settings found, using default settings');

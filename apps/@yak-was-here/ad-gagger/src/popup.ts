@@ -1,14 +1,12 @@
-import { SiteConfiguration } from './types';
+import { SiteConfiguration, StorageKeys, defaultSettings } from './types';
 
-const STORAGE_KEY = StorageKeys.Configuration;
-
-async function loadConfigurations(): Promise<SiteConfiguration[]> {
-    const result = await chrome.storage.local.get(STORAGE_KEY);
-    return result[STORAGE_KEY] || DEFAULT_CONFIGURATIONS;
+async function loadSettings(): Promise<SiteConfiguration[]> {
+    const result = await chrome.storage.local.get(StorageKeys.Settings);
+    return result[StorageKeys.Settings] || defaultSettings.siteConfigurations;
 }
 
-async function saveConfigurations(configs: SiteConfiguration[]) {
-    await chrome.storage.local.set({ [STORAGE_KEY]: configs });
+async function saveSettings(settings: SiteConfiguration[]) {
+    await chrome.storage.local.set({ [StorageKeys.Settings]: settings });
 
     // Notify content scripts of the update
     const tabs = await chrome.tabs.query({});
@@ -16,22 +14,22 @@ async function saveConfigurations(configs: SiteConfiguration[]) {
         if (tab.id) {
             chrome.tabs.sendMessage(tab.id, {
                 type: 'CONFIGURATION_UPDATED',
-                configurations: configs,
+                configurations: settings,
             });
         }
     });
 }
 
-function displayConfigurations(configs: SiteConfiguration[]) {
+function displaySettings(settings: SiteConfiguration[]) {
     const configList = document.getElementById('configList');
     if (!configList) return;
 
-    configList.innerHTML = configs
+    configList.innerHTML = settings
         .map(
             (config) => `
         <div class="config-item">
             <strong>Site:</strong> ${config.uriMatcher}<br>
-            <strong>Ad Detector:</strong> ${config.adDetectorSelector}
+            <strong>Ad Selector:</strong> ${config.adSelector}
         </div>
     `
         )
@@ -47,8 +45,8 @@ function showError(message: string) {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const configs = await loadConfigurations();
-    displayConfigurations(configs);
+    const configs = await loadSettings();
+    displaySettings(configs);
 
     const uploadButton = document.getElementById('uploadButton');
     const configFile = document.getElementById(
@@ -80,16 +78,20 @@ document.addEventListener('DOMContentLoaded', async () => {
                 throw new Error('Invalid configuration format');
             }
 
-            await saveConfigurations(newConfigs);
-            displayConfigurations(newConfigs);
+            await saveSettings(newConfigs);
+            displaySettings(newConfigs);
             configFile.value = '';
         } catch (error) {
-            showError(`Error loading configuration: ${error.message}`);
+            const errorMessage =
+                typeof error === 'object' && error !== null && 'message' in error
+                    ? (error as { message: string }).message
+                    : String(error);
+            showError(`Error loading configuration: ${errorMessage}`);
         }
     });
 
     resetButton?.addEventListener('click', async () => {
-        await saveConfigurations(DEFAULT_CONFIGURATIONS);
-        displayConfigurations(DEFAULT_CONFIGURATIONS);
+        await saveSettings(defaultSettings.siteConfigurations);
+        displaySettings(defaultSettings.siteConfigurations);
     });
 });

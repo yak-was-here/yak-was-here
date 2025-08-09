@@ -2,7 +2,7 @@ import { SiteConfiguration } from './Configurations';
 
 export enum StorageKeys {
     MutedTabIds = 'mutedTabIds',
-    Configuration = 'configuration',
+    Settings = 'settings',
 }
 
 export interface Settings {
