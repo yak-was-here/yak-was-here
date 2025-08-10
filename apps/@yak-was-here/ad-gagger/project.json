@@ -99,9 +99,8 @@
         "copy-from-wsl-to-windows": {
             "executor": "nx:run-commands",
             "options": {
-                "command": [
-                    "rm -rf /mnt/c/temp/ad-gagger",
-                    "cp -r dist/apps/@yak-was-here/ad-gagger /mnt/c/temp/ad-gagger"
+                "commands": [
+                    "rsync -av --delete dist/apps/@yak-was-here/ad-gagger/ /mnt/c/temp/ad-gagger/"
                 ]
             },
             "dependsOn": ["build"]

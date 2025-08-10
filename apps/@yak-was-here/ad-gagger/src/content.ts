@@ -13,10 +13,10 @@ import { Settings, defaultSettings } from './types';
 /**
  * Mutes the tab if it is not already muted by the extension (indicated by being in the muted list); otherwise it might have been unmuted by the user (maybe they are interested in the ad)
  * @param tabId 
- * @param inMutedList 
- * @param muted 
  */
-function handleTabMute(tabId: number, inMutedList: boolean, muted: boolean): void {
+async function handleTabMute(tabId: number): Promise<void> {
+    const inMutedList = await isTabIdInMutedList(tabId);
+    const muted = await isCurrentTabMuted();
     if (!inMutedList && !muted) {
         setTabMuteState(tabId, true);
         
@@ -28,10 +28,10 @@ function handleTabMute(tabId: number, inMutedList: boolean, muted: boolean): voi
 /**
  * Unmutes the tab if it was muted by the extension (indicated by being in the muted list); otherwise it might have been muted by the user
  * @param tabId 
- * @param inMutedList 
- * @param muted 
  */
-function handleTabUnmute(tabId: number, inMutedList: boolean, muted: boolean): void {
+async function handleTabUnmute(tabId: number): Promise<void> {
+    const inMutedList = await isTabIdInMutedList(tabId);
+    const muted = await isCurrentTabMuted();
     if (inMutedList && muted) {
         setTabMuteState(tabId, false);
         
@@ -166,7 +166,7 @@ const init = async () => {
 
         // if the ad already exists
         if (ad) {
-            handleTabMute(tabId, inMutedList, muted);
+            handleTabMute(tabId);
             console.log('Ad Gagger: Ad already exists');
             console.log('Ad Gagger: tabId', tabId, 'inMutedList', inMutedList, 'muted', muted);
             
@@ -174,7 +174,7 @@ const init = async () => {
             // Set up observer to detect when the ad is over
             const adEndObserver = new MutationObserver(() => {
                 if (!adContainer.querySelector(siteConfiguration.adSelector)) {
-                    handleTabUnmute(tabId, inMutedList, muted);
+                    handleTabUnmute(tabId);
                     console.log('Ad Gagger: Ad no longer exists');
                     console.log('Ad Gagger: tabId', tabId, 'inMutedList', inMutedList, 'muted', muted);
                     adEndObserver.disconnect();
@@ -195,7 +195,7 @@ const init = async () => {
         const adStartObserver = new MutationObserver(() => {
             const ad: Element | null = adContainer.querySelector(siteConfiguration.adSelector);
             if (ad) {
-                handleTabMute(tabId, inMutedList, muted);
+                handleTabMute(tabId);
                 console.log('Ad Gagger: Ad started playing');
                 console.log('Ad Gagger: tabId', tabId, 'inMutedList', inMutedList, 'muted', muted);
 
@@ -203,7 +203,7 @@ const init = async () => {
                 adStartObserver.disconnect();
                 const adEndObserver = new MutationObserver(() => {
                     if (!adContainer.querySelector(siteConfiguration.adSelector)) {
-                        handleTabUnmute(tabId, inMutedList, muted);
+                        handleTabUnmute(tabId);
                         console.log('Ad Gagger: Ad ended');
                         console.log('Ad Gagger: tabId', tabId, 'inMutedList', inMutedList, 'muted', muted);
                         adEndObserver.disconnect();
