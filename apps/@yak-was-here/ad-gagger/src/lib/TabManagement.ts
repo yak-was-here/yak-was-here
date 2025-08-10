@@ -1,6 +1,10 @@
 import { StorageKeys } from '../types';
+import { getStorageValue, setStorageValue } from './SettingsManagement';
 
-// Function to get current tab ID
+/**
+ * Gets the ID of the current tab using the chrome runtime API
+ * @returns Promise that resolves to the current tab ID
+ */
 export async function getCurrentTabId(): Promise<number> {
     return new Promise((resolve) => {
         chrome.runtime.sendMessage(
@@ -19,34 +23,30 @@ export async function getCurrentTabId(): Promise<number> {
     });
 }
 
-// Function to check if tab should be muted
+/**
+ * Checks if a tab is in the local storage muted list
+ * @param tabId The ID of the tab to check
+ * @returns Promise that resolves to true if the tab is muted, false otherwise
+ */
 export async function isTabIdInMutedList(tabId: number): Promise<boolean> {
-    return new Promise((resolve) => {
-        chrome.storage.local.get([StorageKeys.MutedTabIds], (result) => {
-            const mutedTabIds: number[] = result[StorageKeys.MutedTabIds] || [];
-            resolve(mutedTabIds.includes(tabId));
-        });
-    });
+    const mutedTabIds = await getStorageValue(StorageKeys.MutedTabIds) ?? [];
+    return mutedTabIds.includes(tabId);
 }
 
 // Function to add tab to muted array
-export function addTabToMutedList(tabId: number) {
-    chrome.storage.local.get([StorageKeys.MutedTabIds], (result) => {
-        const mutedTabIds: number[] = result[StorageKeys.MutedTabIds] || [];
-        if (!mutedTabIds.includes(tabId)) {
-            mutedTabIds.push(tabId);
-            chrome.storage.local.set({ [StorageKeys.MutedTabIds]: mutedTabIds });
-        }
-    });
+export async function addTabToMutedList(tabId: number) {
+    const mutedList = await getStorageValue(StorageKeys.MutedTabIds) ?? [];
+    if (!mutedList.includes(tabId)) {
+        mutedList.push(tabId);
+        setStorageValue(StorageKeys.MutedTabIds, mutedList);
+    }
 }
 
 // Function to remove tab from muted array
-export function removeTabFromMutedList(tabId: number) {
-    chrome.storage.local.get([StorageKeys.MutedTabIds], (result) => {
-        const mutedTabIds: number[] = result[StorageKeys.MutedTabIds] || [];
-        const updatedIds = mutedTabIds.filter((id) => id !== tabId);
-        chrome.storage.local.set({ [StorageKeys.MutedTabIds]: updatedIds });
-    });
+export async function removeTabFromMutedList(tabId: number) {
+    const mutedList = await getStorageValue(StorageKeys.MutedTabIds) ?? [];
+    const updatedList = mutedList.filter((id) => id !== tabId);
+    setStorageValue(StorageKeys.MutedTabIds, updatedList);
 }
 
 /**

@@ -1,5 +1,6 @@
 import { removeTabFromMutedList } from './lib';
 
+// Receive messages from content scripts
 chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
     if (!request || !sender || !sender.tab || !sender.tab.id || !sender.tab.mutedInfo) {
         return;

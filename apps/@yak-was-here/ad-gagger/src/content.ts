@@ -10,28 +10,34 @@ import {
 } from './lib';
 import { Settings, defaultSettings } from './types';
 
-function conditionallyMuteTab(tabId: number, inMutedList: boolean, muted: boolean): boolean {
+/**
+ * Mutes the tab if it is not already muted by the extension (indicated by being in the muted list); otherwise it might have been unmuted by the user (maybe they are interested in the ad)
+ * @param tabId 
+ * @param inMutedList 
+ * @param muted 
+ */
+function handleTabMute(tabId: number, inMutedList: boolean, muted: boolean): void {
     if (!inMutedList && !muted) {
         setTabMuteState(tabId, true);
-        addTabToMutedList(tabId);
-
-        console.info('Ad Gagger: Ad detected. Muted.');
-
-        return true;
+        
+        console.log('Ad Gagger: Muted tab.');
     }
-    return false;
+    addTabToMutedList(tabId);
 }
 
-function conditionallyUnmuteTab(tabId: number, inMutedList: boolean, muted: boolean): boolean {
+/**
+ * Unmutes the tab if it was muted by the extension (indicated by being in the muted list); otherwise it might have been muted by the user
+ * @param tabId 
+ * @param inMutedList 
+ * @param muted 
+ */
+function handleTabUnmute(tabId: number, inMutedList: boolean, muted: boolean): void {
     if (inMutedList && muted) {
         setTabMuteState(tabId, false);
-        removeTabFromMutedList(tabId);
-
-        console.info('Ad Gagger: Ad no longer detected. Unmuted.');
-
-        return true;
+        
+        console.log('Ad Gagger: Unmuted tab.');
     }
-    return false;
+    removeTabFromMutedList(tabId);
 }
 
 // function handleSkipButtonChange(siteSettings: SiteConfiguration) {
@@ -45,7 +51,7 @@ function conditionallyUnmuteTab(tabId: number, inMutedList: boolean, muted: bool
 //         skipButton.offsetParent !== null &&
 //         !skipButton.disabled
 //     ) {
-//         console.info('Ad Gagger: Skip button detected. Skipping ad.');
+//         console.log('Ad Gagger: Skip button detected. Skipping ad.');
 
 //         try {
 //             // Try direct click first
@@ -116,8 +122,10 @@ const getSettings = async (): Promise<Settings> => {
     const savedSettings: Settings | null = null;
 
     if (savedSettings === null) {
-        console.error('Ad Gagger: No saved settings found, using default settings');
+        console.log('Ad Gagger: No saved settings found, using default settings');
     }
+
+    // save default settings to sync storage
 
     return savedSettings || defaultSettings;
 }
@@ -130,18 +138,20 @@ const init = async () => {
     const siteConfiguration = getSiteConfiguration(settings.siteConfigurations, window.location.href);
 
     if (!siteConfiguration) {
-        console.info('Ad Gagger: No site configuration found for this URL');
+        console.log('Ad Gagger: No site configuration found for this URL');
         return;
     }
 
     if (siteConfiguration && !siteConfiguration.active) {
-        console.info('Ad Gagger: Site configuration is not active');
+        console.log('Ad Gagger: Site configuration is not active');
         return;
     }
 
     const tabId = await getCurrentTabId();
     const inMutedList = await isTabIdInMutedList(tabId);
     const muted = await isCurrentTabMuted();
+
+    console.log('Ad Gagger: inMutedList', inMutedList);
 
     // Syncs the mute state of the current tab with the extension's last stored state for the tab
     if (inMutedList && !muted) {
@@ -156,13 +166,18 @@ const init = async () => {
 
         // if the ad already exists
         if (ad) {
-            conditionallyMuteTab(tabId, inMutedList, muted);
+            handleTabMute(tabId, inMutedList, muted);
+            console.log('Ad Gagger: Ad already exists');
+            console.log('Ad Gagger: tabId', tabId, 'inMutedList', inMutedList, 'muted', muted);
+            
 
             // Set up observer to detect when the ad is over
             const adEndObserver = new MutationObserver(() => {
                 if (!adContainer.querySelector(siteConfiguration.adSelector)) {
+                    handleTabUnmute(tabId, inMutedList, muted);
+                    console.log('Ad Gagger: Ad no longer exists');
+                    console.log('Ad Gagger: tabId', tabId, 'inMutedList', inMutedList, 'muted', muted);
                     adEndObserver.disconnect();
-                    conditionallyUnmuteTab(tabId, inMutedList, muted);
                 }
             });
 
@@ -180,14 +195,18 @@ const init = async () => {
         const adStartObserver = new MutationObserver(() => {
             const ad: Element | null = adContainer.querySelector(siteConfiguration.adSelector);
             if (ad) {
-                conditionallyMuteTab(tabId, inMutedList, muted);
+                handleTabMute(tabId, inMutedList, muted);
+                console.log('Ad Gagger: Ad started playing');
+                console.log('Ad Gagger: tabId', tabId, 'inMutedList', inMutedList, 'muted', muted);
 
                 // Transition to observing for disappearance
                 adStartObserver.disconnect();
                 const adEndObserver = new MutationObserver(() => {
                     if (!adContainer.querySelector(siteConfiguration.adSelector)) {
+                        handleTabUnmute(tabId, inMutedList, muted);
+                        console.log('Ad Gagger: Ad ended');
+                        console.log('Ad Gagger: tabId', tabId, 'inMutedList', inMutedList, 'muted', muted);
                         adEndObserver.disconnect();
-                        conditionallyUnmuteTab(tabId, inMutedList, muted);
                     }
                 });
 
@@ -214,8 +233,8 @@ const init = async () => {
         //     document.querySelector(siteConfiguration.adContainerSelector) ||
         //     document.body;
 
-        // console.info('Ad Gagger: adContainerSelector', adContainerSelector);
-        // console.info(
+        // console.log('Ad Gagger: adContainerSelector', adContainerSelector);
+        // console.log(
         //     'Ad Gagger: adDetectionElementSelector',
         //     siteConfiguration.adDetectorSelector
         // );
@@ -270,7 +289,7 @@ const init = async () => {
 
     // Listen for settings updates from popup
     chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-        if (message.type === 'CONFIGURATION_UPDATED') {
+        if (message.type === 'SETTINGS_UPDATED') {
             init();
         }
     });

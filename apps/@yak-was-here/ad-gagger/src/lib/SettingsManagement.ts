@@ -1,4 +1,4 @@
-import { Settings, SiteConfiguration, StorageKeys } from '../types';
+import { Settings, SiteConfiguration, StorageData, StorageKeys } from '../types';
 
 /**
  * Select site settings based on current URL and site configurations
@@ -12,15 +12,9 @@ export function getSiteConfiguration(
 ): SiteConfiguration | null {
     for (const siteConfiguration of siteConfigurations) {
         if (currentUrl.startsWith(siteConfiguration.uriMatcher)) {
-            console.info(
-                'Ad Gagger: Site configuration found',
-                siteConfiguration
-            );
             return siteConfiguration;
         }
     }
-
-    console.info('Ad Gagger: No site configuration found');
     return null;
 }
 
@@ -125,4 +119,18 @@ export async function saveSettings(
         console.error('Ad Gagger: Error saving settings', error);
         return false;
     }
+}
+
+
+export function getStorageValue<K extends StorageKeys>(
+    key: K
+): Promise<StorageData[K] | undefined> {
+    return chrome.storage.local.get(key).then(result => result[key]);
+}
+
+export function setStorageValue<K extends StorageKeys>(
+    key: K, 
+    value: StorageData[K]
+): Promise<void> {
+    return chrome.storage.local.set({ [key]: value });
 }

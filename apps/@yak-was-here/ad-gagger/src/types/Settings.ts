@@ -5,6 +5,11 @@ export enum StorageKeys {
     Settings = 'settings',
 }
 
+export interface StorageData {
+    [StorageKeys.MutedTabIds]: number[];
+    [StorageKeys.Settings]: Settings;
+}
+
 export interface Settings {
     siteConfigurations: SiteConfiguration[];
 }

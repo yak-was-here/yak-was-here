@@ -13,7 +13,7 @@ async function saveSettings(settings: SiteConfiguration[]) {
     tabs.forEach((tab) => {
         if (tab.id) {
             chrome.tabs.sendMessage(tab.id, {
-                type: 'CONFIGURATION_UPDATED',
+                type: 'SETTINGS_UPDATED',
                 configurations: settings,
             });
         }
