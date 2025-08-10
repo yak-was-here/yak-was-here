@@ -8,7 +8,7 @@
         "build": {
             "executor": "@nx/esbuild:esbuild",
             "outputs": ["{options.outputPath}"],
-            "defaultConfiguration": "production",
+            "defaultConfiguration": "development",
             "options": {
                 "platform": "browser",
                 "outputPath": "dist/apps/@yak-was-here/ad-gagger",
@@ -40,7 +40,7 @@
                 ],
                 "generatePackageJson": false,
                 "esbuildOptions": {
-                    "sourcemap": false,
+                    "sourcemap": true,
                     "outExtension": {
                         ".js": ".js"
                     }
@@ -53,7 +53,15 @@
                 "{projectRoot}/src/assets/images/*.png"
             ],
             "configurations": {
-                "development": {},
+                "development": {
+                    "minify": true,
+                    "esbuildOptions": {
+                        "sourcemap": true,
+                        "outExtension": {
+                            ".js": ".js"
+                        }
+                    }
+                },
                 "production": {
                     "minify": true,
                     "esbuildOptions": {

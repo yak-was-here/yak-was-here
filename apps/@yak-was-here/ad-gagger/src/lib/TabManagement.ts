@@ -90,15 +90,3 @@ export function setCurrentTabMuteState(mute: boolean): void {
     });
     console.info(`Ad Gagger: Current tab ${mute ? 'muted' : 'unmuted'}`);
 }
-
-/**
- * Syncs the mute state of the current tab with the extension's last stored state for the tab
- */
-export async function syncTabMuteStateWithStorage() {
-    const tabId = await getCurrentTabId();
-    const shouldBeMuted = await isTabIdInMutedList(tabId);
-
-    if (shouldBeMuted) {
-        setTabMuteState(tabId, true);
-    }
-}

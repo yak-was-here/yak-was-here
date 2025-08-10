@@ -6,10 +6,9 @@ import {
     removeTabFromMutedList,
     getSiteConfiguration,
     setTabMuteState,
-    syncTabMuteStateWithStorage,
     // retrieveSavedSettings,
 } from './lib';
-import { Settings, defaultSettings, SiteConfiguration, StorageKeys } from './types';
+import { Settings, defaultSettings } from './types';
 
 function conditionallyMuteTab(tabId: number, inMutedList: boolean, muted: boolean): boolean {
     if (!inMutedList && !muted) {
@@ -128,19 +127,32 @@ const init = async () => {
     // let didClickSkipButton = false;
     
     const settings = await getSettings();
-    const pageConfiguration = getSiteConfiguration(settings.siteConfigurations, window.location.href);
+    const siteConfiguration = getSiteConfiguration(settings.siteConfigurations, window.location.href);
+
+    if (!siteConfiguration) {
+        console.info('Ad Gagger: No site configuration found for this URL');
+        return;
+    }
+
+    if (siteConfiguration && !siteConfiguration.active) {
+        console.info('Ad Gagger: Site configuration is not active');
+        return;
+    }
 
     const tabId = await getCurrentTabId();
     const inMutedList = await isTabIdInMutedList(tabId);
     const muted = await isCurrentTabMuted();
 
-    syncTabMuteStateWithStorage();
+    // Syncs the mute state of the current tab with the extension's last stored state for the tab
+    if (inMutedList && !muted) {
+        setTabMuteState(tabId, true);
+    }
 
-    if (pageConfiguration) {
+    if (siteConfiguration) {
 
-        const adContainer = (pageConfiguration.adContainerSelector && document.querySelector(pageConfiguration.adContainerSelector)) || document;
+        const adContainer = (siteConfiguration.adContainerSelector && document.querySelector(siteConfiguration.adContainerSelector)) || document;
         
-        const ad: Element | null = adContainer.querySelector(pageConfiguration.adSelector);
+        const ad: Element | null = adContainer.querySelector(siteConfiguration.adSelector);
 
         // if the ad already exists
         if (ad) {
@@ -148,7 +160,7 @@ const init = async () => {
 
             // Set up observer to detect when the ad is over
             const adEndObserver = new MutationObserver(() => {
-                if (!adContainer.querySelector(pageConfiguration.adSelector)) {
+                if (!adContainer.querySelector(siteConfiguration.adSelector)) {
                     adEndObserver.disconnect();
                     conditionallyUnmuteTab(tabId, inMutedList, muted);
                 }
@@ -166,14 +178,14 @@ const init = async () => {
 
         // Set up observer to detect appearance
         const adStartObserver = new MutationObserver(() => {
-            const ad: Element | null = adContainer.querySelector(pageConfiguration.adSelector);
+            const ad: Element | null = adContainer.querySelector(siteConfiguration.adSelector);
             if (ad) {
                 conditionallyMuteTab(tabId, inMutedList, muted);
 
                 // Transition to observing for disappearance
                 adStartObserver.disconnect();
                 const adEndObserver = new MutationObserver(() => {
-                    if (!adContainer.querySelector(pageConfiguration.adSelector)) {
+                    if (!adContainer.querySelector(siteConfiguration.adSelector)) {
                         adEndObserver.disconnect();
                         conditionallyUnmuteTab(tabId, inMutedList, muted);
                     }
