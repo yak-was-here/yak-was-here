@@ -18,7 +18,7 @@ const activeObservers: MutationObserver[] = [];
 /**
  * The URL that will be used for selecting a site configuration
  */
-let siteConfigurationURL = window.location.href;
+let siteConfigurationURL: string | null = null;
 
 /**
  * Settings for the extension
@@ -100,20 +100,14 @@ const startURLWatcher = () => {
 // window.addEventListener('locationchange', () => handleNavigation('custom-locationchange'));
 
 /**
- * Initialize the tab
+ * Initialize
  */
-const initializeTab = async () => {
-    console.log('Ad Gagger: Initializing tab');
+const init = async () => {
+    console.log('Ad Gagger: Initializing');
 
-    const tabId = await getCurrentTabId();
-    const muted = await isCurrentTabMuted();
-    const inMutedList = await isTabIdInMutedList(tabId);
-
-    // Syncs the mute state of the current tab with the extension's last stored state for the tab (if the tab is closed the tab id will automatically be removed from the mute list)
-    if (inMutedList && !muted) {
-        console.log('Ad Gagger: Tab found in muted list');
-        setTabMuteState(tabId, true);
-    }
+    await loadSettings();
+    siteConfigurationURL = window.location.href;
+    await loadSiteConfiguration();
 }
 
 /**
@@ -131,6 +125,8 @@ const updateSettings = async () => {
  */
 const updateSiteConfiguration = async () => {
     console.log('Ad Gagger: Updating site configuration');
+
+    handleTabUnmute(await getCurrentTabId());
 
     siteConfigurationURL = window.location.href;
     await loadSiteConfiguration();
@@ -454,9 +450,4 @@ const startObserver = (
     });
 };
 
-initializeTab();
-
-// This is done instead of calling updateSettings() because setUpAdDetection() should not start until DOM content is loaded and updateSettings() ends up triggering setUpAdDetection()
-loadSettings().then(() => {
-    loadSiteConfiguration();
-});
+init();
