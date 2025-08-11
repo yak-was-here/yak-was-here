@@ -16,9 +16,9 @@ import { Settings, SiteConfiguration, defaultSettings } from './types';
 const activeObservers: MutationObserver[] = [];
 
 /**
- * Track current URL for navigation detection
+ * The URL that will be used for selecting a site configuration
  */
-let currentURL = window.location.href;
+let siteConfigurationURL = window.location.href;
 
 /**
  * Settings for the extension
@@ -42,44 +42,62 @@ chrome.runtime.onMessage.addListener((message) => {
     }
 });
 
-// Handle SPA navigation where full page reloads do not trigger the extension content script to be reinitialized automatically
+// Handle SPA navigation where full page reloads do not trigger the extension 
+// content script to be reinitialized automatically.
+// Optimized for React 18+ concurrent features and state batching
+// with a fallback URL interval checker
 
-// Listen for back/forward button navigation and reinitialize
-window.addEventListener('popstate', () => {
-    console.log('Ad Gagger: popstate fired');
-    if (window.location.href !== currentURL) {
-        console.log('Ad Gagger: Navigation detected via popstate:', currentURL, '->', window.location.href);
+/**
+ * Centralized navigation handler
+ */
+const handleNavigation = (navigationSource: string) => {
+    const newURL = window.location.href;
+    if (newURL !== siteConfigurationURL) {
+        console.log(`Ad Gagger: Navigation detected via ${navigationSource}:`, siteConfigurationURL, '->', newURL);
         updateSiteConfiguration();
     }
+};
+
+// Listen for back/forward button navigation
+window.addEventListener('popstate', () => {
+    handleNavigation('popstate');
 });
 
-// Listen for programmatic navigation (pushState/replaceState) and update site configuration
+// Listen for programmatic navigation (pushState/replaceState)
 const originalPushState = history.pushState;
 const originalReplaceState = history.replaceState;
 
 history.pushState = function(...args) {
-    console.log('Ad Gagger: pushState called with args:', args);
     originalPushState.apply(history, args);
-    setTimeout(() => {
-        console.log('Ad Gagger: After pushState');
-        if (window.location.href !== currentURL) {
-            console.log('Ad Gagger: Navigation detected via pushState:', currentURL, '->', window.location.href);
-            updateSiteConfiguration();
-        }
-    }, 100);
+    // React 18+ may batch updates, use multiple timing checks
+    handleNavigation('pushState-sync');
+    setTimeout(() => handleNavigation('pushState-batch'), 0); // Next tick
+    setTimeout(() => handleNavigation('pushState-delayed'), 50); // After React updates
 };
 
 history.replaceState = function(...args) {
-    console.log('Ad Gagger: replaceState called with args:', args);
     originalReplaceState.apply(history, args);
-    setTimeout(() => {
-        console.log('Ad Gagger: After replaceState');
-        if (window.location.href !== currentURL) {
-            console.log('Ad Gagger: Navigation detected via replaceState:', currentURL, '->', window.location.href);
-            updateSiteConfiguration();
-        }
-    }, 100);
+    // React 18+ may batch updates, use multiple timing checks  
+    handleNavigation('replaceState-sync');
+    setTimeout(() => handleNavigation('replaceState-batch'), 0); // Next tick
+    setTimeout(() => handleNavigation('replaceState-delayed'), 50); // After React updates
 };
+
+let urlCheckInterval: number;
+/**
+ * Starts a periodic URL watcher to handle cases where navigation events are missed; a fallback technique
+ */
+const startURLWatcher = () => {
+    if (urlCheckInterval) clearInterval(urlCheckInterval);
+    urlCheckInterval = window.setInterval(() => {
+        handleNavigation('interval-watcher');
+    }, 2000);
+};
+// startURLWatcher();
+
+// !Listen for custom framework events (uncomment as needed)
+// document.addEventListener('routechange', () => handleNavigation('custom-routechange'));
+// window.addEventListener('locationchange', () => handleNavigation('custom-locationchange'));
 
 /**
  * Initialize the tab
@@ -106,7 +124,6 @@ const updateSettings = async () => {
 
     await loadSettings();
     await updateSiteConfiguration();
-
 }
 
 /**
@@ -115,7 +132,7 @@ const updateSettings = async () => {
 const updateSiteConfiguration = async () => {
     console.log('Ad Gagger: Updating site configuration');
 
-    currentURL = window.location.href;
+    siteConfigurationURL = window.location.href;
     await loadSiteConfiguration();
     setUpAdDetection();
 }
@@ -149,7 +166,7 @@ const setUpAdDetection = async () => {
     await cleanup();
 
     if (!siteConfiguration) {
-        console.log('Ad Gagger: No site configuration found for this URL.', currentURL);
+        console.log('Ad Gagger: No site configuration found for this URL.', siteConfigurationURL);
         return;
     }
 
@@ -350,14 +367,14 @@ const loadSettings = async () => {
 const loadSiteConfiguration = async () => {
     console.log('Ad Gagger: Loading site configuration');
 
-    if (!settings || !currentURL) {
+    if (!settings || !siteConfigurationURL) {
         console.log('Ad Gagger: Could not load site configuration');
         return;
     }
 
     siteConfiguration = getSiteConfiguration(
         settings.siteConfigurations,
-        currentURL
+        siteConfigurationURL
     );
 }
 
