@@ -6,7 +6,7 @@ import {
     removeTabFromMutedList,
     getSiteConfiguration,
     setTabMuteState,
-    // retrieveSavedSettings,
+    retrieveSavedSettings,
 } from './lib';
 import { Settings, SiteConfiguration, defaultSettings } from './types';
 
@@ -32,13 +32,13 @@ let siteConfiguration: SiteConfiguration | null = null;
 
 // Wait for DOM content to start detecting ads
 document.addEventListener('DOMContentLoaded',  () => {
-    startDetection();
+    setUpAdDetection();
 });
 
 // Listen for settings updates from popup and reinitializes
 chrome.runtime.onMessage.addListener((message) => {
     if (message.type === 'SETTINGS_UPDATED') {
-        init();
+        updateSettings();
     }
 });
 
@@ -46,14 +46,14 @@ chrome.runtime.onMessage.addListener((message) => {
 
 // Listen for back/forward button navigation and reinitialize
 window.addEventListener('popstate', () => {
-    console.log('Ad Gagger: popstate fired', window.location.href, 'vs', currentURL);
+    console.log('Ad Gagger: popstate fired');
     if (window.location.href !== currentURL) {
-        console.log('Ad Gagger: Navigation detected via popstate');
-        init();
+        console.log('Ad Gagger: Navigation detected via popstate:', currentURL, '->', window.location.href);
+        updateSiteConfiguration();
     }
 });
 
-// Listen for programmatic navigation (pushState/replaceState) and reinitialize
+// Listen for programmatic navigation (pushState/replaceState) and update site configuration
 const originalPushState = history.pushState;
 const originalReplaceState = history.replaceState;
 
@@ -61,94 +61,100 @@ history.pushState = function(...args) {
     console.log('Ad Gagger: pushState called with args:', args);
     originalPushState.apply(history, args);
     setTimeout(() => {
-        console.log('Ad Gagger: After pushState, URL:', window.location.href, 'vs', currentURL);
+        console.log('Ad Gagger: After pushState');
         if (window.location.href !== currentURL) {
-            console.log('Ad Gagger: Navigation detected via pushState');
-            init();
+            console.log('Ad Gagger: Navigation detected via pushState:', currentURL, '->', window.location.href);
+            updateSiteConfiguration();
         }
-    }, 100); // Increased timeout
+    }, 100);
 };
 
 history.replaceState = function(...args) {
     console.log('Ad Gagger: replaceState called with args:', args);
     originalReplaceState.apply(history, args);
     setTimeout(() => {
-        console.log('Ad Gagger: After replaceState, URL:', window.location.href, 'vs', currentURL);
+        console.log('Ad Gagger: After replaceState');
         if (window.location.href !== currentURL) {
-            console.log('Ad Gagger: Navigation detected via replaceState');
-            init();
+            console.log('Ad Gagger: Navigation detected via replaceState:', currentURL, '->', window.location.href);
+            updateSiteConfiguration();
         }
-    }, 100); // Increased timeout
+    }, 100);
 };
 
-// Add a fallback URL watcher for debugging
-setInterval(() => {
-    if (window.location.href !== currentURL) {
-        console.log('Ad Gagger: URL changed detected by interval watcher:', currentURL, '->', window.location.href);
-        init();
-    }
-}, 1000);
-
 /**
- * Initialization runs before the DOM is loaded
+ * Initialize the tab
  */
-const init = async () => {
-    await cleanup();
-
-    console.log('Ad Gagger: Initializing content script');
+const initializeTab = async () => {
+    console.log('Ad Gagger: Initializing tab');
 
     const tabId = await getCurrentTabId();
     const muted = await isCurrentTabMuted();
     const inMutedList = await isTabIdInMutedList(tabId);
-    
-    // Update the current URL tracking
-    currentURL = window.location.href;
 
-    // Syncs the mute state of the current tab with the extension's last stored state for the tab (it may still be on the muted list after navigation or on reloads, but if the tab is closed the tab id will automatically be removed from the mute list)
+    // Syncs the mute state of the current tab with the extension's last stored state for the tab (if the tab is closed the tab id will automatically be removed from the mute list)
     if (inMutedList && !muted) {
-        setTabMuteState(tabId, true);
-
         console.log('Ad Gagger: Tab found in muted list');
+        setTabMuteState(tabId, true);
     }
+}
 
-    settings = await getSettings();
-    siteConfiguration = getSiteConfiguration(
-        settings.siteConfigurations,
-        currentURL
-    );
+/**
+ * Update settings; should only be called when settings actually change
+ */
+const updateSettings = async () => {
+    console.log('Ad Gagger: Updating settings');
+
+    await loadSettings();
+    await updateSiteConfiguration();
 
 }
 
-// First-time initialization
-init();
+/**
+ * Update site configuration; should only be called when settings change or URL changes
+ */
+const updateSiteConfiguration = async () => {
+    console.log('Ad Gagger: Updating site configuration');
+
+    currentURL = window.location.href;
+    await loadSiteConfiguration();
+    setUpAdDetection();
+}
 
 /**
- * Checks if the site configuration is usable.
- * @param siteConfiguration The site configuration to check.
- * @returns True if the site configuration is usable, false otherwise.
+ * Waits for settings. Uses exponential backoff if settings are null, doubling the timeout each retry.
+ * @param startingTimeoutMs - Starting timeout in milliseconds (defaults to 100ms)
  */
-const canUseSiteConfiguration = (
-    siteConfiguration: SiteConfiguration | null
-): boolean => {
-    if (!siteConfiguration) {
-        console.log('Ad Gagger: No site configuration found for this URL.');
-        return false;
+const waitForSettings = (startingTimeoutMs = 100) => {
+    if (settings) {
+        setUpAdDetection();
+    } else {
+        console.log(`Ad Gagger: Settings not yet available. Trying again in ${startingTimeoutMs}ms`);
+        setTimeout(() => {
+            waitForSettings(startingTimeoutMs * 2);
+        }, startingTimeoutMs);
     }
-
-    if (siteConfiguration && !siteConfiguration.active) {
-        console.log('Ad Gagger: Site configuration is not active.');
-        return false;
-    }
-
-    return true;
 };
 
 /**
  * Detection runs after the DOM content is loaded
  * @returns 
  */
-const startDetection = async () => {
-    if (!canUseSiteConfiguration(siteConfiguration) || !siteConfiguration) {
+const setUpAdDetection = async () => {
+
+    if (!settings) {
+        waitForSettings();
+        return;
+    }
+
+    await cleanup();
+
+    if (!siteConfiguration) {
+        console.log('Ad Gagger: No site configuration found for this URL.', currentURL);
+        return;
+    }
+
+    if (siteConfiguration && !siteConfiguration.active) {
+        console.log('Ad Gagger: Site configuration found but it is not active.');
         return;
     }
 
@@ -206,14 +212,16 @@ const startDetection = async () => {
  * Cleanup
  */
 const cleanup = async () => {
-    activeObservers.forEach((observer) => observer.disconnect());
-    activeObservers.length = 0;
+    if (activeObservers.length > 0) {
+        activeObservers.forEach((observer) => observer.disconnect());
+        activeObservers.length = 0;
 
-    console.log('Ad Gagger: Cleaned up');
+        console.log('Ad Gagger: Cleaned up old observers');
+    }
 };
 
 /**
- * Mutes the tab if it is not already muted by the extension (indicated by being in the muted list); otherwise it might have been unmuted by the user (maybe they are interested in the ad)
+ * Mute the tab if it is not already muted by the extension (indicated by being in the muted list); otherwise it might have been unmuted by the user (maybe they are interested in the ad)
  * @param tabId 
  */
 const handleTabMute = async (tabId: number): Promise<void> => {
@@ -228,7 +236,7 @@ const handleTabMute = async (tabId: number): Promise<void> => {
 }
 
 /**
- * Unmutes the tab if it was muted by the extension (indicated by being in the muted list); otherwise it might have been muted by the user
+ * Unmute the tab if it was muted by the extension (indicated by being in the muted list); otherwise it might have been muted by the user
  * @param tabId 
  */
 const handleTabUnmute = async (tabId: number): Promise<void> => {
@@ -320,18 +328,37 @@ const handleTabUnmute = async (tabId: number): Promise<void> => {
 // }
 
 /**
- * Retrieves the settings for the extension or falls back to default settings.
- * @returns The settings for the extension.
+ * Loads the saved settings or falls back to default settings.
  */
-const getSettings = async (): Promise<Settings> => {
+const loadSettings = async () => {
     // const savedSettings = await retrieveSavedSettings();
     const savedSettings: Settings | null = null;
 
     if (savedSettings === null) {
-        console.log('Ad Gagger: No saved settings found, using default settings');
+        settings = defaultSettings;
+        console.log('Ad Gagger: No saved settings found, using default settings', defaultSettings);
+    } else {
+        settings = savedSettings;
+        console.log('Ad Gagger: Using saved settings', savedSettings);
     }
 
-    return savedSettings || defaultSettings;
+}
+
+/**
+ * Loads the site configuration from current settings.
+ */
+const loadSiteConfiguration = async () => {
+    console.log('Ad Gagger: Loading site configuration');
+
+    if (!settings || !currentURL) {
+        console.log('Ad Gagger: Could not load site configuration');
+        return;
+    }
+
+    siteConfiguration = getSiteConfiguration(
+        settings.siteConfigurations,
+        currentURL
+    );
 }
 
 /**
@@ -352,6 +379,8 @@ const waitForAdEnd = (adContainer: Document | Element, siteConfiguration: SiteCo
     });
 
     startObserver(adEndObserver, adContainer);
+
+    console.log('Ad Gagger: Waiting for ad end');
 }
 
 /**
@@ -374,6 +403,8 @@ const waitForAdStart = (adContainer: Document | Element, siteConfiguration: Site
     });
 
     startObserver(adStartObserver, adContainer);
+
+    console.log('Ad Gagger: Waiting for ad start');
 }
 
 /**
@@ -404,3 +435,9 @@ const startObserver = (
     });
 };
 
+initializeTab();
+
+// This is done instead of calling updateSettings() because setUpAdDetection() should not start until DOM content is loaded and updateSettings() ends up triggering setUpAdDetection()
+loadSettings().then(() => {
+    loadSiteConfiguration();
+});

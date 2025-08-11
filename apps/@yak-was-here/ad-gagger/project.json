@@ -54,9 +54,9 @@
             ],
             "configurations": {
                 "development": {
-                    "minify": true,
+                    "minify": false,
                     "esbuildOptions": {
-                        "sourcemap": true,
+                        "sourcemap": false,
                         "outExtension": {
                             ".js": ".js"
                         }
@@ -65,7 +65,7 @@
                 "production": {
                     "minify": true,
                     "esbuildOptions": {
-                        "sourcemap": false,
+                        "sourcemap": true,
                         "outExtension": {
                             ".js": ".js"
                         }
