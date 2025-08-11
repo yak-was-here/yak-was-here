@@ -375,6 +375,8 @@ const waitForAdEnd = (adContainer: Document | Element, siteConfiguration: SiteCo
             stopObserver(adEndObserver);
 
             console.log('Ad Gagger: Ad ended');
+
+            waitForAdStart(adContainer, siteConfiguration, tabId);
         }
     });
 

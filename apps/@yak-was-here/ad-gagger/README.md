@@ -9,10 +9,8 @@ Automatically mute and skip video ads on YouTube, Twitch, and any website you co
 
 ## TODO
 
-- [ ] Check if a site configuration is active before initializing content script
 - [ ] Use sync storage for settings
-- [ ] Handle reloads and forward and backward navigations
 - [ ] Allow import/export of configurations
 - [ ] Reset settings button
-- [ ] Set a timeout for unmuting the tab on Twitch based on the Twitch ad timer?
 - [ ] Skip the new "Using ad blocker?" message that Twitch shows
+- [ ] Support Kick.com
