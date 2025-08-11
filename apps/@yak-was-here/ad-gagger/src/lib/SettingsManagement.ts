@@ -3,15 +3,15 @@ import { Settings, SiteConfiguration, StorageData, StorageKeys } from '../types'
 /**
  * Select site settings based on current URL and site configurations
  * @param siteConfigurations
- * @param currentUrl
+ * @param currentURL
  * @returns
  */
 export function getSiteConfiguration(
     siteConfigurations: SiteConfiguration[],
-    currentUrl: string
+    currentURL: string
 ): SiteConfiguration | null {
     for (const siteConfiguration of siteConfigurations) {
-        if (currentUrl.startsWith(siteConfiguration.uriMatcher)) {
+        if (currentURL.startsWith(siteConfiguration.uriMatcher)) {
             return siteConfiguration;
         }
     }
