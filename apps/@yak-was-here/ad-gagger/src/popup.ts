@@ -28,7 +28,7 @@ function displaySettings(settings: SiteConfiguration[]) {
         .map(
             (config) => `
         <div class="config-item">
-            <strong>Site:</strong> ${config.uriMatcher}<br>
+            <strong>Domain:</strong> ${config.domain}<br>
             <strong>Ad Selector:</strong> ${config.adSelector}
         </div>
     `

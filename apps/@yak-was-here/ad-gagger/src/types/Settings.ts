@@ -18,14 +18,14 @@ export const defaultSettings: Settings = {
     siteConfigurations: [
         {
             active: true,
-            uriMatcher: 'https://www.twitch.tv/',
+            domain: 'www.twitch.tv',
             adSelector: '[data-a-target="video-ad-label"]',
             adContainerSelector: '[data-a-target="video-player"]',
             adCloseButtonSelector: '[aria-label="Return to stream"]',
         },
         {
             active: true,
-            uriMatcher: 'https://www.youtube.com/',
+            domain: 'www.youtube.com',
             adSelector: 'div.html5-video-player.ad-showing',
             adContainerSelector: 'div.html5-video-player',
             adCloseButtonSelector:

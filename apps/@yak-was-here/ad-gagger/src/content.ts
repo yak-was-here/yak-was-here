@@ -7,6 +7,7 @@ import {
     getSiteConfiguration,
     setTabMuteState,
     retrieveSavedSettings,
+    urlsHaveSameHostname,
 } from './lib';
 import { Settings, SiteConfiguration, defaultSettings } from './types';
 
@@ -93,7 +94,7 @@ const startURLWatcher = () => {
         handleNavigation('interval-watcher');
     }, 2000);
 };
-// startURLWatcher();
+startURLWatcher();
 
 // !Listen for custom framework events (uncomment as needed)
 // document.addEventListener('routechange', () => handleNavigation('custom-routechange'));
@@ -128,8 +129,14 @@ const updateSiteConfiguration = async () => {
 
     handleTabUnmute(await getCurrentTabId());
 
-    siteConfigurationURL = window.location.href;
-    await loadSiteConfiguration();
+    const oldURL = siteConfigurationURL;
+    const newURL = window.location.href;
+    siteConfigurationURL = newURL;
+
+    if (!urlsHaveSameHostname(newURL, oldURL ?? '')) {
+        await loadSiteConfiguration();
+    }
+
     setUpAdDetection();
 }
 

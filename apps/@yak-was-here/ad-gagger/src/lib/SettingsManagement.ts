@@ -11,11 +11,68 @@ export function getSiteConfiguration(
     currentURL: string
 ): SiteConfiguration | null {
     for (const siteConfiguration of siteConfigurations) {
-        if (currentURL.startsWith(siteConfiguration.uriMatcher)) {
+        if (urlBelongsToDomain(siteConfiguration.domain, currentURL)) {
             return siteConfiguration;
         }
     }
     return null;
+}
+
+/**
+ * Checks if a given URL belongs to the specified domain.
+ * Ignores cases where the domain appears as a query parameter value.
+ * 
+ * @param domain - The domain to check against (e.g., "example.com")
+ * @param currentUrl - The URL to test (e.g., "https://example.com/path")
+ * @returns true if the URL belongs to the domain, false otherwise
+ */
+export function urlBelongsToDomain(domain: string, currentUrl: string): boolean {
+    if (!domain || !currentUrl) {
+        return false;
+    }
+
+    try {
+        const url = new URL(currentUrl);
+        const hostname = url.hostname;
+        
+        // Escape special regex characters in the domain
+        const escapedDomain = domain.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        
+        // Create regex pattern that matches the domain at the end of hostname
+        // This handles both exact matches and subdomains
+        // ^(.+\.)?domain\.com$ - matches example.com, sub.example.com, but not fakeexample.com
+        const domainPattern = new RegExp(`^(.+\\.)?${escapedDomain}$`, 'i');
+        
+        return domainPattern.test(hostname);
+    } catch {
+        // Invalid URL format
+        return false;
+    }
+}
+
+/**
+ * Compares two URLs to check if they have the same hostname. 
+ * Example: 
+ * `urlsHaveSameDomain("https://sub.example.com/page1", "https://example.com/page2") // false (different hostnames)`
+ * 
+ * @param url1 - The first URL to compare (e.g., "https://example.com/path1")
+ * @param url2 - The second URL to compare (e.g., "https://example.com/path2")
+ * @returns true if both URLs have the same hostname, false otherwise
+ */
+export function urlsHaveSameHostname(url1: string, url2: string): boolean {
+    if (!url1 || !url2) {
+        return false;
+    }
+
+    try {
+        const parsedUrl1 = new URL(url1);
+        const parsedUrl2 = new URL(url2);
+        
+        return parsedUrl1.hostname.toLowerCase() === parsedUrl2.hostname.toLowerCase();
+    } catch {
+        // Invalid URL format
+        return false;
+    }
 }
 
 /**
@@ -27,8 +84,8 @@ function isSiteConfiguration(obj: unknown): obj is SiteConfiguration {
         typeof obj === 'object' &&
         'active' in obj &&
         typeof (obj as SiteConfiguration).active === 'boolean' &&
-        'uriMatcher' in obj &&
-        typeof (obj as SiteConfiguration).uriMatcher === 'string' &&
+        'domain' in obj &&
+        typeof (obj as SiteConfiguration).domain === 'string' &&
         'adSelector' in obj &&
         typeof (obj as SiteConfiguration).adSelector === 'string' &&
         'adContainerSelector' in obj &&
