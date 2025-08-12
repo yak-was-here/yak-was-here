@@ -1,4 +1,4 @@
-import { removeTabFromMutedList } from './lib';
+import { handleTabUnmute, removeTabFromMutedList, setTabMuteState } from './lib';
 
 // Receive messages from content scripts
 chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
@@ -33,5 +33,5 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
 });
 
 chrome.tabs.onRemoved.addListener(async (tabId) => {
-    removeTabFromMutedList(tabId);
+    await handleTabUnmute(tabId);
 });

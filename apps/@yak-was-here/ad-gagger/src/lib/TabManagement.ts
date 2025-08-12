@@ -90,3 +90,33 @@ export function setCurrentTabMuteState(mute: boolean): void {
     });
     console.info(`Ad Gagger: Current tab ${mute ? 'muted' : 'unmuted'}`);
 }
+
+/**
+ * Mute the tab if it is not already muted by the extension (indicated by being in the muted list); otherwise it might have been unmuted by the user (maybe they are interested in the ad)
+ * @param tabId 
+ */
+export const handleTabMute = async (tabId: number): Promise<void> => {
+    const inMutedList = await isTabIdInMutedList(tabId);
+    const muted = await isCurrentTabMuted();
+    if (!inMutedList && !muted) {
+        setTabMuteState(tabId, true);
+        
+        console.log('Ad Gagger: Muted tab.');
+    }
+    await addTabToMutedList(tabId);
+}
+
+/**
+ * Unmute the tab if it was muted by the extension (indicated by being in the muted list); otherwise it might have been muted by the user
+ * @param tabId 
+ */
+export const handleTabUnmute = async (tabId: number): Promise<void> => {
+    const inMutedList = await isTabIdInMutedList(tabId);
+    const muted = await isCurrentTabMuted();
+    if (inMutedList && muted) {
+        setTabMuteState(tabId, false);
+        
+        console.log('Ad Gagger: Unmuted tab.');
+    }
+    await removeTabFromMutedList(tabId);
+}

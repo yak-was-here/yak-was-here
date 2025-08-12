@@ -1,13 +1,10 @@
 import {
-    addTabToMutedList,
     getCurrentTabId,
-    isTabIdInMutedList,
-    isCurrentTabMuted,
-    removeTabFromMutedList,
     getSiteConfiguration,
-    setTabMuteState,
     retrieveSavedSettings,
     urlsHaveSameHostname,
+    handleTabUnmute,
+    handleTabMute,
 } from './lib';
 import { Settings, SiteConfiguration, defaultSettings } from './types';
 
@@ -100,11 +97,15 @@ startURLWatcher();
 // document.addEventListener('routechange', () => handleNavigation('custom-routechange'));
 // window.addEventListener('locationchange', () => handleNavigation('custom-locationchange'));
 
+// !Intersection Observer for YouTube?
+
 /**
  * Initialize
  */
 const init = async () => {
     console.log('Ad Gagger: Initializing');
+
+    await handleTabUnmute(await getCurrentTabId());
 
     await loadSettings();
     siteConfigurationURL = window.location.href;
@@ -126,8 +127,6 @@ const updateSettings = async () => {
  */
 const updateSiteConfiguration = async () => {
     console.log('Ad Gagger: Updating site configuration');
-
-    handleTabUnmute(await getCurrentTabId());
 
     const oldURL = siteConfigurationURL;
     const newURL = window.location.href;
@@ -160,13 +159,13 @@ const waitForSettings = (startingTimeoutMs = 100) => {
  * @returns 
  */
 const setUpAdDetection = async () => {
+    await cleanup();
+    console.log('Ad Gagger: activeObservers after cleanup: ', activeObservers);
 
     if (!settings) {
         waitForSettings();
         return;
     }
-
-    await cleanup();
 
     if (!siteConfiguration) {
         console.log('Ad Gagger: No site configuration found for this URL.', siteConfigurationURL);
@@ -187,6 +186,8 @@ const setUpAdDetection = async () => {
         document;
 
     waitForAdStart(adContainer, siteConfiguration, await getCurrentTabId());
+
+    console.log('Ad Gagger: activeObservers after waitForAdStart: ', activeObservers);
 
     // const adObserver = new MutationObserver(
     //     createDebouncedHandler(100, () => {
@@ -229,45 +230,23 @@ const setUpAdDetection = async () => {
 };
 
 /**
- * Cleanup
+ * Cleanup tasks
  */
 const cleanup = async () => {
+    await handleTabUnmute(await getCurrentTabId());
+    cleanUpObservers();
+};
+
+/**
+ * Cleans up old observers
+ */
+const cleanUpObservers = () => {
     if (activeObservers.length > 0) {
         activeObservers.forEach((observer) => observer.disconnect());
         activeObservers.length = 0;
 
         console.log('Ad Gagger: Cleaned up old observers');
     }
-};
-
-/**
- * Mute the tab if it is not already muted by the extension (indicated by being in the muted list); otherwise it might have been unmuted by the user (maybe they are interested in the ad)
- * @param tabId 
- */
-const handleTabMute = async (tabId: number): Promise<void> => {
-    const inMutedList = await isTabIdInMutedList(tabId);
-    const muted = await isCurrentTabMuted();
-    if (!inMutedList && !muted) {
-        setTabMuteState(tabId, true);
-        
-        console.log('Ad Gagger: Muted tab.');
-    }
-    addTabToMutedList(tabId);
-}
-
-/**
- * Unmute the tab if it was muted by the extension (indicated by being in the muted list); otherwise it might have been muted by the user
- * @param tabId 
- */
-const handleTabUnmute = async (tabId: number): Promise<void> => {
-    const inMutedList = await isTabIdInMutedList(tabId);
-    const muted = await isCurrentTabMuted();
-    if (inMutedList && muted) {
-        setTabMuteState(tabId, false);
-        
-        console.log('Ad Gagger: Unmuted tab.');
-    }
-    removeTabFromMutedList(tabId);
 }
 
 // function handleSkipButtonChange(siteSettings: SiteConfiguration) {
@@ -351,6 +330,8 @@ const handleTabUnmute = async (tabId: number): Promise<void> => {
  * Loads the saved settings or falls back to default settings.
  */
 const loadSettings = async () => {
+    console.log('Ad Gagger: Loading settings');
+
     // const savedSettings = await retrieveSavedSettings();
     const savedSettings: Settings | null = null;
 
@@ -388,13 +369,16 @@ const loadSiteConfiguration = async () => {
  * @param tabId - The ID of the current tab.
  */
 const waitForAdEnd = (adContainer: Document | Element, siteConfiguration: SiteConfiguration, tabId: number) => {
-    const adEndObserver = new MutationObserver(() => {
+    cleanUpObservers();
+
+    const adEndObserver = new MutationObserver(async () => {
         if (!adContainer.querySelector(siteConfiguration.adSelector)) {
-            handleTabUnmute(tabId);
+            await handleTabUnmute(tabId);
 
             stopObserver(adEndObserver);
 
             console.log('Ad Gagger: Ad ended');
+            console.log('Ad Gagger: activeObservers: ', activeObservers);
 
             waitForAdStart(adContainer, siteConfiguration, tabId);
         }
@@ -412,13 +396,19 @@ const waitForAdEnd = (adContainer: Document | Element, siteConfiguration: SiteCo
  * @param tabId - The ID of the current tab.
  */
 const waitForAdStart = (adContainer: Document | Element, siteConfiguration: SiteConfiguration, tabId: number) => {
-    const adStartObserver = new MutationObserver(() => {
+    cleanUpObservers();
+
+    const adStartObserver = new MutationObserver(async () => {
         if (adContainer.querySelector(siteConfiguration.adSelector)) {
-            handleTabMute(tabId);
+            await handleTabMute(tabId);
 
             stopObserver(adStartObserver);
 
             console.log('Ad Gagger: Ad started');
+            console.log(
+                'Ad Gagger: activeObservers: ',
+                activeObservers
+            );
 
             waitForAdEnd(adContainer, siteConfiguration, tabId);
         }
