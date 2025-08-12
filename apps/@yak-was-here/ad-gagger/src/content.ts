@@ -1,5 +1,5 @@
 import {
-    getCurrentTabId,
+    retrieveCurrentTabId,
     getSiteConfiguration,
     retrieveSavedSettings,
     urlsHaveSameHostname,
@@ -27,6 +27,11 @@ let settings: Settings | null = null;
  * Configuration for the currentURL
  */
 let siteConfiguration: SiteConfiguration | null = null;
+
+/**
+ * The current tab id; it is set once in init() and should never change
+ */
+let currentTabId: number | null = null;
 
 // Wait for DOM content to start detecting ads
 document.addEventListener('DOMContentLoaded',  () => {
@@ -86,7 +91,7 @@ let urlCheckInterval: number;
  * Starts a periodic URL watcher to handle cases where navigation events are missed; a fallback technique
  */
 const startURLWatcher = () => {
-    if (urlCheckInterval) clearInterval(urlCheckInterval);
+    cleanUpURLWatcher();
     urlCheckInterval = window.setInterval(() => {
         handleNavigation('interval-watcher');
     }, 2000);
@@ -105,7 +110,9 @@ startURLWatcher();
 const init = async () => {
     console.log('Ad Gagger: Initializing');
 
-    await handleTabUnmute(await getCurrentTabId());
+    currentTabId = await retrieveCurrentTabId();
+
+    await handleTabUnmute(await getTabId());
 
     await loadSettings();
     siteConfigurationURL = window.location.href;
@@ -185,7 +192,7 @@ const setUpAdDetection = async () => {
             document.querySelector(siteConfiguration.adContainerSelector)) ||
         document;
 
-    waitForAdStart(adContainer, siteConfiguration, await getCurrentTabId());
+    waitForAdStart(adContainer, siteConfiguration, await getTabId());
 
     console.log('Ad Gagger: activeObservers after waitForAdStart: ', activeObservers);
 
@@ -233,7 +240,7 @@ const setUpAdDetection = async () => {
  * Cleanup tasks
  */
 const cleanup = async () => {
-    await handleTabUnmute(await getCurrentTabId());
+    await handleTabUnmute(await getTabId());
     cleanUpObservers();
 };
 
@@ -246,6 +253,15 @@ const cleanUpObservers = () => {
         activeObservers.length = 0;
 
         console.log('Ad Gagger: Cleaned up old observers');
+    }
+}
+
+/**
+ * Clear the interval for the URL watcher if once exists
+ */
+const cleanUpURLWatcher = () => {
+    if (urlCheckInterval) {
+        clearInterval(urlCheckInterval);
     }
 }
 
@@ -446,5 +462,14 @@ const startObserver = (
         subtree: true,
     });
 };
+
+/**
+ * Gets the current tab ID variable value if it is already available otherwise retrieves it from chrome runtime.
+ * @returns The current tab ID.
+ */
+const getTabId = async (): Promise<number> => {
+    if (currentTabId) return currentTabId;
+    return await retrieveCurrentTabId();
+}
 
 init();

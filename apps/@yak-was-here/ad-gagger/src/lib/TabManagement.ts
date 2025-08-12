@@ -5,7 +5,7 @@ import { getStorageValue, setStorageValue } from './SettingsManagement';
  * Gets the ID of the current tab using the chrome runtime API
  * @returns Promise that resolves to the current tab ID
  */
-export async function getCurrentTabId(): Promise<number> {
+export async function retrieveCurrentTabId(): Promise<number> {
     return new Promise((resolve) => {
         chrome.runtime.sendMessage(
             { action: 'getCurrentTabId' },
