@@ -72,18 +72,12 @@ const originalReplaceState = history.replaceState;
 
 history.pushState = function(...args) {
     originalPushState.apply(history, args);
-    // React 18+ may batch updates, use multiple timing checks
-    handleNavigation('pushState-sync');
-    setTimeout(() => handleNavigation('pushState-batch'), 0); // Next tick
-    setTimeout(() => handleNavigation('pushState-delayed'), 50); // After React updates
+    handleNavigation('pushState');
 };
 
 history.replaceState = function(...args) {
     originalReplaceState.apply(history, args);
-    // React 18+ may batch updates, use multiple timing checks  
-    handleNavigation('replaceState-sync');
-    setTimeout(() => handleNavigation('replaceState-batch'), 0); // Next tick
-    setTimeout(() => handleNavigation('replaceState-delayed'), 50); // After React updates
+    handleNavigation('replaceState');
 };
 
 let urlCheckInterval: number;

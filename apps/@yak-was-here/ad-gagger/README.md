@@ -10,7 +10,11 @@ Automatically mute and skip video ads on YouTube, Twitch, and any website you co
 ## TODO
 
 - [ ] Use sync storage for settings
+- [ ] Use timestamp and extension version to identify when settings and stats where saved
 - [ ] Allow import/export of configurations
 - [ ] Reset settings button
 - [ ] Skip the new "Using ad blocker?" message that Twitch shows
 - [ ] Support Kick.com
+- [ ] Add stats - chrome.storage.sync
+  - [ ] Ads muted
+  - [ ] Ads skipped
