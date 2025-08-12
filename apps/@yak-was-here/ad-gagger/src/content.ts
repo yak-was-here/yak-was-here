@@ -88,6 +88,15 @@ history.replaceState = function(...args) {
 
 let urlCheckInterval: number;
 /**
+ * Clear the interval for the URL watcher if once exists
+ */
+const cleanUpURLWatcher = () => {
+    if (urlCheckInterval) {
+        clearInterval(urlCheckInterval);
+    }
+}
+
+/**
  * Starts a periodic URL watcher to handle cases where navigation events are missed; a fallback technique
  */
 const startURLWatcher = () => {
@@ -253,15 +262,6 @@ const cleanUpObservers = () => {
         activeObservers.length = 0;
 
         console.log('Ad Gagger: Cleaned up old observers');
-    }
-}
-
-/**
- * Clear the interval for the URL watcher if once exists
- */
-const cleanUpURLWatcher = () => {
-    if (urlCheckInterval) {
-        clearInterval(urlCheckInterval);
     }
 }
 
