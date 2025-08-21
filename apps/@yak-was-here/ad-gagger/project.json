@@ -5,72 +5,114 @@
     "projectType": "application",
     "tags": [],
     "targets": {
-        "dev": {
-            "executor": "nx:run-commands",
-            "options": {
-                "command": "wxt",
-                "cwd": "apps/@yak-was-here/ad-gagger"
-            }
-        },
-        "dev:firefox": {
-            "executor": "nx:run-commands",
-            "options": {
-                "command": "wxt -b firefox",
-                "cwd": "apps/@yak-was-here/ad-gagger"
-            }
-        },
         "build": {
-            "executor": "nx:run-commands",
-            "outputs": ["{projectRoot}/.output"],
+            "executor": "@nx/esbuild:esbuild",
+            "outputs": ["{options.outputPath}"],
+            "defaultConfiguration": "development",
             "options": {
-                "command": "wxt build",
-                "cwd": "apps/@yak-was-here/ad-gagger"
+                "platform": "browser",
+                "outputPath": "dist/apps/@yak-was-here/ad-gagger",
+                "bundle": true,
+                "format": ["esm"],
+                "main": "apps/@yak-was-here/ad-gagger/src/content.ts",
+                "additionalEntryPoints": [
+                    "apps/@yak-was-here/ad-gagger/src/content.ts",
+                    "apps/@yak-was-here/ad-gagger/src/background.ts",
+                    "apps/@yak-was-here/ad-gagger/src/popup.ts"
+                ],
+                "tsConfig": "apps/@yak-was-here/ad-gagger/tsconfig.app.json",
+                "assets": [
+                    {
+                        "input": "apps/@yak-was-here/ad-gagger/src/assets/",
+                        "glob": "*.{html,css}",
+                        "output": "./"
+                    },
+                    {
+                        "input": "apps/@yak-was-here/ad-gagger/src/assets/",
+                        "glob": "*.json",
+                        "output": "./"
+                    },
+                    {
+                        "input": "apps/@yak-was-here/ad-gagger/src/assets/images/",
+                        "glob": "*.png",
+                        "output": "images/"
+                    }
+                ],
+                "generatePackageJson": false,
+                "esbuildOptions": {
+                    "sourcemap": true,
+                    "outExtension": {
+                        ".js": ".js"
+                    }
+                }
+            },
+            "inputs": [
+                "{projectRoot}/src/*.ts",
+                "{projectRoot}/src/assets/*.html",
+                "{projectRoot}/src/assets/*.json",
+                "{projectRoot}/src/assets/images/*.png"
+            ],
+            "configurations": {
+                "development": {
+                    "minify": false,
+                    "esbuildOptions": {
+                        "sourcemap": false,
+                        "outExtension": {
+                            ".js": ".js"
+                        }
+                    }
+                },
+                "production": {
+                    "minify": true,
+                    "esbuildOptions": {
+                        "sourcemap": true,
+                        "outExtension": {
+                            ".js": ".js"
+                        }
+                    }
+                }
             }
         },
-        "build:firefox": {
-            "executor": "nx:run-commands",
-            "outputs": ["{projectRoot}/.output"],
-            "options": {
-                "command": "wxt build -b firefox",
-                "cwd": "apps/@yak-was-here/ad-gagger"
-            }
-        },
-        "zip": {
-            "executor": "nx:run-commands",
+        "serve": {
+            "continuous": true,
+            "executor": "@nx/js:node",
+            "defaultConfiguration": "development",
             "dependsOn": ["build"],
             "options": {
-                "command": "wxt zip",
-                "cwd": "apps/@yak-was-here/ad-gagger"
-            }
-        },
-        "zip:firefox": {
-            "executor": "nx:run-commands",
-            "dependsOn": ["build:firefox"],
-            "options": {
-                "command": "wxt zip -b firefox",
-                "cwd": "apps/@yak-was-here/ad-gagger"
-            }
-        },
-        "postinstall": {
-            "executor": "nx:run-commands",
-            "options": {
-                "command": "wxt prepare",
-                "cwd": "apps/@yak-was-here/ad-gagger"
+                "buildTarget": "@yak-was-here/ad-gagger:build",
+                "runBuildTargetDependencies": false
+            },
+            "configurations": {
+                "development": {
+                    "buildTarget": "@yak-was-here/ad-gagger:build:development"
+                },
+                "production": {
+                    "buildTarget": "@yak-was-here/ad-gagger:build:production"
+                }
             }
         },
         "test": {
-            "executor": "@nx/jest:jest",
-            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
             "options": {
-                "jestConfig": "apps/@yak-was-here/ad-gagger/jest.config.ts",
                 "passWithNoTests": true
-            },
-            "configurations": {
-                "ci": {
-                    "ci": true,
-                    "coverage": true
-                }
             }
+        },
+        "copy-from-wsl-to-windows": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "rsync -av --delete dist/apps/@yak-was-here/ad-gagger/ /mnt/c/temp/ad-gagger/"
+                ]
+            },
+            "dependsOn": ["build"]
+        },
+        "launch-in-windows": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "powershell.exe -Command \"Start-Process 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe' -ArgumentList '--load-extension=C:\\temp\\ad-gagger', '--new-window', '--user-data-dir=C:\\temp\\.chrome-dev-profile'\""
+                ]
+            },
+            "dependsOn": ["build", "copy-from-wsl-to-windows"]
         }
     }
 }
