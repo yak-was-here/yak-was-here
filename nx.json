@@ -1,9 +1,9 @@
 {
     "installation": {
-        "version": "21.1.1",
+        "version": "21.4.0",
         "plugins": {
-            "@nx/eslint": "21.1.1",
-            "@nx/next": "21.1.1"
+            "@nx/eslint": "21.4.0",
+            "@nx/next": "21.4.0"
         }
     },
     "$schema": "./node_modules/nx/schemas/nx-schema.json",
