@@ -1,6 +1,6 @@
 # yak-was-here
 
-A monorepo of my personal websites.
+A monorepo of my personal websites and tools.
 
 ## [yak-was-here.com](https://www.yak-was-here.com)
 
@@ -14,6 +14,12 @@ My personal website created with NextJS and shadcn/ui. [Read more...](https://ww
 [`library/@yak-was-here/yaku`](./library/@yak-was-here/yaku/)
 
 My UI component library.
+
+## Ad Gagger
+
+[`apps/@yak-was-here/ad-gagger`](./apps/@yak-was-here/ad-gagger/)
+
+Automatically mute and skip video ads on YouTube, Twitch, and any website you configure.
 
 ## [isaacyakl.com](https://www.isaacyakl.com)
 

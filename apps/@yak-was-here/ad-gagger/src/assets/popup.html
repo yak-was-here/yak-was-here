@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Gagger - Settings</title>
+    <style>
+        body {
+            width: 300px;
+            padding: 10px;
+        }
+        .setting-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+        #configList {
+            margin: 10px 0;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .config-item {
+            border: 1px solid #ccc;
+            padding: 5px;
+            margin: 5px 0;
+        }
+        .error {
+            color: red;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ad Gagger - Settings</h1>
+    
+    <div class="setting-row">
+        <input type="file" id="configFile" accept=".json">
+        <button id="uploadButton">Upload Settings</button>
+    </div>
+    
+    <div id="error" class="error" style="display: none;"></div>
+
+    <h2>Current Site Configurations</h2>
+    <div id="configList"></div>
+    
+    <div class="setting-row">
+        <button id="resetButton">Reset to Default</button>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

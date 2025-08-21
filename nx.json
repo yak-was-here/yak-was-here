@@ -67,5 +67,12 @@
     "namedInputs": {
         "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"],
         "default": ["sharedGlobals"]
+    },
+    "targetDefaults": {
+        "@nx/esbuild:esbuild": {
+            "cache": true,
+            "dependsOn": ["^build"],
+            "inputs": ["default", "^default"]
+        }
     }
 }
