@@ -1,3 +1,8 @@
 {
-  "servers": {}
+  "servers": {
+    "nx-mcp": {
+      "type": "http",
+      "url": "http://localhost:9495/mcp"
+    }
+  }
 }
