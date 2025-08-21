@@ -1,11 +1,4 @@
 {
-    "installation": {
-        "version": "21.1.1",
-        "plugins": {
-            "@nx/eslint": "21.1.1",
-            "@nx/next": "21.1.1"
-        }
-    },
     "$schema": "./node_modules/nx/schemas/nx-schema.json",
     "defaultBase": "master",
     "nxCloudId": "68301e17343ab56de51a522b",
