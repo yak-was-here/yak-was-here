@@ -43,3 +43,13 @@ An old version of my personal website created with NextJS without a component li
   - Add automatic campaign URL generation
 - Create sitemap generator (not as important since site is small)
 - Add RichSnippets (including article structured data for work and update [share metadata](https://ogp.me/#no_vertical))
+
+## Development
+
+### Updating packages
+
+```sh
+npx nx migrate latest
+```
+
+[https://nx.dev/features/automate-updating-dependencies](https://nx.dev/features/automate-updating-dependencies)
