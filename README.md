@@ -29,22 +29,28 @@ An old version of my personal website created with NextJS without a component li
 
 ## To-Do
 
-- Move to NextJS 15
-- Move to Shadcn/ui
 - Update resume
-- Grab tagline from Twitter API
+- Grab tagline from Twitter
 - Use an icon library
-- Move public images to a shared library package
 - Add code highlighter
 - yak's Thoughts (Blog Articles)
   - Add GitHub action to published articles
   - Create automatic "TOC" from article headings
   - Add automatic heading anchors with copy to clipboard button
   - Add automatic campaign URL generation
-- Create sitemap generator (not as important since site is small)
-- Add RichSnippets (including article structured data for work and update [share metadata](https://ogp.me/#no_vertical))
+- Add sitemap generator
 
 ## Development
+
+### Setup
+
+#### Prerequisites
+
+- nvm
+
+```sh
+npm i
+```
 
 ### Updating packages
 
