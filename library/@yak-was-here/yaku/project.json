@@ -1,9 +1,0 @@
-{
-    "name": "@yak-was-here/yaku",
-    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-    "sourceRoot": "library/@yak-was-here/yaku/src",
-    "projectType": "library",
-    "tags": [],
-    "// targets": "to see all targets run: nx show project @yak-was-here/yaku --web",
-    "targets": {}
-}
