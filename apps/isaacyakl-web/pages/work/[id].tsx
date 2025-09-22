@@ -8,7 +8,7 @@ import Link from "next/link";
 import WorkTags from "../../components/WorkTags";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import { nick, siteURL } from "../../data/meta";
-import { GetStaticPaths } from "next";
+import { type GetStaticPaths } from "next";
 
 const Work = ({ title, images, tags, results, summary, links, htmlContent }: WorkFile) => {
 	const getResults = () => {
