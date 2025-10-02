@@ -42,8 +42,9 @@
         "@testing-library/react": "16.1.0",
         "@types/jest": "30.0.0",
         "@types/node": "^20.0.0",
-        "@types/react": "19.0.0",
-        "@types/react-dom": "19.0.0",
+        "@types/react": "^19.0.0",
+        "@types/react-dom": "^19.0.0",
+        "@wxt-dev/module-react": "^1.1.5",
         "autoprefixer": "10.4.13",
         "babel-jest": "30.0.5",
         "esbuild": "^0.19.2",
@@ -67,7 +68,8 @@
         "ts-node": "10.9.1",
         "tslib": "^2.3.0",
         "typescript": "5.9.2",
-        "typescript-eslint": "8.44.0"
+        "typescript-eslint": "8.44.0",
+        "wxt": "^0.20.11"
     },
     "nx": {},
     "dependencies": {
