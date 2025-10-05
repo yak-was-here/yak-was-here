@@ -2,7 +2,7 @@
     "name": "@yak-was-here/ad-gagger-wxt",
     "description": "Automatically mute and skip Twitch ads.",
     "private": true,
-    "version": "0.0.0",
+    "version": "0.1.0",
     "type": "module",
     "scripts": {
         "dev": "wxt",
