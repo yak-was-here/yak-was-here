@@ -16,4 +16,12 @@ export default defineConfig({
             enabled: 9,
         },
     },
+    webExt: {
+        binaries: {
+            brave: 'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe',
+        },
+        openConsole: true,
+        openDevtools: true,
+        startUrls: ['https://twitch.tv/'],
+    }
 });
