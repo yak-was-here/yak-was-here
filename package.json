@@ -4,7 +4,9 @@
     "description": "A monorepo of my personal websites.",
     "main": "index.js",
     "private": true,
-    "scripts": {},
+    "scripts": {
+        "postinstall": "nx run @yak-was-here/ad-gagger-wxt:postinstall"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/isaacyakl/yak-was-here.git"
