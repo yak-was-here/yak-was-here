@@ -25,11 +25,6 @@ let settings: Settings | null = null; // TODO: this simply becomes an array of o
  */
 let siteConfiguration: SiteConfiguration | null = null; // TODO: this simply becomes an enabled or disabled for this site
 
-/**
- * The current tab id; it is set once in init() and should never change
- */
-let currentTabId: number | null = null;
-
 export default defineContentScript({
     matches: [URL_PATTERN],
     async main(ctx) {
@@ -62,9 +57,7 @@ const handleUrlChangeWithinSameDomain = (ctx: ContentScriptContext) => {
 const initTab = async () => {
     console.log('Initializing tab...');
 
-    currentTabId = await retrieveCurrentTabId();
-
-    await handleTabUnmute(await getTabId());
+    await handleTabUnmute(await retrieveCurrentTabId());
 
     await loadSettings();
     siteConfigurationURL = window.location.href;
@@ -144,7 +137,11 @@ const setUpAdDetection = async () => {
             document.querySelector(siteConfiguration.adContainerSelector)) ||
         document;
 
-    waitForAdStart(adContainer, siteConfiguration, await getTabId());
+    waitForAdStart(
+        adContainer,
+        siteConfiguration,
+        await retrieveCurrentTabId()
+    );
 
     console.log('activeObservers after waitForAdStart: ', activeObservers);
 
@@ -192,7 +189,7 @@ const setUpAdDetection = async () => {
  * Cleanup tasks
  */
 const cleanup = async () => {
-    await handleTabUnmute(await getTabId());
+    await handleTabUnmute(await retrieveCurrentTabId());
     cleanUpObservers();
 };
 
@@ -328,12 +325,3 @@ const startObserver = (
         subtree: true,
     });
 };
-
-/**
- * Gets the current tab ID variable value if it is already available otherwise retrieves it from runtime.
- * @returns The current tab ID.
- */
-const getTabId = async (): Promise<number> => {
-    if (currentTabId) return currentTabId;
-    return await retrieveCurrentTabId();
-}
