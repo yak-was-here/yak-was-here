@@ -22,6 +22,6 @@ export default defineConfig({
         },
         openConsole: true,
         openDevtools: true,
-        startUrls: ['https://twitch.tv/'],
-    }
+        startUrls: ['https://twitch.tv/fanum'],
+    },
 });

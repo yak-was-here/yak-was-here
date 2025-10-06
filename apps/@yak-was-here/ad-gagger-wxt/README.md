@@ -16,6 +16,8 @@ Automatically mute and skip Twitch ads.
 
 ## Development
 
+Reference example: [https://github.com/wxt-dev/examples/tree/main/examples/react-shadcn](https://github.com/wxt-dev/examples/tree/main/examples/react-shadcn)
+
 For best DX, develop in Windows so that the extension can launch in browser with HMR.
 
 Do not install `package.json` found in this directory. Instead, make sure that the following packages (React specific) are added to the top-level `package.json` for the mono-repo:
@@ -25,5 +27,5 @@ npm i -D wxt typescript @types/react @types/react-dom @wxt-dev/module-react
 ```
 
 ```sh
-npm i react react-dom
+npm i react react-dom @webext-core/messaging
 ```
