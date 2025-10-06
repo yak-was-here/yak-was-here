@@ -1,4 +1,4 @@
-import { SiteConfiguration } from './Configurations';
+import { SiteConfiguration } from '@/types/configurations';
 
 export enum StorageKeys {
     MutedTabIds = 'mutedTabIds',

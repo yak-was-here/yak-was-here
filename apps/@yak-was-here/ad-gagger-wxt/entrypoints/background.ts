@@ -1,4 +1,4 @@
-import { handleTabUnmute } from "@/lib";
+import { unmuteTabConditionally } from "@/lib/tab-management";
 
 export default defineBackground(() => {
   console.log('Hello background!', { id: browser.runtime.id });
@@ -37,5 +37,5 @@ browser.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
 });
 
 browser.tabs.onRemoved.addListener(async (tabId) => {
-    await handleTabUnmute(tabId);
+    await unmuteTabConditionally(tabId);
 });
