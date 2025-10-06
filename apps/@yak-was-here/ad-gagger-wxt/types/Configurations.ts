@@ -6,8 +6,8 @@
  * @property {string | null} adCloseButtonSelector - The CSS selector for the ad skip button. `null` means the ad does not offer a skip button.
  */
 export type SiteConfiguration = {
-    active: boolean;
-    domain: string;
+    enabled: boolean;
+    match_string: string;
     adSelector: string;
     adContainerSelector: string | null;
     adCloseButtonSelector: string | null;

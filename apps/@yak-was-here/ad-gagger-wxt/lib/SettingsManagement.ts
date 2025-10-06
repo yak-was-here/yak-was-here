@@ -11,7 +11,7 @@ export function getSiteConfiguration(
     currentURL: string
 ): SiteConfiguration | null {
     for (const siteConfiguration of siteConfigurations) {
-        if (urlBelongsToDomain(siteConfiguration.domain, currentURL)) {
+        if (urlBelongsToDomain(siteConfiguration.match_string, currentURL)) {
             return siteConfiguration;
         }
     }
@@ -83,17 +83,17 @@ function isSiteConfiguration(obj: unknown): obj is SiteConfiguration {
         obj !== null &&
         typeof obj === 'object' &&
         'active' in obj &&
-        typeof (obj as SiteConfiguration).active === 'boolean' &&
+        typeof (obj as unknown as SiteConfiguration).enabled === 'boolean' &&
         'domain' in obj &&
-        typeof (obj as SiteConfiguration).domain === 'string' &&
+        typeof (obj as unknown as SiteConfiguration).match_string === 'string' &&
         'adSelector' in obj &&
-        typeof (obj as SiteConfiguration).adSelector === 'string' &&
+        typeof (obj as unknown as SiteConfiguration).adSelector === 'string' &&
         'adContainerSelector' in obj &&
-        (typeof (obj as SiteConfiguration).adContainerSelector === 'string' ||
-            (obj as SiteConfiguration).adContainerSelector === null) &&
+        (typeof (obj as unknown as SiteConfiguration).adContainerSelector === 'string' ||
+            (obj as unknown as SiteConfiguration).adContainerSelector === null) &&
         'adCloseButtonSelector' in obj &&
-        (typeof (obj as SiteConfiguration).adCloseButtonSelector === 'string' ||
-            (obj as SiteConfiguration).adCloseButtonSelector === null)
+        (typeof (obj as unknown as SiteConfiguration).adCloseButtonSelector === 'string' ||
+            (obj as unknown as SiteConfiguration).adCloseButtonSelector === null)
     );
 }
 

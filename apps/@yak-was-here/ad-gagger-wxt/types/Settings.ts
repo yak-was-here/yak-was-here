@@ -17,15 +17,15 @@ export interface Settings {
 export const defaultSettings: Settings = {
     siteConfigurations: [
         {
-            active: true,
-            domain: 'www.twitch.tv',
+            enabled: true,
+            match_string: '*://*.twitch.tv/*',
             adSelector: '[data-a-target="video-ad-label"]',
             adContainerSelector: '[data-a-target="video-player"]',
             adCloseButtonSelector: '[aria-label="Return to stream"]',
         },
         {
-            active: true,
-            domain: 'www.youtube.com',
+            enabled: false,
+            match_string: '*://*.youtube.com/*',
             adSelector: 'div.html5-video-player.ad-showing',
             adContainerSelector: 'div.html5-video-player',
             adCloseButtonSelector:

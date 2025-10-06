@@ -2,8 +2,7 @@ import { ContentScriptContext } from '#imports';
 import { defaultSettings, Settings, SiteConfiguration } from '@/types';
 import { getSiteConfiguration, handleTabMute, handleTabUnmute, retrieveCurrentTabId, urlsHaveSameHostname } from '@/lib';
 
-const URL_PATTERN = '*://*.twitch.tv/*';
-const MATCH_PATTERN = new MatchPattern(URL_PATTERN);
+const MATCH_STRING = '*://*.twitch.tv/*';
 
 /**
  * For keeping track of all active mutation observers
@@ -26,7 +25,7 @@ let settings: Settings | null = null; // TODO: this simply becomes an array of o
 let siteConfiguration: SiteConfiguration | null = null; // TODO: this simply becomes an enabled or disabled for this site
 
 export default defineContentScript({
-    matches: [URL_PATTERN],
+    matches: [MATCH_STRING],
     async main(ctx) {
 
         initTab();
@@ -39,8 +38,10 @@ export default defineContentScript({
         // https://wxt.dev/guide/essentials/content-scripts.html#dealing-with-spas
         // Technically we don't need to do this since we are only handling domains not specific URLs within the domains.
         ctx.addEventListener(window, 'wxt:locationchange', ({ oldUrl, newUrl }) => {
-            if (MATCH_PATTERN.includes(newUrl)) {
-                console.log(`Detected location change:\n${oldUrl} ➡️ ${newUrl}` );
+            if (new MatchPattern(MATCH_STRING).includes(newUrl)) {
+                console.log(
+                    `Detected location change:\n${oldUrl} ➡️ ${newUrl}`
+                );
                 handleUrlChangeWithinSameDomain(ctx);
             }
         });
@@ -124,7 +125,7 @@ const setUpAdDetection = async () => {
         return;
     }
 
-    if (siteConfiguration && !siteConfiguration.active) {
+    if (siteConfiguration && !siteConfiguration.enabled) {
         console.log('Site configuration found but it is not active.');
         return;
     }
