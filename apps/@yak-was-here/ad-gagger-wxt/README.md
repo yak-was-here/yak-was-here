@@ -18,19 +18,32 @@ Automatically mute and skip Twitch ads.
 
 > Reference example: [https://github.com/wxt-dev/examples/tree/main/examples/react-shadcn](https://github.com/wxt-dev/examples/tree/main/examples/react-shadcn)
 
-For best DX, develop in Windows so that the extension can launch in browser with HMR.
+Develop in Windows so that the extension can launch in browser with HMR.
 
-Install [nvm-windows](https://github.com/coreybutler/nvm-windows/releases) and make sure to fully restart the editor after installation.
+Install [nvm-windows](https://github.com/coreybutler/nvm-windows/releases) and make sure to leave the "Open with PowerShell" option checked so that it updates the environment variables after installation. Then make sure to fully restart the editor + terminal(s) after installation.
 
-All packages for this package should already be included in the root `package.json` for the monorepo. Do not install `package.json` found in this directory. Navigate to the repo's root dir and run:
+Navigate to the monorepo root directory to use the correct version of node + npm:
 
 ```sh
+# See what version of Node needs to be installed
+cat .nvmrc
+```
+
+```sh
+# Install and use the version from above
+nvm install 22 && nvm use 22
+```
+
+Install the monorepo's packages. All packages for this project should already be included in the root `package.json` of the monorepo. <u>Do not install `package.json` found in this directory.</u> Navigate to the repo's root dir and run:
+
+```sh
+# Install monorepo packages
 npm i
 ```
 
 ## Packages Used
 
-The following packages (React specific) are used by this project and should be in the top-level `package.json` for the monorepo.
+The following packages (React specific) are used by this project and should be in the top-level `package.json` of the monorepo.
 
 ```sh
 npm i -D wxt typescript @types/react @types/react-dom @wxt-dev/module-react

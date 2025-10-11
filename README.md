@@ -44,9 +44,9 @@ An old version of my personal website created with NextJS without a component li
 
 ### Setup
 
-#### Prerequisites
+Install nvm or [nvm-windows](https://github.com/coreybutler/nvm-windows) if necessary and restart editor and terminal(s).
 
-- nvm
+Install packages:
 
 ```sh
 npm i
@@ -59,3 +59,28 @@ npx nx migrate latest
 ```
 
 [https://nx.dev/features/automate-updating-dependencies](https://nx.dev/features/automate-updating-dependencies)
+
+### Troubleshooting
+
+#### Nx command not found
+
+If `nx` commands fails to find the command, make 
+sure to do:
+
+```sh
+./nx <command>
+# OR
+npx nx <command>
+```
+
+#### Nx general error or cannot find module error
+
+Try the below and attempt installing the packages again after.
+
+```sh
+# Remove nx data
+rm -rf .nx/cache/ .nx/installation/ ./nx/workspace-data
+
+# Remove node_modules
+rm -rf node_modules/
+```
