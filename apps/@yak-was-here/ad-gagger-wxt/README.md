@@ -14,13 +14,23 @@ Automatically mute and skip Twitch ads.
   - [ ] Ads muted per platform
   - [ ] Ads skipped per platform
 
-## Development
+## Development Setup
 
-Reference example: [https://github.com/wxt-dev/examples/tree/main/examples/react-shadcn](https://github.com/wxt-dev/examples/tree/main/examples/react-shadcn)
+> Reference example: [https://github.com/wxt-dev/examples/tree/main/examples/react-shadcn](https://github.com/wxt-dev/examples/tree/main/examples/react-shadcn)
 
 For best DX, develop in Windows so that the extension can launch in browser with HMR.
 
-Do not install `package.json` found in this directory. Instead, make sure that the following packages (React specific) are added to the top-level `package.json` for the mono-repo:
+Install [nvm-windows](https://github.com/coreybutler/nvm-windows/releases) and make sure to fully restart the editor after installation.
+
+All packages for this package should already be included in the root `package.json` for the monorepo. Do not install `package.json` found in this directory. Navigate to the repo's root dir and run:
+
+```sh
+npm i
+```
+
+## Packages Used
+
+The following packages (React specific) are used by this project and should be in the top-level `package.json` for the monorepo.
 
 ```sh
 npm i -D wxt typescript @types/react @types/react-dom @wxt-dev/module-react
