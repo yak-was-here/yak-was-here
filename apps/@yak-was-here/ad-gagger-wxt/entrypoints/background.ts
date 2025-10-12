@@ -1,15 +1,21 @@
-import { unmuteTabConditionally } from "@/lib/tab-management";
+import { unmuteTabConditionally } from '@/lib/tab-management';
 
 export default defineBackground(() => {
-  console.log('Hello background!', { id: browser.runtime.id });
+    console.log('Hello background!', { id: browser.runtime.id });
 });
 
 // Receive messages from content scripts
 browser.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
-    if (!request || !sender || !sender.tab || !sender.tab.id || !sender.tab.mutedInfo) {
+    if (
+        !request ||
+        !sender ||
+        !sender.tab ||
+        !sender.tab.id ||
+        !sender.tab.mutedInfo
+    ) {
         return;
     }
-    
+
     if (request.action === 'setTabMuteState') {
         browser.tabs.get(request.tabId, (tab) => {
             if (browser.runtime.lastError) {

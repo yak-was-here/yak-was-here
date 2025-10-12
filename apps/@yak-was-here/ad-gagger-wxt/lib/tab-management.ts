@@ -29,13 +29,13 @@ export async function retrieveCurrentTabId(): Promise<number> {
  * @returns Promise that resolves to true if the tab is muted, false otherwise
  */
 export async function isTabIdInMutedList(tabId: number): Promise<boolean> {
-    const mutedTabIds = await getStorageValue(StorageKeys.MutedTabIds) ?? [];
+    const mutedTabIds = (await getStorageValue(StorageKeys.MutedTabIds)) ?? [];
     return mutedTabIds.includes(tabId);
 }
 
 // Function to add tab to muted array
 export async function addTabToMutedList(tabId: number) {
-    const mutedList = await getStorageValue(StorageKeys.MutedTabIds) ?? [];
+    const mutedList = (await getStorageValue(StorageKeys.MutedTabIds)) ?? [];
     if (!mutedList.includes(tabId)) {
         mutedList.push(tabId);
         setStorageValue(StorageKeys.MutedTabIds, mutedList);
@@ -44,7 +44,7 @@ export async function addTabToMutedList(tabId: number) {
 
 // Function to remove tab from muted array
 export async function removeTabFromMutedList(tabId: number) {
-    const mutedList = await getStorageValue(StorageKeys.MutedTabIds) ?? [];
+    const mutedList = (await getStorageValue(StorageKeys.MutedTabIds)) ?? [];
     const updatedList = mutedList.filter((id: number) => id !== tabId);
     setStorageValue(StorageKeys.MutedTabIds, updatedList);
 }
@@ -91,30 +91,30 @@ export function setCurrentTabMuteState(mute: boolean): void {
 
 /**
  * Mute the tab if it is not already muted by the extension (indicated by being in the muted list); otherwise it might have been unmuted by the user (maybe they are interested in the ad)
- * @param tabId 
+ * @param tabId
  */
 export const muteTabConditionally = async (tabId: number): Promise<void> => {
     const inMutedList = await isTabIdInMutedList(tabId);
     const muted = await isCurrentTabMuted();
     if (!inMutedList && !muted) {
         setTabMuteState(tabId, true);
-        
+
         console.log('Muted tab.');
     }
     await addTabToMutedList(tabId);
-}
+};
 
 /**
  * Unmute the tab if it was muted by the extension (indicated by being in the muted list); otherwise it might have been muted by the user
- * @param tabId 
+ * @param tabId
  */
 export const unmuteTabConditionally = async (tabId: number): Promise<void> => {
     const inMutedList = await isTabIdInMutedList(tabId);
     const muted = await isCurrentTabMuted();
     if (inMutedList && muted) {
         setTabMuteState(tabId, false);
-        
+
         console.log('Unmuted tab.');
     }
     await removeTabFromMutedList(tabId);
-}
+};

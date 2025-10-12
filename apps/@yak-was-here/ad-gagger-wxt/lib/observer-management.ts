@@ -1,6 +1,9 @@
-import { SiteConfiguration } from "@/types/configurations";
-import { muteTabConditionally, unmuteTabConditionally } from "@/lib/tab-management";
-import { cleanUpObservers } from "@/utils/observers";
+import { SiteConfiguration } from '@/types/configurations';
+import {
+    muteTabConditionally,
+    unmuteTabConditionally,
+} from '@/lib/tab-management';
+import { cleanUpObservers } from '@/utils/observers';
 
 /**
  * Observes the start of an ad by monitoring the ad container for the addition of the adSelector element.

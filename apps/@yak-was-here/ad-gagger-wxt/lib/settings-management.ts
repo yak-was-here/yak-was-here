@@ -1,4 +1,9 @@
-import { defaultSettings, Settings, StorageData, StorageKeys } from '@/types/settings';
+import {
+    defaultSettings,
+    Settings,
+    StorageData,
+    StorageKeys,
+} from '@/types/settings';
 import { SiteConfiguration } from '@/types/configurations';
 
 /**
@@ -6,12 +11,12 @@ import { SiteConfiguration } from '@/types/configurations';
  * @returns Settings
  */
 export function retrieveSettings(): Settings {
-    console.log('Retrieving settings...')
+    console.log('Retrieving settings...');
     // const savedSettings = await retrieveSettingsFromStorage();
     const savedSettings: Settings | null = null;
 
     if (savedSettings === null) {
-        console.warn('Using default settings.')
+        console.warn('Using default settings.');
         return defaultSettings;
     } else {
         return savedSettings;
@@ -29,7 +34,11 @@ export function getSiteConfigurationFromSettings(
     currentURL: string
 ): SiteConfiguration | null {
     for (const siteConfiguration of settings.siteConfigurations) {
-        if (new MatchPattern(siteConfiguration.match_string).includes(currentURL)) {
+        if (
+            new MatchPattern(siteConfiguration.match_string).includes(
+                currentURL
+            )
+        ) {
             return siteConfiguration;
         }
     }
@@ -46,7 +55,8 @@ function isSiteConfiguration(obj: unknown): obj is SiteConfiguration {
         'active' in obj &&
         typeof (obj as unknown as SiteConfiguration).enabled === 'boolean' &&
         'domain' in obj &&
-        typeof (obj as unknown as SiteConfiguration).match_string === 'string' &&
+        typeof (obj as unknown as SiteConfiguration).match_string ===
+            'string' &&
         'adSelector' in obj &&
         typeof (obj as unknown as SiteConfiguration).adSelector === 'string' &&
         'adContainerSelector' in obj &&
@@ -115,13 +125,9 @@ export async function clearSavedSettings(): Promise<boolean> {
 /**
  * Save settings after validating
  */
-export async function saveSettings(
-    config: Settings
-): Promise<boolean> {
+export async function saveSettings(config: Settings): Promise<boolean> {
     if (!isSettingsData(config)) {
-        console.error(
-            'Invalid settings format could not be saved'
-        );
+        console.error('Invalid settings format could not be saved');
         return false;
     }
 
@@ -136,15 +142,14 @@ export async function saveSettings(
     }
 }
 
-
 export function getStorageValue<K extends StorageKeys>(
     key: K
 ): Promise<StorageData[K] | undefined> {
-    return browser.storage.local.get(key).then(result => result[key]);
+    return browser.storage.local.get(key).then((result) => result[key]);
 }
 
 export function setStorageValue<K extends StorageKeys>(
-    key: K, 
+    key: K,
     value: StorageData[K]
 ): Promise<void> {
     return browser.storage.local.set({ [key]: value });

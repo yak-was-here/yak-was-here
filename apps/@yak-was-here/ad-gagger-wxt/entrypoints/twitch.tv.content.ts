@@ -1,6 +1,12 @@
 import { Settings } from '@/types/settings';
-import { getSiteConfigurationFromSettings, retrieveSettings } from '@/lib/settings-management';
-import { retrieveCurrentTabId, unmuteTabConditionally } from '@/lib/tab-management';
+import {
+    getSiteConfigurationFromSettings,
+    retrieveSettings,
+} from '@/lib/settings-management';
+import {
+    retrieveCurrentTabId,
+    unmuteTabConditionally,
+} from '@/lib/tab-management';
 import { waitForAdStart } from '@/lib/observer-management';
 
 const MATCH_STRING = '*://*.twitch.tv/*';
@@ -8,7 +14,6 @@ const MATCH_STRING = '*://*.twitch.tv/*';
 export default defineContentScript({
     matches: [MATCH_STRING],
     async main(ctx) {
-
         const adObservers: MutationObserver[] = [];
 
         const settings = await initialize();
@@ -16,19 +21,24 @@ export default defineContentScript({
 
         // https://wxt.dev/guide/essentials/content-scripts.html#dealing-with-spas
         // Technically we may not need to do this because we are only handling on a per domain basis.
-        ctx.addEventListener(window, 'wxt:locationchange', async ({ oldUrl, newUrl }) => {
-            
-            if (new MatchPattern(MATCH_STRING).includes(newUrl)) {
-                
-                console.log(
-                    `Detected location change:\n${oldUrl} ➡️ ${newUrl}`
-                );
+        ctx.addEventListener(
+            window,
+            'wxt:locationchange',
+            async ({ oldUrl, newUrl }) => {
+                if (new MatchPattern(MATCH_STRING).includes(newUrl)) {
+                    console.log(
+                        `Detected location change:\n${oldUrl} ➡️ ${newUrl}`
+                    );
 
-                await stopAdDetection(adObservers);
-                startAdDetection(settings, window.location.href, adObservers);
-
+                    await stopAdDetection(adObservers);
+                    startAdDetection(
+                        settings,
+                        window.location.href,
+                        adObservers
+                    );
+                }
             }
-        });
+        );
     },
 });
 
@@ -42,7 +52,7 @@ const initialize = async (): Promise<Settings> => {
     await unmuteTabConditionally(await retrieveCurrentTabId());
 
     return await retrieveSettings();
-}
+};
 
 /**
  * Start ad detection
@@ -90,14 +100,13 @@ const startAdDetection = async (
         siteConfiguration,
         await retrieveCurrentTabId()
     );
-
 };
 
 /**
  * Stop ad detection: unmutes the tab if it was muted by the extension and clean up any observers
  */
 const stopAdDetection = async (adObservers: MutationObserver[]) => {
-    console.log(`Stopping ad detection...`)
+    console.log(`Stopping ad detection...`);
 
     await unmuteTabConditionally(await retrieveCurrentTabId());
     cleanUpObservers(adObservers);
