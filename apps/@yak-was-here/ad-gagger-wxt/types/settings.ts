@@ -1,4 +1,4 @@
-import { SiteConfiguration } from '@/types/configurations';
+import { InteractionType, SiteConfiguration } from '@/types/configurations';
 
 export enum StorageKeys {
     MutedTabIds = 'mutedTabIds',
@@ -18,18 +18,36 @@ export const defaultSettings: Settings = {
     siteConfigurations: [
         {
             enabled: true,
-            match_string: '*://*.twitch.tv/*',
-            adSelector: '[data-a-target="video-ad-label"]',
-            adContainerSelector: '[data-a-target="video-player"]',
-            adCloseButtonSelector: '[aria-label="Return to stream"]',
+            matchString: '*://*.twitch.tv/*',
+            elementConfigurations: [
+                {
+                    type: InteractionType.GAG,
+                    selector: '[data-a-target="video-ad-label"]',
+                    containerSelector: '[data-a-target="video-player"]',
+                },
+                {
+                    type: InteractionType.CLICK,
+                    selector: 'button[aria-label="Return to stream"]',
+                    containerSelector: '',
+                },
+            ],
         },
         {
             enabled: false,
-            match_string: '*://*.youtube.com/*',
-            adSelector: 'div.html5-video-player.ad-showing',
-            adContainerSelector: 'div.html5-video-player',
-            adCloseButtonSelector:
-                '.ytp-ad-skip-button-container:not([style*="display: none"]) .ytp-ad-skip-button',
+            matchString: '*://*.youtube.com/*',
+            elementConfigurations: [
+                {
+                    type: InteractionType.GAG,
+                    selector: 'div.html5-video-player.ad-showing',
+                    containerSelector: 'div.html5-video-player',
+                },
+                {
+                    type: InteractionType.CLICK,
+                    selector:
+                        '.ytp-ad-skip-button-container:not([style*="display: none"]) .ytp-ad-skip-button',
+                    containerSelector: 'div.html5-video-player',
+                },
+            ],
         },
     ],
 };

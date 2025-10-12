@@ -4,7 +4,7 @@ import {
     StorageData,
     StorageKeys,
 } from '@/types/settings';
-import { SiteConfiguration } from '@/types/configurations';
+import { SiteConfiguration, ElementConfiguration, InteractionType } from '@/types/configurations';
 
 /**
  * Retrieve settings first from storage if they exists otherwise fallback to default settings
@@ -35,7 +35,7 @@ export function getSiteConfigurationFromSettings(
 ): SiteConfiguration | null {
     for (const siteConfiguration of settings.siteConfigurations) {
         if (
-            new MatchPattern(siteConfiguration.match_string).includes(
+            new MatchPattern(siteConfiguration.matchString).includes(
                 currentURL
             )
         ) {
@@ -46,29 +46,38 @@ export function getSiteConfigurationFromSettings(
 }
 
 /**
+ * Type guard to check if an object is an `ElementConfiguration`
+ */
+function isElementConfiguration(obj: unknown): obj is ElementConfiguration {
+    return (
+        obj !== null &&
+        typeof obj === 'object' &&
+        'type' in obj &&
+        typeof (obj as unknown as ElementConfiguration).type === 'string' &&
+        Object.values(InteractionType).includes((obj as unknown as ElementConfiguration).type as InteractionType) &&
+        'selector' in obj &&
+        typeof (obj as unknown as ElementConfiguration).selector === 'string' &&
+        'containerSelector' in obj &&
+        typeof (obj as unknown as ElementConfiguration).containerSelector === 'string'
+    );
+}
+
+/**
  * Type guard to check if an object is a `SiteConfiguration`
  */
 function isSiteConfiguration(obj: unknown): obj is SiteConfiguration {
     return (
         obj !== null &&
         typeof obj === 'object' &&
-        'active' in obj &&
+        'enabled' in obj &&
         typeof (obj as unknown as SiteConfiguration).enabled === 'boolean' &&
-        'domain' in obj &&
-        typeof (obj as unknown as SiteConfiguration).match_string ===
-            'string' &&
-        'adSelector' in obj &&
-        typeof (obj as unknown as SiteConfiguration).adSelector === 'string' &&
-        'adContainerSelector' in obj &&
-        (typeof (obj as unknown as SiteConfiguration).adContainerSelector ===
-            'string' ||
-            (obj as unknown as SiteConfiguration).adContainerSelector ===
-                null) &&
-        'adCloseButtonSelector' in obj &&
-        (typeof (obj as unknown as SiteConfiguration).adCloseButtonSelector ===
-            'string' ||
-            (obj as unknown as SiteConfiguration).adCloseButtonSelector ===
-                null)
+        'matchString' in obj &&
+        typeof (obj as unknown as SiteConfiguration).matchString === 'string' &&
+        'elementConfigurations' in obj &&
+        Array.isArray((obj as unknown as SiteConfiguration).elementConfigurations) &&
+        (obj as unknown as SiteConfiguration).elementConfigurations.every(
+            (elementConfig) => isElementConfiguration(elementConfig)
+        )
     );
 }
 

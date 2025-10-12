@@ -1,104 +1,145 @@
-import { SiteConfiguration } from '@/types/configurations';
-import {
-    muteTabConditionally,
-    unmuteTabConditionally,
-} from '@/lib/tab-management';
-import { cleanUpObservers } from '@/utils/observers';
+import { ElementConfiguration } from '@/types/configurations';
+import { interactWithElement } from './interaction-management';
+
+export enum ElementPresenceStatus {
+    Appeared = 'appeared',
+    Disappeared = 'disappeared',
+}
 
 /**
- * Observes the start of an ad by monitoring the ad container for the addition of the adSelector element.
- * @param adObservers - An array of all current observers for a tab.
- * @param adContainer - The container element that holds the ad.
- * @param siteConfiguration - The configuration settings for the site.
+ * Observes when an element appears by monitoring the container for the addition of the selector element.
+ * @param observers - An array of all current observers for a tab.
+ * @param elementConfiguration - The configuration for the element being observed
  * @param tabId - The ID of the current tab.
  */
-export const waitForAdStart = (
-    adObservers: MutationObserver[],
-    adContainer: Document | Element,
-    siteConfiguration: SiteConfiguration,
+export const waitForElementAppearance = (
+    observers: MutationObserver[],
+    elementConfiguration: ElementConfiguration,
     tabId: number
 ) => {
-    cleanUpObservers(adObservers);
 
-    const adStartObserver = new MutationObserver(async () => {
-        if (adContainer.querySelector(siteConfiguration.adSelector)) {
-            await muteTabConditionally(tabId);
+    const appearanceObserver = new MutationObserver(async () => {
+        
+        const elementContainer: Document | Element =
+            (elementConfiguration.containerSelector &&
+                document.querySelector(
+                    elementConfiguration.containerSelector
+                )) ||
+            document;
+    
+        const element = elementContainer.querySelector(elementConfiguration.selector);
+        
+        if (element) {
 
-            stopAdObserver(adObservers, adStartObserver);
+            stopObserver(observers, appearanceObserver);
+            
+            console.log('Element appeared', elementConfiguration.selector);
 
-            console.log('Ad started');
+            await interactWithElement(element, elementConfiguration, ElementPresenceStatus.Appeared, tabId);
 
-            waitForAdEnd(adObservers, adContainer, siteConfiguration, tabId);
+            waitForElementDisappearance(
+                observers,
+                elementConfiguration,
+                tabId
+            );
         }
     });
 
-    startAdObserver(adObservers, adStartObserver, adContainer);
+    const container: Document | Element =
+        (elementConfiguration.containerSelector &&
+            document.querySelector(elementConfiguration.containerSelector)) ||
+        document;
 
-    console.log('Waiting for ad to start');
+    startObserver(observers, appearanceObserver, container);
+
+    console.log('Waiting for element appearance', elementConfiguration.selector);
 };
 
 /**
- * Observes the end of an ad by monitoring the ad container for the disappearance of the adSelector element.
- * @param adObservers - An array of all current observers for a tab.
- * @param adContainer - The container element that holds the ad.
- * @param siteConfiguration - The configuration settings for the site.
+ * Observes when an element disappears by monitoring the container for the absence of the selector element.
+ * @param observers - An array of all current observers for a tab.
+ * @param elementConfiguration - The configuration for the element being observed
  * @param tabId - The ID of the current tab.
  */
-export const waitForAdEnd = (
-    adObservers: MutationObserver[],
-    adContainer: Document | Element,
-    siteConfiguration: SiteConfiguration,
+export const waitForElementDisappearance = (
+    observers: MutationObserver[],
+    elementConfiguration: ElementConfiguration,
     tabId: number
 ) => {
-    cleanUpObservers(adObservers);
 
-    const adEndObserver = new MutationObserver(async () => {
-        if (!adContainer.querySelector(siteConfiguration.adSelector)) {
-            await unmuteTabConditionally(tabId);
+    const disappearanceObserver = new MutationObserver(async () => {
+        
+        const elementContainer: Document | Element =
+            (elementConfiguration.containerSelector &&
+                document.querySelector(
+                    elementConfiguration.containerSelector
+                )) ||
+            document;
+        
+        const element = elementContainer.querySelector(
+            elementConfiguration.selector
+        );
+        
+        if (!element) {
+            
+            stopObserver(observers, disappearanceObserver);
+            
+            console.log('Element disappeared', elementConfiguration.selector);
 
-            stopAdObserver(adObservers, adEndObserver);
+            await interactWithElement(element, elementConfiguration, ElementPresenceStatus.Disappeared, tabId);
 
-            console.log('Ad ended');
-
-            waitForAdStart(adObservers, adContainer, siteConfiguration, tabId);
+            waitForElementAppearance(
+                observers,
+                elementConfiguration,
+                tabId
+            );
         }
     });
 
-    startAdObserver(adObservers, adEndObserver, adContainer);
+    const container: Document | Element =
+        (elementConfiguration.containerSelector &&
+            document.querySelector(elementConfiguration.containerSelector)) ||
+        document;
 
-    console.log('Waiting for ad to end');
+    startObserver(observers, disappearanceObserver, container);
+
+    console.log('Waiting for element disappearance', elementConfiguration.selector);
 };
 
 /**
- * Cleans up a observer by disconnecting and removing it from the ad observers list.
- * @param adObservers - An array of all current observers for a tab.
+ * Cleans up a observer by disconnecting and removing it from the observers list.
+ * @param observersArr - An array of all current observers for a tab.
  * @param observer - The MutationObserver to stop.
  */
-export const stopAdObserver = (
-    adObservers: MutationObserver[],
+export const stopObserver = (
+    observersArr: MutationObserver[],
     observer: MutationObserver
 ) => {
     observer.disconnect();
 
-    // Remove from ad observers list
-    const index = adObservers.indexOf(observer);
-    if (index > -1) adObservers.splice(index, 1);
+    // Remove from observers list
+    const index = observersArr.indexOf(observer);
+    if (index > -1) observersArr.splice(index, 1);
+    
+    console.log(`Observer disconnected and removed:`, observersArr);
 };
 
 /**
- * Uses an observer to start observing for mutations and adds the observer to the ad observers list.
- * @param adObservers - An array of all current observers for a tab.
+ * Uses an observer to start observing for mutations and adds the observer to the observers list.
+ * @param observersArr - An array of all current observers for a tab.
  * @param observer - The MutationObserver to start.
  * @param root - The root element to observe.
  */
-export const startAdObserver = (
-    adObservers: MutationObserver[],
+export const startObserver = (
+    observersArr: MutationObserver[],
     observer: MutationObserver,
     root: Document | Element
 ) => {
-    adObservers.push(observer);
+    observersArr.push(observer);
     observer.observe(root, {
         childList: true,
         subtree: true,
     });
+
+    console.log(`Observer added and observing:`, observersArr);
 };

@@ -7,17 +7,17 @@ import {
     retrieveCurrentTabId,
     unmuteTabConditionally,
 } from '@/lib/tab-management';
-import { waitForAdStart } from '@/lib/observer-management';
+import { waitForElementAppearance } from '@/lib/observer-management';
 
 const MATCH_STRING = '*://*.twitch.tv/*';
 
 export default defineContentScript({
     matches: [MATCH_STRING],
     async main(ctx) {
-        const adObservers: MutationObserver[] = [];
+        const observersArr: MutationObserver[] = [];
 
         const settings = await initialize();
-        startAdDetection(settings, window.location.href, adObservers);
+        startDetection(settings, window.location.href, observersArr);
 
         // https://wxt.dev/guide/essentials/content-scripts.html#dealing-with-spas
         // Technically we may not need to do this because we are only handling on a per domain basis.
@@ -30,11 +30,11 @@ export default defineContentScript({
                         `Detected location change:\n${oldUrl} ➡️ ${newUrl}`
                     );
 
-                    await stopAdDetection(adObservers);
-                    startAdDetection(
+                    await stopDetection(observersArr);
+                    startDetection(
                         settings,
                         window.location.href,
-                        adObservers
+                        observersArr
                     );
                 }
             }
@@ -55,21 +55,21 @@ const initialize = async (): Promise<Settings> => {
 };
 
 /**
- * Start ad detection
+ * Start detection
  * @param settings - extension settings
  * @param currentUrl - URL to match against
- * @param adObservers - an array to store ad observers in
+ * @param observersArr - an array to store observers in
  */
-const startAdDetection = async (
+const startDetection = async (
     settings: Settings,
     currentUrl: string,
-    adObservers: MutationObserver[]
+    observersArr: MutationObserver[]
 ) => {
-    console.log(`Starting ad detection...`);
+    console.log(`Starting detection...`);
 
     if (!settings) {
         console.error(
-            'Could not start ad detection because no settings were found!'
+            'Could not start detection because no settings were found!'
         );
         return;
     }
@@ -89,25 +89,23 @@ const startAdDetection = async (
         return;
     }
 
-    const adContainer =
-        (siteConfiguration.adContainerSelector &&
-            document.querySelector(siteConfiguration.adContainerSelector)) ||
-        document;
+    const tabId = await retrieveCurrentTabId();;
 
-    waitForAdStart(
-        adObservers,
-        adContainer,
-        siteConfiguration,
-        await retrieveCurrentTabId()
-    );
+    for (const elementConfig of siteConfiguration.elementConfigurations) {
+        waitForElementAppearance(
+            observersArr,
+            elementConfig,
+            tabId
+        );
+    };
 };
 
 /**
- * Stop ad detection: unmutes the tab if it was muted by the extension and clean up any observers
+ * Stop detection: unmutes the tab if it was muted by the extension and clean up any observers
  */
-const stopAdDetection = async (adObservers: MutationObserver[]) => {
-    console.log(`Stopping ad detection...`);
+const stopDetection = async (observersArr: MutationObserver[]) => {
+    console.log(`Stopping detection...`);
 
     await unmuteTabConditionally(await retrieveCurrentTabId());
-    cleanUpObservers(adObservers);
+    cleanUpObservers(observersArr);
 };
