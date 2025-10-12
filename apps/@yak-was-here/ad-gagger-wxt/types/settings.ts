@@ -1,8 +1,9 @@
 import { InteractionType, SiteConfiguration } from '@/types/configurations';
 
 export enum StorageKeys {
-    MutedTabIds = 'mutedTabIds',
-    Settings = 'settings',
+    // Includes storage location prefix. See: https://wxt.dev/storage.html#basic-usage
+    MutedTabIds = 'local:mutedTabIds',
+    Settings = 'sync:settings',
 }
 
 export interface StorageData {

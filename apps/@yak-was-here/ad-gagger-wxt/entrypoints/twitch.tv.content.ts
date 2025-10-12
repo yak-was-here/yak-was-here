@@ -1,4 +1,4 @@
-import { Settings } from '@/types/settings';
+import { Settings, StorageKeys } from '@/types/settings';
 import {
     getSiteConfigurationFromSettings,
     retrieveSettings,
@@ -37,6 +37,18 @@ export default defineContentScript({
                         observersArr
                     );
                 }
+            }
+        );
+
+        storage.watch<Settings>(
+            StorageKeys.Settings,
+            async (newVal, oldVal) => {
+                console.warn(`Settings change detected!`);
+                await stopDetection(observersArr);
+
+                const updatedSettings = await retrieveSettings(newVal);
+
+                startDetection(updatedSettings, window.location.href, observersArr);
             }
         );
     },

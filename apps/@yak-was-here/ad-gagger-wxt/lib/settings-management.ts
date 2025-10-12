@@ -1,26 +1,27 @@
+import { storage } from '#imports';
 import {
     defaultSettings,
     Settings,
     StorageData,
     StorageKeys,
 } from '@/types/settings';
-import { SiteConfiguration, ElementConfiguration, InteractionType } from '@/types/configurations';
+import { SiteConfiguration } from '@/types/configurations';
 
 /**
- * Retrieve settings first from storage if they exists otherwise fallback to default settings
- * @returns Settings
+ * Retrieve and return valid settings starting first with what was passed in (usually a new storage value), second from storage directly, or lastly fallback to default settings
+ * @param settings - if there are settings to use attempt to use them
+ * @returns Settings from storage or default settings
  */
-export function retrieveSettings(): Settings {
+export const retrieveSettings = async (settings?: Settings | null) => {
     console.log('Retrieving settings...');
-    // const savedSettings = await retrieveSettingsFromStorage();
-    const savedSettings: Settings | null = null;
+
+    const savedSettings = settings ?? await retrieveSettingsFromStorage();
 
     if (savedSettings === null) {
         console.warn('Using default settings.');
         return defaultSettings;
-    } else {
-        return savedSettings;
     }
+    return savedSettings;
 }
 
 /**
@@ -46,109 +47,43 @@ export function getSiteConfigurationFromSettings(
 }
 
 /**
- * Type guard to check if an object is an `ElementConfiguration`
- */
-function isElementConfiguration(obj: unknown): obj is ElementConfiguration {
-    return (
-        obj !== null &&
-        typeof obj === 'object' &&
-        'type' in obj &&
-        typeof (obj as unknown as ElementConfiguration).type === 'string' &&
-        Object.values(InteractionType).includes((obj as unknown as ElementConfiguration).type as InteractionType) &&
-        'selector' in obj &&
-        typeof (obj as unknown as ElementConfiguration).selector === 'string' &&
-        'containerSelector' in obj &&
-        typeof (obj as unknown as ElementConfiguration).containerSelector === 'string'
-    );
-}
-
-/**
- * Type guard to check if an object is a `SiteConfiguration`
- */
-function isSiteConfiguration(obj: unknown): obj is SiteConfiguration {
-    return (
-        obj !== null &&
-        typeof obj === 'object' &&
-        'enabled' in obj &&
-        typeof (obj as unknown as SiteConfiguration).enabled === 'boolean' &&
-        'matchString' in obj &&
-        typeof (obj as unknown as SiteConfiguration).matchString === 'string' &&
-        'elementConfigurations' in obj &&
-        Array.isArray((obj as unknown as SiteConfiguration).elementConfigurations) &&
-        (obj as unknown as SiteConfiguration).elementConfigurations.every(
-            (elementConfig) => isElementConfiguration(elementConfig)
-        )
-    );
-}
-
-/**
- * Type guard to check if an object is a `Settings`
- */
-function isSettingsData(obj: unknown): obj is Settings {
-    return (
-        obj !== null &&
-        typeof obj === 'object' &&
-        'siteConfigurations' in obj &&
-        Array.isArray((obj as Settings).siteConfigurations) &&
-        (obj as Settings).siteConfigurations.every(isSiteConfiguration)
-    );
-}
-
-/**
  * Retrieve settings from sync storage or return null
  * @returns Settings | null
  */
 async function retrieveSettingsFromStorage(): Promise<Settings | null> {
-    try {
-        const storedData = await browser.storage.sync.get(StorageKeys.Settings);
-        // const storedConfig = storedData[StorageKeys.Configuration];
-
-        if (isSettingsData(storedData)) {
-            return storedData;
-        } else {
-            console.error('Stored configuration is invalid', storedData);
-            await clearSavedSettings();
-            return null;
-        }
-    } catch (error) {
-        console.error('Error retrieving configuration', error);
-        await clearSavedSettings();
-        return null;
+    const settings = await storage.getItem<Settings>(StorageKeys.Settings);
+    
+    const meta = await storage.getMeta(StorageKeys.Settings);
+    const lastModified =
+        meta['lastModified'] && typeof meta['lastModified'] === 'number'
+            ? meta['lastModified']
+            : 0;
+    
+    if (settings !== null) {
+        console.log(`Successfully retrieved settings from storage. Last modified: `, lastModified);
     }
+
+    return settings;
 }
 
 /**
  * Clear saved settings
  * @returns
  */
-export async function clearSavedSettings(): Promise<boolean> {
-    try {
-        await browser.storage.sync.remove(StorageKeys.Settings.toString());
-        return true;
-    } catch (error) {
-        console.error('Error clearing settings', error);
-        return false;
-    }
+export async function clearSavedSettings() {
+    console.warn(`Clearing stored settings.`);
+    await storage.removeItem(StorageKeys.Settings);
 }
 
 /**
- * Save settings after validating
+ * Save settings
  */
-export async function saveSettings(config: Settings): Promise<boolean> {
-    if (!isSettingsData(config)) {
-        console.error('Invalid settings format could not be saved');
-        return false;
-    }
+export async function saveSettings(settings: Settings) {
+    console.log(`Saving settings.`, settings);
+    
+    await storage.setItem<Settings>(StorageKeys.Settings, settings);
 
-    try {
-        await browser.storage.sync.set({
-            [StorageKeys.Settings]: config,
-        });
-        return true;
-    } catch (error) {
-        console.error('Error saving settings', error);
-        return false;
-    }
+    await storage.setMeta(StorageKeys.Settings, { lastModified: Date.now() });
 }
 
 export function getStorageValue<K extends StorageKeys>(
