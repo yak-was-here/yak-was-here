@@ -9,7 +9,7 @@ import {
 } from '@/lib/tab-management';
 import { waitForElementAppearance } from '@/lib/observer-management';
 
-const MATCH_STRING = '*://*.twitch.tv/*';
+const MATCH_STRING = '<all_urls>';
 
 export default defineContentScript({
     matches: [MATCH_STRING],

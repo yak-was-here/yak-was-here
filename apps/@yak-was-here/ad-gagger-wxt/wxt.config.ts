@@ -9,7 +9,6 @@ export default defineConfig({
     manifest: {
         name: 'Ad Gagger',
         permissions: ['storage'],
-        host_permissions: ['<all_urls>'],
     },
     imports: {
         eslintrc: {
