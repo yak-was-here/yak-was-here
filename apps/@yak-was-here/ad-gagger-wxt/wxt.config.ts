@@ -19,6 +19,7 @@ export default defineConfig({
     webExt: {
         binaries: {
             brave: 'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe',
+            braveUser: `${process.env.USERPROFILE}\\AppData\\Local\\BraveSoftware\\Brave-Browser\\Application\\brave.exe`,
         },
         openConsole: true,
         openDevtools: true,
