@@ -25,25 +25,26 @@ export const retrieveSettings = async (settings?: Settings | null) => {
 }
 
 /**
- * Select site configuration from settings based on current URL
+ * Get site configuration(s) from settings based on the passed URL
  * @param settings
- * @param currentURL
- * @returns
+ * @param url
+ * @returns - an array of matching site configurations
  */
 export function getSiteConfigurationFromSettings(
     settings: Settings,
-    currentURL: string
-): SiteConfiguration | null {
+    url: string
+): SiteConfiguration[] {
+    const matchingConfigs: SiteConfiguration[] = [];
     for (const siteConfiguration of settings.siteConfigurations) {
         if (
             new MatchPattern(siteConfiguration.matchString).includes(
-                currentURL
+                url
             )
         ) {
-            return siteConfiguration;
+            matchingConfigs.push(siteConfiguration);
         }
     }
-    return null;
+    return matchingConfigs;
 }
 
 /**

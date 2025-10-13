@@ -6,6 +6,7 @@ Automatically mute and skip Twitch ads.
 
 - [X] Skip the new "Using ad blocker?" message that Twitch shows
 - [X] Fix eslint errors
+- [X] Support multiple site configurations matches for the same URL
 - [ ] Mute ad and unmute "mini-player" version of stream when an ad is running
 - [ ] Support YouTube.com
 - [ ] Support Amazon Prime Video

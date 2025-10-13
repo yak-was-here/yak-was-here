@@ -1,6 +1,6 @@
 import { Settings, StorageKeys } from '@/types/settings';
 import {
-    getSiteConfigurationFromSettings,
+    getSiteConfigurationFromSettings as getSiteConfigurationsFromSettings,
     retrieveSettings,
 } from '@/lib/settings-management';
 import {
@@ -8,16 +8,25 @@ import {
     unmuteTabConditionally,
 } from '@/lib/tab-management';
 import { waitForElementAppearance } from '@/lib/observer-management';
+import { SiteConfiguration } from '@/types/configurations';
+import { hasUrlChanged } from '@/utils/urls';
 
 const MATCH_STRING = '<all_urls>';
 
 export default defineContentScript({
     matches: [MATCH_STRING],
     async main(ctx) {
-        const observersArr: MutationObserver[] = [];
 
-        const settings = await initialize();
-        startDetection(settings, window.location.href, observersArr);
+        const observersArr: MutationObserver[] = [];
+        
+        const tabId = await retrieveCurrentTabId();
+        const siteConfigurations = await initialize(tabId);
+        
+        if (siteConfigurations.length > 0) {
+            startDetection(siteConfigurations, observersArr, tabId);
+        } else {
+            console.log(`No site configurations match the current URL.`)
+        }
 
         // https://wxt.dev/guide/essentials/content-scripts.html#dealing-with-spas
         // Technically we may not need to do this because we are only handling on a per domain basis.
@@ -25,30 +34,46 @@ export default defineContentScript({
             window,
             'wxt:locationchange',
             async ({ oldUrl, newUrl }) => {
-                if (new MatchPattern(MATCH_STRING).includes(newUrl)) {
+                if (hasUrlChanged(oldUrl, newUrl)) {
                     console.log(
                         `Detected location change:\n${oldUrl} ➡️ ${newUrl}`
                     );
 
-                    await stopDetection(observersArr);
-                    startDetection(
-                        settings,
-                        window.location.href,
-                        observersArr
-                    );
+                    await stopDetection(observersArr, tabId);
+
+                    const newSiteConfiguration = await initialize(tabId, newUrl.toString());
+
+                    if (newSiteConfiguration.length > 0) {
+                        startDetection(
+                            newSiteConfiguration,
+                            observersArr,
+                            tabId
+                        );
+                    } else {
+                        console.log(
+                            `No site configurations match the current URL.`
+                        );
+                    }
                 }
             }
         );
 
         storage.watch<Settings>(
             StorageKeys.Settings,
-            async (newVal, oldVal) => {
-                console.warn(`Settings change detected!`);
-                await stopDetection(observersArr);
+            async (updatedSettings, outdatedSettings) => {
+                console.warn(`Detected settings change.`);
 
-                const updatedSettings = await retrieveSettings(newVal);
+                await stopDetection(observersArr, tabId);
 
-                startDetection(updatedSettings, window.location.href, observersArr);
+                const siteConfigurations = await initialize(tabId, undefined, updatedSettings ?? undefined);
+
+                if (siteConfigurations.length > 0) {
+                    startDetection(siteConfigurations, observersArr, tabId);
+                } else {
+                    console.log(
+                        `No site configurations match the current URL.`
+                    );
+                }
             }
         );
     },
@@ -58,66 +83,61 @@ export default defineContentScript({
  * Initialize: reset tab state and retrieve settings
  * @returns settings
  */
-const initialize = async (): Promise<Settings> => {
+const initialize = async (tabId: number, passedUrl?: string, passedSettings?: Settings): Promise<SiteConfiguration[]> => {
     console.log('Initializing...');
 
-    await unmuteTabConditionally(await retrieveCurrentTabId());
+    await unmuteTabConditionally(tabId);
 
-    return await retrieveSettings();
+    const settings = passedSettings ?? await retrieveSettings();
+    const url = passedUrl ?? window.location.href;
+
+    const siteConfigurations = getSiteConfigurationsFromSettings(
+        settings,
+        url
+    );
+
+    return siteConfigurations;
 };
 
 /**
  * Start detection
- * @param settings - extension settings
- * @param currentUrl - URL to match against
+ * @param siteConfigurations - configuration(s) for this site/URL
  * @param observersArr - an array to store observers in
+ * @param tabId - the id of current tab
  */
 const startDetection = async (
-    settings: Settings,
-    currentUrl: string,
-    observersArr: MutationObserver[]
+    siteConfigurations: SiteConfiguration[],
+    observersArr: MutationObserver[],
+    tabId: number,
 ) => {
     console.log(`Starting detection...`);
 
-    if (!settings) {
-        console.error(
-            'Could not start detection because no settings were found!'
-        );
-        return;
-    }
-
-    const siteConfiguration = getSiteConfigurationFromSettings(
-        settings,
-        currentUrl
-    );
-
-    if (!siteConfiguration) {
-        console.log(`No site configuration found for: `, currentUrl);
-        return;
-    }
-
-    if (siteConfiguration && !siteConfiguration.enabled) {
-        console.log('Site configuration found but it is not active.');
-        return;
-    }
-
-    const tabId = await retrieveCurrentTabId();;
-
-    for (const elementConfig of siteConfiguration.elementConfigurations) {
-        waitForElementAppearance(
-            observersArr,
-            elementConfig,
-            tabId
-        );
+    for (const siteConfiguration of siteConfigurations) {
+        if (siteConfiguration.enabled) {
+            for (const elementConfig of siteConfiguration.elementConfigurations) {
+                waitForElementAppearance(
+                    observersArr,
+                    elementConfig,
+                    tabId
+                );
+            };
+        } else {
+            console.log(`Skipping disabled site configuration with matchString: `, siteConfiguration.matchString);
+        }
+        
     };
+
 };
 
 /**
  * Stop detection: unmutes the tab if it was muted by the extension and clean up any observers
  */
-const stopDetection = async (observersArr: MutationObserver[]) => {
+const stopDetection = async (
+    observersArr: MutationObserver[],
+    tabId: number
+) => {
     console.log(`Stopping detection...`);
 
-    await unmuteTabConditionally(await retrieveCurrentTabId());
+    await unmuteTabConditionally(tabId);
     cleanUpObservers(observersArr);
 };
