@@ -1,18 +1,8 @@
-import { StorageKeys } from '@/lib/storage-management';
 import { InteractionType, SiteConfiguration } from '@/types/configurations';
-
-export interface StorageData {
-    [StorageKeys.MutedTabIds]: number[];
-    [StorageKeys.Settings]: Settings;
-}
 
 export interface Settings {
     siteConfigurations: SiteConfiguration[];
 }
-
-/**********************
- * DEFAULTS
- **********************/
 
 export const defaultSiteConfigurations: SiteConfiguration[] = [
     {

@@ -1,10 +1,9 @@
-import { storage } from '#imports';
 import {
     defaultSettings,
     defaultSiteConfigurations,
     Settings,
-    StorageData,
 } from '@/types/settings';
+import { settingsStorage, StorageTypes } from './storage-management';
 import { StorageKeys } from './storage-management';
 import { SiteConfiguration } from '@/types/configurations';
 
@@ -54,16 +53,18 @@ export function getSiteConfigurationFromSettings(
  * @returns Settings | null
  */
 async function retrieveSettingsFromStorage(): Promise<Settings | null> {
-    const settings = await storage.getItem<Settings>(StorageKeys.Settings);
+    const settings = await settingsStorage.getValue();
     
-    const meta = await storage.getMeta(StorageKeys.Settings);
+    const meta = await settingsStorage.getMeta();
     const lastModified =
         meta['lastModified'] && typeof meta['lastModified'] === 'number'
             ? meta['lastModified']
             : 0;
     
     if (settings !== null) {
-        console.log(`Successfully retrieved settings from storage. Last modified: `, lastModified);
+        const lastModifiedDate = new Date(lastModified).toLocaleString();
+        
+        console.log(`Successfully retrieved settings from storage. Last modified: `, lastModifiedDate);
     }
 
     return settings;
@@ -74,19 +75,25 @@ async function retrieveSettingsFromStorage(): Promise<Settings | null> {
  * @returns
  */
 export async function clearSavedSettings() {
-    console.warn(`Clearing stored settings.`);
-    await storage.removeItem(StorageKeys.Settings);
+    await settingsStorage.removeValue();
+    await settingsStorage.removeMeta();
+    console.warn(`Cleared stored settings.`);
 }
 
 /**
  * Save settings
  */
-export async function saveSettings(settings: Settings) {
-    console.log(`Saving settings.`, settings);
-    
-    await storage.setItem<Settings>(StorageKeys.Settings, settings);
+export async function saveSettings(userSettings: Settings) {
 
-    await storage.setMeta(StorageKeys.Settings, { lastModified: Date.now() });
+    const validatedSettings = validateSettings(userSettings);
+    
+    await settingsStorage.setValue(validatedSettings);
+
+    await settingsStorage.setMeta({
+        lastModified: Date.now()
+    });
+    
+    console.log(`Saved settings.`, validatedSettings);
 }
 
 /**
@@ -128,13 +135,13 @@ export const validateSettings = (userSettings: Settings): Settings => {
 
 export function getStorageValue<K extends StorageKeys>(
     key: K
-): Promise<StorageData[K] | undefined> {
+): Promise<StorageTypes[K] | undefined> {
     return browser.storage.local.get(key).then((result) => result[key]);
 }
 
 export function setStorageValue<K extends StorageKeys>(
     key: K,
-    value: StorageData[K]
+    value: StorageTypes[K]
 ): Promise<void> {
     return browser.storage.local.set({ [key]: value });
 }

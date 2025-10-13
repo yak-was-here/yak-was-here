@@ -5,19 +5,30 @@ export enum StorageKeys {
     MutedTabIds = 'local:mutedTabIds',
     Settings = 'sync:settings'
 }
+export interface StorageTypes {
+    [StorageKeys.MutedTabIds]: number[];
+    [StorageKeys.Settings]: Settings;
+}
 
-export const settingsStorage = storage.defineItem<Settings>(
+export enum StorageMetaKeys {
+    lastModified = 'lastModified'
+}
+
+export interface StorageMetaTypes extends Record<string, unknown> {
+    [StorageMetaKeys.lastModified]: number;
+}
+
+export const settingsStorage = storage.defineItem<StorageTypes[StorageKeys.Settings], StorageMetaTypes>(
     StorageKeys.Settings,
     {
         version: 1,
     }
 );
 
-export const mutedTabIdsStorage = storage.defineItem<number[]>(
+export const mutedTabIdsStorage = storage.defineItem<StorageTypes[StorageKeys.MutedTabIds]>(
     StorageKeys.MutedTabIds,
     {
         fallback: [],
-        version: 1,
     }
 );
 

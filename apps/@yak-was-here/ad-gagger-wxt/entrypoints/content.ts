@@ -1,5 +1,5 @@
 import { Settings } from '@/types/settings';
-import { StorageKeys } from '@/lib/storage-management';
+import { settingsStorage } from '@/lib/storage-management';
 import {
     getSiteConfigurationFromSettings as getSiteConfigurationsFromSettings,
     getSettings,
@@ -60,8 +60,7 @@ export default defineContentScript({
             }
         );
 
-        storage.watch<Settings>(
-            StorageKeys.Settings,
+        settingsStorage.watch(
             async (updatedSettings, outdatedSettings) => {
                 console.warn(`Detected settings change.`);
 
