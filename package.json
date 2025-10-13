@@ -101,6 +101,7 @@
         "remark": "^15.0.1",
         "remark-html": "^16.0.1",
         "tailwind-merge": "^3.3.1",
-        "tw-animate-css": "^1.3.8"
+        "tw-animate-css": "^1.3.8",
+        "uuid": "^13.0.0"
     }
 }

@@ -1,10 +1,11 @@
 import { storage } from '#imports';
 import {
     defaultSettings,
+    defaultSiteConfigurations,
     Settings,
     StorageData,
-    StorageKeys,
 } from '@/types/settings';
+import { StorageKeys } from './storage-management';
 import { SiteConfiguration } from '@/types/configurations';
 
 /**
@@ -21,7 +22,8 @@ export const getSettings = async (settings?: Settings | null) => {
         console.warn('Using default settings.');
         return defaultSettings;
     }
-    return savedSettings;
+
+    return validateSettings(savedSettings);
 }
 
 /**
@@ -85,6 +87,43 @@ export async function saveSettings(settings: Settings) {
     await storage.setItem<Settings>(StorageKeys.Settings, settings);
 
     await storage.setMeta(StorageKeys.Settings, { lastModified: Date.now() });
+}
+
+/**
+ * Validate settings - merges default settings with user settings and returns validated settings
+ */
+export const validateSettings = (userSettings: Settings): Settings => {
+    const validatedSettings = JSON.parse(JSON.stringify(userSettings)) as Settings;
+
+    // Collect default site configurations' enabled state from user settings
+    const defaultSiteConfigs_UserEnabledSettings = new Map<string, boolean>(
+        validatedSettings.siteConfigurations
+            .filter(userSiteConfig => {
+                return defaultSiteConfigurations.find(defaultSiteConfig => defaultSiteConfig.id === userSiteConfig.id)
+            })
+            .map(c => [c.id, c.enabled] as [string, boolean])
+    );
+    
+    // Only preserve the enabled state from user settings
+    // and merge them with the values for the default site configurations
+    const defaultSiteConfigs_WithUserEnabledSettings: SiteConfiguration[] = defaultSiteConfigurations.map((defaultSiteCfg) => {
+        const clonedDefaultSiteCfg = JSON.parse(JSON.stringify(defaultSiteCfg)) as SiteConfiguration;
+        const overrideEnabled = defaultSiteConfigs_UserEnabledSettings.get(defaultSiteCfg.id);
+        if (typeof overrideEnabled === 'boolean') {
+            clonedDefaultSiteCfg.enabled = overrideEnabled;
+        }
+        return clonedDefaultSiteCfg;
+    });
+
+    // User created site configurations
+    const userCreatedSitConfigs: SiteConfiguration[] = validatedSettings.siteConfigurations.filter((cfg) => {
+        const isDefaultId = defaultSiteConfigurations.find((c) => c.id === cfg.id);
+        return cfg.isUserCreated && !isDefaultId;
+    });
+
+    validatedSettings.siteConfigurations = [...defaultSiteConfigs_WithUserEnabledSettings, ...userCreatedSitConfigs];
+
+    return validatedSettings;
 }
 
 export function getStorageValue<K extends StorageKeys>(

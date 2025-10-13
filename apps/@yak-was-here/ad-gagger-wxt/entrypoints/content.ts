@@ -1,4 +1,5 @@
-import { Settings, StorageKeys } from '@/types/settings';
+import { Settings } from '@/types/settings';
+import { StorageKeys } from '@/lib/storage-management';
 import {
     getSiteConfigurationFromSettings as getSiteConfigurationsFromSettings,
     getSettings,

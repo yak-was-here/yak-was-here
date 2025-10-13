@@ -1,4 +1,4 @@
-import { StorageKeys } from '@/types/settings';
+import { StorageKeys } from './storage-management';
 import { getStorageValue, setStorageValue } from '@/lib/settings-management';
 
 /**
