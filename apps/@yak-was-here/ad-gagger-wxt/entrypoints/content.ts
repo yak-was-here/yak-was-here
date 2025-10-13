@@ -1,7 +1,7 @@
 import { Settings, StorageKeys } from '@/types/settings';
 import {
     getSiteConfigurationFromSettings as getSiteConfigurationsFromSettings,
-    retrieveSettings,
+    getSettings,
 } from '@/lib/settings-management';
 import {
     retrieveCurrentTabId,
@@ -20,7 +20,8 @@ export default defineContentScript({
         const observersArr: MutationObserver[] = [];
         
         const tabId = await retrieveCurrentTabId();
-        const siteConfigurations = await initialize(tabId);
+        const settings = await getSettings();
+        const siteConfigurations = await initialize(tabId, settings);
         
         if (siteConfigurations.length > 0) {
             startDetection(siteConfigurations, observersArr, tabId);
@@ -41,11 +42,11 @@ export default defineContentScript({
 
                     await stopDetection(observersArr, tabId);
 
-                    const newSiteConfiguration = await initialize(tabId, newUrl.toString());
+                    const updatedSiteConfiguration = await initialize(tabId, settings, newUrl.toString());
 
-                    if (newSiteConfiguration.length > 0) {
+                    if (updatedSiteConfiguration.length > 0) {
                         startDetection(
-                            newSiteConfiguration,
+                            updatedSiteConfiguration,
                             observersArr,
                             tabId
                         );
@@ -65,7 +66,9 @@ export default defineContentScript({
 
                 await stopDetection(observersArr, tabId);
 
-                const siteConfigurations = await initialize(tabId, undefined, updatedSettings ?? undefined);
+                const validatedSettings = await getSettings(updatedSettings);
+
+                const siteConfigurations = await initialize(tabId, validatedSettings);
 
                 if (siteConfigurations.length > 0) {
                     startDetection(siteConfigurations, observersArr, tabId);
@@ -83,18 +86,18 @@ export default defineContentScript({
  * Initialize: reset tab state and retrieve settings
  * @returns settings
  */
-const initialize = async (tabId: number, passedUrl?: string, passedSettings?: Settings): Promise<SiteConfiguration[]> => {
+const initialize = async (
+    tabId: number,
+    settings: Settings,
+    passedUrl?: string
+): Promise<SiteConfiguration[]> => {
     console.log('Initializing...');
 
     await unmuteTabConditionally(tabId);
 
-    const settings = passedSettings ?? await retrieveSettings();
     const url = passedUrl ?? window.location.href;
 
-    const siteConfigurations = getSiteConfigurationsFromSettings(
-        settings,
-        url
-    );
+    const siteConfigurations = getSiteConfigurationsFromSettings(settings, url);
 
     return siteConfigurations;
 };

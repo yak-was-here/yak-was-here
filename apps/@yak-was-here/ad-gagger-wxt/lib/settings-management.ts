@@ -8,11 +8,11 @@ import {
 import { SiteConfiguration } from '@/types/configurations';
 
 /**
- * Retrieve and return valid settings starting first with what was passed in (usually a new storage value), second from storage directly, or lastly fallback to default settings
+ * Get valid settings starting first with what was passed in (usually a new storage value), second from storage directly, or lastly fallback to default settings
  * @param settings - if there are settings to use attempt to use them
  * @returns Settings from storage or default settings
  */
-export const retrieveSettings = async (settings?: Settings | null) => {
+export const getSettings = async (settings?: Settings | null) => {
     console.log('Retrieving settings...');
 
     const savedSettings = settings ?? await retrieveSettingsFromStorage();
