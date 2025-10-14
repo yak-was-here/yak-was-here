@@ -54,11 +54,25 @@ npm i
 
 ### Updating packages
 
+Update a specific package:
+
 ```sh
-npx nx migrate latest
+./nx migrate <package-name>@<version>
 ```
 
-[https://nx.dev/features/automate-updating-dependencies](https://nx.dev/features/automate-updating-dependencies)
+Update all packages:
+
+```sh
+# Updates the versions of the relevant packages in the package.json file
+# Generates a migrations.json if there are pending migrations
+./nx migrate latest
+```
+
+References:
+
+- [nx migrate Command](https://nx.dev/docs/reference/nx-commands#nx-migrate)
+- [Automate Updating Dependencies](https://nx.dev/features/automate-updating-dependencies)
+- [Advanced Update Process](https://nx.dev/docs/guides/tips-n-tricks/advanced-update)
 
 ### Troubleshooting
 
