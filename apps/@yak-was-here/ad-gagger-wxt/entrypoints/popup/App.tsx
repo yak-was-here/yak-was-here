@@ -26,7 +26,7 @@ function App() {
                         />
                     </div>
                     <div>
-                        <label className='text-purple-900'>YouTube.com</label>
+                        <label>YouTube.com</label>
                         <input
                             type="checkbox"
                             checked={youtube}

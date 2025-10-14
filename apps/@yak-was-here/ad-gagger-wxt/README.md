@@ -51,5 +51,5 @@ npm i -D wxt typescript @types/react @types/react-dom @wxt-dev/module-react
 ```
 
 ```sh
-npm i react react-dom @webext-core/messaging uuid tailwindcss @tailwindcss/vite
+npm i react react-dom @webext-core/messaging uuid
 ```

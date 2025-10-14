@@ -1,5 +1,4 @@
 import { defineConfig } from 'wxt';
-import tailwindcss from '@tailwindcss/vite';
 
 // See https://wxt.dev/api/config.html
 export default defineConfig({
@@ -7,9 +6,6 @@ export default defineConfig({
         '@wxt-dev/module-react',
         '@wxt-dev/auto-icons', // https://www.npmjs.com/package/@wxt-dev/auto-icons
     ],
-    vite: () => ({
-        plugins: [tailwindcss()],
-    }),
     manifest: {
         name: 'Ad Gagger',
         permissions: ['storage'],
@@ -26,6 +22,6 @@ export default defineConfig({
         },
         openConsole: true,
         openDevtools: true,
-        startUrls: ['https://www.twitch.tv/caseoh_'],
+        startUrls: ['https://www.twitch.tv/shroud'],
     },
 });
