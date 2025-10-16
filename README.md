@@ -17,7 +17,7 @@ My UI component library.
 
 ## Ad Gagger
 
-[`apps/@yak-was-here/ad-gagger`](./apps/@yak-was-here/ad-gagger/)
+[`apps/@yak-was-here/ad-gagger-wxt`](./apps/@yak-was-here/ad-gagger-wxt/)
 
 Automatically mute and skip video ads on YouTube, Twitch, and any website you configure.
 
