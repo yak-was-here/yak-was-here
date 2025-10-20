@@ -17,9 +17,9 @@ My UI component library.
 
 ## Ad Gagger
 
-[`apps/@yak-was-here/ad-gagger-wxt`](./apps/@yak-was-here/ad-gagger-wxt/)
+[`apps/@yak-was-here/ad-gagger-wxt`](./apps/@yak-was-here/ad-gagger-wxt/README.md)
 
-Automatically mute and skip video ads on YouTube, Twitch, and any website you configure.
+Automatically mute and skip ads on Twitch.tv and more.
 
 ## [isaacyakl.com](https://www.isaacyakl.com)
 
@@ -44,7 +44,23 @@ An old version of my personal website created with NextJS without a component li
 
 ### Setup
 
-Install nvm or [nvm-windows](https://github.com/coreybutler/nvm-windows) if necessary and restart editor and terminal(s).
+#### nvm
+
+Install nvm or [nvm-windows](https://github.com/coreybutler/nvm-windows/releases) and make sure to leave the "Open with PowerShell" option checked so that it updates the environment variables after installation. Then make sure to fully restart the editor + terminal(s) after installation.
+
+Use the correct version of node+npm:
+
+```sh
+# See what version of Node needs to be installed
+cat .nvmrc
+```
+
+```sh
+# Install and use the version from above
+nvm install 22 && nvm use 22
+```
+
+#### Dependencies
 
 Install packages:
 

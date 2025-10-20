@@ -2,7 +2,7 @@
     "name": "@yak-was-here/ad-gagger-wxt",
     "description": "Automatically mute and skip Twitch ads.",
     "private": true,
-    "version": "0.1.0",
+    "version": "0.2.0",
     "type": "module",
     "scripts": {
         "dev": "wxt",
@@ -15,5 +15,18 @@
         "zip:firefox": "wxt zip -b firefox",
         "compile": "tsc --noEmit",
         "postinstall": "wxt prepare"
+    },
+    "dependencies": {
+        "@webext-core/messaging": "^2.3.0",
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0",
+        "uuid": "^13.0.0"
+    },
+    "devDependencies": {
+        "@types/react": "^19.2.2",
+        "@types/react-dom": "^19.2.2",
+        "@wxt-dev/module-react": "^1.1.5",
+        "typescript": "^5.9.3",
+        "wxt": "^0.20.11"
     }
 }
