@@ -3,30 +3,28 @@ import EmailLink from "./EmailLink";
 import Skill from "./Skill";
 import TelLink from "./TelLink";
 import Link from "next/link";
-import { useEffect } from "react";
 import { FaDownload, FaPrint, FaAt, FaPhoneAlt, FaBriefcase, FaGithub, FaLinkedin } from "react-icons/fa";
 
 function ResumeView() {
-	let revealObfsdLinks = async (): Promise<void> => {};
+	const revealObfuscatedLinks = async (obfuscatedLinks: NodeList): Promise<void> => {
+            if (obfuscatedLinks.length > 0) {
+                for (let i = 0; i < obfuscatedLinks.length; i++) {
+                    const link = obfuscatedLinks[i] as HTMLAnchorElement;
+                    // @ts-expect-error focusVisible is an experimental option so it needed to be ignored by TS https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus
+                    link.focus({ preventScroll: true, focusVisible: false });
+                }
+            }
+		};
 	const printResume = () => {
 		// Print to PDF in Firefox for best text recognition.
-		// Reveal obfuscated contact information before printing/printing to PDF
-		revealObfsdLinks().then(() => {
+        // Reveal obfuscated contact information before printing/printing to PDF
+        const links = document.querySelectorAll(
+            'a[href="https://youtu.be/dQw4w9WgXcQ"'
+        );
+		revealObfuscatedLinks(links).then(() => {
 			window.print();
 		});
 	};
-
-	useEffect(() => {
-		revealObfsdLinks = async (): Promise<void> => {
-			const obfsdLinks: NodeList = document.querySelectorAll('a[href="https://youtu.be/dQw4w9WgXcQ"');
-
-			for (let i = 0; i < obfsdLinks.length; i++) {
-				const obfsdLnk = obfsdLinks[i] as HTMLAnchorElement;
-				// @ts-ignore
-				obfsdLnk.focus({ preventScroll: true, focusVisible: false }); // focusVisibile is an experimental option so it needed to be ignored by TS https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus
-			}
-		};
-	});
 
 	// Golden nugget on Stackoverflow about best settings for full page print styling
 	// https://stackoverflow.com/a/36690658/13254325
