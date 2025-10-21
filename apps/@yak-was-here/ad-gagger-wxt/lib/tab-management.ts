@@ -1,5 +1,4 @@
-import { StorageKeys } from './storage-management';
-import { getStorageValue, setStorageValue } from '@/lib/settings-management';
+import { mutedTabIdsStorage } from './storage-management';
 
 /**
  * Gets the ID of the current tab using the runtime API
@@ -29,24 +28,29 @@ export async function retrieveCurrentTabId(): Promise<number> {
  * @returns Promise that resolves to true if the tab is muted, false otherwise
  */
 export async function isTabIdInMutedList(tabId: number): Promise<boolean> {
-    const mutedTabIds = (await getStorageValue(StorageKeys.MutedTabIds)) ?? [];
-    return mutedTabIds.includes(tabId);
+    return (await mutedTabIdsStorage.getValue()).includes(tabId);
 }
 
-// Function to add tab to muted array
+/**
+ * Adds a tab to the muted list in storage
+ * @param tabId The ID of the tab to add to the muted list
+ */
 export async function addTabToMutedList(tabId: number) {
-    const mutedList = (await getStorageValue(StorageKeys.MutedTabIds)) ?? [];
+    const mutedList = await mutedTabIdsStorage.getValue();
     if (!mutedList.includes(tabId)) {
         mutedList.push(tabId);
-        setStorageValue(StorageKeys.MutedTabIds, mutedList);
+        await mutedTabIdsStorage.setValue(mutedList);
     }
 }
 
-// Function to remove tab from muted array
+/**
+ * Removes a tab from the muted list in storage
+ * @param tabId The ID of the tab to remove from the muted list
+ */
 export async function removeTabFromMutedList(tabId: number) {
-    const mutedList = (await getStorageValue(StorageKeys.MutedTabIds)) ?? [];
+    const mutedList = await mutedTabIdsStorage.getValue();
     const updatedList = mutedList.filter((id: number) => id !== tabId);
-    setStorageValue(StorageKeys.MutedTabIds, updatedList);
+    await mutedTabIdsStorage.setValue(updatedList);
 }
 
 /**
@@ -74,17 +78,6 @@ export function setTabMuteState(tabId: number, mute: boolean): void {
     browser.runtime.sendMessage({
         action: 'setTabMuteState',
         tabId: tabId,
-        mute: mute,
-    });
-}
-
-/**
- * Sets the mute state for the current tab
- * @param mute Whether to mute (true) or unmute (false) the tab
- */
-export function setCurrentTabMuteState(mute: boolean): void {
-    browser.runtime.sendMessage({
-        action: 'setCurrentTabMuteState',
         mute: mute,
     });
 }

@@ -132,16 +132,3 @@ export const validateSettings = (userSettings: Settings): Settings => {
 
     return validatedSettings;
 }
-
-export function getStorageValue<K extends StorageKeys>(
-    key: K
-): Promise<StorageTypes[K] | undefined> {
-    return browser.storage.local.get(key).then((result) => result[key]);
-}
-
-export function setStorageValue<K extends StorageKeys>(
-    key: K,
-    value: StorageTypes[K]
-): Promise<void> {
-    return browser.storage.local.set({ [key]: value });
-}
