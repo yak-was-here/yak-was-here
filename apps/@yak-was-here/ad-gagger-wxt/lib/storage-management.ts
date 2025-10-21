@@ -1,14 +1,17 @@
 import { Settings } from "@/types/settings";
+import { emptyStatistics, Statistics } from '@/types/statistics';
 
 export enum StorageKeys {
-    // Includes storage location prefix. See: https://wxt.dev/storage.html#basic-usage
+    // Include storage location prefix. See: https://wxt.dev/storage.html#basic-usage
     MutedTabIds = 'local:mutedTabIds',
-    Settings = 'sync:settings'
+    Settings = 'sync:settings',
+    Statistics = 'sync:statistics',
 }
 
 export interface StorageTypes {
     [StorageKeys.MutedTabIds]: number[];
     [StorageKeys.Settings]: Settings;
+    [StorageKeys.Statistics]: Statistics;
 }
 
 export enum StorageMetaKeys {
@@ -33,4 +36,13 @@ export const mutedTabIdsStorage = storage.defineItem<StorageTypes[StorageKeys.Mu
     }
 );
 
+export const statisticsStorage = storage.defineItem<
+    StorageTypes[StorageKeys.Statistics],
+    StorageMetaTypes
+    >(StorageKeys.Statistics,
+    {
+        version: 1,
+        fallback: emptyStatistics,
+    }
+);
 
