@@ -132,3 +132,10 @@ export const validateSettings = (userSettings: Settings): Settings => {
 
     return validatedSettings;
 }
+
+export const resetSettings = async () => {
+    // Remove the settings storage values
+    // because without them the extension uses default settings
+    await settingsStorage.removeValue();
+    await settingsStorage.removeMeta();
+}
