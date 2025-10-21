@@ -4,7 +4,7 @@ import { emptyStatistics } from "@/types/statistics";
 
 export const incrementInteractionStat = async (type: InteractionType) => {
     const stats = await statisticsStorage.getValue();
-    const current = Number(stats[type] ?? 0);
+    const current = Math.max(0, Number(stats[type] ?? 0));
     const newCount = current + 1;
     await statisticsStorage.setValue({
         ...stats,
