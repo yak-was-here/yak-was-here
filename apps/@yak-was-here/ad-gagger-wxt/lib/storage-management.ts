@@ -5,6 +5,7 @@ export enum StorageKeys {
     MutedTabIds = 'local:mutedTabIds',
     Settings = 'sync:settings'
 }
+
 export interface StorageTypes {
     [StorageKeys.MutedTabIds]: number[];
     [StorageKeys.Settings]: Settings;

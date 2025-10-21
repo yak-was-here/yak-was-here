@@ -26,12 +26,12 @@ export const getSettings = async (settings?: Settings | null) => {
 }
 
 /**
- * Get site configuration(s) from settings based on the passed URL
+ * Get site configuration(s) from settings for the passed URL
  * @param settings
  * @param url
  * @returns - an array of matching site configurations
  */
-export function getSiteConfigurationFromSettings(
+export function getSiteConfigurationsForURL(
     settings: Settings,
     url: string
 ): SiteConfiguration[] {
@@ -54,16 +54,16 @@ export function getSiteConfigurationFromSettings(
  */
 async function retrieveSettingsFromStorage(): Promise<Settings | null> {
     const settings = await settingsStorage.getValue();
-    
+
     const meta = await settingsStorage.getMeta();
     const lastModified =
         meta['lastModified'] && typeof meta['lastModified'] === 'number'
             ? meta['lastModified']
             : 0;
-    
+
     if (settings !== null) {
         const lastModifiedDate = new Date(lastModified).toLocaleString();
-        
+
         console.log(`Successfully retrieved settings from storage. Last modified: `, lastModifiedDate);
     }
 
@@ -86,13 +86,13 @@ export async function clearSavedSettings() {
 export async function saveSettings(userSettings: Settings) {
 
     const validatedSettings = validateSettings(userSettings);
-    
+
     await settingsStorage.setValue(validatedSettings);
 
     await settingsStorage.setMeta({
         lastModified: Date.now()
     });
-    
+
     console.log(`Saved settings.`, validatedSettings);
 }
 
@@ -110,7 +110,7 @@ export const validateSettings = (userSettings: Settings): Settings => {
             })
             .map(c => [c.id, c.enabled] as [string, boolean])
     );
-    
+
     // Only preserve the enabled state from user settings
     // and merge them with the values for the default site configurations
     const defaultSiteConfigs_WithUserEnabledSettings: SiteConfiguration[] = defaultSiteConfigurations.map((defaultSiteCfg) => {

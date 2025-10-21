@@ -1,7 +1,7 @@
 import { Settings } from '@/types/settings';
 import { settingsStorage } from '@/lib/storage-management';
 import {
-    getSiteConfigurationFromSettings as getSiteConfigurationsFromSettings,
+    getSiteConfigurationsForURL,
     getSettings,
 } from '@/lib/settings-management';
 import {
@@ -12,6 +12,7 @@ import { waitForElementAppearance } from '@/lib/observer-management';
 import { SiteConfiguration } from '@/types/configurations';
 import { hasUrlChanged } from '@/utils/urls';
 
+// This allows users to create configurations for any site/URL
 const MATCH_STRING = '<all_urls>';
 
 export default defineContentScript({
@@ -19,19 +20,19 @@ export default defineContentScript({
     async main(ctx) {
 
         const observersArr: MutationObserver[] = [];
-        
+
         const tabId = await retrieveCurrentTabId();
         const settings = await getSettings();
-        const siteConfigurations = await initialize(tabId, settings);
-        
-        if (siteConfigurations.length > 0) {
-            startDetection(siteConfigurations, observersArr, tabId);
+        const urlSiteConfigurations = await initialize(tabId, settings);
+
+        if (urlSiteConfigurations.length > 0) {
+            startDetection(urlSiteConfigurations, observersArr, tabId);
         } else {
             console.log(`No site configurations match the current URL.`)
         }
 
+        // Triggered when location changes
         // https://wxt.dev/guide/essentials/content-scripts.html#dealing-with-spas
-        // Technically we may not need to do this because we are only handling on a per domain basis.
         ctx.addEventListener(
             window,
             'wxt:locationchange',
@@ -43,11 +44,11 @@ export default defineContentScript({
 
                     await stopDetection(observersArr, tabId);
 
-                    const updatedSiteConfiguration = await initialize(tabId, settings, newUrl.toString());
+                    const updatedUrlSiteConfigurations = await initialize(tabId, settings, newUrl.toString());
 
-                    if (updatedSiteConfiguration.length > 0) {
+                    if (updatedUrlSiteConfigurations.length > 0) {
                         startDetection(
-                            updatedSiteConfiguration,
+                            updatedUrlSiteConfigurations,
                             observersArr,
                             tabId
                         );
@@ -68,10 +69,10 @@ export default defineContentScript({
 
                 const validatedSettings = await getSettings(updatedSettings);
 
-                const siteConfigurations = await initialize(tabId, validatedSettings);
+                const urlSiteConfigurations = await initialize(tabId, validatedSettings);
 
-                if (siteConfigurations.length > 0) {
-                    startDetection(siteConfigurations, observersArr, tabId);
+                if (urlSiteConfigurations.length > 0) {
+                    startDetection(urlSiteConfigurations, observersArr, tabId);
                 } else {
                     console.log(
                         `No site configurations match the current URL.`
@@ -83,8 +84,8 @@ export default defineContentScript({
 });
 
 /**
- * Initialize: reset tab state and retrieve settings
- * @returns settings
+ * Initialize tab with applicable settings
+ * @returns site configurations for the passedUrl
  */
 const initialize = async (
     tabId: number,
@@ -97,14 +98,14 @@ const initialize = async (
 
     const url = passedUrl ?? window.location.href;
 
-    const siteConfigurations = getSiteConfigurationsFromSettings(settings, url);
+    const urlSiteConfigurations = getSiteConfigurationsForURL(settings, url);
 
-    return siteConfigurations;
+    return urlSiteConfigurations;
 };
 
 /**
  * Start detection
- * @param siteConfigurations - configuration(s) for this site/URL
+ * @param siteConfigurations - only configuration(s) for this site/URL
  * @param observersArr - an array to store observers in
  * @param tabId - the id of current tab
  */
@@ -127,7 +128,7 @@ const startDetection = async (
         } else {
             console.log(`Skipping disabled site configuration with matchString: `, siteConfiguration.matchString);
         }
-        
+
     };
 
 };
