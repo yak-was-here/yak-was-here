@@ -6,14 +6,13 @@ A monorepo of my personal websites and tools.
 
 ## [yak-was-here.com](https://www.yak-was-here.com)
 
-[`apps/yak-was-here-web`](./apps/yak-was-here-web/)
-[`apps/yak-was-here-web-e2e`](./apps/yak-was-here-web-e2e/)
+[`apps/yak-was-here-web`](./apps/yak-was-here-web/README.md)
 
 My personal website created with NextJS and shadcn/ui. [Read more...](https://www.yak-was-here.com/article/personal-website)
 
 ## Yaku
 
-[`library/@yak-was-here/yaku`](./library/@yak-was-here/yaku/)
+[`lib/yaku`](./lib/yaku/README.md)
 
 My UI component library.
 
@@ -33,6 +32,7 @@ An old version of my personal website created with NextJS without a component li
 
 ## TODO
 
+- 🚩Rename+move `@yak-was-here/ad-gagger-wxt` => `ad-gagger-wxt` and reset it up as an official nx app
 - Update resume
 - Grab tagline from Twitter
 - Use an icon library
