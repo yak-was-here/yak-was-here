@@ -22,6 +22,6 @@ Develop in Windows so that the extension can launch in browser with HMR.
 Refer to [nvm setup](../../../README.md).
 
 ```sh
-# Install packages
+# Install packages from root package.json or this subdirectory
 npm i
 ```

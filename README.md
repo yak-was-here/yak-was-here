@@ -2,6 +2,8 @@
 
 A monorepo of my personal websites and tools.
 
+---
+
 ## [yak-was-here.com](https://www.yak-was-here.com)
 
 [`apps/yak-was-here-web`](./apps/yak-was-here-web/)
@@ -27,7 +29,9 @@ Automatically mute and skip ads on Twitch.tv and more.
 
 An old version of my personal website created with NextJS without a component library. Originally, this was an experiment in using CSS relative viewport units (REM) for element sizing and layouts in lieu of media queries and breakpoints so that it would only need a single-layout. However, after testing, I learned — though not impossible — it does pose many challenges. [Read more...](https://www.isaacyakl.com/work/isaacyakl-com)
 
-## To-Do
+---
+
+## TODO
 
 - Update resume
 - Grab tagline from Twitter
