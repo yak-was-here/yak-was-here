@@ -15,7 +15,9 @@
         "skipDefaultLibCheck": true,
         "strict": true,
         "baseUrl": ".",
-        "paths": {},
+        "paths": {
+            "@yak-was-here/yaku": ["lib/yaku/src/index.ts"]
+        },
         "verbatimModuleSyntax": true
     },
     "exclude": ["node_modules", "tmp"]
