@@ -1,6 +1,6 @@
-import { InteractionType } from "@/types/configurations";
-import { statisticsStorage } from "./storage-management"
-import { emptyStatistics } from "@/types/statistics";
+import { InteractionType } from '@/types/configurations';
+import { statisticsStorage } from './storage-management';
+import { emptyStatistics } from '@/types/statistics';
 
 export const incrementInteractionStat = async (type: InteractionType) => {
     const stats = await statisticsStorage.getValue();
@@ -14,11 +14,11 @@ export const incrementInteractionStat = async (type: InteractionType) => {
         lastModified: Date.now(),
     });
     return newCount;
-}
+};
 
 export const resetStatistics = async () => {
     await statisticsStorage.setValue(emptyStatistics);
     await statisticsStorage.setMeta({
         lastModified: Date.now(),
     });
-}
+};

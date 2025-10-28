@@ -18,7 +18,6 @@ const MATCH_STRING = '<all_urls>';
 export default defineContentScript({
     matches: [MATCH_STRING],
     async main(ctx) {
-
         const observersArr: MutationObserver[] = [];
 
         const tabId = await retrieveCurrentTabId();
@@ -28,7 +27,7 @@ export default defineContentScript({
         if (urlSiteConfigurations.length > 0) {
             startDetection(urlSiteConfigurations, observersArr, tabId);
         } else {
-            console.log(`No site configurations match the current URL.`)
+            console.log(`No site configurations match the current URL.`);
         }
 
         // Triggered when location changes
@@ -44,7 +43,11 @@ export default defineContentScript({
 
                     await stopDetection(observersArr, tabId);
 
-                    const updatedUrlSiteConfigurations = await initialize(tabId, settings, newUrl.toString());
+                    const updatedUrlSiteConfigurations = await initialize(
+                        tabId,
+                        settings,
+                        newUrl.toString()
+                    );
 
                     if (updatedUrlSiteConfigurations.length > 0) {
                         startDetection(
@@ -61,25 +64,24 @@ export default defineContentScript({
             }
         );
 
-        settingsStorage.watch(
-            async (updatedSettings, outdatedSettings) => {
-                console.warn(`Detected settings change.`);
+        settingsStorage.watch(async (updatedSettings, outdatedSettings) => {
+            console.warn(`Detected settings change.`);
 
-                await stopDetection(observersArr, tabId);
+            await stopDetection(observersArr, tabId);
 
-                const validatedSettings = await getSettings(updatedSettings);
+            const validatedSettings = await getSettings(updatedSettings);
 
-                const urlSiteConfigurations = await initialize(tabId, validatedSettings);
+            const urlSiteConfigurations = await initialize(
+                tabId,
+                validatedSettings
+            );
 
-                if (urlSiteConfigurations.length > 0) {
-                    startDetection(urlSiteConfigurations, observersArr, tabId);
-                } else {
-                    console.log(
-                        `No site configurations match the current URL.`
-                    );
-                }
+            if (urlSiteConfigurations.length > 0) {
+                startDetection(urlSiteConfigurations, observersArr, tabId);
+            } else {
+                console.log(`No site configurations match the current URL.`);
             }
-        );
+        });
     },
 });
 
@@ -112,25 +114,22 @@ const initialize = async (
 const startDetection = async (
     siteConfigurations: SiteConfiguration[],
     observersArr: MutationObserver[],
-    tabId: number,
+    tabId: number
 ) => {
     console.log(`Starting detection...`);
 
     for (const siteConfiguration of siteConfigurations) {
         if (siteConfiguration.enabled) {
             for (const elementConfig of siteConfiguration.elementConfigurations) {
-                waitForElementAppearance(
-                    observersArr,
-                    elementConfig,
-                    tabId
-                );
-            };
+                waitForElementAppearance(observersArr, elementConfig, tabId);
+            }
         } else {
-            console.log(`Skipping disabled site configuration with matchString: `, siteConfiguration.matchString);
+            console.log(
+                `Skipping disabled site configuration with matchString: `,
+                siteConfiguration.matchString
+            );
         }
-
-    };
-
+    }
 };
 
 /**

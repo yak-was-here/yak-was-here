@@ -17,31 +17,31 @@ export const waitForElementAppearance = (
     elementConfiguration: ElementConfiguration,
     tabId: number
 ) => {
-
     const appearanceObserver = new MutationObserver(async () => {
-        
         const elementContainer: Document | Element =
             (elementConfiguration.containerSelector &&
                 document.querySelector(
                     elementConfiguration.containerSelector
                 )) ||
             document;
-    
-        const element = elementContainer.querySelector(elementConfiguration.selector);
-        
-        if (element) {
 
+        const element = elementContainer.querySelector(
+            elementConfiguration.selector
+        );
+
+        if (element) {
             stopObserver(observers, appearanceObserver);
-            
+
             console.log('Element appeared', elementConfiguration.selector);
 
-            await interactWithElement(element, elementConfiguration, ElementPresenceStatus.Appeared, tabId);
-
-            waitForElementDisappearance(
-                observers,
+            await interactWithElement(
+                element,
                 elementConfiguration,
+                ElementPresenceStatus.Appeared,
                 tabId
             );
+
+            waitForElementDisappearance(observers, elementConfiguration, tabId);
         }
     });
 
@@ -52,7 +52,10 @@ export const waitForElementAppearance = (
 
     startObserver(observers, appearanceObserver, container);
 
-    console.log('Waiting for element appearance', elementConfiguration.selector);
+    console.log(
+        'Waiting for element appearance',
+        elementConfiguration.selector
+    );
 };
 
 /**
@@ -66,33 +69,31 @@ export const waitForElementDisappearance = (
     elementConfiguration: ElementConfiguration,
     tabId: number
 ) => {
-
     const disappearanceObserver = new MutationObserver(async () => {
-        
         const elementContainer: Document | Element =
             (elementConfiguration.containerSelector &&
                 document.querySelector(
                     elementConfiguration.containerSelector
                 )) ||
             document;
-        
+
         const element = elementContainer.querySelector(
             elementConfiguration.selector
         );
-        
+
         if (!element) {
-            
             stopObserver(observers, disappearanceObserver);
-            
+
             console.log('Element disappeared', elementConfiguration.selector);
 
-            await interactWithElement(element, elementConfiguration, ElementPresenceStatus.Disappeared, tabId);
-
-            waitForElementAppearance(
-                observers,
+            await interactWithElement(
+                element,
                 elementConfiguration,
+                ElementPresenceStatus.Disappeared,
                 tabId
             );
+
+            waitForElementAppearance(observers, elementConfiguration, tabId);
         }
     });
 
@@ -103,7 +104,10 @@ export const waitForElementDisappearance = (
 
     startObserver(observers, disappearanceObserver, container);
 
-    console.log('Waiting for element disappearance', elementConfiguration.selector);
+    console.log(
+        'Waiting for element disappearance',
+        elementConfiguration.selector
+    );
 };
 
 /**
@@ -120,7 +124,7 @@ export const stopObserver = (
     // Remove from observers list
     const index = observersArr.indexOf(observer);
     if (index > -1) observersArr.splice(index, 1);
-    
+
     console.log(`Observer disconnected and removed:`, observersArr);
 };
 

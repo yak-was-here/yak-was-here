@@ -1,4 +1,4 @@
-import { InteractionType } from "./configurations";
+import { InteractionType } from './configurations';
 
 export interface Statistics {
     [InteractionType.CLICK]: number;
@@ -8,4 +8,4 @@ export interface Statistics {
 export const emptyStatistics: Statistics = {
     [InteractionType.CLICK]: 0,
     [InteractionType.GAG]: 0,
-}
+};

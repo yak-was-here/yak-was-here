@@ -1,0 +1,9 @@
+{
+    "name": "ad-gagger-wxt",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "apps/ad-gagger-wxt",
+    "projectType": "application",
+    "tags": [],
+    "// targets": "to see all targets run: nx show project ad-gagger-wxt --web",
+    "targets": {}
+}

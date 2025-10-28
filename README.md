@@ -98,8 +98,7 @@ References:
 
 #### Nx command not found
 
-If `nx` commands fails to find the command, make 
-sure to do:
+If `nx` commands fails to find the command, make sure to do:
 
 ```sh
 ./nx <command>
