@@ -16,12 +16,6 @@ My personal website created with NextJS and shadcn/ui. [Read more...](https://ww
 
 My UI component library.
 
-## Ad Gagger
-
-[`apps/@yak-was-here/ad-gagger-wxt`](./apps/@yak-was-here/ad-gagger-wxt/README.md)
-
-Automatically mute and skip ads on Twitch.tv and more.
-
 ## [isaacyakl.com](https://www.isaacyakl.com)
 
 [`apps/isaacyakl-web`](./apps/isaacyakl-web/)

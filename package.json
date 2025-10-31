@@ -3,9 +3,7 @@
     "version": "0.0.0",
     "description": "A monorepo of my personal websites and tools.",
     "private": true,
-    "scripts": {
-        "postinstall": "nx run ad-gagger-wxt:postinstall"
-    },
+    "scripts": {},
     "repository": {
         "type": "git",
         "url": "git+https://github.com/isaacyakl/yak-was-here.git"
