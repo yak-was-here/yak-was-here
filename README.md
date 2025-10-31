@@ -32,7 +32,6 @@ An old version of my personal website created with NextJS without a component li
 
 ## TODO
 
-- 🚩Rename+move `@yak-was-here/ad-gagger-wxt` => `ad-gagger-wxt` and reset it up as an official nx app
 - Update resume
 - Grab tagline from Twitter
 - Use an icon library
