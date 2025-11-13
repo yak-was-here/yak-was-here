@@ -53,8 +53,8 @@ cat .nvmrc
 ```
 
 ```sh
-# Install and use the version from above
-nvm install 22 && nvm use 22
+# Use the node version in .nvmrc
+nvm use
 ```
 
 #### Dependencies
@@ -65,13 +65,7 @@ Install packages:
 npm i
 ```
 
-### Updating packages
-
-Update a specific package:
-
-```sh
-./nx migrate <package-name>@<version>
-```
+### Updating Nx packages
 
 Update all packages:
 
@@ -80,6 +74,13 @@ Update all packages:
 # Generates a migrations.json if there are pending migrations
 ./nx migrate latest
 ```
+
+Update a specific package:
+
+```sh
+./nx migrate <package-name>@<version>
+```
+
 
 References:
 
@@ -94,9 +95,9 @@ References:
 If `nx` commands fails to find the command, make sure to do:
 
 ```sh
-./nx <command>
+./nx <command> # local install
 # OR
-npx nx <command>
+npx nx <command> # package runner
 ```
 
 #### Nx general error or cannot find module error
@@ -106,7 +107,16 @@ Try the below and attempt installing the packages again after.
 ```sh
 # Remove nx data
 rm -rf .nx/cache/ .nx/installation/ ./nx/workspace-data
+```
 
+```sh
 # Remove node_modules
 rm -rf node_modules/
+```
+
+#### TypeScript duplicate Vite dependency problem
+
+```sh
+# Dedup workspace
+cd packages/ex-package && npm dedupe
 ```
