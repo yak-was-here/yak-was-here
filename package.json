@@ -15,7 +15,8 @@
     "typescript": "~5.9.2"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ],
   "dependencies": {
     "next": "~16.0.1",
