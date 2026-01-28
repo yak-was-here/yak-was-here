@@ -8,8 +8,11 @@
     "@nx/js": "22.4.2",
     "@nx/next": "^22.4.2",
     "@swc-node/register": "~1.9.1",
+    "@swc/cli": "~0.6.0",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "nx": "22.4.2",
     "tslib": "^2.3.0",
     "typescript": "~5.9.2"

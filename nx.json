@@ -36,5 +36,13 @@
         "watchDepsTargetName": "watch-deps"
       }
     }
-  ]
+  ],
+  "generators": {
+    "@nx/next": {
+      "application": {
+        "style": "css",
+        "linter": "none"
+      }
+    }
+  }
 }
