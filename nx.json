@@ -1,10 +1,7 @@
 {
     "installation": {
-        "version": "22.2.3",
-        "plugins": {
-            "@nx/eslint": "22.2.3",
-            "@nx/next": "22.2.3"
-        }
+        "version": "22.4.2",
+        "plugins": { "@nx/eslint": "22.4.2", "@nx/next": "22.4.2" }
     },
     "$schema": "./node_modules/nx/schemas/nx-schema.json",
     "defaultBase": "master",
@@ -23,22 +20,10 @@
         },
         {
             "plugin": "@nx/playwright/plugin",
-            "options": {
-                "targetName": "e2e"
-            }
+            "options": { "targetName": "e2e" }
         },
-        {
-            "plugin": "@nx/eslint/plugin",
-            "options": {
-                "targetName": "lint"
-            }
-        },
-        {
-            "plugin": "@nx/jest/plugin",
-            "options": {
-                "targetName": "test"
-            }
-        },
+        { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } },
+        { "plugin": "@nx/jest/plugin", "options": { "targetName": "test" } },
         {
             "plugin": "@nx/react/router-plugin",
             "options": {
@@ -63,25 +48,13 @@
                 "watchDepsTargetName": "watch-deps"
             }
         },
-        {
-            "plugin": "@nx/vitest",
-            "options": {
-                "testTargetName": "test"
-            }
-        }
+        { "plugin": "@nx/vitest", "options": { "testTargetName": "test" } }
     ],
     "generators": {
         "@nx/next": {
-            "application": {
-                "style": "tailwind",
-                "linter": "eslint"
-            }
+            "application": { "style": "tailwind", "linter": "eslint" }
         },
-        "@nx/react": {
-            "library": {
-                "unitTestRunner": "jest"
-            }
-        }
+        "@nx/react": { "library": { "unitTestRunner": "jest" } }
     },
     "namedInputs": {
         "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"],
@@ -95,8 +68,6 @@
         }
     },
     "release": {
-        "version": {
-            "preVersionCommand": "npx nx run-many -t build"
-        }
+        "version": { "preVersionCommand": "npx nx run-many -t build" }
     }
 }
