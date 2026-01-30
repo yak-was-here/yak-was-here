@@ -38,7 +38,8 @@
     "src/**/*.jsx",
     "../../apps/isaacyakl-web/.next/types/**/*.ts",
     "../../dist/apps/isaacyakl-web/.next/types/**/*.ts",
-    "next-env.d.ts"
+    "next-env.d.ts",
+    "index.d.ts"
   ],
   "exclude": [
     "out-tsc",
