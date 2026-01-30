@@ -26,13 +26,13 @@ tags:
 
 Below are many of the features I have developed for my website:
 
--  Portfolio work and projects
--  Web resume
--  Work search and tagging system with URL query support
--  Linktree style "more" page
--  Blog
--  Sitemap generator
--  Landing pages
+- Portfolio work and projects
+- Web resume
+- Work search and tagging system with URL query support
+- Linktree style "more" page
+- Blog
+- Sitemap generator
+- Landing pages
 
 ## Prototyping
 

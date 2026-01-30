@@ -42,21 +42,21 @@ tags:
 
 In 2014 &mdash; after analyzing the ecommerce platform options &mdash; we moved from BigCommerce to Shopify because of its larger third-party application marketplace. These applications enabled me to quickly add features with minimal development time so that during my time with the company I successfully developed or implemented the following features:
 
--  Trade-In Web Application
--  Customer Product Reviews System
--  Live Search Suggestions
--  Facebook Page Widget
--  Product Structured Data
--  Zopim Customer Live Chat
--  Facebook Like Buttons for Product Pages
--  YouTube Video Feed
--  Pre-Order and Custom Order Product Types
--  Holiday Website Themes
--  Product Labels from Product Tags
--  Related Product Recommendations
--  In-Cart Upsells
--  Sales Rep Affiliate Selector
--  Marker Anodization Gallery
+- Trade-In Web Application
+- Customer Product Reviews System
+- Live Search Suggestions
+- Facebook Page Widget
+- Product Structured Data
+- Zopim Customer Live Chat
+- Facebook Like Buttons for Product Pages
+- YouTube Video Feed
+- Pre-Order and Custom Order Product Types
+- Holiday Website Themes
+- Product Labels from Product Tags
+- Related Product Recommendations
+- In-Cart Upsells
+- Sales Rep Affiliate Selector
+- Marker Anodization Gallery
 
 In order to add these features, I had to customize our store theme to a high degree.
 
@@ -122,11 +122,11 @@ I also created most of YourPbFriend's social media cover photos and profile pi
 
 I performed several search engine optimization tasks for YourPbFriend. These included:
 
--  Sitemap submission
--  Google Search Console and Analytics setup
--  Page load time optimization
--  Keyword targeting
--  Content generation
+- Sitemap submission
+- Google Search Console and Analytics setup
+- Page load time optimization
+- Keyword targeting
+- Content generation
 
 When selecting the theme to build upon, I made sure it had responsive design and featured structured data so that Google could generate Rich Results for top ranking pages. For keyword targeting and content generation, I set up Google Analytics and worked with the team to identify customer interest and need. This allowed me to optimize existing pages and collections for the keyword phrases paintballers and airsofters were searching. It also allowed me to identify other things they were searching for and create pages for those as well. Due to the success of the business, I did not need to implement a backlink strategy; we were receiving backlinks organically. This is not always the case, so this illustrated how well we filled industry needs.
 

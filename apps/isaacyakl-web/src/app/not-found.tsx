@@ -29,7 +29,7 @@ function NotFoundContent() {
 						That page doesn&apos;t exist. Perhaps you can{" "}
 						<Link href={`/work?q=${searchQuery}`}>try searching for it</Link>?
 					</p>
-					<p className="max-w-[10rem] m-auto">
+					<p className="max-w-40 m-auto">
 						<CtaBtn text="Go home" href="/" />
 					</p>
 				</section>
@@ -47,7 +47,7 @@ export default function NotFound() {
 					<section>
 						<h2>😔 Page not found</h2>
 						<p>That page doesn&apos;t exist.</p>
-						<p className="max-w-[10rem] m-auto">
+						<p className="max-w-40 m-auto">
 							<CtaBtn text="Go home" href="/" />
 						</p>
 					</section>

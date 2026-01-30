@@ -29,9 +29,10 @@ const NavBar = ({ active = "home", className = "" }) => {
                 className={`heading-font-family flex flex-col items-stretch text-lg xl:text-base list-none transition-all ease-in-out duration-500 overflow-hidden p-0 bg-white font-thin text-right tracking-[0.15rem] dont-print${
                     isNavMenuOpen ? " max-h-56" : " max-h-0"
                 }`}
+                role="menu"
             >
-                <li id="home-menuitem" role="menuitem">
-                    <Link href="/" className="hover:!no-underline">
+                <li id="home-menuitem" role="none">
+                    <Link href="/" className="hover:no-underline!" role="menuitem">
                         <span
                             className={`block transition-none py-2 px-2 ${
                                 active === "home"
@@ -43,8 +44,8 @@ const NavBar = ({ active = "home", className = "" }) => {
                         </span>
                     </Link>
                 </li>
-                <li id="work-menuitem" title="Browse work" role="menuitem">
-                    <Link href="/work" className="hover:!no-underline">
+                <li id="work-menuitem" title="Browse work" role="none">
+                    <Link href="/work" className="hover:no-underline!" role="menuitem">
                         <span
                             className={`block transition-none py-2 px-2 ${
                                 active === "work"
@@ -56,8 +57,8 @@ const NavBar = ({ active = "home", className = "" }) => {
                         </span>
                     </Link>
                 </li>
-                <li id="resume-menuitem" title="View resume" role="menuitem">
-                    <Link href="/resume" className="hover:!no-underline">
+                <li id="resume-menuitem" title="View resume" role="none">
+                    <Link href="/resume" className="hover:no-underline!" role="menuitem">
                         <span
                             className={`block transition-none py-2 px-2 ${
                                 active === "resume"
@@ -69,8 +70,8 @@ const NavBar = ({ active = "home", className = "" }) => {
                         </span>
                     </Link>
                 </li>
-                <li id="contact-menuitem" role="menuitem">
-                    <Link href="/more#contact" className="hover:!no-underline">
+                <li id="contact-menuitem" role="none">
+                    <Link href="/more#contact" className="hover:no-underline!" role="menuitem">
                         <span
                             className={`block transition-none py-2 px-2 ${
                                 active === "contact"

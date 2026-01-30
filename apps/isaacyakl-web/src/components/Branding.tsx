@@ -16,7 +16,7 @@ const Branding = ({ inFooter = false }: { inFooter?: boolean }) => {
 		} else {
 			return (
 				<div className="justify-self-start">
-					<Link href="/" title="Home" className="text-black no-underline hover:!no-underline ">
+					<Link href="/" title="Home" className="text-black no-underline hover:no-underline! ">
 						<div className="relative inline-block h-7 w-7 pr-1">
 							<Image className="object-contain" src="/img/yak-logo.svg" alt="yak logo" fill />
 						</div>

@@ -265,10 +265,10 @@ function ResumeView() {
 								</ul>
 								<h4 className="font-resume-body inline-block normal-case text-[10pt] leading-none text-black m-0 ml-3 mr-1 p-0">Skills used:</h4>
 								<ul className="resume-work-tools list-none inline-block m-0 ml-4 mb-0.5 p-0">
-									<li className="inline m-0 p-0">NextJS</li>,&nbsp;
-									<li className="inline m-0 p-0">TypeScript</li>,&nbsp;
-									<li className="inline m-0 p-0">React</li>,&nbsp;
-									<li className="inline m-0 p-0">YAML</li>,&nbsp;
+									<li className="inline m-0 p-0">NextJS,&nbsp;</li>
+									<li className="inline m-0 p-0">TypeScript,&nbsp;</li>
+									<li className="inline m-0 p-0">React,&nbsp;</li>
+									<li className="inline m-0 p-0">YAML,&nbsp;</li>
 									<li className="inline m-0 p-0">Markdown</li>
 								</ul>
 							</div>
@@ -287,9 +287,9 @@ function ResumeView() {
 								</ul>
 								<h4 className="font-resume-body inline-block normal-case text-[10pt] leading-none text-black m-0 ml-3 mr-1 p-0">Skills used:</h4>
 								<ul className="resume-work-tools list-none inline-block m-0 ml-4 mb-0.5 p-0">
-									<li className="inline m-0 p-0">TypeScript</li>,&nbsp;
-									<li className="inline m-0 p-0">Jest</li>,&nbsp;
-									<li className="inline m-0 p-0">Webpack</li>,&nbsp;
+									<li className="inline m-0 p-0">TypeScript,&nbsp;</li>
+									<li className="inline m-0 p-0">Jest,&nbsp;</li>
+									<li className="inline m-0 p-0">Webpack,&nbsp;</li>
 									<li className="inline m-0 p-0">Babel</li>
 								</ul>
 							</div>
@@ -308,10 +308,10 @@ function ResumeView() {
 								</ul>
 								<h4 className="font-resume-body inline-block normal-case text-[10pt] leading-none text-black m-0 ml-3 mr-1 p-0">Skills used:</h4>
 								<ul className="resume-work-tools list-none inline-block m-0 ml-4 mb-0.5 p-0">
-									<li className="inline m-0 p-0">JavaScript</li>,&nbsp;
-									<li className="inline m-0 p-0">Babel</li>,&nbsp;
-									<li className="inline m-0 p-0">Tailwind CSS</li>,&nbsp;
-									<li className="inline m-0 p-0">Twitch API</li>,&nbsp;
+									<li className="inline m-0 p-0">JavaScript,&nbsp;</li>
+									<li className="inline m-0 p-0">Babel,&nbsp;</li>
+									<li className="inline m-0 p-0">Tailwind CSS,&nbsp;</li>
+									<li className="inline m-0 p-0">Twitch API,&nbsp;</li>
 									<li className="inline m-0 p-0">JSON</li>
 								</ul>
 							</div>
@@ -332,11 +332,11 @@ function ResumeView() {
 								</ul>
 								<h4 className="font-resume-body inline-block normal-case text-[10pt] leading-none text-black m-0 ml-3 mr-1 p-0">Skills used:</h4>
 								<ul className="resume-work-tools list-none inline-block m-0 ml-4 mb-0.5 p-0">
-									<li className="inline m-0 p-0">JavaScript</li>,&nbsp;
-									<li className="inline m-0 p-0">Shopify Liquid</li>,&nbsp;
-									<li className="inline m-0 p-0">JSON</li>,&nbsp;
-									<li className="inline m-0 p-0">PHP</li>,&nbsp;
-									<li className="inline m-0 p-0">Git</li>,&nbsp;
+									<li className="inline m-0 p-0">JavaScript,&nbsp;</li>
+									<li className="inline m-0 p-0">Shopify Liquid,&nbsp;</li>
+									<li className="inline m-0 p-0">JSON,&nbsp;</li>
+									<li className="inline m-0 p-0">PHP,&nbsp;</li>
+									<li className="inline m-0 p-0">Git,&nbsp;</li>
 									<li className="inline m-0 p-0">Adobe Apps</li>
 								</ul>
 							</div>
@@ -354,10 +354,10 @@ function ResumeView() {
 								</ul>
 								<h4 className="font-resume-body inline-block normal-case text-[10pt] leading-none text-black m-0 ml-3 mr-1 p-0">Skills used:</h4>
 								<ul className="resume-work-tools list-none inline-block m-0 ml-4 mb-0.5 p-0">
-									<li className="inline m-0 p-0">jQuery</li>,&nbsp;
-									<li className="inline m-0 p-0">Shopify Liquid</li>,&nbsp;
-									<li className="inline m-0 p-0">Bootstrap</li>,&nbsp;
-									<li className="inline m-0 p-0">PHP</li>,&nbsp;
+									<li className="inline m-0 p-0">jQuery,&nbsp;</li>
+									<li className="inline m-0 p-0">Shopify Liquid,&nbsp;</li>
+									<li className="inline m-0 p-0">Bootstrap,&nbsp;</li>
+									<li className="inline m-0 p-0">PHP,&nbsp;</li>
 									<li className="inline m-0 p-0">Adobe Apps</li>
 								</ul>
 							</div>

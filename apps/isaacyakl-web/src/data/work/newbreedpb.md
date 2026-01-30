@@ -48,17 +48,17 @@ The web store is built with Shopify using a customized version of the [Venture t
 
 ### Features
 
--  Product second image display on hover
--  Product YouTube videos and 3D model support
--  Large search bar with auto focus
--  Product reviews system
--  Instagram feed widget
--  Automatic [FAQ page](https://newbreedpb.com/pages/frequently-asked-questions) formatting
--  Product availability tagging system
--  Product offers auto population (Warranty, Free Shipping, Financing, Layaway, etc.)
--  Product SKU and MPN display
--  Automatic structured data (Product, Breadcrumbs, FAQ, Blog Articles)
--  Automatic campaign link formatting for blog articles
+- Product second image display on hover
+- Product YouTube videos and 3D model support
+- Large search bar with auto focus
+- Product reviews system
+- Instagram feed widget
+- Automatic [FAQ page](https://newbreedpb.com/pages/frequently-asked-questions) formatting
+- Product availability tagging system
+- Product offers auto population (Warranty, Free Shipping, Financing, Layaway, etc.)
+- Product SKU and MPN display
+- Automatic structured data (Product, Breadcrumbs, FAQ, Blog Articles)
+- Automatic campaign link formatting for blog articles
 
 These features make use of the Shopify Liquid templating language, JavaScript (ESNext transpiled to ES5), HTML, and CSS/SCSS. My workflow utilizes the [Shopify Theme Kit](https://shopify.dev/themes/tools/theme-kit) and Git/GitHub, and the procedure can be found in the theme's [README.md](https://github.com/isaacyakl/new-breed-shopify-theme#new-version-procedure) on GitHub.
 
@@ -104,17 +104,17 @@ When I first started working with New Breed, we attempted to run Meta and Google
 
 I perform many essential one-time and daily SEO tasks. Much of my time in this role is spent optimizing and generating content for keyword phrases that target customers' needs along the purchase path. By doing so consistently, I am able to acquire backlinks manually and, hopefully, organically in the future. A few tasks performed are as follows:
 
--  Internal linking
--  Keyword optimizing pages/collections
--  Blog article writing
--  One-time structured data enhancements
-   -  Organization information
-   -  Sitelinks searchbox
--  Automatically generated structured data
-   -  Products
-   -  Articles
-   -  Breadcrumbs
-   -  FAQ
+- Internal linking
+- Keyword optimizing pages/collections
+- Blog article writing
+- One-time structured data enhancements
+  - Organization information
+  - Sitelinks searchbox
+- Automatically generated structured data
+  - Products
+  - Articles
+  - Breadcrumbs
+  - FAQ
 
 ## Ecommerce
 

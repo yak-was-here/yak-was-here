@@ -33,7 +33,7 @@ export default function BackToTop(): JSX.Element {
 				<button
 					id="backToTop"
 					title="Back to top"
-					className="fixed w-auto bottom-0 right-0 text-black cursor-pointer bg-transparent z-[100] transition-all duration-500 ease-in-out hover:bg-transparent"
+					className="fixed w-auto bottom-0 right-0 text-black cursor-pointer bg-transparent z-100 transition-all duration-500 ease-in-out hover:bg-transparent"
 					onClick={() => {
 						window.scrollTo({
 							top: 0,
