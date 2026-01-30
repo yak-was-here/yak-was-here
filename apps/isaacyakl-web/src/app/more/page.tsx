@@ -1,21 +1,23 @@
-import BaseMeta from "../components/BaseMeta";
-import ContactIcons from "../components/ContactIcons";
-import NavBar from "../components/NavBar";
-import { fName, lName, nick, tagline } from "../data/meta";
+"use client";
+
+import ContactIcons from "../../components/ContactIcons";
+import NavBar from "../../components/NavBar";
+import { fName, lName, nick, tagline } from "../../data/meta";
 import { useEffect, useState } from "react";
-import { getYear } from "../lib/browser";
-import Links from "../components/Links";
+import { getYear } from "../../lib/browser";
+import Links from "../../components/Links";
 
 export default function More() {
 	const [currentDate, setCurrentDate] = useState(getYear());
 
 	useEffect(() => {
 		setCurrentDate(getYear());
+		// Set document title since this is a client component
+		document.title = `Links to ${nick}'s businesses, projects, and more.`;
 	}, []);
 
 	return (
 		<div className="yakground-image print:bg-none">
-			<BaseMeta title={`Links to ${nick}'s businesses, projects, and more.`} desc={`Browse a list of ${nick}'s businesses, projects, and more.`} />
 			<NavBar active="more" />
 			<main className="text-center">
 				<section>

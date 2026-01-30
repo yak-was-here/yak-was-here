@@ -1,56 +1,35 @@
-import BaseMeta from "../../components/BaseMeta";
+"use client";
+
 import WorkBrowser from "../../components/WorkBrowser";
 import PageHeader from "../../components/PageHeader";
 import NavBar from "../../components/NavBar";
 import PageFooter from "../../components/PageFooter";
-import { getAllWorkMetadata } from "../../lib/work";
-import { useRouter } from "next/router";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Breadcrumbs from "../../components/Breadcrumbs";
-import { fName, lName, nick } from "../../data/meta";
 import { FaGithub } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
-const Index = ({ allWorkMetadata }: { allWorkMetadata: Array<WorkFile> }) => {
+export default function WorkIndex({ allWorkMetadata }: { allWorkMetadata: Array<WorkFile> }) {
     const router = useRouter();
+    const searchParams = useSearchParams();
+    const [searchQuery, setSearchQuery] = useState("");
+
+    useEffect(() => {
+        const q = searchParams.get('q');
+        setSearchQuery(q ? decodeURIComponent(q) : "");
+    }, [searchParams]);
 
     const updateURLSearchQuery = (q: string) => {
         if (q !== "") {
-            router.push({
-                pathname: router.pathname,
-                query: {
-                    q: encodeURIComponent(q),
-                },
-            });
+            router.push(`/work?q=${encodeURIComponent(q)}`);
         } else {
-            router.push({
-                pathname: router.pathname,
-                query: {},
-            });
-        }
-    };
-
-    const getURLSearchQuery = () => {
-        try {
-            return router.query.q === undefined
-                ? ""
-                : typeof router.query.q === "string"
-                ? decodeURIComponent(router.query.q)
-                : decodeURIComponent(router.query.q[0]);
-        } catch (e) {
-            console.error(e);
+            router.push("/work");
         }
     };
 
     return (
         <>
-            <BaseMeta
-                title={`${fName} "${nick}" ${lName}'s Portfolio${
-                    getURLSearchQuery() !== ""
-                        ? ` — "${getURLSearchQuery()}" work`
-                        : ": Work and Projects"
-                }`}
-                desc={`Read about and view ${nick}'s work experience and projects.`}
-            />
             <NavBar active="work" />
             <Breadcrumbs
                 trail={[
@@ -76,7 +55,7 @@ const Index = ({ allWorkMetadata }: { allWorkMetadata: Array<WorkFile> }) => {
                     </p>
                     <WorkBrowser
                         workMetadata={allWorkMetadata}
-                        tagQuery={getURLSearchQuery()}
+                        tagQuery={searchQuery}
                         onQueryUpdate={updateURLSearchQuery}
                     />
                 </section>
@@ -84,19 +63,4 @@ const Index = ({ allWorkMetadata }: { allWorkMetadata: Array<WorkFile> }) => {
             <PageFooter />
         </>
     );
-};
-
-export async function getStaticProps() {
-	const allWorkMetadata = await getAllWorkMetadata();
-
-	if (allWorkMetadata) {
-		return {
-			props: {
-				allWorkMetadata,
-			},
-		};
-	}
-	return;
 }
-
-export default Index;

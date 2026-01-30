@@ -1,3 +1,5 @@
+"use client";
+
 import WorkCard from "./WorkCard";
 import React, { useState, useEffect, useRef } from "react";
 import { isDesktop } from "react-device-detect";

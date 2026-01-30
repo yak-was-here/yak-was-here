@@ -14,6 +14,9 @@ function Breadcrumbs({
         },
     ],
     className = "",
+}: {
+    trail?: Crumb[];
+    className?: string;
 }) {
     return (
         <div className={`max-width m-auto flex flex-wrap content-around items-center justify-end text-lg md:text-xs p-2 ${className}`}>

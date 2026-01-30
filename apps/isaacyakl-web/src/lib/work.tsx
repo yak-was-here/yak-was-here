@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
 
-const workDirectory = path.join(process.cwd(), "data/work");
+const workDirectory = path.join(process.cwd(), "src/data/work");
 
 const getMDWorkFiles = () => {
 	const fileNames = fs.readdirSync(workDirectory);
@@ -43,7 +43,7 @@ export async function getAllWorkMetadata() {
 	});
 }
 
-export async function getWorkFileData(id: string) {
+export async function getWorkFileData(id: string): Promise<WorkFile | undefined> {
 	const fullPath = path.join(workDirectory, `${id}.md`);
 	let workFile = "";
 
@@ -68,5 +68,5 @@ export async function getWorkFileData(id: string) {
 		id,
 		...workFileMatterResult.data,
 		htmlContent,
-	};
+	} as WorkFile;
 }

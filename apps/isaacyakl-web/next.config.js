@@ -11,10 +11,6 @@ const nextConfig = {
     // Use this to set Nx-specific options
     // See: https://nx.dev/recipes/next/next-config-setup
     nx: {},
-    i18n: {
-        locales: ["en"],
-        defaultLocale: "en",
-    },
     reactStrictMode: true,
 
     async redirects() {

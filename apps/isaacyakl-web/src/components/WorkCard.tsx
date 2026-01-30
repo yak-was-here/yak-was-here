@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { title } from "../data/meta";
 
 const WorkCard = ({ title = "", id = title, date = "", role = "", image = "", summary = "" }: { title?: string; id?: string; date?: string; role?: string; image?: string; summary?: string }) => {
     const roleHeading = () => {

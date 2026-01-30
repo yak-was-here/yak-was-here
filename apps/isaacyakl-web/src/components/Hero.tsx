@@ -18,6 +18,7 @@ function Hero() {
 				</EmailLink>
 			);
 		}
+		return null;
 	};
 
 	return (
@@ -47,6 +48,7 @@ function Hero() {
                         </span>
                     </div>
                 </div>
+                {renderWorkStatus()}
                 <ContactIcons id="social" />
             </div>
         </header>

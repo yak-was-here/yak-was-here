@@ -1,3 +1,5 @@
+"use client";
+
 import { type JSX, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { TfiAngleUp } from "react-icons/tfi";

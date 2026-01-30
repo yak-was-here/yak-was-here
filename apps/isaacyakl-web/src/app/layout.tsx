@@ -1,32 +1,30 @@
 import './global.css';
 import { Bebas_Neue } from 'next/font/google';
-import { GoogleAnalytics, usePageViews } from 'nextjs-google-analytics';
+import GoogleAnalyticsClient from '../components/GoogleAnalyticsClient';
 import BackToTop from '../components/BackToTop';
+import { Metadata } from 'next';
 
 const bebasNeue = Bebas_Neue({
     weight: '400',
     display: 'swap',
     subsets: ['latin'],
+    variable: '--font-bebas-neue',
 });
+
+export const metadata: Metadata = {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://isaacyakl.com'),
+};
 
 export default function RootLayout({
     children,
 }: {
     children: React.ReactNode;
-    }) {
-
-    usePageViews();
-
+}) {
     return (
-        <html lang="en">
+        <html lang="en" className={bebasNeue.variable} style={{ '--font-family-headings': bebasNeue.style.fontFamily } as React.CSSProperties}>
             <body>
-                <GoogleAnalytics />
+                <GoogleAnalyticsClient gaMeasurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
                 <BackToTop />
-                <style jsx global>{`
-                    :root {
-                        --font-family-headings: ${bebasNeue.style.fontFamily}, "Arial Narrow", Arial, Helvetica, sans-serif;
-                    }
-                `}</style>
                 {children}
             </body>
         </html>

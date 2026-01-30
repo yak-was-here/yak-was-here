@@ -1,3 +1,5 @@
+"use client";
+
 import { fName, lName, resumeIntroWebDev, github, linkedin, siteURL, tel, email, location, title } from "../data/meta";
 import EmailLink from "./EmailLink";
 import Skill from "./Skill";

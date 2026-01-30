@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Obfuscate from "react-obfuscate";
 import { nick, email } from "../data/meta";

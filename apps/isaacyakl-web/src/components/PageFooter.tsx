@@ -1,3 +1,5 @@
+"use client";
+
 import ContactIcons from "./ContactIcons";
 import Branding from "./Branding";
 import React from "react";

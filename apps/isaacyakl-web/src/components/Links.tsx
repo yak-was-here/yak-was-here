@@ -1,12 +1,14 @@
+"use client";
+
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import { FaBriefcase, FaSpotify } from "react-icons/fa";
 import { IoDocumentText } from "react-icons/io5";
 import { RxCrosshair1 } from "react-icons/rx";
 import { FcHome } from "react-icons/fc";
 
 export default function Links({ showHeading = false }: { showHeading?: boolean }) {
-	const router = useRouter();
+	const pathname = usePathname();
 	const getHeading = () => {
 		if (showHeading) return <h2>Links</h2>;
 		else return;
@@ -15,7 +17,7 @@ export default function Links({ showHeading = false }: { showHeading?: boolean }
         <section className="mb-4 w-full">
             {getHeading()}
             <div className="flex flex-wrap justify-center items-center">
-                {router.pathname === "/more" ? (
+                {pathname === "/more" ? (
                     <Link href="./" className="btn text-center">
                         <span className="inline-block align-middle mr-1">
                             <FcHome className="h-[1em] w-[1em] text-white" />
