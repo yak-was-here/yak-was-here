@@ -98,7 +98,7 @@
 		@apply flex flex-col flex-wrap justify-center items-center;
 	}
 	section {
-		@apply max-w-7xl m-auto w-screen p-2;
+		@apply max-w-7xl m-auto w-full p-2;
 	}
 	footer {
 		@apply text-sm bg-no-repeat bg-center bg-cover;
