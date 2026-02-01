@@ -1,0 +1,12 @@
+{
+  "name": "isaacyakl-web",
+  "targets": {
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/isaacyakl-web",
+        "command": "next dev --turbo"
+      }
+    }
+  }
+}

@@ -13,11 +13,6 @@ const nextConfig = {
     nx: {},
     reactStrictMode: true,
 
-    // Set correct workspace root for Turbopack
-    turbopack: {
-        root: require('path').resolve(__dirname, '../..'),
-    },
-
     async redirects() {
         return [
             {
