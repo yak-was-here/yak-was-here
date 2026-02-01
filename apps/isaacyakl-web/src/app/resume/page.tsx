@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 export default function Resume() {
 	return (
 		<>
-			<NavBar active="resume" className="dont-print" />
+			<NavBar active="resume" className="no-print" />
 			<Breadcrumbs
-				className="dont-print select-none"
+				className="no-print select-none"
 				trail={[
 					{ text: "Home", link: "/" },
 					{ text: "Resume", link: "/resume" },

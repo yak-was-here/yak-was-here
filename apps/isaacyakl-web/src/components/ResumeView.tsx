@@ -32,12 +32,12 @@ function ResumeView() {
 	// https://stackoverflow.com/a/36690658/13254325
 	return (
 		<div className="yakground-image overflow-auto p-[0.3in] print:bg-none print:p-0">
-			<main id="resumePaper" className="relative yak-shadow block m-auto bg-white w-[8.5in] h-[11in] p-[0.5in] overflow-hidden print:absolute print:top-0 print:bottom-0 print:!mt-0 print:p-0 print:w-full print:h-full">
+			<main id="resumePaper" className="relative yak-shadow block m-auto bg-white w-[8.5in] h-[11in] p-[0.5in] overflow-hidden print:absolute print:top-0 print:bottom-0 print:mt-0! print:p-0 print:w-full print:h-full">
 				<div id="resumeActions" className="absolute w-full h-[0.5in] flex flex-nowrap justify-end items-start m-0 p-1 top-0 right-0 print:hidden overflow-hidden">
-					<Link href="/litzenberger-isaac-resume.pdf" className="btn w-auto flex-none m-0.5 py-1 px-2 drop-shadow-none !text-yak-green !bg-transparent hover:!text-white hover:!bg-yak-green hover:!drop-shadow-md" title="Download" passHref>
+					<Link href="/litzenberger-isaac-resume.pdf" className="btn w-auto flex-none m-0.5 py-1 px-2 drop-shadow-none text-yak-green! bg-transparent! hover:text-white! hover:bg-yak-green! hover:drop-shadow-md!" title="Download" passHref>
 						<FaDownload className="inline m-0 p-0" />
 					</Link>
-					<Link href="#" onClick={printResume} className="btn w-auto flex-none m-0.5 py-1 px-2 drop-shadow-none !text-yak-green !bg-transparent hover:!text-white hover:!bg-yak-green hover:!drop-shadow-md" title="Print" passHref>
+					<Link href="#" onClick={printResume} className="btn w-auto flex-none m-0.5 py-1 px-2 drop-shadow-none text-yak-green! bg-transparent! hover:text-white! hover:bg-yak-green! hover:drop-shadow-md!" title="Print" passHref>
 						<FaPrint className="inline m-0 p-0" />
 					</Link>
 				</div>

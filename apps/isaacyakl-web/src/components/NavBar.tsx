@@ -14,19 +14,19 @@ const NavBar = ({ active = "home", className = "" }) => {
             <div id="top" className="grid grid-cols-2 items-center">
                 <Branding />
                 <div
-                    className="justify-self-end cursor-pointer dont-print"
+                    className="justify-self-end cursor-pointer no-print"
                     onClick={() => setNavMenuState(!isNavMenuOpen)}
                     role="menu"
                     aria-owns="home-menuitem work-menuitem resume-menuitem contact-menuitem more-menuitem"
                 >
                     <FontAwesomeIcon
                         icon={faBars}
-                        className="w-[1.68rem] h-[1.68rem]"
+                        fontSize="2.25rem"
                     />
                 </div>
             </div>
             <ul
-                className={`heading-font-family flex flex-col items-stretch text-lg xl:text-base list-none transition-all ease-in-out duration-500 overflow-hidden p-0 bg-white font-thin text-right tracking-[0.15rem] dont-print${
+                className={`heading-font-family flex flex-col items-stretch text-lg xl:text-base list-none transition-all ease-in-out duration-500 overflow-hidden p-0 bg-white font-thin text-right tracking-[0.15rem] no-print${
                     isNavMenuOpen ? " max-h-56" : " max-h-0"
                 }`}
                 role="menu"

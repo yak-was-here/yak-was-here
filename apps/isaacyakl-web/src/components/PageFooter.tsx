@@ -17,9 +17,9 @@ const PageFooter = ({ children }: { children?: React.ReactNode }) => {
 	return (
 		<footer className="print:bg-none">
 			<div className="max-width m-auto p-2">
-				<div className="dont-print">{children}</div>
+				<div className="no-print">{children}</div>
 				<div className="text-center">
-					<ContactIcons id="contact" className="mt-8 mb-10 dont-print" />
+					<ContactIcons id="contact" className="mt-8 mb-10 no-print" />
 					<Branding inFooter={true} />
 					<p>
 						&copy; {currentDate} {fName} {lName} &mdash; All rights reserved.

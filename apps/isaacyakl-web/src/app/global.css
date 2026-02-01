@@ -32,6 +32,9 @@
 	.heading-font-family {
 		font-family: var(--font-family-headings);
 	}
+	.font-resume-body {
+		font-family: var(--font-family-resume-body);
+	}
 
 	html,
 	body {
@@ -73,7 +76,7 @@
 	a,
 	a:visited,
 	a:active {
-		@apply text-yak-green transition-all duration-[250ms] ease-in-out no-underline cursor-pointer;
+		@apply text-yak-green transition-all duration-250 ease-in-out no-underline cursor-pointer;
 	}
 	a:hover {
 		@apply underline;
@@ -89,13 +92,13 @@
 	}
 	header {
 		background-image: url("/img/isaacyakl-hero-background-4k.jpg");
-		@apply bg-no-repeat bg-center bg-cover min-h-[5rem];
+        @apply bg-no-repeat bg-center bg-cover min-h-20;
 	}
 	main {
 		@apply flex flex-col flex-wrap justify-center items-center;
 	}
 	section {
-		@apply max-w-screen-xl m-auto w-screen p-2;
+		@apply max-w-7xl m-auto w-screen p-2;
 	}
 	footer {
 		@apply text-sm bg-no-repeat bg-center bg-cover;
@@ -124,7 +127,7 @@
 }
 @layer utilities {
 	.max-width {
-		@apply max-w-screen-xl;
+		@apply max-w-7xl;
 	}
 	.cta-arrow::after {
 		color: inherit;
@@ -133,10 +136,14 @@
 	.yak-shadow {
 		box-shadow: #4242425e 4px 9px 8px 0px;
 	}
+	.resume-work-tools {
+		list-style: none;
+		display: inline-block;
+	}
 }
 
 @media print {
-	.dont-print {
+	.no-print {
 		@apply hidden;
 	}
 	.yak-shadow {
